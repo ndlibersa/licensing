@@ -35,67 +35,79 @@ if ($step == "3"){
 			if (!$dbcheck) {
 				$errorMessage[] = "Unable to access the database '" . $database_name . "'.  Please verify it has been created.<br />MySQL Error: " . mysql_error();
 			}else{
-				//passed db host, name check, can open/run file now
-				//make sure SQL file exists
-				$test_sql_file = "test_create.sql";
-				$sql_file = "create_tables_data.sql";
+				//make sure the tables don't already exist - otherwise this script will overwrite all of the data!
+				$query = "SELECT count(*) count FROM information_schema.`COLUMNS` WHERE table_schema = '" . $database_name . "' AND table_name='License'";
 
-			    if (!file_exists($test_sql_file)) {
-			    	$errorMessage[] = "Could not open sql file: " . $test_sql_file . ".  If this file does not exist you must download new install files.";
-			    }else{
-					//run the file - checking for errors at each SQL execution
-					$f = fopen($test_sql_file,"r");
-					$sqlFile = fread($f,filesize($test_sql_file));
-					$sqlArray = explode(";",$sqlFile);
-
-
-
-					//Process the sql file by statements
-					foreach ($sqlArray as $stmt) {
-					   if (strlen(trim($stmt))>3){
-					   		//replace the DATABASE_NAME parameter with what was actually input
-					   		$stmt = str_replace("_DATABASE_NAME_", $database_name, $stmt);
-
-							$result = mysql_query($stmt);
-							if (!$result){
-								$errorMessage[] = mysql_error() . "<br /><br />For statement: " . $stmt;
-								 break;
-							}
-					    }
-					}
-
-				}
-
-
-				//once this check has passed we can run the entire ddl/dml script
-				if (count($errorMessage) == 0){
-					if (!file_exists($sql_file)) {
-						$errorMessage[] = "Could not open sql file: " . $sql_file . ".  If this file does not exist you must download new install files.";
+				//if License table exists, error out
+				if (!$row = mysql_fetch_array(mysql_query($query))){
+					$errorMessage[] = "Please verify your database user has access to select from the information_schema MySQL metadata database.";
+				}else{
+					if ($row['count'] > 0){
+						$errorMessage[] = "The Licensing tables already exist.  If you intend to upgrade, please run upgrade.php instead.  If you would like to perform a fresh install you will need to manually drop all of the Licensing tables in this schema first.";
 					}else{
-						//run the file - checking for errors at each SQL execution
-						$f = fopen($sql_file,"r");
-						$sqlFile = fread($f,filesize($sql_file));
-						$sqlArray = explode(';',$sqlFile);
+						//passed db host, name check, can open/run file now
+						//make sure SQL file exists
+						$test_sql_file = "test_create.sql";
+						$sql_file = "create_tables_data.sql";
+
+						if (!file_exists($test_sql_file)) {
+							$errorMessage[] = "Could not open sql file: " . $test_sql_file . ".  If this file does not exist you must download new install files.";
+						}else{
+							//run the file - checking for errors at each SQL execution
+							$f = fopen($test_sql_file,"r");
+							$sqlFile = fread($f,filesize($test_sql_file));
+							$sqlArray = explode(";",$sqlFile);
 
 
 
-						//Process the sql file by statements
-						foreach ($sqlArray as $stmt) {
-						   if (strlen(trim($stmt))>3){
-								//replace the DATABASE_NAME parameter with what was actually input
-								$stmt = str_replace("_DATABASE_NAME_", $database_name, $stmt);
+							//Process the sql file by statements
+							foreach ($sqlArray as $stmt) {
+							   if (strlen(trim($stmt))>3){
+									//replace the DATABASE_NAME parameter with what was actually input
+									$stmt = str_replace("_DATABASE_NAME_", $database_name, $stmt);
 
-								$result = mysql_query($stmt);
-								if (!$result){
-									$errorMessage[] = mysql_error() . "<br /><br />For statement: " . $stmt;
-									 break;
+									$result = mysql_query($stmt);
+									if (!$result){
+										$errorMessage[] = mysql_error() . "<br /><br />For statement: " . $stmt;
+										 break;
+									}
 								}
+							}
+
+						}
+
+
+						//once this check has passed we can run the entire ddl/dml script
+						if (count($errorMessage) == 0){
+							if (!file_exists($sql_file)) {
+								$errorMessage[] = "Could not open sql file: " . $sql_file . ".  If this file does not exist you must download new install files.";
+							}else{
+								//run the file - checking for errors at each SQL execution
+								$f = fopen($sql_file,"r");
+								$sqlFile = fread($f,filesize($sql_file));
+								$sqlArray = explode(';',$sqlFile);
+
+
+
+								//Process the sql file by statements
+								foreach ($sqlArray as $stmt) {
+								   if (strlen(trim($stmt))>3){
+										//replace the DATABASE_NAME parameter with what was actually input
+										$stmt = str_replace("_DATABASE_NAME_", $database_name, $stmt);
+
+										$result = mysql_query($stmt);
+										if (!$result){
+											$errorMessage[] = mysql_error() . "<br /><br />For statement: " . $stmt;
+											 break;
+										}
+									}
+								}
+
 							}
 						}
 
 					}
 				}
-
 			}
 		}
 
@@ -200,7 +212,7 @@ if ($step == "3"){
 		$fh = fopen($configFile, 'w');
 
 		if (!$fh){
-			$errorMessage[] = "Could not open file " . $configFile . ".  Please verify you can write to /admin/ directory.";
+			$errorMessage[] = "Could not open file " . $configFile . ".  Please verify you can write to the /admin/ directory.";
 		}else{
 			if (!$organizationsModule) $organizationsModule = "N";
 			if (!$cancellationModule) $cancellationModule = "N";
