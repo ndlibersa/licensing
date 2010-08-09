@@ -442,7 +442,7 @@ switch ($_GET['action']) {
 
 		try {
 			$sfxProvider->delete();
-			echo "SFX Provider Link successfully deleted";
+			echo "Terms Tool Resource Link successfully deleted";
 		} catch (Exception $e) {
 			echo $e->getMessage();
 		}

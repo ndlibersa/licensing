@@ -179,7 +179,7 @@ if ($step == "3"){
 	$organizationsModule = $_POST['organizationsModule'];
 	$cancellationModule = $_POST['cancellationModule'];
 	$usageModule = $_POST['usageModule'];
-	$useSFXTermsToolFunctionality = $_POST['useSFXTermsToolFunctionality'];
+	$useTermsToolFunctionality = $_POST['useTermsToolFunctionality'];
 	$organizationsDatabaseName = trim($_POST['organizationsDatabaseName']);
 
 
@@ -217,7 +217,7 @@ if ($step == "3"){
 			if (!$organizationsModule) $organizationsModule = "N";
 			if (!$cancellationModule) $cancellationModule = "N";
 			if (!$usageModule) $usageModule = "N";
-			if (!$useSFXTermsToolFunctionality) $useSFXTermsToolFunctionality = "N";
+			if (!$useTermsToolFunctionality) $useTermsToolFunctionality = "N";
 
 
 			$iniData = array();
@@ -226,7 +226,7 @@ if ($step == "3"){
 			$iniData[] = "organizationsDatabaseName=" . $organizationsDatabaseName;
 			$iniData[] = "cancellationModule=" . $cancellationModule;
 			$iniData[] = "usageModule=" . $usageModule;
-			$iniData[] = "useSFXTermsToolFunctionality=" . $useSFXTermsToolFunctionality;
+			$iniData[] = "useTermsToolFunctionality=" . $useTermsToolFunctionality;
 			$iniData[] = "remoteAuthVariableName=\"" . $remoteAuthVariableName . "\"";
 
 			$iniData[] = "[database]";
@@ -285,7 +285,7 @@ if ($step == "3"){
 		<li>Know your host, username and password for MySQL with permissions to create tables</li>
 		<li>It is recommended for security to have a different username and password for CORAL with only select, insert, update and delete privileges to CORAL schemas</li>
 		<li>The server variable to access your school's auth system via PHP - for example $HTTP_SERVER_VARS['REMOTE_USER'] or $SERVER['AUTH_USER']</li>
-		<li>Know what other systems you will be using operating with - you will be asked whether you are using SFX or the Organizations Module.  If you are using the Organizations module you will need to provide the name of the database/schema used for Organizations for inter-operability.  Recommended name is coral_organizations_prod.  For more information about inter-operability refer to the user guide.</li>
+		<li>Know what other systems you will be using operating with - you will be asked whether you are using the Terms Tool Add-On or the Organizations Module.  If you are using the Organizations module you will need to provide the name of the database/schema used for Organizations for inter-operability.  Recommended name is coral_organizations_prod.  For more information about inter-operability refer to the user guide.</li>
 		<li>Verify that your /admin/ directory is writable by server during the installation process (chmod 777).  After installation you should chmod it back.</li>
 	</ul>
 
@@ -462,7 +462,7 @@ if ($step == "3"){
 	if ($_POST['organizationsModule']) $organizationsChecked = "checked";
 	if ($_POST['cancellationModule']) $cancellationChecked = "checked";
 	if ($_POST['usageModule']) $usageChecked = "checked";
-	if ($_POST['useSFXTermsToolFunctionality']) $useSFXTermsToolFunctionalityChecked = "checked";
+	if ($_POST['useTermsToolFunctionality']) $useTermsToolFunctionalityChecked = "checked";
 
 	?>
 		<form method="post" action="<?=$_SERVER['PHP_SELF']?>">
@@ -507,9 +507,9 @@ if ($step == "3"){
 				</td>
 			</tr>
 			<tr>
-				<td>&nbsp;Are you going to use SFX inter-operability?</td>
+				<td>&nbsp;Are you going to use the Terms Tool Add-On?</td>
 				<td>
-					<input type="checkbox" name="useSFXTermsToolFunctionality" value="Y" <?=$useSFXTermsToolFunctionalityChecked?>>
+					<input type="checkbox" name="useTermsToolFunctionality" value="Y" <?=$useTermsToolFunctionalityChecked?>>
 				</td>
 			</tr>
 			<tr>

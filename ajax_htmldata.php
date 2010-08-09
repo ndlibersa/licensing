@@ -449,7 +449,7 @@ switch ($_GET['action']) {
 			$documentArray = $license->getAllDocumentsForExpressionDisplay();
 		}
 
-		$config = new Configuration();
+		$util = new Utility();
 
 
 
@@ -499,8 +499,8 @@ switch ($_GET['action']) {
 						<tr>
 						<td class='alt' ><?php echo $expressionIns['expressionTypeName']; ?>
 						<?php
-						//if not configured to use SFX, hide the production use in terms tool checkbox/display
-						if ((strtoupper($expressionIns['noteType']) == 'DISPLAY') && ($config->settings->useSFXTermsToolFunctionality == "Y")){
+						//if not configured to use the terms tool, hide the production use in terms tool checkbox/display
+						if ((strtoupper($expressionIns['noteType']) == 'DISPLAY') && ($util->useTermsTool())){
 							if ($user->isAdmin()) {
 								if ($expressionIns['productionUseInd'] == "1"){
 									echo "</td><td class='alt' style='float: right;text-align:right;'><input type='checkbox' id='productionUseInd_" . $expressionIns['expressionID'] . "' name='productionUseInd_" . $expressionIns['expressionID'] . "' onclick='javascript:changeProdUse(" . $expressionIns['expressionID'] . ")' checked></td>";
@@ -614,7 +614,7 @@ switch ($_GET['action']) {
 						<table class='verticalFormTable'>
 						<tr>
 						<th>For Document</th>
-						<th>SFX Resource</th>
+						<th>Resource</th>
 						<th>&nbsp;</th>
 						<th>&nbsp;</th>
 						</tr>
@@ -641,7 +641,7 @@ switch ($_GET['action']) {
 		}
 
 		if ($user->canEdit()){
-			echo "<br /><br /><a href='ajax_forms.php?action=getSFXForm&licenseID=" . $licenseID . "&height=170&width=260&modal=true' class='thickbox' id='addSFXResource'>add new sfx resource link</a>";
+			echo "<br /><br /><a href='ajax_forms.php?action=getSFXForm&licenseID=" . $licenseID . "&height=170&width=260&modal=true' class='thickbox' id='addSFXResource'>add new terms tool resource link</a>";
 		}
 
 		break;
@@ -1225,7 +1225,7 @@ switch ($_GET['action']) {
 		$instanceArray = array();
 		$user = new User();
 		$tempArray = array();
-		$config = new Configuration();
+		$util = new Utility();
 
 		if (count($user->allAsArray()) > 0){
 
@@ -1239,8 +1239,8 @@ switch ($_GET['action']) {
 
 				</th>
 				<?php
-				//if not configured to use SFX, hide the Terms Tool Update Email
-				if ($config->settings->useSFXTermsToolFunctionality == "Y"){
+				//if not configured to use terms tool, hide the Terms Tool Update Email
+				if ($util->useTermsTool()){
 					echo "<th>Terms Tool Update Email</th>";
 				}
 				?>
@@ -1257,7 +1257,7 @@ switch ($_GET['action']) {
 					echo "<td>" . $instance['lastName'] . "</td>";
 					echo "<td>" . $privilege->shortName . "</td>";
 					//if not configured to use SFX, hide the Terms Tool Update Email
-					if ($config->settings->useSFXTermsToolFunctionality == "Y"){
+					if ($util->useTermsTool()){
 						echo "<td>" . $instance['emailAddressForTermsTool'] . "</td>";
 					}
 					echo "<td style='width:30px'><a href='ajax_forms.php?action=getAdminUserUpdateForm&loginID=" . $instance['loginID'] . "&height=210&width=295&modal=true' class='thickbox' id='expression'>update</a></td>";

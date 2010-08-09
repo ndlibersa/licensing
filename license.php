@@ -33,9 +33,9 @@ $_SESSION['ref_script']=$currentPage;
 
 
 //determine if we should display the SFX tab - if user is admin and if configured in settings to use SFX
-$config = new Configuration();
+$util = new Utility();
 $displaySFX = 0;
-if (($user->isAdmin()) && ($config->settings->useSFXTermsToolFunctionality == "Y")){
+if (($user->isAdmin()) && ($util->useTermsTool())){
 	$displaySFX=1;
 }
 
@@ -61,7 +61,7 @@ if ($license->shortName){
 			<td class="sidemenu">
 				<div class="sidemenuselected" style='position: relative; width: 91px'><a href='javascript:void(0)' class='showDocuments'>Documents</a></div>
 				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showExpressions'>Expressions</a></div>
-				<?php if ($displaySFX == "1"){ ?><div class='sidemenuunselected'><a href='javascript:void(0)' class='showSFXProviders'>SFX Links</a></div><?php } ?>
+				<?php if ($displaySFX == "1"){ ?><div class='sidemenuunselected'><a href='javascript:void(0)' class='showSFXProviders'>Terms Tool</a></div><?php } ?>
 				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showAttachments'>Attachments</a><br />&nbsp;<span class='span_AttachmentNumber'></span></div>
 			</td>
 			<td class='mainContent'>
@@ -85,7 +85,7 @@ if ($license->shortName){
 			<td class="sidemenu">
 				<div class="sidemenuunselected"><a href='javascript:void(0)' class='showDocuments'>Documents</a></div>
 				<div class='sidemenuselected' style='position: relative; width: 91px'><a href='javascript:void(0)' class='showExpressions'>Expressions</a></div>
-				<?php if ($displaySFX == "1"){ ?><div class='sidemenuunselected'><a href='javascript:void(0)' class='showSFXProviders'>SFX Links</a></div><?php } ?>
+				<?php if ($displaySFX == "1"){ ?><div class='sidemenuunselected'><a href='javascript:void(0)' class='showSFXProviders'>Terms Tool</a></div><?php } ?>
 				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showAttachments'>Attachments</a><br />&nbsp;<span class='span_AttachmentNumber'></span></div>
 			</td>
 			<td class='mainContent'>
@@ -105,7 +105,7 @@ if ($license->shortName){
 			<td class="sidemenu">
 				<div class="sidemenuunselected"><a href='javascript:void(0)' class='showDocuments'>Documents</a></div>
 				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showExpressions'>Expressions</a></div>
-				<div class='sidemenuselected' style='position: relative; width: 91px'><a href='javascript:void(0)' class='showSFXProviders'>SFX Links</a></div>
+				<div class='sidemenuselected' style='position: relative; width: 91px'><a href='javascript:void(0)' class='showSFXProviders'>Terms Tool</a></div>
 				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showAttachments'>Attachments</a><br />&nbsp;<span class='span_AttachmentNumber'></span></div>
 			</td>
 			<td class='mainContent'>
@@ -124,7 +124,7 @@ if ($license->shortName){
 			<td class="sidemenu">
 				<div class="sidemenuunselected"><a href='javascript:void(0)' class='showDocuments'>Documents</a></div>
 				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showExpressions'>Expressions</a></div>
-				<?php if ($displaySFX == "1"){ ?><div class='sidemenuunselected'><a href='javascript:void(0)' class='showSFXProviders'>SFX Links</a></div><?php } ?>
+				<?php if ($displaySFX == "1"){ ?><div class='sidemenuunselected'><a href='javascript:void(0)' class='showSFXProviders'>Terms Tool</a></div><?php } ?>
 				<div class='sidemenuselected' style='position: relative; width: 91px'><a href='javascript:void(0)' class='showAttachments'>Attachments</a><br />&nbsp;<span class='span_AttachmentNumber'></span></div>
 			</td>
 			<td class='mainContent'>

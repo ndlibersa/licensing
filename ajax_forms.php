@@ -316,7 +316,7 @@ switch ($_GET['action']) {
 
 
 
-	//form to add/edit sfx provider links
+	//form to add/edit sfx or other terms tool provider links
     case 'getSFXForm':
 
 		//sfx provider id passed in for updates
@@ -332,7 +332,7 @@ switch ($_GET['action']) {
 
 		<table class="thickboxTable" style="width:240px;">
 		<tr>
-		<td colspan='2'><span class='headerText'>SFX Resource Link</span><br /><span id='span_errors'></span><br /></td>
+		<td colspan='2'><span class='headerText'>Terms Tool Resource Link</span><br /><span id='span_errors'></span><br /></td>
 		</tr>
 
 
@@ -360,7 +360,7 @@ switch ($_GET['action']) {
 
 		<tr>
 		<td>
-		<label for="shortName" class="formText">SFX Resource:</label>  <span id='span_error_shortName' class='errorText'></span><br />
+		<label for="shortName" class="formText">Terms Tool Resource:</label>  <span id='span_error_shortName' class='errorText'></span><br />
 		<input id='shortName' name='shortName' style='width:190px' value='<?php echo $sfxProvider->shortName; ?>' />
 		</td>
 		</tr>
@@ -902,7 +902,7 @@ switch ($_GET['action']) {
 			$update='Add New';
 		}
 
-		$config = new Configuration();
+		$util = new Utility();
 
 		?>
 		<div id='div_updateForm'>
@@ -944,7 +944,7 @@ switch ($_GET['action']) {
 
 		<?php
 		//if not configured to use SFX, hide the Terms Tool Report
-		if ($config->settings->useSFXTermsToolFunctionality == "Y"){
+		if ($util->useTermsTool()) {
 		?>
 		<tr><td><label for='emailAddressForTermsTool'><b>Terms Tool Email</b></label</td>
 		<td>

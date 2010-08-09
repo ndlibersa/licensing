@@ -101,6 +101,20 @@ class Utility {
 		}
 	}
 
+
+	//return true if there is a setting in config to use the terms tool
+	//setting could be called either useSFXTermsToolFunctionality or useTermsToolFunctionality
+	public function useTermsTool(){
+		$config = new Configuration();
+
+		if (($config->settings->useSFXTermsToolFunctionality == "Y") || ($config->settings->useTermsToolFunctionality == "Y")){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
 }
 
 ?>
