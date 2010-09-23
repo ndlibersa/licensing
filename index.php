@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL);
 /*
 **************************************************************************************************************************
 ** CORAL Licensing Module v. 1.0
@@ -29,6 +29,8 @@ include 'templates/header.php';
 
 if ($_SESSION['ref_script'] != "license.php"){
 	$reset='Y';
+}else{
+	$reset='N';
 }
 
 $_SESSION['ref_script']=$currentPage;

@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL);
 
 /*
 **************************************************************************************************************************
@@ -1373,7 +1374,7 @@ switch ($_GET['action']) {
 			$reset = '';
 
 			if (isset($_GET['page'])){
-				$selectedValue = $_SESSION['license_qualifierID'];
+				if (isset($_SESSION['license_qualifierID'])) $selectedValue = $_SESSION['license_qualifierID'];
 				$reset = $_GET['reset'];
 			}
 
