@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL);
+
 /*
 **************************************************************************************************************************
 ** CORAL Licensing Module v. 1.0
@@ -27,7 +27,7 @@ include 'templates/header.php';
 //except we don't want it to retain if they press the 'index' button
 //check what referring script is
 
-if ($_SESSION['ref_script'] != "license.php"){
+if (isset($_SESSION['ref_script']) && ($_SESSION['ref_script'] != "license.php")){
 	$reset='Y';
 }else{
 	$reset='N';
@@ -57,8 +57,8 @@ $_SESSION['ref_script']=$currentPage;
 	<tr>
 	<td class='searchRow'><label for='searchName'><b>Name (contains)</b></label>
 	<br />
-	<input type='text' name='searchName' id='searchName' style='width:145px' value='<?php if ($reset != 'Y') echo $_SESSION['license_shortName']; ?>' /><br />
-	<div id='div_searchName' style='<?php if ((!$_SESSION['license_shortName']) || ($reset == 'Y')) echo "display:none;"; ?>margin-left:123px;'><input type='button' name='searchName' value='go!' class='searchButton' /></div>
+	<input type='text' name='searchName' id='searchName' style='width:145px' value='<?php if (isset($_SESSION['license_shortName']) && ($reset != 'Y')) echo $_SESSION['license_shortName']; ?>' /><br />
+	<div id='div_searchName' style='<?php if ((!isset($_SESSION['license_shortName'])) || ($reset == 'Y')) echo "display:none;"; ?>margin-left:123px;'><input type='button' name='searchName' value='go!' class='searchButton' /></div>
 	</td>
 	</tr>
 
@@ -79,7 +79,7 @@ $_SESSION['ref_script']=$currentPage;
 
 			<?php
 			foreach($license->getOrganizationList() as $display) {
-				if (($_SESSION['license_organizationID'] == $display['organizationID']) && ($reset != 'Y')){
+				if ((isset($_SESSION['license_organizationID'])) && ($_SESSION['license_organizationID'] == $display['organizationID']) && ($reset != 'Y')){
 					echo "<option value='" . $display['organizationID'] . "' selected>" . $display['name'] . "</option>";
 				}else{
 					echo "<option value='" . $display['organizationID'] . "'>" . $display['name'] . "</option>";
@@ -108,7 +108,7 @@ $_SESSION['ref_script']=$currentPage;
 		$display = array();
 
 		foreach($license->getConsortiumList() as $display) {
-			if (($_SESSION['license_consortiumID'] == $display['consortiumID']) && ($reset != 'Y')){
+			if ((isset($_SESSION['license_consortiumID'])) && ($_SESSION['license_consortiumID'] == $display['consortiumID']) && ($reset != 'Y')){
 				echo "<option value='" . $display['consortiumID'] . "' selected>" . $display['name'] . "</option>";
 			}else{
 				echo "<option value='" . $display['consortiumID'] . "'>" . $display['name'] . "</option>";
@@ -131,7 +131,7 @@ $_SESSION['ref_script']=$currentPage;
 		$status = new Status();
 
 		foreach($status->allAsArray() as $display) {
-			if (($_SESSION['license_statusID'] == $display['statusID']) && ($reset != 'Y')){
+			if ((isset($_SESSION['license_statusID'])) && ($_SESSION['license_statusID'] == $display['statusID']) && ($reset != 'Y')){
 				echo "<option value='" . $display['statusID'] . "' selected>" . $display['shortName'] . "</option>";
 			}else{
 				echo "<option value='" . $display['statusID'] . "'>" . $display['shortName'] . "</option>";
@@ -156,7 +156,7 @@ $_SESSION['ref_script']=$currentPage;
 		$documentType = new DocumentType();
 
 		foreach($documentType->allAsArray() as $display) {
-			if (($_SESSION['license_documentTypeID'] == $display['documentTypeID']) && ($reset != 'Y')){
+			if ((isset($_SESSION['license_documentTypeID'])) && ($_SESSION['license_documentTypeID'] == $display['documentTypeID']) && ($reset != 'Y')){
 				echo "<option value='" . $display['documentTypeID'] . "' selected>" . $display['shortName'] . "</option>";
 			}else{
 				echo "<option value='" . $display['documentTypeID'] . "'>" . $display['shortName'] . "</option>";
@@ -187,7 +187,7 @@ $_SESSION['ref_script']=$currentPage;
 		$expressionType = new ExpressionType();
 
 		foreach($expressionType->allAsArray() as $display) {
-			if (($_SESSION['license_expressionTypeID'] == $display['expressionTypeID']) && ($reset != 'Y')){
+			if ((isset($_SESSION['license_expressionTypeID'])) && ($_SESSION['license_expressionTypeID'] == $display['expressionTypeID']) && ($reset != 'Y')){
 				echo "<option value='" . $display['expressionTypeID'] . "' selected>" . $display['shortName'] . "</option>";
 			}else{
 				echo "<option value='" . $display['expressionTypeID'] . "'>" . $display['shortName'] . "</option>";
@@ -205,7 +205,7 @@ $_SESSION['ref_script']=$currentPage;
 	<td class='searchRow'><label for='qualifierID'><b>Qualifier</b></label>
 	<br />
 	<div id='div_Qualifiers'>
-	<input type='hidden' id='qualifierID' value='<?php if (($_SESSION['license_qualifierID']) && ($reset != 'Y')) echo $_SESSION['license_qualifierID']; ?>' />
+	<input type='hidden' id='qualifierID' value='<?php if ((isset($_SESSION['license_qualifierID'])) && ($_SESSION['license_qualifierID']) && ($reset != 'Y')) echo $_SESSION['license_qualifierID']; ?>' />
 	</div>
 	</td>
 	</tr>
