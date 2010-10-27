@@ -321,14 +321,14 @@ switch ($_GET['action']) {
 
 		//sfx provider id passed in for updates
 		$licenseID = $_GET['licenseID'];
-		if (isset($_GET['SFXProviderID'])) $SFXProviderID = $_GET['SFXProviderID']; else $SFXProviderID = '';
+		if (isset($_GET['sfxProviderID'])) $sfxProviderID = $_GET['sfxProviderID']; else $sfxProviderID = '';
 
-		$sfxProvider = new SFXProvider(new NamedArguments(array('primaryKey' => $SFXProviderID)));
+		$sfxProvider = new SFXProvider(new NamedArguments(array('primaryKey' => $sfxProviderID)));
 		$license = new License(new NamedArguments(array('primaryKey' => $licenseID)));
 
 		?>
 		<div id='div_sfxForm'>
-		<input type='hidden' id='SFXProviderID' name='SFXProviderID' value='<?php echo $SFXProviderID; ?>'>
+		<input type='hidden' id='sfxProviderID' name='sfxProviderID' value='<?php echo $sfxProviderID; ?>'>
 
 		<table class="thickboxTable" style="width:240px;">
 		<tr>

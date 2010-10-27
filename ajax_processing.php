@@ -416,13 +416,13 @@ switch ($_GET['action']) {
      case 'submitSFXProvider':
 
     	//if expressionID is sent then this is an update
-    	if ((isset($_GET['SFXProviderID'])) && ($_GET['SFXProviderID'] != '')){
- 			$sfxProvider = new SFXProvider(new NamedArguments(array('primaryKey' => $_GET['SFXProviderID'])));
+    	if ((isset($_GET['sfxProviderID'])) && ($_GET['sfxProviderID'] != '')){
+ 			$sfxProvider = new SFXProvider(new NamedArguments(array('primaryKey' => $_GET['sfxProviderID'])));
 			$sfxProvider->shortName		= urldecode($_GET['shortName']);
 			$sfxProvider->documentID 	= $_GET['documentID'];
     	}else{
  			$sfxProvider = new SFXProvider();
- 			$sfxProvider->SFXProviderID = '';
+ 			$sfxProvider->sfxProviderID = '';
 			$sfxProvider->shortName		= urldecode($_GET['shortName']);
 			$sfxProvider->documentID 	= $_GET['documentID'];
 		}
@@ -438,7 +438,7 @@ switch ($_GET['action']) {
 
      case 'deleteSFXProvider':
 
-		$sfxProvider = new SFXProvider(new NamedArguments(array('primaryKey' => $_GET['SFXProviderID'])));
+		$sfxProvider = new SFXProvider(new NamedArguments(array('primaryKey' => $_GET['sfxProviderID'])));
 
 		try {
 			$sfxProvider->delete();

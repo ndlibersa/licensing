@@ -357,13 +357,13 @@ function updateAttachmentsNumber(){
  }
 
 
- function deleteSFXProvider(SFXProviderID){
+ function deleteSFXProvider(sfxProviderID){
     if (confirm("Do you really want to delete this terms tool resource link?") == true) {
        $.ajax({
           type:       "GET",
           url:        "ajax_processing.php",
           cache:      false,
-          data:       "action=deleteSFXProvider&SFXProviderID=" + SFXProviderID,
+          data:       "action=deleteSFXProvider&sfxProviderID=" + sfxProviderID,
           success:    function(html) { updateSFXProviders(); }
 
 

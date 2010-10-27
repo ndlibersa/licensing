@@ -40,7 +40,7 @@ function submitSFXForm(){
 		 type:       "GET",
 		 url:        "ajax_processing.php",
 		 cache:      false,
-		 data:       "action=submitSFXProvider&SFXProviderID=" + $("#SFXProviderID").val() + "&documentID=" + $("#documentID").val() + "&shortName=" + $("#shortName").val(),
+		 data:       "action=submitSFXProvider&sfxProviderID=" + $("#sfxProviderID").val() + "&documentID=" + $("#documentID").val() + "&shortName=" + $("#shortName").val(),
 		 success:    function(html) {
 			if (html){
 				$("#span_errors").html(html);

@@ -121,10 +121,10 @@ CREATE TABLE  IF NOT EXISTS  `_DATABASE_NAME_`.`ExpressionQualifierProfile` (
 
 
 CREATE TABLE IF NOT EXISTS  `_DATABASE_NAME_`.`SFXProvider` (
-  `SFXProviderID` int(10) unsigned NOT NULL auto_increment,
+  `sfxProviderID` int(10) unsigned NOT NULL auto_increment,
   `documentID` int(10) unsigned NOT NULL,
   `shortName` varchar(245) NOT NULL,
-  PRIMARY KEY  (`SFXProviderID`)
+  PRIMARY KEY  (`sfxProviderID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 

@@ -623,8 +623,8 @@ switch ($_GET['action']) {
 				echo "<tr>";
 				echo "<td>" . $document->shortName . "</td>";
 				echo "<td>" . $sfxProvider->shortName . "</td>";
-				echo "<td><a href='ajax_forms.php?action=getSFXForm&height=170&width=260&modal=true&licenseID=" . $licenseID . "&SFXProviderID=" . $sfxProvider->SFXProviderID . "' class='thickbox' id='editSFXProvider'>edit</a></td>";
-				echo "<td><a href='javascript:deleteSFXProvider(\"" . $sfxProvider->SFXProviderID . "\");'>remove</a></td>";
+				echo "<td><a href='ajax_forms.php?action=getSFXForm&height=170&width=260&modal=true&licenseID=" . $licenseID . "&sfxProviderID=" . $sfxProvider->sfxProviderID . "' class='thickbox' id='editSFXProvider'>edit</a></td>";
+				echo "<td><a href='javascript:deleteSFXProvider(\"" . $sfxProvider->sfxProviderID . "\");'>remove</a></td>";
 				echo "</tr>";
 			}
 
