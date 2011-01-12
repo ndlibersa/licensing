@@ -35,12 +35,12 @@ switch ($_GET['action']) {
     case 'submitDocument':
 
     	//if documentID is sent then this is an update
-    	if ((isset($_GET['documentID'])) && ($_GET['documentID'] != '')){
- 			$document = new Document(new NamedArguments(array('primaryKey' => $_GET['documentID'])));
+    	if ((isset($_POST['documentID'])) && ($_POST['documentID'] != '')){
+ 			$document = new Document(new NamedArguments(array('primaryKey' => $_POST['documentID'])));
 
-			if ((($document->expirationDate == "") || ($document->expirationDate == '0000-00-00')) && ($_GET['archiveInd'] == "1")){
+			if ((($document->expirationDate == "") || ($document->expirationDate == '0000-00-00')) && ($_POST['archiveInd'] == "1")){
 				$document->expirationDate = date( 'Y-m-d H:i:s' );
-			}else if ($_GET['archiveInd'] == "0"){
+			}else if ($_POST['archiveInd'] == "0"){
 				$document->expirationDate = '';
 			}
 
@@ -49,7 +49,7 @@ switch ($_GET['action']) {
  			$document = new Document();
  			$document->documentID = '';
 
-			if ($_GET['archiveInd'] == "1"){
+			if ($_POST['archiveInd'] == "1"){
 				$document->expirationDate = date( 'Y-m-d H:i:s' );
 			}else{
 				$document->expirationDate = '';
@@ -58,24 +58,24 @@ switch ($_GET['action']) {
 		}
 
 		//first set effective Date for proper saving
-		if ((isset($_GET['effectiveDate'])) && ($_GET['effectiveDate'] != '')){
-			$document->effectiveDate = date("Y-m-d", strtotime($_GET['effectiveDate']));
+		if ((isset($_POST['effectiveDate'])) && ($_POST['effectiveDate'] != '')){
+			$document->effectiveDate = date("Y-m-d", strtotime($_POST['effectiveDate']));
 		}else{
 			$document->effectiveDate= 'null';
 		}
 
 
-		$document->shortName=urldecode($_GET['shortName']);
-		$document->documentTypeID=$_GET['documentTypeID'];
-		$document->parentDocumentID=$_GET['parentDocumentID'];
-		$document->licenseID=$_GET['licenseID'];
-		$document->documentURL=$_GET['uploadDocument'];
+		$document->shortName=$_POST['shortName'];
+		$document->documentTypeID=$_POST['documentTypeID'];
+		$document->parentDocumentID=$_POST['parentDocumentID'];
+		$document->licenseID=$_POST['licenseID'];
+		$document->documentURL=$_POST['uploadDocument'];
 
 
 		try {
 			$document->save();
 		} catch (Exception $e) {
-			echo $e->getMessage();
+			echo $e->POSTMessage();
 		}
 
         break;
@@ -117,7 +117,7 @@ switch ($_GET['action']) {
 
 	//verify that the new document name doesn't have bad characters and the name isn't already being used
     case 'checkUploadDocument':
-		$uploadDocument = $_GET['uploadDocument'];
+		$uploadDocument = $_POST['uploadDocument'];
 		$document = new Document();
 
 		$exists = 0;
@@ -205,24 +205,24 @@ switch ($_GET['action']) {
 
     case 'submitSignature':
     	//set date for proper saving
-        if ((isset($_GET['signatureDate'])) && ($_GET['signatureDate'] != '')){
-			$signatureDate = date("Y-m-d", strtotime($_GET['signatureDate']));
+        if ((isset($_POST['signatureDate'])) && ($_POST['signatureDate'] != '')){
+			$signatureDate = date("Y-m-d", strtotime($_POST['signatureDate']));
 		}else{
 			$signatureDate = "";
 		}
 
     	//if signatureID is sent then this is an update
-    	if ((isset($_GET['signatureID'])) && ($_GET['signatureID'] != '')){
- 			$signature = new Signature(new NamedArguments(array('primaryKey' => $_GET['signatureID'])));
+    	if ((isset($_POST['signatureID'])) && ($_POST['signatureID'] != '')){
+ 			$signature = new Signature(new NamedArguments(array('primaryKey' => $_POST['signatureID'])));
     	}else{
  			$signature = new Signature();
  			$signature->signatureID = '';
  		}
 
 
-		$signature->signerName		= urldecode($_GET['signerName']);
-		$signature->signatureTypeID = $_GET['signatureTypeID'];
-		$signature->documentID		= $_GET['documentID'];
+		$signature->signerName		= $_POST['signerName'];
+		$signature->signatureTypeID = $_POST['signatureTypeID'];
+		$signature->documentID		= $_POST['documentID'];
 		$signature->signatureDate	= $signatureDate;
 
 		try {
@@ -360,7 +360,7 @@ switch ($_GET['action']) {
 		//if note id is sent in, this is an update
     	if ((isset($_POST['expressionNoteID'])) && ($_POST['expressionNoteID'] != '')){
  			$expressionNote = new ExpressionNote(new NamedArguments(array('primaryKey' => $_POST['expressionNoteID'])));
-			$expressionNote->note					= urldecode($_POST['expressionNote']);
+			$expressionNote->note					= $_POST['expressionNote'];
 			$expressionNote->displayOrderSeqNumber	= $_POST['displayOrderSeqNumber'];
 
 			try {
@@ -375,7 +375,7 @@ switch ($_GET['action']) {
 
  			$expressionNote = new ExpressionNote();
  			$expressionNote->expressionNoteID 		= '';
-			$expressionNote->note					= urldecode($_POST['expressionNote']);
+			$expressionNote->note					= $_POST['expressionNote'];
 			$expressionNote->expressionID			= $_POST['expressionID'];
 			$expressionNote->displayOrderSeqNumber	= $expression->getNextExpressionNoteSequence;
 
@@ -416,15 +416,15 @@ switch ($_GET['action']) {
      case 'submitSFXProvider':
 
     	//if expressionID is sent then this is an update
-    	if ((isset($_GET['sfxProviderID'])) && ($_GET['sfxProviderID'] != '')){
- 			$sfxProvider = new SFXProvider(new NamedArguments(array('primaryKey' => $_GET['sfxProviderID'])));
-			$sfxProvider->shortName		= urldecode($_GET['shortName']);
-			$sfxProvider->documentID 	= $_GET['documentID'];
+    	if ((isset($_POST['providerID'])) && ($_POST['providerID'] != '')){
+ 			$sfxProvider = new SFXProvider(new NamedArguments(array('primaryKey' => $_POST['providerID'])));
+			$sfxProvider->shortName		= $_POST['shortName'];
+			$sfxProvider->documentID 	= $_POST['documentID'];
     	}else{
  			$sfxProvider = new SFXProvider();
  			$sfxProvider->sfxProviderID = '';
-			$sfxProvider->shortName		= urldecode($_GET['shortName']);
-			$sfxProvider->documentID 	= $_GET['documentID'];
+			$sfxProvider->shortName		= $_POST['shortName'];
+			$sfxProvider->documentID 	= $_POST['documentID'];
 		}
 
 		try {
@@ -472,7 +472,7 @@ switch ($_GET['action']) {
 			}
 
 
-			$license->shortName			= urldecode($_POST['shortName']);
+			$license->shortName			= $_POST['shortName'];
 			$license->consortiumID		= $_POST['consortiumID'];
 
 			//this method will save to either organization or provider depending on the settings
@@ -536,7 +536,7 @@ switch ($_GET['action']) {
 		if ((isset($_GET['shortName'])) && ($_GET['shortName'] != '')){
 			$consortium = new Consortium();
 			$consortium->consortiumID='';
-			$consortium->shortName		= urldecode($_GET['shortName']);
+			$consortium->shortName		= $_GET['shortName'];
 
 			try {
 				$consortium->save();
@@ -567,7 +567,7 @@ switch ($_GET['action']) {
 		if ((isset($_GET['shortName'])) && ($_GET['shortName'] != '')){
 			$provider = new Provider();
 			$provider->providerID='';
-			$provider->shortName		= urldecode($_GET['shortName']);
+			$provider->shortName		= $_GET['shortName'];
 
 			try {
 				$provider->save();
@@ -599,10 +599,10 @@ switch ($_GET['action']) {
 	 //new doc type being added directly on document form - returns updated drop down list
      case 'addDocumentType':
 
-		if ((isset($_GET['shortName'])) && ($_GET['shortName'] != '')){
+		if ((isset($_POST['shortName'])) && ($_POST['shortName'] != '')){
 			$documentType = new DocumentType();
 			$documentType->documentTypeID='';
-			$documentType->shortName		= urldecode($_GET['shortName']);
+			$documentType->shortName		= $_POST['shortName'];
 
 			try {
 				$documentType->save();
@@ -619,7 +619,7 @@ switch ($_GET['action']) {
 		$displayArray = $documentType->allAsArray();
 
 		foreach($displayArray as $display) {
-			if ($_GET['shortName'] == $display['shortName']){
+			if ($_POST['shortName'] == $display['shortName']){
 				echo "<option value='" . $display['documentTypeID'] . "' selected>" . $display['shortName'] . "</option>";
 			}else{
 				echo "<option value='" . $display['documentTypeID'] . "'>" . $display['shortName'] . "</option>";
@@ -636,10 +636,10 @@ switch ($_GET['action']) {
 	 //no longer used.... must add signature types from admin form
      case 'addSignatureType':
 
-		if ((isset($_GET['shortName'])) && ($_GET['shortName'] != '')){
+		if ((isset($_POST['shortName'])) && ($_POST['shortName'] != '')){
 			$signatureType = new SignatureType();
 			$signatureType->signatureTypeID='';
-			$signatureType->shortName		= urldecode($_GET['shortName']);
+			$signatureType->shortName		= $_POST['shortName'];
 
 			try {
 				$signatureType->save();
@@ -657,7 +657,7 @@ switch ($_GET['action']) {
 		$displayArray = $signatureType->allAsArray();
 
 		foreach($displayArray as $display) {
-			if ($_GET['shortName'] == $display['shortName']){
+			if ($_POST['shortName'] == $display['shortName']){
 				echo "<option value='" . $display['signatureTypeID'] . "' selected>" . $display['shortName'] . "</option>";
 			}else{
 				echo "<option value='" . $display['signatureTypeID'] . "'>" . $display['shortName'] . "</option>";
@@ -674,11 +674,11 @@ switch ($_GET['action']) {
      case 'addExpressionType':
 
 
-		if ((isset($_GET['shortName'])) && ($_GET['shortName'] != '')){
+		if ((isset($_POST['shortName'])) && ($_POST['shortName'] != '')){
 			$expressionType = new ExpressionType();
 			$expressionType->expressionTypeID='';
 
-			$expressionType->shortName		= urldecode($_GET['shortName']);
+			$expressionType->shortName		= $_POST['shortName'];
 			$expressionType->noteType		= 'Internal';
 
 			try {
@@ -696,7 +696,7 @@ switch ($_GET['action']) {
 		$displayArray = $expressionType->allAsArray();
 
 		foreach($displayArray as $display) {
-			if ($_GET['shortName'] == $display['shortName']){
+			if ($_POST['shortName'] == $display['shortName']){
 				echo "<option value='" . $display['expressionTypeID'] . "' selected>" . $display['shortName'] . "</option>";
 			}else{
 				echo "<option value='" . $display['expressionTypeID'] . "'>" . $display['shortName'] . "</option>";
@@ -712,8 +712,8 @@ switch ($_GET['action']) {
 	 //error is echoed back
      case 'addData':
 
- 		$className = $_GET['tableName'];
- 		$shortName = urldecode($_GET['shortName']);
+ 		$className = $_POST['tableName'];
+ 		$shortName = $_POST['shortName'];
 
 		$instance = new $className();
 		$instance->shortName = $shortName;
@@ -722,7 +722,7 @@ switch ($_GET['action']) {
 		try {
 			$instance->save();
 		} catch (Exception $e) {
-			echo $e->getMessage();
+			echo $e->POSTMessage();
 		}
 		echo "</font>";
 
@@ -731,9 +731,9 @@ switch ($_GET['action']) {
 	 //generically updates data for admin screen
 	 //error is echoed back
      case 'updateData':
- 		$className = $_GET['tableName'];
- 		$updateID = $_GET['updateID'];
- 		$shortName = urldecode($_GET['shortName']);
+ 		$className = $_POST['tableName'];
+ 		$updateID = $_POST['updateID'];
+ 		$shortName = $_POST['shortName'];
 
 		$instance = new $className(new NamedArguments(array('primaryKey' => $updateID)));
 		$instance->shortName = $shortName;
@@ -741,7 +741,7 @@ switch ($_GET['action']) {
 		try {
 			$instance->save();
 		} catch (Exception $e) {
-			echo $e->getMessage();
+			echo $e->POSTMessage();
 		}
 
  		break;
@@ -762,7 +762,7 @@ switch ($_GET['action']) {
 
 		if ($numberOfChildren > 0){
 			//print out a friendly message...
-			echo "Unable to delete  - this " . strtolower(ereg_replace("[A-Z]", " \\0" , lcfirst($className))) . " is in use.  Please make sure no licenses are set up with this information.";
+			echo "Unable to delete  - this " . strtolower(preg_replace("/[A-Z]/", " \\0" , lcfirst($className))) . " is in use.  Please make sure no licenses are set up with this information.";
 		}else{
 			try {
 				$instance->delete();
@@ -778,20 +778,20 @@ switch ($_GET['action']) {
 
 
      case 'submitExpressionType':
-		if ((isset($_GET['expressionTypeID'])) && ($_GET['expressionTypeID'] != '')){
- 			$expressionType = new ExpressionType(new NamedArguments(array('primaryKey' => $_GET['expressionTypeID'])));
+		if ((isset($_POST['expressionTypeID'])) && ($_POST['expressionTypeID'] != '')){
+ 			$expressionType = new ExpressionType(new NamedArguments(array('primaryKey' => $_POST['expressionTypeID'])));
 		}else{
  			$expressionType = new ExpressionType();
  			$expressionType->expressionTypeID = '';
 		}
 
-		$expressionType->shortName	= $_GET['shortName'];
-		$expressionType->noteType 	= $_GET['noteType'];
+		$expressionType->shortName	= $_POST['shortName'];
+		$expressionType->noteType 	= $_POST['noteType'];
 
 		try {
 			$expressionType->save();
 		} catch (Exception $e) {
-			echo $e->getMessage();
+			echo $e->POSTMessage();
 		}
 
  		break;
@@ -799,41 +799,41 @@ switch ($_GET['action']) {
 
 
      case 'submitQualifier':
-		if ((isset($_GET['qualifierID'])) && ($_GET['qualifierID'] != '')){
- 			$qualifier = new Qualifier(new NamedArguments(array('primaryKey' => $_GET['qualifierID'])));
+		if ((isset($_POST['qualifierID'])) && ($_POST['qualifierID'] != '')){
+ 			$qualifier = new Qualifier(new NamedArguments(array('primaryKey' => $_POST['qualifierID'])));
 		}else{
  			$qualifier = new Qualifier();
  			$qualifier->qualifierID = '';
 		}
 
-		$qualifier->expressionTypeID 	= $_GET['expressionTypeID'];
-		$qualifier->shortName			= $_GET['shortName'];
+		$qualifier->expressionTypeID 	= $_POST['expressionTypeID'];
+		$qualifier->shortName			= $_POST['shortName'];
 
 		try {
 			$qualifier->save();
 		} catch (Exception $e) {
-			echo $e->getMessage();
+			echo $e->POSTMessage();
 		}
 
  		break;
 
      case 'submitUserData':
-		if ($_GET['orgLoginID']){
- 			$user = new User(new NamedArguments(array('primaryKey' => $_GET['orgLoginID'])));
+		if ($_POST['orgLoginID']){
+ 			$user = new User(new NamedArguments(array('primaryKey' => $_POST['orgLoginID'])));
 		}else{
   			$user = new User();
 		}
 
-		$user->loginID		= $_GET['loginID'];
-		$user->firstName 	= $_GET['firstName'];
-		$user->lastName		= $_GET['lastName'];
-		$user->privilegeID	= $_GET['privilegeID'];
-		$user->emailAddressForTermsTool	= $_GET['emailAddressForTermsTool'];
+		$user->loginID		= $_POST['loginID'];
+		$user->firstName 	= $_POST['firstName'];
+		$user->lastName		= $_POST['lastName'];
+		$user->privilegeID	= $_POST['privilegeID'];
+		$user->emailAddressForTermsTool	= $_POST['emailAddressForTermsTool'];
 
 		try {
 			$user->save();
 		} catch (Exception $e) {
-			echo $e->getMessage();
+			echo $e->POSTMessage();
 		}
 
 
@@ -881,7 +881,7 @@ switch ($_GET['action']) {
 	//verify file name for uploaded attachments (4th tab) aren't already being used
     case 'checkUploadAttachment':
 
-		$uploadAttachment = $_GET['uploadAttachment'];
+		$uploadAttachment = $_POST['uploadAttachment'];
 		$attachmentFile = new AttachmentFile();
 
 		$exists = 0;
@@ -947,7 +947,7 @@ switch ($_GET['action']) {
     		$attachment->sentDate = "";
     	}
 
-		$attachment->attachmentText	= urldecode($_POST['attachmentText']);
+		$attachment->attachmentText	= $_POST['attachmentText'];
 		$attachment->licenseID 	= $_POST['licenseID'];
 
 

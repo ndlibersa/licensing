@@ -159,7 +159,7 @@ $("#submitLicense").click(function () {
 function doSubmitLicense(){
   if (validateForm() === true) {
 	// ajax call to add/update
-	$.post("ajax_processing.php?action=submitLicense", { licenseID: $("#editLicenseID").val(),shortName: escape($("#licenseShortName").val()), organizationID: $("#licenseOrganizationID").val(), organizationName: $("#organizationName").val(), consortiumID: $("#licenseConsortiumID").val()  } ,
+	$.post("ajax_processing.php?action=submitLicense", { licenseID: $("#editLicenseID").val(),shortName: $("#licenseShortName").val(), organizationID: $("#licenseOrganizationID").val(), organizationName: $("#organizationName").val(), consortiumID: $("#licenseConsortiumID").val()  } ,
 		function(data){$("#div_licenseForm").html(data);});
 
 
@@ -188,7 +188,7 @@ function addConsortium(){
 	 type:       "GET",
 	 url:        "ajax_processing.php",
 	 cache:      false,
-	 data:       "action=addConsortium&shortName=" + escape($("#newConsortium").val()),
+	 data:       "action=addConsortium&shortName=" + $("#newConsortium").val(),
 	 success:    function(html) { $('#span_consortium').html(html); $('#span_newConsortium').html("<font color='red'>Consortium has been added</font>"); }
  });
 }

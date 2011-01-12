@@ -138,7 +138,8 @@ $(document).ready(function(){
           url:        "ajax_htmldata.php",
           cache:      false,
           data:       "action=getAllDocuments&licenseID=" + $("#licenseID").val() + "&showChildrenDocumentID=" + showParentDocumentID + "&parentOrderBy=" + parentOrderBy + "&childOrderBy=" + childOrderBy,
-          success:    function(html) { $('#div_documents').html(html);
+          success:    function(html) { 
+          	$('#div_documents').html(html);
           	tb_reinit();
           }
 

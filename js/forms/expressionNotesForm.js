@@ -23,7 +23,7 @@ function addExpressionNote(){
 	 type:       "POST",
 	 url:        "ajax_processing.php?action=submitExpressionNote",
 	 cache:      false,
-	 data:       { expressionNote: escape($("#expressionNote").val()), expressionID: $("#expressionID").val(), displayOrderSeqNumber: $("#displayOrderSeqNumber").val() } ,
+	 data:       { expressionNote: $("#expressionNote").val(), expressionID: $("#expressionID").val(), displayOrderSeqNumber: $("#displayOrderSeqNumber").val() } ,
 	 success:    function(response) {
 		updateExpressionNoteForm();
 	 }
@@ -38,7 +38,7 @@ $("#commitUpdate").click(function () {
 	 type:       "POST",
 	 url:        "ajax_processing.php?action=submitExpressionNote",
 	 cache:      false,
-	 data:       { expressionNote: escape($("#expressionNote").val()), expressionNoteID: $("#expressionNoteID").val(), displayOrderSeqNumber: $("#displayOrderSeqNumber").val() },
+	 data:       { expressionNote: $("#expressionNote").val(), expressionNoteID: $("#expressionNoteID").val(), displayOrderSeqNumber: $("#displayOrderSeqNumber").val() },
 	 success:    function(response) {
 		updateExpressionNoteForm();
 	 }

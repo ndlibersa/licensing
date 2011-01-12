@@ -82,10 +82,10 @@ function newExpressionType(){
 function addExpressionType(){
   //add expressionType to db and returns updated select box
   $.ajax({
-	 type:       "GET",
-	 url:        "ajax_processing.php",
+	 type:       "POST",
+	 url:        "ajax_processing.php?action=addExpressionType",
 	 cache:      false,
-	 data:       "action=addExpressionType&shortName=" + escape($("#newExpressionType").val()),
+	 data:       { shortName: $("#newExpressionType").val() },
 	 success:    function(html) { $('#span_expressionType').html(html); $('#span_newExpressionType').html("<font color='red'>ExpressionType has been added</font>"); }
  });
 }

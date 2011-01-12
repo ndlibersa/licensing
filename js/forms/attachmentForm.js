@@ -31,11 +31,11 @@ var URLArray = [];
 function checkUploadAttachment (file, extension){
 	$("#div_file_message").html("");
 	 $.ajax({
-		 type:       "GET",
-		 url:        "ajax_processing.php",
+		 type:       "POST",
+		 url:        "ajax_processing.php?action=checkUploadAttachment",
 		 cache:      false,
 		 async: 	 false,
-		 data:       "action=checkUploadAttachment&uploadAttachment=" + file,
+		 data:       { uploadAttachment: file },
 		 success:    function(response) {
 					if (response == "1"){
 						$("#div_file_message").html("  <font color='red'>File name is already being used...</font>");
@@ -114,7 +114,7 @@ $("#submitAttachment").click(function () {
 	 url:        "ajax_processing.php?action=submitAttachment",
 	 cache:      false,
 	 async:      false,
-	 data:       { attachmentID: $("#attachmentID").val(), licenseID: $("#licenseID").val(),sentDate: $("#sentDate").val(), attachmentText: escape($("#attachmentText").val())  } ,
+	 data:       { attachmentID: $("#attachmentID").val(), licenseID: $("#licenseID").val(),sentDate: $("#sentDate").val(), attachmentText: $("#attachmentText").val()  } ,
 	 success:    function(html) {
 		if (isNaN(html)){
 			$("#span_errors").html(html);

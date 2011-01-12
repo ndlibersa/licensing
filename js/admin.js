@@ -17,7 +17,7 @@
  
  
  $(document).ready(function(){
-
+ 
       updateUserList();
       updateForm('Organization');
       updateForm('Consortium');
@@ -105,10 +105,10 @@
        	       $('#span_' + tableName + "_response").html('<img src = "images/circle.gif">&nbsp;&nbsp;Processing...');
        	       
 	       $.ajax({
-		  type:       "GET",
-		  url:        "ajax_processing.php",
+		  type:       "POST",
+		  url:        "ajax_processing.php?action=addData",
 		  cache:      false,
-		  data:       "action=addData&tableName=" + tableName + "&shortName=" + escape($('#new' + tableName).val()),
+		  data:       { tableName: tableName, shortName: $('#new' + tableName).val() },
 		  success:    function(html) { 
 		  $('#span_' + tableName + "_response").html(html);  
 
@@ -126,10 +126,10 @@
 
  function updateData(tableName, updateID){
 	$.ajax({
-          type:       "GET",
-          url:        "ajax_processing.php",
+          type:       "POST",
+          url:        "ajax_processing.php?action=updateData",
           cache:      false,
-          data:       "action=updateData&tableName=" + tableName + "&updateID=" + updateID + "&shortName=" + escape($('#updateVal').val()),
+          data:       { tableName: tableName, updateID: updateID, shortName: $('#updateVal').val() },
           success:    function(html) { 
           updateForm(tableName);
           window.parent.tb_remove();
@@ -144,10 +144,10 @@
 
  function submitUserData(orgLoginID){
 	$.ajax({
-          type:       "GET",
-          url:        "ajax_processing.php",
+          type:       "POST",
+          url:        "ajax_processing.php?action=submitUserData",
           cache:      false,
-          data:       "action=submitUserData&orgLoginID=" + orgLoginID + "&loginID=" + $('#loginID').val() + "&firstName=" + $('#firstName').val() + "&lastName=" + $('#lastName').val() + "&privilegeID=" + $('#privilegeID').val() + "&emailAddressForTermsTool=" + $('#emailAddressForTermsTool').val(),
+          data:       { orgLoginID: orgLoginID, loginID: $('#loginID').val(), firstName: $('#firstName').val(), lastName: $('#lastName').val(), privilegeID: $('#privilegeID').val(), emailAddressForTermsTool: $('#emailAddressForTermsTool').val() },
           success:    function(html) { 
           updateUserList();
           window.parent.tb_remove();
@@ -160,10 +160,10 @@
 
  function submitExpressionType(){
 	$.ajax({
-          type:       "GET",
-          url:        "ajax_processing.php",
+          type:       "POST",
+          url:        "ajax_processing.php?action=submitExpressionType",
           cache:      false,
-          data:       "action=submitExpressionType&expressionTypeID=" + $('#expressionTypeID').val() + "&shortName=" + $('#shortName').val() + "&noteType=" + $('#noteType').val(),
+          data:       { expressionTypeID: $('#expressionTypeID').val(), shortName: $('#shortName').val(), noteType: $('#noteType').val() },
           success:    function(html) { 
           updateExpressionTypeList();
           window.parent.tb_remove();
@@ -179,10 +179,10 @@
  function submitQualifier(){
  	$("#submitQualifier").attr("disabled","disabled");
 	$.ajax({
-          type:       "GET",
-          url:        "ajax_processing.php",
+          type:       "POST",
+          url:        "ajax_processing.php?action=submitQualifier",
           cache:      false,
-          data:       "action=submitQualifier&qualifierID=" + $('#qualifierID').val() + "&shortName=" + $('#shortName').val() + "&expressionTypeID=" + $('#expressionTypeID').val(),
+          data:       { qualifierID: $('#qualifierID').val(), shortName: $('#shortName').val(), expressionTypeID: $('#expressionTypeID').val() },
           success:    function(html) { 
           updateQualifierList();
           window.parent.tb_remove();

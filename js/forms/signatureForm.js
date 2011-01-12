@@ -50,10 +50,10 @@ $(function(){
 $("#commitUpdate").click(function () {
 
   $.ajax({
-	 type:       "GET",
-	 url:        "ajax_processing.php",
+	 type:       "POST",
+	 url:        "ajax_processing.php?action=submitSignature",
 	 cache:      false,
-	 data:       "action=submitSignature&signatureID=" + $("#signatureID").val() + "&signerName=" + escape($("#signerName").val()) + "&signatureTypeID=" + $("#signatureTypeID").val() + "&signatureDate=" + $("#signatureDate").val() + "&documentID=" + $("#documentID").val(),
+	 data:       { signatureID: $("#signatureID").val(), signerName: $("#signerName").val(), signatureTypeID: $("#signatureTypeID").val(), signatureDate: $("#signatureDate").val(), documentID: $("#documentID").val() },
 	 success:    function(response) {
 		updateSignatureForm();
 	 }
@@ -108,10 +108,10 @@ function newSignatureType(){
 function addSignatureType(){
 	//add signatureType to db and returns updated select box
   $.ajax({
-	 type:       "GET",
-	 url:        "ajax_processing.php",
+	 type:       "POST",
+	 url:        "ajax_processing.php?action=addSignatureType",
 	 cache:      false,
-	 data:       "action=addSignatureType&shortName=" + escape($("#newSignatureType").val()),
+	 data:       { shortName: $("#newSignatureType").val() },
 	 success:    function(html) { $('#span_signatureType').html(html); $('#span_newSignatureType').html("<font color='red'>SignatureType has been added</font>"); }
  });
 }

@@ -91,11 +91,11 @@ var exists = '';
 function checkUploadDocument (file, extension){
 	$("#div_file_message").html("");
 	 $.ajax({
-		 type:       "GET",
-		 url:        "ajax_processing.php",
+		 type:       "POST",
+		 url:        "ajax_processing.php?action=checkUploadDocument",
 		 cache:      false,
-		 async: 	 false,
-		 data:       "action=checkUploadDocument&uploadDocument=" + file,
+		 async:      false,
+		 data:       { uploadDocument: file },
 		 success:    function(response) {
 			if (response == "1"){
 				exists = "1";
@@ -142,10 +142,10 @@ $("#submitDocument").click(function () {
 function doSubmitDocument(){
   if (validateForm() === true) {
 	  $.ajax({
-		 type:       "GET",
-		 url:        "ajax_processing.php",
+		 type:       "POST",
+		 url:        "ajax_processing.php?action=submitDocument",
 		 cache:      false,
-		 data:       "action=submitDocument&effectiveDate=" + $("#effectiveDate").val() + "&documentTypeID=" + $("#documentTypeID").val() + "&parentDocumentID=" + $("#parentDocumentID").val() + "&shortName=" + escape($("#shortName").val()) + "&uploadDocument=" + escape(fileName) + "&archiveInd=" + getCheckboxValue('archiveInd') + "&licenseID=" + $("#licenseID").val() + "&documentID=" + $("#documentID").val(),
+		 data:       { effectiveDate: $("#effectiveDate").val(), documentTypeID: $("#documentTypeID").val(), parentDocumentID: $("#parentDocumentID").val(), shortName: $("#shortName").val(), uploadDocument: fileName, archiveInd: getCheckboxValue('archiveInd'), licenseID: $("#licenseID").val(), documentID: $("#documentID").val() },
 		 success:    function(html) {
 			if (html){
 				$("#span_errors").html(html);
@@ -192,10 +192,10 @@ function newDocumentType(){
 function addDocumentType(){
   //add documentType to db and returns updated select box
   $.ajax({
-	 type:       "GET",
-	 url:        "ajax_processing.php",
+	 type:       "POST",
+	 url:        "ajax_processing.php?action=addDocumentType",
 	 cache:      false,
-	 data:       "action=addDocumentType&shortName=" + escape($("#newDocumentType").val()),
+	 data:       { shortName: $("#newDocumentType").val() },
 	 success:    function(html) { $('#span_documentType').html(html); $('#span_newDocumentType').html("<font color='red'>DocumentType has been added</font>"); }
  });
 }

@@ -50,4 +50,12 @@ if (false === function_exists('lcfirst')) {
 	}
 }
 
+
+//fix default timezone for PHP > 5.3
+if(function_exists("date_default_timezone_set") and function_exists("date_default_timezone_get")){
+	@date_default_timezone_set(@date_default_timezone_get());
+}
+
+
+
 ?>

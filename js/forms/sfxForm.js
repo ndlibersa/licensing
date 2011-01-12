@@ -37,10 +37,10 @@ $("#submitSFX").click(function () {
 function submitSFXForm(){
 	if (validateForm() === true) {
 	  $.ajax({
-		 type:       "GET",
-		 url:        "ajax_processing.php",
+		 type:       "POST",
+		 url:        "ajax_processing.php?action=submitSFXProvider",
 		 cache:      false,
-		 data:       "action=submitSFXProvider&sfxProviderID=" + $("#sfxProviderID").val() + "&documentID=" + $("#documentID").val() + "&shortName=" + $("#shortName").val(),
+		 data:       { providerID: $("#sfxProviderID").val(), documentID: $("#documentID").val(), shortName: $("#shortName").val() },
 		 success:    function(html) {
 			if (html){
 				$("#span_errors").html(html);

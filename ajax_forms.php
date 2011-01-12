@@ -321,7 +321,7 @@ switch ($_GET['action']) {
 
 		//sfx provider id passed in for updates
 		$licenseID = $_GET['licenseID'];
-		if (isset($_GET['sfxProviderID'])) $sfxProviderID = $_GET['sfxProviderID']; else $sfxProviderID = '';
+		if (isset($_GET['providerID'])) $sfxProviderID = $_GET['providerID']; else $sfxProviderID = '';
 
 		$sfxProvider = new SFXProvider(new NamedArguments(array('primaryKey' => $sfxProviderID)));
 		$license = new License(new NamedArguments(array('primaryKey' => $licenseID)));
