@@ -217,6 +217,7 @@ if ($step == "3"){
 			if (!$organizationsModule) $organizationsModule = "N";
 			if (!$cancellationModule) $cancellationModule = "N";
 			if (!$usageModule) $usageModule = "N";
+			if (!$resourcesModule) $resourcesModule = "N";
 			if (!$useTermsToolFunctionality) $useTermsToolFunctionality = "N";
 
 
@@ -226,6 +227,7 @@ if ($step == "3"){
 			$iniData[] = "organizationsDatabaseName=" . $organizationsDatabaseName;
 			$iniData[] = "cancellationModule=" . $cancellationModule;
 			$iniData[] = "usageModule=" . $usageModule;
+			$iniData[] = "resourcesModule=" . $resourcesModule;
 			$iniData[] = "useTermsToolFunctionality=" . $useTermsToolFunctionality;
 			$iniData[] = "remoteAuthVariableName=\"" . $remoteAuthVariableName . "\"";
 
@@ -290,7 +292,7 @@ if ($step == "3"){
 	</ul>
 
 
-	<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
+	<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
 	<input type='hidden' name='step' value='1'>
 	<input type="submit" value="Continue" name="submit">
 	</form>
@@ -319,9 +321,9 @@ if ($step == "3"){
 
 	<h3>Getting system info and verifying php version</h3>
 	<ul>
-	<li>System: <?=$phpinfo['phpinfo']['System'];?></li>
-    <li>PHP version: <?=phpversion();?></li>
-    <li>Server API: <?=$phpinfo['phpinfo']['Server API'];?></li>
+	<li>System: <?php echo $phpinfo['phpinfo']['System'];?></li>
+    <li>PHP version: <?php echo phpversion();?></li>
+    <li>Server API: <?php echo $phpinfo['phpinfo']['Server API'];?></li>
 	</ul>
 
 	<br />
@@ -331,7 +333,7 @@ if ($step == "3"){
 
 	if (phpversion() >= 5){
 	?>
-		<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
+		<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
 		<input type='hidden' name='step' value='2'>
 		<input type="submit" value="Continue" name="submit">
 		</form>
@@ -346,7 +348,7 @@ if ($step == "3"){
 	if (!$database_host) $database_host='localhost';
 	if (!$database_name) $database_name='coral_licensing_prod';
 	?>
-		<form method="post" action="<?=$_SERVER['PHP_SELF']?>">
+		<form method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
 		<h3>MySQL info with permissions to create tables</h3>
 		<?php
 			if (count($errorMessage) > 0){
@@ -361,25 +363,25 @@ if ($step == "3"){
 			<tr>
 				<td>&nbsp;Database Host</td>
 				<td>
-					<input type="text" name="database_host" value='<?=$database_host?>' size="30">
+					<input type="text" name="database_host" value='<?php echo $database_host?>' size="30">
 				</td>
 			</tr>
 			<tr>
 				<td>&nbsp;Database Schema Name</td>
 				<td>
-					<input type="text" name="database_name" size="30" value="<?=$database_name?>">
+					<input type="text" name="database_name" size="30" value="<?php echo $database_name?>">
 				</td>
 			</tr>
 			<tr>
 				<td>&nbsp;Database Username</td>
 				<td>
-					<input type="text" name="database_username" size="30" value="<?=$database_username?>">
+					<input type="text" name="database_username" size="30" value="<?php echo $database_username?>">
 				</td>
 			</tr>
 			<tr>
 				<td>&nbsp;Database Password</td>
 				<td>
-					<input type="text" name="database_password" size="30" value="<?=$database_password?>">
+					<input type="text" name="database_password" size="30" value="<?php echo $database_password?>">
 				</td>
 			</tr>
 			<tr>
@@ -402,7 +404,7 @@ if ($step == "3"){
 } else if ($step == '3') {
 
 	?>
-		<form method="post" action="<?=$_SERVER['PHP_SELF']?>">
+		<form method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
 		<h3>MySQL user for CORAL web application - with select, insert, update, delete privileges to CORAL schemas</h3>
 		*It's recommended but not required that this user is different than the one used on the prior step
 		<?php
@@ -413,21 +415,21 @@ if ($step == "3"){
 				echo "</ul></span>";
 			}
 		?>
-		<input type="hidden" name="database_host" value='<?=$database_host?>'>
-		<input type="hidden" name="database_name" value="<?=$database_name?>">
+		<input type="hidden" name="database_host" value='<?php echo $database_host?>'>
+		<input type="hidden" name="database_name" value="<?php echo $database_name?>">
 
 		<table width="100%" border="0" cellspacing="0" cellpadding="2">
 		<tr>
 			<tr>
 				<td>&nbsp;Database Username</td>
 				<td>
-					<input type="text" name="database_username" size="30" value="<?=$database_username?>">
+					<input type="text" name="database_username" size="30" value="<?php echo $database_username?>">
 				</td>
 			</tr>
 			<tr>
 				<td>&nbsp;Database Password</td>
 				<td>
-					<input type="text" name="database_password" size="30" value="<?=$database_password?>">
+					<input type="text" name="database_password" size="30" value="<?php echo $database_password?>">
 				</td>
 			</tr>
 
@@ -437,7 +439,7 @@ if ($step == "3"){
 			<tr>
 				<td>&nbsp;Your Login ID</td>
 				<td>
-					<input type="text" name="admin_login" size="30" value="<?=$admin_login?>">
+					<input type="text" name="admin_login" size="30" value="<?php echo $admin_login?>">
 				</td>
 			</tr>
 			<tr>
@@ -458,14 +460,15 @@ if ($step == "3"){
 <?php
 //fourth step - ask for other settings in configuration.ini
 } else if ($step == '4') {
-	if (!$remoteAuthVariableName) $remoteAuthVariableName = "HTTP_SERVER_VARS['REMOTE_USER']";
+	if (!$remoteAuthVariableName) $remoteAuthVariableName = "_SERVER['REMOTE_USER']";
 	if ($_POST['organizationsModule']) $organizationsChecked = "checked";
 	if ($_POST['cancellationModule']) $cancellationChecked = "checked";
 	if ($_POST['usageModule']) $usageChecked = "checked";
+	if ($_POST['resourcesModule']) $resourcesChecked = "checked";
 	if ($_POST['useTermsToolFunctionality']) $useTermsToolFunctionalityChecked = "checked";
 
 	?>
-		<form method="post" action="<?=$_SERVER['PHP_SELF']?>">
+		<form method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
 		<h3>Inter-operability and other config settings</h3>
 		<?php
 			if (count($errorMessage) > 0){
@@ -475,47 +478,53 @@ if ($step == "3"){
 				echo "</ul></span>";
 			}
 		?>
-		<input type="hidden" name="database_host" value='<?=$database_host?>'>
-		<input type="hidden" name="database_name" value="<?=$database_name?>">
-		<input type="hidden" name="database_username" value='<?=$database_username?>'>
-		<input type="hidden" name="database_password" value="<?=$database_password?>">
+		<input type="hidden" name="database_host" value='<?php echo $database_host?>'>
+		<input type="hidden" name="database_name" value="<?php echo $database_name?>">
+		<input type="hidden" name="database_username" value='<?php echo $database_username?>'>
+		<input type="hidden" name="database_password" value="<?php echo $database_password?>">
 
 		<table width="100%" border="0" cellspacing="0" cellpadding="2">
 		<tr>
 			<tr>
 				<td>&nbsp;Are you using organizations module?</td>
 				<td>
-					<input type="checkbox" name="organizationsModule" value="Y" <?=$organizationsChecked?>>
+					<input type="checkbox" name="organizationsModule" value="Y" <?php echo $organizationsChecked?>>
 				</td>
 			</tr>
 			<tr>
 				<td>&nbsp;If so, enter organizations database schema name</td>
 				<td>
-					<input type="text" name="organizationsDatabaseName" size="30" value="<?=$organizationsDatabaseName?>">
+					<input type="text" name="organizationsDatabaseName" size="30" value="<?php echo $organizationsDatabaseName?>">
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;Are you using the resources module?</td>
+				<td>
+					<input type="checkbox" name="resourcesModule" value="Y" <?php echo $resourcesChecked?>>
 				</td>
 			</tr>
 			<tr>
 				<td>&nbsp;Are you using cancellation module?</td>
 				<td>
-					<input type="checkbox" name="cancellationModule" value="Y" <?=$cancellationChecked?>>
+					<input type="checkbox" name="cancellationModule" value="Y" <?php echo $cancellationChecked?>>
 				</td>
 			</tr>
 			<tr>
 				<td>&nbsp;Are you using usage module?</td>
 				<td>
-					<input type="checkbox" name="usageModule" value="Y" <?=$usageChecked?>>
+					<input type="checkbox" name="usageModule" value="Y" <?php echo $usageChecked?>>
 				</td>
 			</tr>
 			<tr>
 				<td>&nbsp;Are you going to use the Terms Tool Add-On?</td>
 				<td>
-					<input type="checkbox" name="useTermsToolFunctionality" value="Y" <?=$useTermsToolFunctionalityChecked?>>
+					<input type="checkbox" name="useTermsToolFunctionality" value="Y" <?php echo $useTermsToolFunctionalityChecked?>>
 				</td>
 			</tr>
 			<tr>
 				<td>&nbsp;Remote Auth Variable Name</td>
 				<td>
-					<input type="text" name="remoteAuthVariableName" size="30" value="<?=$remoteAuthVariableName?>">
+					<input type="text" name="remoteAuthVariableName" size="30" value="<?php echo $remoteAuthVariableName?>">
 				</td>
 			</tr>
 			<tr>
