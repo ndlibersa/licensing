@@ -266,6 +266,7 @@ switch ($_GET['action']) {
 		$expression->documentText		= $_POST['documentText'];
 		$expression->documentID 		= $_POST['documentID'];
 		$expression->expressionTypeID	= $_POST['expressionTypeID'];
+		$expression->productionUseInd	= '0';
 		$expression->simplifiedText		= '';
 
 		try {
