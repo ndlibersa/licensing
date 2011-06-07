@@ -193,6 +193,8 @@ class License extends DatabaseObject {
 				foreach ($expression->getExpressionNotes() as $expressionNote) {
 					$expressionNote->delete();
 				}
+
+				$expression->removeQualifiers();
 				$expression->delete();
 			}
 

@@ -28,7 +28,13 @@ class Qualifier extends DatabaseObject {
 	//returns number of children for this particular expression type
 	public function getNumberOfChildren(){
 
-		$query = "SELECT count(*) childCount FROM ExpressionQualifierProfile WHERE qualifierID = '" . $this->qualifierID . "';";
+		$query = "SELECT count(*) childCount FROM ExpressionQualifierProfile WHERE qualifierID = '" . $this->qualifierID . "'
+				AND expressionID IN
+				(SELECT E.expressionID
+				FROM Expression E, Document D, License L
+				WHERE E.documentID = D.documentID
+				AND D.licenseID = L.licenseID)
+				;";
 
 		$result = $this->db->processQuery($query, 'assoc');
 
