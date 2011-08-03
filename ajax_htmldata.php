@@ -194,7 +194,7 @@ switch ($_GET['action']) {
 				if (($attachment->sentDate == "0000-00-00") || ($attachment->sentDate == "")) {
 					$sentDate='';
 				}else{
-					$sentDate=date("m/d/Y", strtotime($attachment->sentDate));
+					$sentDate=format_date($attachment->sentDate);
 				}
 				$attachmentText = nl2br($attachment->attachmentText);
 
@@ -274,9 +274,9 @@ switch ($_GET['action']) {
 		$config = new Configuration;
 		if ($config->settings->organizationsModule == 'Y'){
 			//searches against org name and aliases
-			if ($_GET['shortName']) $whereAdd[] = "(UPPER(L.shortName) LIKE UPPER('%" . $_GET['shortName'] . "%') OR UPPER(D.shortName) LIKE  UPPER('%" . $_GET['shortName'] . "%') OR UPPER(O.name) LIKE  UPPER('%" . $_GET['shortName'] . "%') OR UPPER(A.name) LIKE  UPPER('%" . $_GET['shortName'] . "%'))";
+			if ($_GET['shortName']) $whereAdd[] = "(UPPER(L.shortName) LIKE UPPER('%" .  str_replace("'","''",$_GET['shortName']) . "%') OR UPPER(D.shortName) LIKE  UPPER('%" .  str_replace("'","''",$_GET['shortName']) . "%') OR UPPER(O.name) LIKE  UPPER('%" .  str_replace("'","''",$_GET['shortName']) . "%') OR UPPER(A.name) LIKE  UPPER('%" .  str_replace("'","''",$_GET['shortName']) . "%'))";
 		}else{
-			if ($_GET['shortName']) $whereAdd[] = "(UPPER(L.shortName) LIKE UPPER('%" . $_GET['shortName'] . "%') OR UPPER(D.shortName) LIKE  UPPER('%" . $_GET['shortName'] . "%') OR UPPER(O.shortName) LIKE  UPPER('%" . $_GET['shortName'] . "%'))";
+			if ($_GET['shortName']) $whereAdd[] = "(UPPER(L.shortName) LIKE UPPER('%" .  str_replace("'","''",$_GET['shortName']) . "%') OR UPPER(D.shortName) LIKE  UPPER('%" .  str_replace("'","''",$_GET['shortName']) . "%') OR UPPER(O.shortName) LIKE  UPPER('%" .  str_replace("'","''",$_GET['shortName']) . "%'))";
 		}
 
 		if ($_GET['organizationID']){
@@ -808,11 +808,11 @@ switch ($_GET['action']) {
 				if (($document->effectiveDate == "0000-00-00") || ($document->effectiveDate == "")){
 					$displayEffectiveDate = '';
 				}else{
-					$displayEffectiveDate = date("m/d/Y", strtotime($document->effectiveDate));
+					$displayEffectiveDate = format_date($document->effectiveDate);
 				}
 
 				if (($document->expirationDate != "0000-00-00") && ($document->expirationDate != "")){
-					$displayExpirationDate = 'archived on: ' . date("m/d/Y", strtotime($document->expirationDate));
+					$displayExpirationDate = 'archived on: ' . format_date($document->expirationDate);
 				}else{
 					$displayExpirationDate = '';
 				}
@@ -920,13 +920,13 @@ switch ($_GET['action']) {
 							if (($childDocument->effectiveDate == "0000-00-00") || ($childDocument->effectiveDate == "")){
 								$displayEffectiveDate = '';
 							}else{
-								$displayEffectiveDate = date("m/d/Y", strtotime($childDocument->effectiveDate));
+								$displayEffectiveDate = format_date($childDocument->effectiveDate);
 							}
 
 							if ((($childDocument->expirationDate == "0000-00-00") || ($childDocument->expirationDate == "")) && ($user->canEdit())){
 								$displayExpirationDate = "<a href='javascript:archiveDocument(" . $childDocument->documentID . ");'>archive document</a>";
 							}else{
-								$displayExpirationDate = 'archived on: ' . date("m/d/Y", strtotime($childDocument->expirationDate));
+								$displayExpirationDate = 'archived on: ' . format_date($childDocument->expirationDate);
 							}
 
 
@@ -945,7 +945,7 @@ switch ($_GET['action']) {
 
 								foreach($signatureArray as $signature) {
 									if (($signature['signatureDate'] != '') && ($signature['signatureDate'] != "0000-00-00")) {
-										$signatureDate=date("m/d/Y", strtotime($signature['signatureDate']));
+										$signatureDate = format_date($signature['signatureDate']);
 									}else{
 										$signatureDate='';
 									}

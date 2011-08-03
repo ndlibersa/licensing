@@ -163,8 +163,8 @@ function doSubmitDocument(){
 
 //validates fields
 function validateForm (){
+
 	myReturn=0;
-	if (!validateDate('effectiveDate','Effective Date should be mm/dd/yyyy format.')) myReturn="1";
 	if (!validateRequired('documentTypeID','Document Type is required.')) myReturn="1";
 	if (!validateRequired('shortName','Short Name is required.')) myReturn="1";
 

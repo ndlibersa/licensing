@@ -533,7 +533,7 @@ class License extends DatabaseObject {
 			if (!$orgID){
 
 				$dbName = $config->settings->organizationsDatabaseName;
-				$orgName = str_replace("'", "\'",$orgName);
+				$orgName = str_replace("'", "''",$orgName);
 
 				$query = "INSERT INTO " . $dbName . ".Organization (name, createDate, createLoginID) VALUES ('" . $orgName . "', NOW(), '" . $_SESSION['loginID'] . "')";
 

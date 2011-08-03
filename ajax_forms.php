@@ -117,7 +117,7 @@ switch ($_GET['action']) {
 
 
 
-		<script type="text/javascript" src="js/forms/licenseForm.js"></script>
+		<script type="text/javascript" src="js/forms/licenseForm.js?random=<?php echo rand(); ?>"></script>
 		</form>
 		</div>
 
@@ -143,7 +143,7 @@ switch ($_GET['action']) {
 		if (($document->effectiveDate == "0000-00-00") || ($document->effectiveDate == "")){
 			$effectiveDate='';
 		}else{
-			$effectiveDate=date("m/d/Y", strtotime($document->effectiveDate));
+			$effectiveDate=format_date($document->effectiveDate);
 		}
 
 
@@ -273,7 +273,7 @@ switch ($_GET['action']) {
 		</table>
 		</div>
 
-		<script type="text/javascript" src="js/forms/documentForm.js"></script>
+		<script type="text/javascript" src="js/forms/documentForm.js?random=<?php echo rand(); ?>"></script>
 
 		<?php
 
@@ -299,14 +299,14 @@ switch ($_GET['action']) {
 		<tr>
 		<td>
 		<input type='hidden' name='documentID' id='documentID' value='<?php echo $documentID; ?>' />
-		Archive Date:  <input class='date-pick' id='expirationDate' name='expirationDate' style='width:80px' value='<?php echo date('m/d/Y'); ?>' />
+		Archive Date:  <input class='date-pick' id='expirationDate' name='expirationDate' style='width:80px' value='<?php echo format_date(date); ?>' />
 		</td>
 		</tr>
 		<tr><td style='text-align:center;width:100%;'><br /><br /><a href='javascript:void(0)' name='submitArchive' id='submitArchive'>Continue</a></td></tr>
 		</table>
 
 
-		<script type="text/javascript" src="js/forms/documentArchiveForm.js"></script>
+		<script type="text/javascript" src="js/forms/documentArchiveForm.js?random=<?php echo rand(); ?>"></script>
 		</div>
 
 		<?php
@@ -372,7 +372,7 @@ switch ($_GET['action']) {
 		</table>
 
 
-		<script type="text/javascript" src="js/forms/sfxForm.js"></script>
+		<script type="text/javascript" src="js/forms/sfxForm.js?random=<?php echo rand(); ?>"></script>
 		</div>
 
 		<?php
@@ -490,7 +490,7 @@ switch ($_GET['action']) {
 		</table>
 		<input type="hidden" id='documentID' name='documentID' value='<?php echo $documentID; ?>'>
 
-		<script type="text/javascript" src="js/forms/signatureForm.js"></script>
+		<script type="text/javascript" src="js/forms/signatureForm.js?random=<?php echo rand(); ?>"></script>
 		</div>
 
 		<?php
@@ -641,7 +641,7 @@ switch ($_GET['action']) {
 		</table>
 		</div>
 
-		<script type="text/javascript" src="js/forms/expressionForm.js"></script>
+		<script type="text/javascript" src="js/forms/expressionForm.js?random=<?php echo rand(); ?>"></script>
 
 		<?php
 
@@ -753,7 +753,7 @@ switch ($_GET['action']) {
 		<input type="hidden" id='documentID' name='documentID' value='<?php echo $documentID; ?>'>
 		<input type="hidden" id='org' name='org' value='<?php echo $_GET['org']; ?>'>
 
-		<script type="text/javascript" src="js/forms/expressionNotesForm.js"></script>
+		<script type="text/javascript" src="js/forms/expressionNotesForm.js?random=<?php echo rand(); ?>"></script>
 		</div>
 
 		<?php
@@ -771,7 +771,7 @@ switch ($_GET['action']) {
 		$attachment = new Attachment(new NamedArguments(array('primaryKey' => $attachmentID)));
 
 		if (($attachment->sentDate != '') && ($attachment->sentDate != "0000-00-00")) {
-			$sentDate=date("m/d/Y", strtotime($attachment->sentDate));
+			$sentDate = format_date($attachment->sentDate);
 		}else{
 			$sentDate='';
 		}
@@ -833,7 +833,7 @@ switch ($_GET['action']) {
 
 
 
-		<script type="text/javascript" src="js/forms/attachmentForm.js"></script>
+		<script type="text/javascript" src="js/forms/attachmentForm.js?random=<?php echo rand(); ?>"></script>
 		</form>
 		</div>
 
@@ -968,7 +968,7 @@ switch ($_GET['action']) {
 		</div>
 
 
-		<script type="text/javascript" src="js/forms/adminUserForm.js"></script>
+		<script type="text/javascript" src="js/forms/adminUserForm.js?random=<?php echo rand(); ?>"></script>
 		<?php
 
 		break;

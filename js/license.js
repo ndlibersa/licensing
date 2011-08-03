@@ -18,13 +18,19 @@
 
 $(document).ready(function(){
 
-      updateLicenseHead();
-      updateDocuments();
-      updateArchivedDocuments();
-      updateExpressions();
-      updateSFXProviders();
-      updateAttachmentsNumber();
-      updateAttachments();
+	updateLicenseHead();
+	updateDocuments();
+	updateArchivedDocuments();
+	updateExpressions();
+	updateSFXProviders();
+	updateAttachmentsNumber();
+      	updateAttachments();
+
+
+	$('#div_displayDocuments').show();
+	$('#div_displayExpressions').hide();
+	$('#div_displaySFXProviders').hide();
+	$('#div_displayAttachments').hide();
 
 
 });
