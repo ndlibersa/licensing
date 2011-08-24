@@ -57,6 +57,10 @@ class DBService extends Object {
 		//mysql_close($this->db);
 	}
 
+	public function escapeString($value) {
+		return mysql_real_escape_string($value);
+	}
+
 	public function processQuery($sql, $type = NULL) {
     	//echo $sql. "<br />";
 		$result = mysql_query($sql, $this->db);

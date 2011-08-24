@@ -211,10 +211,10 @@ class DatabaseObject extends DynamicObject {
 		$pairs = array();
 		foreach (array_keys($this->attributeNames) as $attributeName) {
 			$value = $this->attributes[$attributeName];
-			if (!isset($value)) {
+			if ($value == '' || !isset($value)) {
 				$value = "NULL";
 			} else {
-				$value = addslashes($value);
+				$value = $this->db->escapeString($value);
 				$value = "'$value'";
 			}
 			$pair = "`$attributeName`=$value";

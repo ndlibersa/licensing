@@ -69,7 +69,7 @@ class Document extends DatabaseObject {
 	//returns array of signatures for license display page
 	public function getSignaturesForDisplay(){
 
-		$query = "SELECT S.signatureID, IF(signatureDate = '0000-00-00','',date_format(signatureDate, '%m/%d/%Y')) signatureDate, signerName, ST.shortName signatureTypeName, S.signatureTypeID
+		$query = "SELECT S.signatureID, IF(signatureDate = '0000-00-00','', signatureDate) signatureDate, signerName, ST.shortName signatureTypeName, S.signatureTypeID
 										FROM Signature S, SignatureType ST
 										WHERE S.signatureTypeID = ST.signatureTypeID
 										AND documentID = '" . $this->documentID . "'
@@ -165,27 +165,14 @@ class Document extends DatabaseObject {
 
 		$objects = array();
 
-		//the SFXProviderID was capitalized at one point but it caused problems with some mysql instances
-		//this has been recoded to accept either way to avoid making a minor db change
-		//db change should be included with next upgrade - 10/27 RM
 		//need to do this since it could be that there's only one request and this is how the dbservice returns result
 		if (isset($result['sfxProviderID'])){
 			$object = new SFXProvider(new NamedArguments(array('primaryKey' => $result['sfxProviderID'])));
 			array_push($objects, $object);
-		}else if (isset($result['SFXProviderID'])){
-			$object = new SFXProvider(new NamedArguments(array('primaryKey' => $result['SFXProviderID'])));
-			$object->sfxProviderID = $result['SFXProviderID'];
-			array_push($objects, $object);
 		}else{
 			foreach ($result as $row) {
-				if (isset($row['sfxProviderID'])){
-					$object = new SFXProvider(new NamedArguments(array('primaryKey' => $row['sfxProviderID'])));
-					array_push($objects, $object);
-				}else{
-					$object = new SFXProvider(new NamedArguments(array('primaryKey' => $row['SFXProviderID'])));
-					$object->sfxProviderID = $row['SFXProviderID'];
-					array_push($objects, $object);
-				}
+				$object = new SFXProvider(new NamedArguments(array('primaryKey' => $row['sfxProviderID'])));
+				array_push($objects, $object);
 			}
 		}
 

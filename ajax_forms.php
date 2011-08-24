@@ -423,7 +423,7 @@ switch ($_GET['action']) {
 				//used for in-line editing (since this is already a form, can't make another form to edit sigs!)
 				if ($signatureID == $display['signatureID']){
 					echo "<td><input type='textbox' id='signerName' value=\"" . $display['signerName'] . "\" style='width:118px;' /></td>";
-					echo "<td><input class='date-pick' id='signatureDate' name='signatureDate' style='width:80px' value=\"" . $display['signatureDate'] . "\" /></td>";
+					echo "<td><input class='date-pick' id='signatureDate' name='signatureDate' style='width:80px' value=\"" . format_date($display['signatureDate']) . "\" /></td>";
 					echo "<td><span id='span_signatureType'><select id='signatureTypeID' name='signatureTypeID'>";
 
 					$stdisplay = array();
@@ -447,7 +447,7 @@ switch ($_GET['action']) {
 
 				}else{
 					echo "<td>" . $display['signerName'] . "</td>";
-					echo "<td>" . $display['signatureDate'] . "</td>";
+					echo "<td>" . format_date($display['signatureDate']) . "</td>";
 					echo "<td>" . $display['signatureTypeName'] . "</td>";
 					if ($signatureID){
 						echo "<td>&nbsp;</td>";

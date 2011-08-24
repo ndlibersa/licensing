@@ -834,7 +834,7 @@ switch ($_GET['action']) {
 
 						echo "<tr>";
 						echo "<td $classAdd>" . $signature['signerName'] . "</td>";
-						echo "<td $classAdd>" . $signature['signatureDate'] . "</td>";
+						echo "<td $classAdd>" . format_date($signature['signatureDate']) . "</td>";
 						echo "</tr>";
 
 					}
@@ -952,7 +952,7 @@ switch ($_GET['action']) {
 
 									echo "<tr>";
 									echo "<td $classAdd>" . $signature['signerName'] . "</td>";
-									echo "<td $classAdd>" . $signatureDate . "</td>";
+									echo "<td $classAdd>" . format_date($signatureDate) . "</td>";
 									echo "</tr>";
 
 								}

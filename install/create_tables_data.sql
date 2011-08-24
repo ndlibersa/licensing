@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS  `_DATABASE_NAME_`.`Expression` (
   `expressionID` int(10) unsigned NOT NULL auto_increment,
   `documentID` int(10) unsigned NOT NULL,
   `expressionTypeID` int(10) unsigned NOT NULL,
-  `documentText` text NOT NULL,
+  `documentText` text,
   `simplifiedText` text,
   `lastUpdateDate` timestamp NOT NULL default '0000-00-00 00:00:00',
   `productionUseInd` tinyint(1) NOT NULL default '0',
