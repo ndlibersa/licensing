@@ -1,0 +1,24 @@
+The following file contains notes on specific upgrades.  For full instructions on how to run an upgrade, refer to the technical documentation available at http://erm.library.nd.edu.
+
+**************************************************************************************************
+****
+****
+****  UPGRADING FROM CORAL LICENSING VERSION 1.0 TO 1.1
+****
+****
+**************************************************************************************************
+
+This upgrade contains coding and database structure changes only.  No changes to the configuration file are required.
+
+Database changes include:
+    * Renaming Qualification to Qualifier
+    * Drop qualificationID from Expression
+    * Add expressionTypeID to Qualifier
+    * Create table ExpressionQualifierProfile
+
+*Please note*  Due to the extent of the change with qualifiers this upgrade will by default remove any qualifier data you have entered. If you wish to first retrieve a report of existing qualifier data contact the CORAL team for a script. Also, the qualifier data can be retained if desired but it will need to be explicitly mapped to the new expression type/qualifier layout first. Let the CORAL Team know if you have any questions about this process.  
+
+For manual installation, you will need to first modify the upgrade_1_11.sql script located in this directory to replace _DATABASE_NAME_ with your MySQL schema name (e.g. coral_licensing_pprd).
+Next, run the upgrade_1_11.sql script in your MySQL client.
+
+The MySQL workbench and data model have both been updated with this upgrade.
