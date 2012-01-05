@@ -104,7 +104,11 @@ function checkUploadDocument (file, extension){
 			}else if (response == "2"){
 				exists = "2";
 				$("#div_file_message").html("  <font color='red'>File name may not contain special characters - ampersand, single quote, double quote or less than/greater than characters</font>");
-				return false;				
+				return false;	
+			} else if (response == "3"){
+				exists = "3";
+				$("#div_file_message").html("  <font color='red'>The documents directory is not writable.</font>");
+				return false;	
 			}else{
 				exists = "";
 			}
@@ -119,13 +123,17 @@ new AjaxUpload('upload_button',
 	{action: 'ajax_processing.php?action=uploadDocument',
 			name: 'myfile',
 			onChange : function (file, extension){checkUploadDocument(file, extension);},
-			onComplete : function(data){
+			onComplete : function(data,response){
 				fileName=data;
 
 				if (exists == ""){
-					$("#div_file_message").html("<img src='images/paperclip.gif'>" + fileName + " successfully uploaded.");
-					$("#div_uploadFile").html("<br />");
-
+				  var errorMessage = $(response).filter('#error');
+          if (errorMessage.size() > 0) {
+            $("#div_file_message").html("<font color='red'>" + errorMessage.html() + "</font>");
+          } else {
+  					$("#div_file_message").html("<img src='images/paperclip.gif'>" + fileName + " successfully uploaded.");
+  					$("#div_uploadFile").html("<br />");
+          }
 				}
 
 		}

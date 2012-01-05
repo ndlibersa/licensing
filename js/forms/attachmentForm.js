@@ -41,7 +41,11 @@ function checkUploadAttachment (file, extension){
 						$("#div_file_message").html("  <font color='red'>File name is already being used...</font>");
 						exists=1;
 						return false;
-					}
+    			} else if (response == "3"){
+    				exists = "3";
+    				$("#div_file_message").html("  <font color='red'>The attachments directory is not writable.</font>");
+    				return false;
+          }
 
 
 					//check if it's already been uploaded in current array
@@ -65,17 +69,20 @@ new AjaxUpload('upload_attachment_button',
 	{action: 'ajax_processing.php?action=uploadAttachment',
 			name: 'myfile',
 			onChange : function (file, extension){checkUploadAttachment(file, extension);},
-			onComplete : function(data){
+			onComplete : function(data,response){
 				fileName=data;
 
-				if (exists != "1"){
+				if (exists == ""){
+          var errorMessage = $(response).filter('#error');
+          if (errorMessage.size() > 0) {
+            $("#div_file_message").html("<font color='red'>" + errorMessage.html() + "</font>");
+          } else {
+				  
+  					arrayLocation = URLArray.length;
+  					URLArray.push(fileName);
 
-					fileName=data;
-					arrayLocation = URLArray.length;
-					URLArray.push(fileName);
-
-					$("#div_file_success").append("<div id='div_" + arrayLocation + "'><img src='images/paperclip.gif'>" + fileName + " successfully uploaded.  <a class='smallLink' href='javascript:removeFile(\"" + arrayLocation + "\");'>remove</a><br /></div>");
-
+  					$("#div_file_success").append("<div id='div_" + arrayLocation + "'><img src='images/paperclip.gif'>" + fileName + " successfully uploaded.  <a class='smallLink' href='javascript:removeFile(\"" + arrayLocation + "\");'>remove</a><br /></div>");
+          }
 				}
 
 	}

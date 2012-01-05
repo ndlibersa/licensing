@@ -122,6 +122,11 @@ switch ($_GET['action']) {
 
 		$exists = 0;
 
+    if (!is_writable("documents")) {
+      echo 3;
+      break;
+    }
+
 		//first check that it doesn't have any offending characters
 		if ((strpos($uploadDocument,"'") > 0) || (strpos($uploadDocument,'"') > 0) || (strpos($uploadDocument,"&") > 0) || (strpos($uploadDocument,"<") > 0) || (strpos($uploadDocument,">") > 0)){
 			echo 2;
@@ -166,7 +171,8 @@ switch ($_GET['action']) {
 				chmod ($target_path, 0766);
 				echo "success uploading!";
 			}else{
-				echo "problems moving " . $_FILES['myfile']['tmp_name'] . " to " . $target_path;
+			  header('HTTP/1.1 500 Internal Server Error');
+			  echo "<div id=\"error\">There was a problem saving your file to $target_path.  Please ensure your documents directory is writable.</div>";
 			}
 
 		}
@@ -886,6 +892,11 @@ switch ($_GET['action']) {
 		$attachmentFile = new AttachmentFile();
 
 		$exists = 0;
+		
+    if (!is_writable("attachments")) {
+      echo 3;
+      break;
+    }
 
 		foreach ($attachmentFile->allAsArray() as $attachmentTestArray) {
 			if (strtoupper($attachmentTestArray['attachmentURL']) == strtoupper($uploadAttachment)) {
@@ -924,7 +935,8 @@ switch ($_GET['action']) {
 				chmod ($target_path, 0766);
 				echo "success uploading!";
 			}else{
-				echo "problems moving " . $_FILES['myfile']['tmp_name'] . " to " . $target_path;
+				header('HTTP/1.1 500 Internal Server Error');
+			  echo "<div id=\"error\">There was a problem saving your file to $target_path.  Please ensure your attachments directory is writable.</div>";
 			}
 		}
 
