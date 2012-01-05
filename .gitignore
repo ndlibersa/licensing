@@ -1,3 +1,4 @@
 .DS_Store
 attachments/*
+documents/*
 admin/configuration.ini
