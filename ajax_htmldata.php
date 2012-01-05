@@ -542,7 +542,7 @@ switch ($_GET['action']) {
 					echo "<div style='margin-left:15px; margin-top:3px;'>";
 
 					if ($expressionTypeArray['documentText']){
-						echo "<b>Document Text:</b> <br />" . $expressionTypeArray['documentText'] . "<br />";
+						echo "<b>Document Text:</b> <br />" . nl2br($expressionTypeArray['documentText']) . "<br />";
 					}
 
 
