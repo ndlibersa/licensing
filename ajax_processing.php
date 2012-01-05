@@ -172,7 +172,7 @@ switch ($_GET['action']) {
 				echo "success uploading!";
 			}else{
 			  header('HTTP/1.1 500 Internal Server Error');
-			  echo "<div id=\"error\">There was a problem saving your file to $target_path.  Please ensure your documents directory is writable.</div>";
+			  echo "<div id=\"error\">There was a problem saving your file to $target_path.</div>";
 			}
 
 		}
@@ -936,7 +936,7 @@ switch ($_GET['action']) {
 				echo "success uploading!";
 			}else{
 				header('HTTP/1.1 500 Internal Server Error');
-			  echo "<div id=\"error\">There was a problem saving your file to $target_path.  Please ensure your attachments directory is writable.</div>";
+			  echo "<div id=\"error\">There was a problem saving your file to $target_path.</div>";
 			}
 		}
 
