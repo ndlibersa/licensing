@@ -37,7 +37,8 @@ if ((isset($_GET['editLicenseForm'])) && ($_GET['editLicenseForm'] == "Y")){
 	}
 }
 
-
+//get CORAL URL for 'Change Module' and logout link
+$coralURL = $util->getCORALURL();
 
 ?>
 
@@ -114,9 +115,6 @@ if ($user->isAdmin()){ ?>
 $config = new Configuration();
 
 if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->organizationsModule == 'Y') || ($config->settings->resourcesModule == 'Y') || ($config->settings->cancellationModule == 'Y') || ($config->settings->usageModule == 'Y')) {
-
-	//get CORAL URL for 'Change Module'
-	$coralURL = $util->getCORALURL();
 
 	?>
 
