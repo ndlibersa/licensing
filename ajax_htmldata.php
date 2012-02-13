@@ -832,9 +832,15 @@ switch ($_GET['action']) {
 
 					foreach($signatureArray as $signature) {
 
+						if (($signature['signatureDate'] != '') && ($signature['signatureDate'] != "0000-00-00")) {
+							$signatureDate = format_date($signature['signatureDate']);
+						}else{
+							$signatureDate='(no date)';
+						}
+
 						echo "<tr>";
 						echo "<td $classAdd>" . $signature['signerName'] . "</td>";
-						echo "<td $classAdd>" . format_date($signature['signatureDate']) . "</td>";
+						echo "<td $classAdd>" . $signatureDate . "</td>";
 						echo "</tr>";
 
 					}
@@ -947,12 +953,12 @@ switch ($_GET['action']) {
 									if (($signature['signatureDate'] != '') && ($signature['signatureDate'] != "0000-00-00")) {
 										$signatureDate = format_date($signature['signatureDate']);
 									}else{
-										$signatureDate='';
+										$signatureDate='(no date)';
 									}
 
 									echo "<tr>";
 									echo "<td $classAdd>" . $signature['signerName'] . "</td>";
-									echo "<td $classAdd>" . format_date($signatureDate) . "</td>";
+									echo "<td $classAdd>" . $signatureDate . "</td>";
 									echo "</tr>";
 
 								}

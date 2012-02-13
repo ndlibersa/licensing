@@ -86,10 +86,11 @@ if ((isset($_GET['editLicenseForm'])) && ($_GET['editLicenseForm'] == "Y")){
 	if ($user->lastName){
 		echo $user->firstName . " " . $user->lastName;
 	}else{
-		echo "Guest User";
+		echo $user->loginID;
 	}
 ?>
 </span>
+<br /><?php if($config->settings->authModule == 'Y'){ echo "<a href='" . $coralURL . "auth/?logout'>logout</a>"; } ?>
 </div>
 </td>
 </tr>

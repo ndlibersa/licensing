@@ -63,7 +63,7 @@ $pageTitle='Not Available';
 if ($_GET['errorMessage']){
 	echo "<h3>" . $_GET['errorMessage'] . "</h3>";
 }else{
-	echo "<h3>You have not been set up to have access to the Licensing Module.  Please contact your electronic resources administrator to be added.</h3>";
+	echo "<h3>You have not been set up to have access to the Licensing Module.</h3>";
 }
 ?>
 

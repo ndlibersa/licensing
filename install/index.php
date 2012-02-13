@@ -177,10 +177,11 @@ if ($step == "3"){
 	//first, validate all required fields are filled in
 	$remoteAuthVariableName = trim($_POST['remoteAuthVariableName']);
 	$organizationsModule = $_POST['organizationsModule'];
-	$cancellationModule = $_POST['cancellationModule'];
 	$usageModule = $_POST['usageModule'];
 	$useTermsToolFunctionality = $_POST['useTermsToolFunctionality'];
 	$organizationsDatabaseName = trim($_POST['organizationsDatabaseName']);
+	$authModule = $_POST['authModule'];
+	$authDatabaseName = trim($_POST['authDatabaseName']);
 
 
 	$database_host = $_POST['database_host'];
@@ -188,8 +189,8 @@ if ($step == "3"){
 	$database_username = $_POST['database_username'];
 	$database_password = trim($_POST['database_password']);
 
-	if (!$remoteAuthVariableName) {
-		$errorMessage[] = 'Remote Auth Variable Name is required';
+	if ((!$remoteAuthVariableName) && (!$authModule)){
+		$errorMessage[] = 'Either the CORAL Authentication module must be used or you must enter the remote auth variable name';
 	}else{
 		//replace double quote with single quote since config writes with double quote
 		$remoteAuthVariableName = str_replace('"', "'", $remoteAuthVariableName);
@@ -200,7 +201,41 @@ if ($step == "3"){
 		}
 
 	}
-	if ((!$organizationsDatabaseName) && ($_POST['organizationsModule'])) $errorMessage[] = "If you are using organizations module you must enter the organizations module database name.  It doesn't need to be created yet.";
+	if ((!$organizationsDatabaseName) && ($_POST['organizationsModule'])) $errorMessage[] = "If you are using the organizations module you must enter the organizations module database name.  It doesn't need to be created yet.";
+	if ((!$authDatabaseName) && ($_POST['authModule'])) $errorMessage[] = "If you are using the authentication module you must enter the auth module database name.  It should be created already so that you can log in.";
+
+
+	//make sure auth database and tables exist if auth is being used
+	if (($authDatabaseName) && ($_POST['authModule'])){
+
+		//first check connecting to host
+		$link = @mysql_connect("$database_host", "$database_username", "$database_password");
+		if (!$link) {
+			$errorMessage[] = "Could not connect to the server '" . $database_host . "'<br />MySQL Error: " . mysql_error();
+		}else{
+
+			//next check that the database exists
+			$dbcheck = @mysql_select_db("$authDatabaseName");
+			if (!$dbcheck) {
+				$errorMessage[] = "Unable to access the auth database '" . $authDatabaseName . "'.  Please verify it has been created.<br />MySQL Error: " . mysql_error();
+			}else{
+				//make sure the tables don't already exist - otherwise this script will overwrite all of the data!
+				$query = "SELECT count(*) count FROM information_schema.`COLUMNS` WHERE table_schema = '" . $authDatabaseName . "' AND table_name='Session'";
+
+				//if auth table exists, error out
+				if (!$row = mysql_fetch_array(mysql_query($query))){
+					$errorMessage[] = "Please verify your database user has access to select from the the auth tables and the information_schema MySQL metadata database.";
+				}else{
+					if ($row['count'] == 0){
+						$errorMessage[] = "Please verify your auth database name is correct and the authentication module has been installed.";
+					}
+				}
+			}
+		}
+	}
+
+
+
 
 	//only continue to checking DB connections if there were no errors this far
 	if (count($errorMessage) > 0){
@@ -215,7 +250,7 @@ if ($step == "3"){
 			$errorMessage[] = "Could not open file " . $configFile . ".  Please verify you can write to the /admin/ directory.";
 		}else{
 			if (!$organizationsModule) $organizationsModule = "N";
-			if (!$cancellationModule) $cancellationModule = "N";
+			if (!$authModule) $authModule = "N";
 			if (!$usageModule) $usageModule = "N";
 			if (!$resourcesModule) $resourcesModule = "N";
 			if (!$useTermsToolFunctionality) $useTermsToolFunctionality = "N";
@@ -225,7 +260,8 @@ if ($step == "3"){
 			$iniData[] = "[settings]";
 			$iniData[] = "organizationsModule=" . $organizationsModule;
 			$iniData[] = "organizationsDatabaseName=" . $organizationsDatabaseName;
-			$iniData[] = "cancellationModule=" . $cancellationModule;
+			$iniData[] = "authModule=" . $authModule;
+			$iniData[] = "authDatabaseName=" . $authDatabaseName;
 			$iniData[] = "usageModule=" . $usageModule;
 			$iniData[] = "resourcesModule=" . $resourcesModule;
 			$iniData[] = "useTermsToolFunctionality=" . $useTermsToolFunctionality;
@@ -286,7 +322,8 @@ if ($step == "3"){
 		<li>Create a MySQL Schema for CORAL Licensing Module - recommended name is coral_licensing_prod.  Each CORAL module has separate user permissions and requires a separate schema.</li>
 		<li>Know your host, username and password for MySQL with permissions to create tables</li>
 		<li>It is recommended for security to have a different username and password for CORAL with only select, insert, update and delete privileges to CORAL schemas</li>
-		<li>The server variable to access your school's auth system via PHP - for example $HTTP_SERVER_VARS['REMOTE_USER'] or $SERVER['AUTH_USER']</li>
+		<li>If you are using the CORAL Authentication module, you will need to have it installed and your admin user set up before you can log into Licensing</li>
+		<li>If you are not using CORAL Authentication, the server variable name to access your school's auth system via PHP - for example $HTTP_SERVER_VARS['REMOTE_USER'] or $SERVER['AUTH_USER']</li>
 		<li>Know what other systems you will be using operating with - you will be asked whether you are using the Terms Tool Add-On or the Organizations Module.  If you are using the Organizations module you will need to provide the name of the database/schema used for Organizations for inter-operability.  Recommended name is coral_organizations_prod.  For more information about inter-operability refer to the user guide.</li>
 		<li>Verify that your /admin/ directory is writable by server during the installation process (chmod 777).  After installation you should chmod it back.</li>
 	</ul>
@@ -434,7 +471,7 @@ if ($step == "3"){
 			</tr>
 
 			<tr>
-				<td colspan="2"><br />&nbsp;Additionally, since user privileges are driven through the web, we will need to set up the first admin account to administer other users.  Please enter your externally authenticated Login ID below.</td>
+				<td colspan="2"><br />&nbsp;Additionally, since user privileges are driven through the web, we will need to set up the first admin account to administer other users.  <br />Please enter either your CORAL Authentication Login ID or your externally authenticated Login ID below.</td>
 			</tr>
 			<tr>
 				<td>&nbsp;Your Login ID</td>
@@ -462,7 +499,7 @@ if ($step == "3"){
 } else if ($step == '4') {
 	if (!$remoteAuthVariableName) $remoteAuthVariableName = "_SERVER['REMOTE_USER']";
 	if ($_POST['organizationsModule']) $organizationsChecked = "checked";
-	if ($_POST['cancellationModule']) $cancellationChecked = "checked";
+	if ($_POST['authModule']) $authChecked = "checked";
 	if ($_POST['usageModule']) $usageChecked = "checked";
 	if ($_POST['resourcesModule']) $resourcesChecked = "checked";
 	if ($_POST['useTermsToolFunctionality']) $useTermsToolFunctionalityChecked = "checked";
@@ -486,7 +523,25 @@ if ($step == "3"){
 		<table width="100%" border="0" cellspacing="0" cellpadding="2">
 		<tr>
 			<tr>
-				<td>&nbsp;Are you using organizations module?</td>
+				<td>&nbsp;Are you going to use the Terms Tool Add-On?</td>
+				<td>
+					<input type="checkbox" name="useTermsToolFunctionality" value="Y" <?php echo $useTermsToolFunctionalityChecked?>>
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;Are you using the authentication module?</td>
+				<td>
+					<input type="checkbox" name="authModule" value="Y" <?php echo $authChecked?>>
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;If so, enter authentication database schema name</td>
+				<td>
+					<input type="text" name="authDatabaseName" size="30" value="<?php echo $authDatabaseName?>">
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;Are you using the organizations module?</td>
 				<td>
 					<input type="checkbox" name="organizationsModule" value="Y" <?php echo $organizationsChecked?>>
 				</td>
@@ -504,25 +559,13 @@ if ($step == "3"){
 				</td>
 			</tr>
 			<tr>
-				<td>&nbsp;Are you using cancellation module?</td>
-				<td>
-					<input type="checkbox" name="cancellationModule" value="Y" <?php echo $cancellationChecked?>>
-				</td>
-			</tr>
-			<tr>
-				<td>&nbsp;Are you using usage module?</td>
+				<td>&nbsp;Are you using the usage module?</td>
 				<td>
 					<input type="checkbox" name="usageModule" value="Y" <?php echo $usageChecked?>>
 				</td>
 			</tr>
 			<tr>
-				<td>&nbsp;Are you going to use the Terms Tool Add-On?</td>
-				<td>
-					<input type="checkbox" name="useTermsToolFunctionality" value="Y" <?php echo $useTermsToolFunctionalityChecked?>>
-				</td>
-			</tr>
-			<tr>
-				<td>&nbsp;Remote Auth Variable Name</td>
+				<td>&nbsp;Remote Auth Variable Name (required if not using the CORAL Authentication Module)</td>
 				<td>
 					<input type="text" name="remoteAuthVariableName" size="30" value="<?php echo $remoteAuthVariableName?>">
 				</td>

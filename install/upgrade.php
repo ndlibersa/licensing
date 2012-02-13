@@ -149,7 +149,7 @@ if ($step == "2"){
 	</ul>
 
 
-	<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
+	<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
 	<input type='hidden' name='step' value='1'>
 	<input type="submit" value="Continue" name="submit">
 	</form>
@@ -162,7 +162,7 @@ if ($step == "2"){
 
 	if (!$database_host) $database_host='localhost';
 	?>
-		<form method="post" action="<?=$_SERVER['PHP_SELF']?>">
+		<form method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
 		<h3>MySQL info with permissions to create and alter tables</h3>
 		<?php
 			if (count($errorMessage) > 0){
@@ -177,25 +177,25 @@ if ($step == "2"){
 			<tr>
 				<td>&nbsp;Database Host</td>
 				<td>
-					<input type="text" name="database_host" value='<?=$database_host?>' size="30">
+					<input type="text" name="database_host" value='<?php echo $database_host?>' size="30">
 				</td>
 			</tr>
 			<tr>
 				<td>&nbsp;Database Schema Name</td>
 				<td>
-					<input type="text" name="database_name" size="30" value="<?=$database_name?>">
+					<input type="text" name="database_name" size="30" value="<?php echo $database_name?>">
 				</td>
 			</tr>
 			<tr>
 				<td>&nbsp;Database Username</td>
 				<td>
-					<input type="text" name="database_username" size="30" value="<?=$database_username?>">
+					<input type="text" name="database_username" size="30" value="<?php echo $database_username?>">
 				</td>
 			</tr>
 			<tr>
 				<td>&nbsp;Database Password</td>
 				<td>
-					<input type="text" name="database_password" size="30" value="<?=$database_password?>">
+					<input type="text" name="database_password" size="30" value="<?php echo $database_password?>">
 				</td>
 			</tr>
 			<tr>

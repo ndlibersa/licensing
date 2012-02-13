@@ -16,36 +16,12 @@
 **************************************************************************************************************************
 */
 
-
 class User extends DatabaseObject {
 
-	protected function defineRelationships() {
-		$this->hasOne('Privilege');
-	}
+	protected function defineRelationships() {}
 
 	protected function overridePrimaryKeyName() {
 		$this->primaryKeyName = 'loginID';
-	}
-
-
-	//returns array of email Addresses for SFX updates
-	public function getSFXUpdateList(){
-		$query = "SELECT emailAddressForTermsTool from User where emailAddressForTermsTool is not null and emailAddressForTermsTool <> '';";
-		$result = $this->db->processQuery($query, 'assoc');
-
-		$toList = array();
-
-		//need to do this since it could be that there's only one request and this is how the dbservice returns result
-		if (isset($result['emailAddressForTermsTool'])){
-			$toList[]=$result['emailAddressForTermsTool'];
-		}else{
-			foreach ($result as $row) {
-				$toList[]=$row['emailAddressForTermsTool'];
-			}
-		}
-
-
-		return $toList;
 	}
 
 
@@ -66,19 +42,6 @@ class User extends DatabaseObject {
 		$privilege = new Privilege(new NamedArguments(array('primaryKey' => $this->privilegeID)));
 
 		if ((strtoupper($privilege->shortName) == 'ADD/EDIT') || (strtoupper($privilege->shortName) == 'ADMIN')){
-			return true;
-		}else{
-			return false;
-		}
-
-	}
-
-
-	//used for displaying add/update/delete links
-	public function isRestricted(){
-		$privilege = new Privilege(new NamedArguments(array('primaryKey' => $this->privilegeID)));
-
-		if (strtoupper($privilege->shortName) == 'RESTRICTED'){
 			return true;
 		}else{
 			return false;
@@ -112,6 +75,25 @@ class User extends DatabaseObject {
 		return $resultArray;
 	}
 
+
+	public function hasOpenSession() {
+		$util = new Utility();
+		$config = new Configuration();
+
+		$dbName = $config->settings->authDatabaseName;
+		$sessionID = $util->getSessionCookie();
+
+
+		$query = "SELECT DISTINCT sessionID FROM " . $dbName . ".Session WHERE loginID = '" . $this->loginID . "' AND sessionID='" . $sessionID . "'";
+		$result = $this->db->processQuery($query, 'assoc');
+
+		if (isset($result['sessionID'])){
+			return true;
+		}else{
+			return false;
+		}
+
+	}
 }
 
 ?>
