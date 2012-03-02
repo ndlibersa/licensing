@@ -418,7 +418,7 @@ if ($step == "3"){
 			<tr>
 				<td>&nbsp;Database Password</td>
 				<td>
-					<input type="text" name="database_password" size="30" value="<?php echo $database_password?>">
+					<input type="password" name="database_password" size="30" value="<?php echo $database_password?>">
 				</td>
 			</tr>
 			<tr>
@@ -466,7 +466,7 @@ if ($step == "3"){
 			<tr>
 				<td>&nbsp;Database Password</td>
 				<td>
-					<input type="text" name="database_password" size="30" value="<?php echo $database_password?>">
+					<input type="password" name="database_password" size="30" value="<?php echo $database_password?>">
 				</td>
 			</tr>
 
