@@ -62,8 +62,12 @@ class DBService extends Object {
 	}
 
 	public function processQuery($sql, $type = NULL) {
-    	//echo $sql. "<br />";
+    //echo $sql. "<br />";
+    $query_start = microtime(true);
 		$result = mysql_query($sql, $this->db);
+		$query_end = microtime(true);
+		$this->log($sql, $query_end - $query_start);
+		
 		$this->checkForError();
 		$data = array();
 
@@ -85,6 +89,17 @@ class DBService extends Object {
 		}
 
 		return $data;
+	}
+	
+	public function log($sql, $query_time) {
+	  $threshold = $this->config->database->logQueryThreshold;
+    if ($this->config->database->logQueries == "Y" && (!$threshold || $query_time >= $threshold)) {
+      $util = new Utility();
+      $log_path = $util->getModulePath()."/log";
+      $log_file = $log_path."/database.log";
+      $log_string = date("c")."\n".$_SERVER['REQUEST_URI']."\n".$sql."\nQuery completed in ".sprintf("%.3f", round($query_time, 3))." seconds";
+      error_log($log_string."\n\n", 3, $log_file);
+    }
 	}
 
 }

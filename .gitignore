@@ -1,4 +1,5 @@
 .DS_Store
-attachments/*
-documents/*
-admin/configuration.ini
+/attachments/*
+/documents/*
+/admin/configuration.ini
+/log

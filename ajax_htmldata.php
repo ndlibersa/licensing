@@ -264,8 +264,8 @@ switch ($_GET['action']) {
 	//license search - used on index.php
 	case 'getSearchLicenses':
 
-		$pageStart = $_GET['pageStart'];
-		$numberOfRecords = $_GET['numberOfRecords'];
+		$pageStart = intval($_GET['pageStart']);
+		$numberOfRecords = intval($_GET['numberOfRecords']);
 		$whereAdd = array();
 
 		//get where statements together
@@ -305,7 +305,7 @@ switch ($_GET['action']) {
 		//get total number of records to print out and calculate page selectors
 		$totalLicenseObj = new License();
 
-		$totalRecords = count($totalLicenseObj->search($whereAdd, $orderBy, ""));
+		$totalRecords = $totalLicenseObj->searchCount($whereAdd);
 
 		//reset pagestart to 1 - happens when a new search is run but it kept the old page start
 		if ($totalRecords <= $pageStart){
@@ -317,41 +317,60 @@ switch ($_GET['action']) {
 		$licenseObj = new License();
 		$licenseArray = array();
 		$licenseArray = $licenseObj->search($whereAdd, $orderBy, $limit);
-
+    $pagination = '';
 		if ($totalRecords == 0){
 			echo "<br /><br /><i>Sorry, no licenses fit your query</i>";
 			$i=0;
 		}else{
+		  //maximum number of pages to display on screen at one time
+			$maxDisplay = 25;
+			
 			$thisPageNum = count($licenseArray) + $pageStart - 1;
 			echo "<span style='font-weight:bold;'>Displaying " . $pageStart . " to " . $thisPageNum . " of " . $totalRecords . " License Records</span><br />";
 
 			//print out page selectors
 			if ($totalRecords > $numberOfRecords){
 				if ($pageStart == "1"){
-					echo "<span class='smallText'><<</span>&nbsp;";
+					$pagination .= "<span class='smallText'><<</span>&nbsp;";
 				}else{
-					echo "<a href='javascript:setPageStart(1);'><<</a>&nbsp;";
+					$pagination .= "<a href='javascript:setPageStart(1);'><<</a>&nbsp;";
 				}
+        $page = floor($pageStart/$numberOfRecords) + 1;
+        //now determine the starting page - we will display 3 prior to the currently selected page
+				if ($page > 3){
+					$startDisplayPage = $page - 3;
+				}else{
+					$startDisplayPage = 1;
+				}
+				
+				$maxPages = floor($totalRecords / $numberOfRecords) + 1;
 
-				for ($i=1; $i<($totalRecords/$numberOfRecords)+1; $i++){
+				//now determine last page we will go to - can't be more than maxDisplay
+				$lastDisplayPage = $startDisplayPage + $maxDisplay;
+				if ($lastDisplayPage > $maxPages){
+					$lastDisplayPage = ceil($maxPages);
+				}
+        
+				for ($i=$startDisplayPage; $i<$lastDisplayPage; $i++){
 
 					$nextPageStarts = ($i-1) * $numberOfRecords + 1;
 					if ($nextPageStarts == "0") $nextPageStarts = 1;
 
 
 					if ($pageStart == $nextPageStarts){
-						echo "<span class='smallText'>" . $i . "</span>&nbsp;";
+						$pagination .= "<span class='smallText'>" . $i . "</span>&nbsp;";
 					}else{
-						echo "<a href='javascript:setPageStart(" . $nextPageStarts  .");'>" . $i . "</a>&nbsp;";
+						$pagination .= "<a href='javascript:setPageStart(" . $nextPageStarts  .");'>" . $i . "</a>&nbsp;";
 					}
 				}
 
 				if ($pageStart == $nextPageStarts){
-					echo "<span class='smallText'>>></span>&nbsp;";
+					$pagination .= "<span class='smallText'>>></span>&nbsp;";
 				}else{
-					echo "<a href='javascript:setPageStart(" . $nextPageStarts  .");'>>></a>&nbsp;";
+					$pagination .= "<a href='javascript:setPageStart(" . $nextPageStarts  .");'>>></a>&nbsp;";
 				}
-			}else{
+				echo $pagination;
+			} else {
 				echo "<br />";
 			}
 
@@ -391,31 +410,8 @@ switch ($_GET['action']) {
 			<td style='text-align:left'>
 			<?php
 			//print out page selectors
-			if ($totalRecords > $numberOfRecords){
-				if ($pageStart == "1"){
-					echo "<span class='smallText'><<</span>&nbsp;";
-				}else{
-					echo "<a href='javascript:setPageStart(1);'><<</a>&nbsp;";
-				}
-
-				for ($i=1; $i<($totalRecords/$numberOfRecords)+1; $i++){
-
-					$nextPageStarts = ($i-1) * $numberOfRecords + 1;
-					if ($nextPageStarts == "0") $nextPageStarts = 1;
-
-
-					if ($pageStart == $nextPageStarts){
-						echo "<span class='smallText'>" . $i . "</span>&nbsp;";
-					}else{
-						echo "<a href='javascript:setPageStart(" . $nextPageStarts  .");'>" . $i . "</a>&nbsp;";
-					}
-				}
-
-				if ($pageStart == $nextPageStarts){
-					echo "<span class='smallText'>>></span>&nbsp;";
-				}else{
-					echo "<a href='javascript:setPageStart(" . $nextPageStarts  .");'>>></a>&nbsp;";
-				}
+			if ($pagination){
+				echo $pagination;
 			}
 			?>
 			</td>

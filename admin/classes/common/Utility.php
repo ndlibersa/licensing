@@ -47,6 +47,11 @@ class Utility {
 
 		return $pagePath;
 	}
+	
+	//returns file path for this module, i.e. /coral/licensing/
+	public function getModulePath(){
+	  return preg_replace("/\/admin\/classes\/common$/", "", dirname(__FILE__));
+	}
 
 
 	//returns page URL up to /coral/
