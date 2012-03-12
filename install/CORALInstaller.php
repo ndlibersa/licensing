@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('../directory.php');
 
 if (!function_exists('debug')) {
@@ -10,8 +11,25 @@ if (!function_exists('debug')) {
 class CORALInstaller {
   
   protected $db;
-  protected $db_error;
+  public $error;
   protected $config;
+  protected $updates = array(
+    "1.1" => array(
+      "privileges" => array("ALTER","CREATE","DELETE"),
+      "description" => "<p>This upgrade will connect to MySQL and run the CORAL Licensing structure changes. No changes to the configuration file are required.  Database structure changes include:</p>
+    	<ul>
+    		<li>Renaming Qualification to Qualifier</li>
+    		<li>Drop qualificationID from Expression</li>
+    		<li>Add expressionTypeID to Qualifier</li>
+    		<li>Create table ExpressionQualifierProfile</li>
+    	</ul>  <br />
+<span style='color:red'>*Please note* Due to the extent of the change with qualifiers this upgrade will by default remove any qualifier data you have entered.  If you wish to first retrieve a report of existing qualifier data <a href='http://erm.library.nd.edu/' target='_blank'>contact the CORAL team</a> for a script.  Also, the qualifier data can be retained if desired but it will need to be explicitly mapped to the new expression type/qualifier layout first.  Let the <a href='http://erm.library.nd.edu/' target='_blank'>CORAL Team</a> know if you have any questions about this process.</span>"
+    ),
+    "1.2" => array(
+      "privileges" => array("ALTER"),
+      "description" => "This optimization update will connect to MySQL and run the CORAL Licensing database changes. No changes to the configuration file are required.  This update adds a number of indexes to the tables in the Licensing module, which greatly improves performance for sites with large numbers of license records.  To see a list of the specific indexes, see the file located at install/protected/update_1.2.sql in this module."
+    )
+  );
   
   public function __construct() {
     if (is_file($this->configFilePath())) {
@@ -20,19 +38,29 @@ class CORALInstaller {
     }
   }
   
-  protected function connect() {
-    $this->db_error = '';
+  public function connect($username = null, $password = null) {
+    $this->error = '';
 		$host = $this->config->database->host;
-		$username = $this->config->database->username;
-		$password = $this->config->database->password;
-		$this->db = mysql_connect($host, $username, $password);
-		$this->db_error = mysql_error($this->db);
-		if (!$this->db_error) {
+		if ($username === null) {
+		  $username = $this->config->database->username;
+		}
+		if ($password === null) {
+		  $password = $this->config->database->password;
+	  }
+		$this->db = @mysql_connect($host, $username, $password);
+		if (!$this->db) {
+		  
+		  $this->error = mysql_error();
+		  if (!$this->error) {
+		    $this->error = "Access denied for user '$username'";
+		  }
+	  } else {
   		$databaseName = $this->config->database->name;
   		mysql_select_db($databaseName, $this->db);
-  		$this->db_error = mysql_error($this->db);
+  		$this->error = mysql_error($this->db);
 		}
-		if ($this->db_error) {
+		
+		if ($this->error) {
 		  $this->db = null;
 		}
 	}
@@ -55,10 +83,58 @@ class CORALInstaller {
 	}
 	
 	protected function checkForError() {
-		if ($this->db_error = mysql_error($this->db)) {
-			throw new Exception("There was a problem with the database: " . $this->db_error);
+		if ($this->error = mysql_error($this->db)) {
+			throw new Exception("There was a problem with the database: " . $this->error);
 		}
 	}
+	
+	public function getDatabaseName() {
+	  return $this->config->database->name;
+	}
+  
+  public function addErrorMessage($error) {
+    if (!$this->hasErrorMessages()) {
+      $_SESSION['installer_error_messages'] = array();
+    }
+    $_SESSION['installer_error_messages'] []= $error;
+  }
+  
+  public function hasErrorMessages() {
+    return isset($_SESSION['installer_error_messages']);
+  }
+  
+  public function displayErrorMessages() {
+    if ($this->hasErrorMessages()) {
+			echo "<div style='color:red'><p><b>The following errors occurred:</b></p><ul>";
+			foreach ($_SESSION['installer_error_messages'] as $err) {
+				echo "<li>" . $err . "</li>";
+			}
+			echo "</ul></div>";
+			unset($_SESSION['installer_error_messages']);
+		}
+  }
+  
+  public function addMessage($msg) {
+    if (!$this->hasMessages()) {
+      $_SESSION['installer_messages'] = array();
+    }
+    $_SESSION['installer_messages'] []= $msg;
+  }
+  
+  public function hasMessages() {
+    return isset($_SESSION['installer_messages']);
+  }
+  
+  public function displayMessages() {
+    if ($this->hasMessages()) {
+			echo "<div style='color:green'><ul>";
+			foreach ($_SESSION['installer_messages'] as $msg) {
+				echo "<li>" . $msg . "</li>";
+			}
+			echo "</ul></div>";
+			unset($_SESSION['installer_messages']);
+		}
+  }
   
   public function modulePath() {
     //returns file path for this module, i.e. /coral/licensing/
@@ -76,9 +152,10 @@ class CORALInstaller {
   public function hasPermission($permission) {
     if ($this->isDatabaseConfigValid()) {
       $grants = array();
+      $permission = "(ALL PRIVILEGES|".strtoupper($permission).")";
       foreach ($this->query("SHOW GRANTS FOR CURRENT_USER()") as $row) {
         $grant = $row[0];
-        if (strpos(str_replace('\\', '', $grant), $this->config->database->name) !== false) {
+        if (strpos(str_replace('\\', '', $grant), $this->config->database->name) || strpos($grant, "ON *.*")) {
           if (preg_match("/(GRANT|,) $permission(,| ON)/i",$grant)) {
             return true;
           }
@@ -88,21 +165,75 @@ class CORALInstaller {
     return false;
   }
   
+  public function hasPermissions($permissions) {
+    foreach($permissions as $permission) {
+      if (!$this->hasPermission($permission)) {
+        return false;
+      }
+    }
+    return true;
+  }
+  
+  public function tableExists($table) {
+    foreach ($this->query("SHOW TABLES") as $row) {
+      if ($row[0] == $table) {
+        return true;
+      }
+    }
+    return false;
+  }
+  
+  public function indexExists($table, $index) {
+    $result = $this->query("SHOW INDEXES FROM $table WHERE Key_name = '$index'");
+    return count($result) > 0;
+  }
+  
   public function installed() {
     if ($this->isDatabaseConfigValid()) {
-      $table_names = array();
-      $test_table_names = array("License","Document","Expression");
-      foreach ($this->query("SHOW TABLES") as $row) {
-        $table_names []= $row[0];
-      }
-      foreach ($test_table_names as $name) {
-        if (!in_array($name, $table_names)) {
+      foreach (array("License","Document","Expression") as $table) {
+        if (!$this->tableExists($table)) {
           return false;
         }
       }
       return true;
     }
     return false;
+  }
+  
+  public function getNextUpdateVersion() {
+    foreach($this->updates as $version => $details) {
+      if (!$this->isUpdateInstalled($version)) {
+        return $version;
+      }
+    }
+  }
+  
+  public function isUpdateReady($version) {
+    return $this->getNextUpdateVersion() == $version;
+  }
+  
+  public function isUpdateInstalled($version) {
+    if ($this->installed()) {
+      switch ($version) {
+        case "1.1":
+          return $this->tableExists("Qualifier");
+        case "1.2":
+          return $this->indexExists("Document", "licenseID");
+      }
+    }
+    return false;
+  }
+  
+  public function getUpdate($version) {
+    return $this->updates[$version];
+  }
+  
+  public function header($title = 'CORAL Installation') {
+    include('header.php');  
+  }
+  
+  public function footer() {
+    include('footer.php');  
   }
 }
 ?>

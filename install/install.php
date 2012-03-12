@@ -55,8 +55,8 @@ if ($step == "3"){
 					}else{
 						//passed db host, name check, can open/run file now
 						//make sure SQL file exists
-						$test_sql_file = "test_create.sql";
-						$sql_file = "create_tables_data.sql";
+						$test_sql_file = "protected/test_create.sql";
+						$sql_file = "protected/create_tables_data.sql";
 
 						if (!file_exists($test_sql_file)) {
 							$errorMessage[] = "Could not open sql file: " . $test_sql_file . ".  If this file does not exist you must download new install files.";

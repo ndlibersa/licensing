@@ -1,8 +1,16 @@
 <?php
+include_once 'CORALInstaller.php';
+$installer = new CORALInstaller();
+
+if (!$installer->installed() || $installer->upgrade_1_1()) {
+  header('Location: index.php');
+  exit;
+}
+
 //this script runs the upgrade process in 3 steps
 //for the next upgrade the file to be run will need to be detected.
 
-$sql_file = "upgrade_1_11.sql";
+$sql_file = "protected/upgrade_1_11.sql";
 
 //take "step" variable to determine which step the current is
 $step = $_POST['step'];
@@ -40,7 +48,7 @@ if ($step == "2"){
 			}else{
 				//passed db host, name check, can open/run file now
 				//make sure SQL file exists
-				$test_sql_file = "test_create.sql";
+				$test_sql_file = "protected/test_create.sql";
 
 			    if (!file_exists($test_sql_file)) {
 			    	$errorMessage[] = "Could not open sql file: " . $test_sql_file . ".  If this file does not exist you must download new install files.";
@@ -109,21 +117,8 @@ if ($step == "2"){
 
 }
 
-
+$installer->header('CORAL Licensing Upgrade 1.1');
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>CORAL Installation</title>
-<link rel="stylesheet" href="css/style.css" type="text/css" />
-</head>
-<body>
-<center>
-<table style='width:700px;'>
-<tr>
-<td style='vertical-align:top;'>
-<div style="text-align:left;">
 
 
 <?php if(!$step){ ?>
@@ -223,14 +218,5 @@ if ($step == "2"){
 
 <?php
 }
+$installer->footer();
 ?>
-
-</td>
-</tr>
-</table>
-<br />
-</center>
-
-
-</body>
-</html>
