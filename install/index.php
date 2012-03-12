@@ -10,12 +10,12 @@ if (!$installer->installed()) {
   exit;
 }
 
-$installer->header('CORAL Upgrades');
+$installer->header('CORAL Maintenance');
 ?>
   <?php $installer->displayMessages(); ?>
   <?php $installer->displayErrorMessages(); ?>
   <h3>CORAL Licensing</h3>
-	<p>Your CORAL Licensing Module is correctly installed and there are no pending upgrades.</p>
+	<p>Your CORAL Licensing Module is correctly installed and there are no pending updates.</p>
 <?php
 $installer->footer();
 ?>
