@@ -274,7 +274,7 @@ if ($step == "3"){
 			$iniData[] = "resourcesModule=" . $resourcesModule;
 			$iniData[] = "useTermsToolFunctionality=" . $useTermsToolFunctionality;
 			$iniData[] = "remoteAuthVariableName=\"" . $remoteAuthVariableName . "\"";
-
+      $iniData[] = "";
 			$iniData[] = "[database]";
 			$iniData[] = "type = \"mysql\"";
 			$iniData[] = "host = \"" . $database_host . "\"";
