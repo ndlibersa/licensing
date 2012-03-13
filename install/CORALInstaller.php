@@ -139,7 +139,7 @@ class CORALInstaller {
   public function modulePath() {
     //returns file path for this module, i.e. /coral/licensing/
     $replace_path = preg_quote(DIRECTORY_SEPARATOR."install");
-    return preg_replace("/$replace_path$/", "", dirname(__FILE__));
+    return preg_replace("@$replace_path$@", "", dirname(__FILE__));
   }
 
   public function configFilePath() {
