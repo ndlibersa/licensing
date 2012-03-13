@@ -138,7 +138,8 @@ class CORALInstaller {
   
   public function modulePath() {
     //returns file path for this module, i.e. /coral/licensing/
-    return preg_replace("/\/install$/", "", dirname(__FILE__));
+    $replace_path = preg_quote(DIRECTORY_SEPARATOR."install");
+    return preg_replace("/$replace_path$/", "", dirname(__FILE__));
   }
 
   public function configFilePath() {
@@ -176,7 +177,7 @@ class CORALInstaller {
   
   public function tableExists($table) {
     foreach ($this->query("SHOW TABLES") as $row) {
-      if ($row[0] == $table) {
+      if (strtolower($row[0]) == strtolower($table)) {
         return true;
       }
     }
