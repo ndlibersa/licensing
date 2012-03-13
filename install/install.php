@@ -56,7 +56,7 @@ if ($step == "3"){
 						//passed db host, name check, can open/run file now
 						//make sure SQL file exists
 						$test_sql_file = "protected/test_create.sql";
-						$sql_file = "protected/create_tables_data.sql";
+						$sql_file = "protected/install.sql";
 
 						if (!file_exists($test_sql_file)) {
 							$errorMessage[] = "Could not open sql file: " . $test_sql_file . ".  If this file does not exist you must download new install files.";
@@ -599,7 +599,6 @@ if ($step == "3"){
 	It is recommended you now:
 	<ul>
 		<li>Set up your .htaccess file</li>
-		<li>Remove the /install/ directory for security purposes</li>
 		<li>Set up your users on the <a href='../admin.php'>admin screen</a>.</li>
 	</ul>
 
