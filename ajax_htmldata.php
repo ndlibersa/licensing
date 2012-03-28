@@ -351,7 +351,7 @@ switch ($_GET['action']) {
 					$lastDisplayPage = ceil($maxPages);
 				}
         
-				for ($i=$startDisplayPage; $i<$lastDisplayPage; $i++){
+				for ($i=$startDisplayPage; $i<=$lastDisplayPage; $i++){
 
 					$nextPageStarts = ($i-1) * $numberOfRecords + 1;
 					if ($nextPageStarts == "0") $nextPageStarts = 1;
