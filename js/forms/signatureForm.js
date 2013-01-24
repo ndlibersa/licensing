@@ -23,7 +23,6 @@ $(function(){
   $("#signerName").autocomplete('ajax_processing.php?action=getSigners', {
 	minChars: 2,
 	max: 20,
-	autoFill: false,
 	mustMatch: false,
 	width: 120,
 	delay: 200,
