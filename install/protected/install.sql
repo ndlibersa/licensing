@@ -16,7 +16,6 @@ CREATE TABLE IF NOT EXISTS  `_DATABASE_NAME_`.`AttachmentFile` (
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 
-
 CREATE TABLE IF NOT EXISTS  `_DATABASE_NAME_`.`Consortium` (
   `consortiumID` int(10) unsigned NOT NULL auto_increment,
   `shortName` tinytext NOT NULL,
@@ -164,6 +163,12 @@ CREATE TABLE IF NOT EXISTS  `_DATABASE_NAME_`.`User` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
+CREATE TABLE IF NOT EXISTS `_DATABASE_NAME_`.CalendarSettings (
+  `calendarSettingsID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `shortName` tinytext NOT NULL,
+  `value` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`calendarSettingsID`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 DELETE FROM `_DATABASE_NAME_`.DocumentType;
 INSERT INTO `_DATABASE_NAME_`.DocumentType (shortName) values ('SERU');
@@ -508,8 +513,6 @@ INSERT INTO `_DATABASE_NAME_`.Status (shortName) values ("Document Only");
 INSERT INTO `_DATABASE_NAME_`.Status (shortName) values ("Editing Expressions");
 INSERT INTO `_DATABASE_NAME_`.Status (shortName) values ("NLR");
 
-
-
 DELETE FROM `_DATABASE_NAME_`.Attachment;
 DELETE FROM `_DATABASE_NAME_`.AttachmentFile;
 DELETE FROM `_DATABASE_NAME_`.Consortium;
@@ -519,6 +522,13 @@ DELETE FROM `_DATABASE_NAME_`.ExpressionNote;
 DELETE FROM `_DATABASE_NAME_`.License;
 DELETE FROM `_DATABASE_NAME_`.SFXProvider;
 DELETE FROM `_DATABASE_NAME_`.Signature;
+
+DELETE FROM `_DATABASE_NAME_`.CalendarSettings;
+INSERT INTO `_DATABASE_NAME_`.CalendarSettings VALUES (1,'Days Before Subscription End','90');
+INSERT INTO `_DATABASE_NAME_`.CalendarSettings VALUES (2,'Days After Subscription End','730');
+INSERT INTO `_DATABASE_NAME_`.CalendarSettings VALUES (3,'Resource Type(s)','1');
+INSERT INTO `_DATABASE_NAME_`.CalendarSettings VALUES (4,'Authorized Site(s)','1');
+
 
 ALTER TABLE `_DATABASE_NAME_`.`Attachment` ADD INDEX `licenseID` ( `licenseID` );
 ALTER TABLE `_DATABASE_NAME_`.`Document` ADD INDEX `licenseID` ( `licenseID` );

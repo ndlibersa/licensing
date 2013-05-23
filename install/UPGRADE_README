@@ -3,6 +3,27 @@ The following file contains notes on specific upgrades.  For full instructions o
 **************************************************************************************************
 ****
 ****
+****  UPGRADING FROM CORAL LICENSING VERSION 1.2 TO 1.3
+****
+****
+**************************************************************************************************
+
+This upgrade contains coding and database structure changes.  
+
+This upgrade enables a calendar on on the menu that displays Licenses that are fixing to expire.
+For the calendar to work it requires the Resource module active and the database setting configured in the configuration.ini /admin/configuration.ini
+Default settings for the calendar can be changed in the admin menu.
+
+Database changes include:
+    * Create table CalendarSettings
+
+For manual installation, you will need to first modify the update_1.3.sql script located in the protected 
+directory to replace _DATABASE_NAME_ with your MySQL schema name (e.g. coral_licensing_pprd).
+Next, run the update_1.3.sql script in your MySQL client.
+
+**************************************************************************************************
+****
+****
 ****  UPGRADING FROM CORAL LICENSING VERSION 1.0 TO 1.1
 ****
 ****

@@ -114,14 +114,28 @@ if ($user->isAdmin()){
 </td></tr>
 </table>
 
-<br />
-<br />
-
-
-
 <?php
 
 $config = new Configuration;
+
+//if the Resources module is not installed, do not display calendar options
+if (($config->settings->resourcesModule == 'Y') && (strlen($config->settings->resourcesDatabaseName) > 0)) { ?>
+
+<br />
+<br />
+
+<table class="headerTable">
+<tr><td>
+<span class="headerText">Calendar Settings</span>&nbsp;&nbsp;<span id='span_CalendarSettings_response'></span>
+<br /><br />
+<div id='div_CalendarSettings'>
+<img src = "images/circle.gif">Loading...
+</div>
+</td></tr>
+</table>
+
+<?php
+}
 
 //if the org module is not installed, display provider list for updates
 if ($config->settings->organizationsModule != 'Y'){ ?>

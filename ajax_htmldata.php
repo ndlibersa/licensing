@@ -1344,8 +1344,77 @@ switch ($_GET['action']) {
 
 		break;
 
+	//display expression type list for admin screen - needs its own display because of note type
+	case 'getCalendarSettingsList':
 
+		$instanceArray = array();
+		$calendarSettings = new CalendarSettings();
+		$tempArray = array();
 
+		foreach ($calendarSettings->allAsArray() as $tempArray) {
+			array_push($instanceArray, $tempArray);
+		}
+
+		if (count($instanceArray) > 0){
+
+			?>
+			<table class='dataTable' style='width:400px'>
+				<tr>
+				<th>Setting</th>
+				<th>Value</th>
+				<th>&nbsp;</th>
+
+				<?php
+
+				foreach($instanceArray as $instance) {
+					echo "<tr>";
+					echo "<td>" . $instance['shortName'] . "</td>";
+					echo "<td>";
+						if (strtolower($instance['shortName']) == strtolower('Authorized Site(s)')) { 
+							$display = array();
+							$authorizedSite = new AuthorizedSite();
+							$siteCount = 0;
+								foreach($authorizedSite->getAllAuthorizedSite() as $display) {
+									if (in_array($display['authorizedSiteID'], explode(",", $instance['value']))) {
+										if ($siteCount > 0) {
+											echo ", ";
+										}
+										echo $display['shortName'];
+										$siteCount = $siteCount + 1;
+									}	
+								}
+						} elseif (strtolower($instance['shortName']) == strtolower('Resource Type(s)')) {
+							$display = array();
+							$resourceType = new ResourceType();
+							$siteCount = 0;
+								foreach($resourceType->getAllResourceType() as $display) {
+									if (in_array($display['resourceTypeID'], explode(",", $instance['value']))) {
+										if ($siteCount > 0) {
+											echo ", ";
+										}
+										echo $display['shortName'];
+										$siteCount = $siteCount + 1;
+									}	
+								}							
+						} else {
+							echo $instance['value'];
+						}
+					echo "</td>";						
+						
+					
+					echo "<td style='width:30px'><a href='ajax_forms.php?action=getCalendarSettingsForm&calendarSettingsID=" . $instance['calendarSettingsID'] . "&height=158&width=265&modal=true' class='thickbox'>edit</a></td>";
+					echo "</tr>";
+				}
+
+				?>
+			</table>
+			<?php
+
+		}else{
+			echo "(none found)";
+		}
+
+		break;
 
 
 	//display qualifier list for admin screen - needs its own display because of expression type

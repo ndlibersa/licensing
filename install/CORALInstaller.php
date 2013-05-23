@@ -28,6 +28,10 @@ class CORALInstaller {
     "1.2" => array(
       "privileges" => array("ALTER"),
       "description" => "This optimization update will connect to MySQL and run the CORAL Licensing database changes. No changes to the configuration file are required.  This update adds a number of indexes to the tables in the Licensing module, which greatly improves performance for sites with large numbers of license records.  To see a list of the specific indexes, see the file located at install/protected/update_1.2.sql in this module."
+    ),
+    "1.3" => array(
+      "privileges" => array("ALTER","CREATE"),
+      "description" => "This update will connect to MySQL and run the CORAL Licensing database changes. Changes to the configuration file are required.  This update adds a CalendarSettings tables in the Licensing module.  To see a list of the specific..."
     )
   );
   
@@ -220,6 +224,8 @@ class CORALInstaller {
           return $this->tableExists("Qualifier");
         case "1.2":
           return $this->indexExists("Document", "licenseID");
+        case "1.3":
+          return $this->tableExists("CalendarSettings");		  
       }
     }
     return false;

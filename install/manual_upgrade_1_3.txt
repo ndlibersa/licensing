@@ -1,0 +1,22 @@
+Manual Installation Coral Upgrade from 1.2 to 1.3
+
+Update the licensing module codebase
+
+	-When performing upgrades your configuration file (/admin/configuration.ini) 
+	should always be backed up first so that when you check out the new code you are sure to not overwrite it. 
+	-Check out the new code through GitHub https://github.com/ndlibersa/licensing/
+	-If needed manually copy and overwrite all the files into the exiting licensing directory.
+	-Do not replace the existing directory.  This will cause you to loose any settings, documents, etc. That you may have.  Copying the new files over the existing files and replacing them will ensure you get the changes needed but not removing additional files.
+	-Ensure that your your configuration file (/admin/configuration.ini) is still correct.
+	
+Update the database schema
+
+    -Open SQL file in /coral/licensing/install/protected/update_1.3.sql and replace 
+	_DATABASE_NAME_ with your database schema name
+    -Run SQL file
+
+Update /admin/configuration.ini
+
+	-For this to work it requires the Resource module active and the database setting configured in the configuration.ini /admin/configuration.ini
+	-Default settings for the calendar can be changed in the admin menu.
+	
