@@ -17,14 +17,6 @@
 */
 
 
-// tamu specific
-// use cas for authentication
-if($config->settings->enableCAS == 'Y') {
-	include_once 'cas.php';
-	getCAS();
-}
-//
-
 include_once 'user.php';
 
 $util = new Utility();
