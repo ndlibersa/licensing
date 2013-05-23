@@ -25,6 +25,7 @@
       updateExpressionTypeList();
       updateForm('SignatureType');  
       updateForm('Status');  
+      updateCalendarSettingsList(); 	  
       updateQualifierList();    
 
 
@@ -98,6 +99,22 @@
         });
         
   }
+  
+  
+    function updateCalendarSettingsList(){
+ 
+        $.ajax({
+           type:       "GET",
+           url:        "ajax_htmldata.php",
+           cache:      false,
+           data:       "action=getCalendarSettingsList",
+           success:    function(html) { $('#div_CalendarSettings').html(html);
+           	tb_reinit();
+           }
+       });
+       
+  }
+  
 
  function addData(tableName){
 
@@ -172,9 +189,21 @@
 
  }
 
+ function submitCalendarSettings(){
+ 
+	$.ajax({
+          type:       "POST",
+          url:        "ajax_processing.php?action=submitCalendarSettings",
+          cache:      false,
+          data:       { calendarSettingsID: $('#calendarSettingsID').val(), shortName: $('#shortName').val(), value: $('#value').val() },
 
+          success:    function(html) { 
+			updateCalendarSettingsList();
+			window.parent.tb_remove();
+		  }
+       });
 
-
+ }
 
  function submitQualifier(){
  	$("#submitQualifier").attr("disabled","disabled");
