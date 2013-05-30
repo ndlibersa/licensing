@@ -105,10 +105,11 @@ DATE_FORMAT(`$resource_databaseName`.`Resource`.`subscriptionEndDate`, '%m/%d/%Y
 `$license_databaseName`.`License`.`shortName`, 
 `$license_databaseName`.`License`.`licenseID`, `$resource_databaseName`.`ResourceType`.`shortName` AS resourceTypeName, `$resource_databaseName`.`ResourceType`.`resourceTypeID` 
 FROM `$resource_databaseName`.`Resource` 
-INNER JOIN `$resource_databaseName`.`ResourceLicenseLink` ON (`$resource_databaseName`.`Resource`.`resourceID` = `$resource_databaseName`.`ResourceLicenseLink`.`resourceID`) 
-INNER JOIN `$license_databaseName`.`License` ON (`ResourceLicenseLink`.`licenseID` = `$license_databaseName`.`License`.`licenseID`) 
+LEFT JOIN `$resource_databaseName`.`ResourceLicenseLink` ON (`$resource_databaseName`.`Resource`.`resourceID` = `$resource_databaseName`.`ResourceLicenseLink`.`resourceID`) 
+LEFT JOIN `$license_databaseName`.`License` ON (`ResourceLicenseLink`.`licenseID` = `$license_databaseName`.`License`.`licenseID`) 
 INNER JOIN `$resource_databaseName`.`ResourceType` ON (`$resource_databaseName`.`Resource`.`resourceTypeID` = `$resource_databaseName`.`ResourceType`.`resourceTypeID`) 
 WHERE 
+`$resource_databaseName`.`Resource`.`archiveDate` IS NULL AND 
 `$resource_databaseName`.`Resource`.`subscriptionEndDate` IS NOT NULL AND 
 `$resource_databaseName`.`Resource`.`subscriptionEndDate` <> '00/00/0000' AND 
 `$resource_databaseName`.`Resource`.`subscriptionEndDate` BETWEEN (CURDATE() - INTERVAL " . $daybefore . " DAY) AND (CURDATE() + INTERVAL " . $dayafter . " DAY) ";
@@ -128,6 +129,24 @@ $result = mysql_query($query, $linkID) or die("Bad Query Failure");
 			<td>
 				<b>Upcoming License Renewals</b>
 			</td>
+			<td>
+					<select multiple name='value' id='value' style='width:155px'>
+			<?php
+
+			$display = array();
+			$authorizedSite = new AuthorizedSite();
+			
+				foreach($authorizedSite->getAllAuthorizedSite() as $display) {
+					if (in_array($display['authorizedSiteID'], explode(",", $calendarSettings->value))) {
+						echo "<option value='" . $display['authorizedSiteID'] . "' selected>" . $display['shortName'] . "</option>";
+					}else{
+						echo "<option value='" . $display['authorizedSiteID'] . "'>" . $display['shortName'] . "</option>";
+					}	
+				}
+			
+			?>
+			</select>
+		</td>	
 		</tr>
 	</table>
 	
@@ -217,7 +236,11 @@ $result = mysql_query($query, $linkID) or die("Bad Query Failure");
 					
 					$html = $html . "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='../resources/resource.php?resourceID=" . $row["resourceID"] . "'><b>". $row["titleText"] . "</b></a>";
 					$html = $html . "&nbsp;&nbsp;[License: ";
-					$html = $html . "<a href='license.php?licenseID=" . $row["licenseID"] . "'>". $row["shortName"] . "</a>";
+						if (is_null($row["licenseID"])) {
+							$html = $html . "<i>No associated licenses available.</i>";
+						} else {
+							$html = $html . "<a href='license.php?licenseID=" . $row["licenseID"] . "'>". $row["shortName"] . "</a>";
+						}
 					$html = $html . " ] - " . $row["resourceTypeName"] . " ";
 					$html = $html . "- Expires in ";
 					
