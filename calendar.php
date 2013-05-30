@@ -151,7 +151,7 @@ $result = mysql_query($query, $linkID) or die("Bad Query Failure");
 					  `$resource_databaseName`.`AuthorizedSite`.`shortName`,
 					  `$resource_databaseName`.`AuthorizedSite`.`authorizedSiteID`
 					FROM
-					  `coral_resources_prod`.`Resource`
+					  `$resource_databaseName`.`Resource`
 					  INNER JOIN `$resource_databaseName`.`ResourceAuthorizedSiteLink` ON (`$resource_databaseName`.`Resource`.`resourceID` = `$resource_databaseName`.`ResourceAuthorizedSiteLink`.`resourceID`)
 					  INNER JOIN `$resource_databaseName`.`AuthorizedSite` ON (`$resource_databaseName`.`ResourceAuthorizedSiteLink`.`authorizedSiteID` = `$resource_databaseName`.`AuthorizedSite`.`authorizedSiteID`)
 					WHERE
@@ -222,7 +222,7 @@ $result = mysql_query($query, $linkID) or die("Bad Query Failure");
 					$html = $html . "- Expires in ";
 					
 						if ($date1 > $date2) {
-							$html = $html . "<span style='color:red'>" . $num_days . " days</span>"; ;
+							$html = $html . "<span style='color:red'>(" . $num_days . " days)</span>"; ;
 						} else {
 							$html = $html . $num_days . " days "; ;
 						}					
