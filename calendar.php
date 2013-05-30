@@ -129,24 +129,6 @@ $result = mysql_query($query, $linkID) or die("Bad Query Failure");
 			<td>
 				<b>Upcoming License Renewals</b>
 			</td>
-			<td>
-					<select multiple name='value' id='value' style='width:155px'>
-			<?php
-
-			$display = array();
-			$authorizedSite = new AuthorizedSite();
-			
-				foreach($authorizedSite->getAllAuthorizedSite() as $display) {
-					if (in_array($display['authorizedSiteID'], explode(",", $calendarSettings->value))) {
-						echo "<option value='" . $display['authorizedSiteID'] . "' selected>" . $display['shortName'] . "</option>";
-					}else{
-						echo "<option value='" . $display['authorizedSiteID'] . "'>" . $display['shortName'] . "</option>";
-					}	
-				}
-			
-			?>
-			</select>
-		</td>	
 		</tr>
 	</table>
 	
