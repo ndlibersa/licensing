@@ -31,7 +31,7 @@ class CORALInstaller {
     ),
     "1.3" => array(
       "privileges" => array("ALTER","CREATE"),
-      "description" => "This update will connect to MySQL and run the CORAL Licensing database changes. Changes to the configuration file are required.  This update adds a CalendarSettings tables in the Licensing module.  To see a list of the specific..."
+      "description" => "This update will connect to MySQL and run the CORAL Licensing database changes. Manual changes to the configuration file are required.  This update adds a CalendarSettings tables in the Licensing module database.  To see a list of the specifics, see the file located at install/UPGRADE_README in this module."
     )
   );
   

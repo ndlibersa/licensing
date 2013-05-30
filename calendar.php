@@ -67,12 +67,12 @@ try{
 
 	foreach($calendarSettingsArray as $display) {
 		$config_error = TRUE;
-		if (strtolower($display['shortName']) == strtolower('Days Before Subscription End')) {
+		if (strtolower($display['shortName']) == strtolower('Days After Subscription End')) {
 			if (strlen($display['value'])>0) {
 				$daybefore = $display['value'];
 				$config_error = FALSE;
 			}
-		} elseif (strtolower($display['shortName']) == strtolower('Days After Subscription End')) {
+		} elseif (strtolower($display['shortName']) == strtolower('Days Before Subscription End')) {
 			if (strlen($display['value'])>0) {
 				$dayafter = $display['value'];
 				$config_error = FALSE;
@@ -206,13 +206,26 @@ $result = mysql_query($query, $linkID) or die("Bad Query Failure");
 						} else {
 							$alt = "";
 						}
+
+					$date1 = new DateTime(date("m/d/y"));
+					$date2 = new DateTime($row["subscriptionEndDate"]);
+					$interval = $date1->diff($date2);
+
+					$num_days = ((($interval->y) * 365) + (($interval->m) * 30) + ($interval->d));
 					
 					$html = $html . "<td  colspan='2' class='$alt'>";
 					
 					$html = $html . "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='../resources/resource.php?resourceID=" . $row["resourceID"] . "'><b>". $row["titleText"] . "</b></a>";
 					$html = $html . "&nbsp;&nbsp;[License: ";
 					$html = $html . "<a href='license.php?licenseID=" . $row["licenseID"] . "'>". $row["shortName"] . "</a>";
-					$html = $html . " ] - " . $row["resourceTypeName"];
+					$html = $html . " ] - " . $row["resourceTypeName"] . " ";
+					$html = $html . "- Expires in ";
+					
+						if ($date1 > $date2) {
+							$html = $html . "<span style='color:red'>" . $num_days . " days</span>"; ;
+						} else {
+							$html = $html . $num_days . " days "; ;
+						}					
 					
 					$k = 0;
 					$siteID = array();

@@ -190,7 +190,8 @@ if ($step == "3"){
 	$organizationsDatabaseName = trim($_POST['organizationsDatabaseName']);
 	$authModule = $_POST['authModule'];
 	$authDatabaseName = trim($_POST['authDatabaseName']);
-
+	$resourcesModule = $_POST['resourcesModule'];
+	$resourcesDatabaseName = trim($_POST['resourcesDatabaseName']);
 
 	$database_host = $_POST['database_host'];
 	$database_name = $_POST['database_name'];
@@ -210,6 +211,7 @@ if ($step == "3"){
 
 	}
 	if ((!$organizationsDatabaseName) && ($_POST['organizationsModule'])) $errorMessage[] = "If you are using the organizations module you must enter the organizations module database name.  It doesn't need to be created yet.";
+	if ((!$resourcesDatabaseName) && ($_POST['resourcesModule'])) $errorMessage[] = "If you are using the resources module you must enter the resources module database name.  It doesn't need to be created yet.";	
 	if ((!$authDatabaseName) && ($_POST['authModule'])) $errorMessage[] = "If you are using the authentication module you must enter the auth module database name.  It should be created already so that you can log in.";
 
 
@@ -272,6 +274,7 @@ if ($step == "3"){
 			$iniData[] = "authDatabaseName=" . $authDatabaseName;
 			$iniData[] = "usageModule=" . $usageModule;
 			$iniData[] = "resourcesModule=" . $resourcesModule;
+			$iniData[] = "resourcesDatabaseName=" . $resourcesDatabaseName;			
 			$iniData[] = "useTermsToolFunctionality=" . $useTermsToolFunctionality;
 			$iniData[] = "remoteAuthVariableName=\"" . $remoteAuthVariableName . "\"";
       $iniData[] = "";
@@ -566,6 +569,12 @@ if ($step == "3"){
 					<input type="checkbox" name="resourcesModule" value="Y" <?php echo $resourcesChecked?>>
 				</td>
 			</tr>
+			<tr>
+				<td>&nbsp;If so, enter resources database schema name</td>
+				<td>
+					<input type="text" name="resourcesDatabaseName" size="30" value="<?php echo $resourcesDatabaseName?>">
+				</td>
+			</tr>			
 			<tr>
 				<td>&nbsp;Are you using the usage module?</td>
 				<td>

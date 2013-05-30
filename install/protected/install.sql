@@ -524,8 +524,8 @@ DELETE FROM `_DATABASE_NAME_`.SFXProvider;
 DELETE FROM `_DATABASE_NAME_`.Signature;
 
 DELETE FROM `_DATABASE_NAME_`.CalendarSettings;
-INSERT INTO `_DATABASE_NAME_`.CalendarSettings VALUES (1,'Days Before Subscription End','90');
-INSERT INTO `_DATABASE_NAME_`.CalendarSettings VALUES (2,'Days After Subscription End','730');
+INSERT INTO `_DATABASE_NAME_`.CalendarSettings VALUES (1,'Days Before Subscription End','730');
+INSERT INTO `_DATABASE_NAME_`.CalendarSettings VALUES (2,'Days After Subscription End','90');
 INSERT INTO `_DATABASE_NAME_`.CalendarSettings VALUES (3,'Resource Type(s)','1');
 INSERT INTO `_DATABASE_NAME_`.CalendarSettings VALUES (4,'Authorized Site(s)','1');
 

@@ -11,7 +11,12 @@ The following file contains notes on specific upgrades.  For full instructions o
 This upgrade contains coding and database structure changes.  
 
 This upgrade enables a calendar on on the menu that displays Licenses that are fixing to expire.
-For the calendar to work it requires the Resource module active and the database setting configured in the configuration.ini /admin/configuration.ini
+For the calendar to work it requires the Resource module active and the database setting configured 
+in the configuration.ini /admin/configuration.ini
+
+resourcesModule=Y
+resourcesDatabaseName=
+
 Default settings for the calendar can be changed in the admin menu.
 
 Database changes include:
@@ -20,6 +25,9 @@ Database changes include:
 For manual installation, you will need to first modify the update_1.3.sql script located in the protected 
 directory to replace _DATABASE_NAME_ with your MySQL schema name (e.g. coral_licensing_pprd).
 Next, run the update_1.3.sql script in your MySQL client.
+
+The javascript is changed in the admin console.  You might need to clear your cache or force reload
+to ensure new javascript is loaded.
 
 **************************************************************************************************
 ****
