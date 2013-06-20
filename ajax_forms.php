@@ -1073,10 +1073,13 @@ switch ($_GET['action']) {
 			<select multiple name='value' id='value' style='width:155px'>
 			<?php
 
-			$display = array();
 			$authorizedSite = new AuthorizedSite();
+			$authorizedSitesArray = $authorizedSite->getAllAuthorizedSite();
+            if ($authorizedSitesArray['authorizedSiteID']) {
+                $authorizedSitesArray = array($authorizedSitesArray);
+            }
 			
-				foreach($authorizedSite->getAllAuthorizedSite() as $display) {
+				foreach($authorizedSitesArray as $display) {
 					if (in_array($display['authorizedSiteID'], explode(",", $calendarSettings->value))) {
 						echo "<option value='" . $display['authorizedSiteID'] . "' selected>" . $display['shortName'] . "</option>";
 					}else{

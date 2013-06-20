@@ -1374,7 +1374,12 @@ switch ($_GET['action']) {
 							$display = array();
 							$authorizedSite = new AuthorizedSite();
 							$siteCount = 0;
-								foreach($authorizedSite->getAllAuthorizedSite() as $display) {
+                            $authorizedSitesArray = $authorizedSite->getAllAuthorizedSite();
+                            if ($authorizedSitesArray['authorizedSiteID']) {
+                                $authorizedSitesArray = array($authorizedSitesArray);
+                            }
+
+								foreach($authorizedSitesArray as $display) {
 									if (in_array($display['authorizedSiteID'], explode(",", $instance['value']))) {
 										if ($siteCount > 0) {
 											echo ", ";
