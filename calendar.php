@@ -224,14 +224,18 @@ $result = mysql_query($query, $linkID) or die("Bad Query Failure");
 							$html = $html . "<a href='license.php?licenseID=" . $row["licenseID"] . "'>". $row["shortName"] . "</a>";
 						}
 					$html = $html . " ] - " . $row["resourceTypeName"] . " ";
-					$html = $html . "- Expires in ";
+                    if ($interval->invert) {
+                        $html = $html . "- <strong style='color:red'>Expired $num_days days ago</strong>";
+                    } else {
+					    $html = $html . "- Expires in ";
 					
 						if ($date1 > $date2) {
 							$html = $html . "<span style='color:red'>(" . $num_days . " days)</span>"; ;
 						} else {
 							$html = $html . $num_days . " days "; ;
 						}					
-					
+					}
+
 					$k = 0;
 					$siteID = array();
 						
