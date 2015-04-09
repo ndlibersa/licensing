@@ -1,0 +1,1120 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: messages\n"
+"POT-Creation-Date: 2015-04-09 18:55+0100\n"
+"PO-Revision-Date: 2015-04-09 18:55+0100\n"
+"Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.10\n"
+"X-Poedit-Basepath: /var/www/Coral/licensing\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: templates/header.php:104 templates/header.php:107 templates/header.php:110
+msgid "Home"
+msgstr "Accueil"
+
+#: templates/header.php:104 templates/header.php:107
+#, fuzzy
+msgid "New License"
+msgstr "Regarder la licence"
+
+#: templates/header.php:104 templates/header.php:107 templates/header.php:110
+#, fuzzy
+msgid "Licenses in Progress"
+msgstr "Licences entregistrées"
+
+#: templates/header.php:104
+msgid "Admin"
+msgstr "Administrateur"
+
+#: templates/header.php:126
+msgid "Change Module"
+msgstr "Changer le module"
+
+#~ msgid "Users"
+#~ msgstr "Utilisateurs"
+
+#~ msgid "Workflow / User Group"
+#~ msgstr "Workflow / Groupe d'utilisateur"
+
+#~ msgid "Access Method"
+#~ msgstr "Mèthode d'accès"
+
+#~ msgid "Account Type"
+#~ msgstr "Type d'account"
+
+#~ msgid "Acquisition Type"
+#~ msgstr "Type d'acquisition"
+
+#~ msgid "Administering Site"
+#~ msgstr "Administration du site"
+
+#~ msgid "Alert Settings"
+#~ msgstr "Configuration des alertes"
+
+#~ msgid "Alias Type"
+#~ msgstr "Type d'alias"
+
+#~ msgid "Attachment Type"
+#~ msgstr "Type de fixation"
+
+#~ msgid "Authentication Type"
+#~ msgstr "Type d'accès"
+
+#~ msgid "Authorized Site"
+#~ msgstr "Site autorisé"
+
+#~ msgid "Cataloging Status"
+#~ msgstr "Statut de catalogue "
+
+#~ msgid "Cataloging Type"
+#~ msgstr "Type de catalogue "
+
+#~ msgid "Contact Role"
+#~ msgstr "Contact Rôle"
+
+#~ msgid "Currency"
+#~ msgstr "Concurrence"
+
+#~ msgid "License Status"
+#~ msgstr "Statut de la licence"
+
+#~ msgid "Note Type"
+#~ msgstr "Type de note"
+
+#~ msgid "Order Type"
+#~ msgstr "Type d'ordre"
+
+#~ msgid "Organization Role"
+#~ msgstr "Rôle dans l'organisation"
+
+#~ msgid "Organizations"
+#~ msgstr "Organisation"
+
+#~ msgid "Purchasing Site"
+#~ msgstr "Site d'achat"
+
+#~ msgid "Resource Format"
+#~ msgstr "Format de la ressource"
+
+#~ msgid "Resource Type"
+#~ msgstr "Type de ressource"
+
+#~ msgid "Storage Location"
+#~ msgstr "Lieu de stockage"
+
+#~ msgid "Subjects"
+#~ msgstr "Sujets"
+
+#~ msgid "User Limit"
+#~ msgstr "Limit d'utilisateurs"
+
+#~ msgid "Loading..."
+#~ msgstr "Chargement..."
+
+#~ msgid "You do not have permissions to access this screen."
+#~ msgstr "Vous n'avez pas la permission d'accèder dans cette page."
+
+#~ msgid "There was a problem with the database: "
+#~ msgstr "Il y avait un problème avec la base de données: "
+
+#~ msgid "Could not connect to "
+#~ msgstr "Ne pouvait pas se connecter à "
+
+#~ msgid "Cannot set value for undefined key ("
+#~ msgstr "Ne peut pas asigner une clé indefini ("
+
+#~ msgid "Error: unexpected fgets() fail"
+#~ msgstr "Erreur: inattendu échoue fgets()"
+
+#~ msgid "Edit DDW facet/term selections at: "
+#~ msgstr "Modifier selections DDW facet/term à: "
+
+#~ msgid "Email template file not found: "
+#~ msgstr "Le fichier template pour l'email est introuvable: "
+
+#~ msgid "Edit Note"
+#~ msgstr "Modifier une note"
+
+#~ msgid "Add Note"
+#~ msgstr "Ajouter une note"
+
+#~ msgid "Note Type:"
+#~ msgstr "Type de note:"
+
+#~ msgid "Notes:"
+#~ msgstr "Notes:"
+
+#~ msgid "submit"
+#~ msgstr "Confirmer"
+
+#~ msgid "cancel"
+#~ msgstr "Annuler"
+
+#~ msgid "Edit Saved Resource"
+#~ msgstr "Modifier ressource enregistré"
+
+#~ msgid "Add New Resource"
+#~ msgstr "Ajouter une nouvelle ressource"
+
+#~ msgid "* required fields"
+#~ msgstr "* champs obligatoires"
+
+#~ msgid "Product"
+#~ msgstr "Produit"
+
+#~ msgid "Name:"
+#~ msgstr "Nom:"
+
+#~ msgid "Description:"
+#~ msgstr "Description:"
+
+#~ msgid "Provider:"
+#~ msgstr "Fournisseur:"
+
+#~ msgid "Format"
+#~ msgstr "Format"
+
+#~ msgid "Initial Cost"
+#~ msgstr "Coût Initial"
+
+#~ msgid "Fund:"
+#~ msgstr "Fond:"
+
+#~ msgid "Price:"
+#~ msgstr "Prix:"
+
+#~ msgid "Type:"
+#~ msgstr "Type:"
+
+#~ msgid "add this payment"
+#~ msgstr "ajouter ce payment"
+
+#~ msgid "add payment"
+#~ msgstr "ajouter un payment"
+
+#~ msgid "remove this payment"
+#~ msgstr "effacer ce payment"
+
+#~ msgid "Notes"
+#~ msgstr "Notes"
+
+#~ msgid "Include any additional information"
+#~ msgstr "Inclure quelque information additional"
+
+#~ msgid "save"
+#~ msgstr "Enregistrer"
+
+#~ msgid "Edit Resource"
+#~ msgstr "Modifier la ressource"
+
+#~ msgid "Parent:"
+#~ msgstr "Parent:"
+
+#~ msgid "Format:"
+#~ msgstr "Format:"
+
+#~ msgid "Archived:"
+#~ msgstr "Archivé:"
+
+#~ msgid "Role:"
+#~ msgstr "Rôle:"
+
+#~ msgid "Organization:"
+#~ msgstr "Organisation:"
+
+#~ msgid "add organization"
+#~ msgstr "Ajouter une organisation"
+
+#~ msgid "remove organization"
+#~ msgstr "Supprimer une organisation"
+
+#~ msgid "remove "
+#~ msgstr "supprimer "
+
+#~ msgid " organization"
+#~ msgstr " organisation"
+
+#~ msgid "Aliases"
+#~ msgstr "Des alias:"
+
+#~ msgid "Alias:"
+#~ msgstr "Alias:"
+
+#~ msgid "add this alias"
+#~ msgstr "ajouter cet alias"
+
+#~ msgid "add alias"
+#~ msgstr "ajouter alias"
+
+#~ msgid "remove this alias"
+#~ msgstr "effacer cet alias"
+
+#~ msgid "Edit Acquisitions Information"
+#~ msgstr "modifier l'information des acquisitions"
+
+#~ msgid "Order"
+#~ msgstr "Ordre"
+
+#~ msgid "Acquisition Type:"
+#~ msgstr "Type d'acquisition:"
+
+#~ msgid "Order Number:"
+#~ msgstr "Numero d'ordre:"
+
+#~ msgid "System Number:"
+#~ msgstr "Nombre de système:"
+
+#~ msgid "Subscription Start:"
+#~ msgstr "Début d'abonnement:"
+
+#~ msgid "Subscription End:"
+#~ msgstr "Fin d'abonnement:"
+
+#~ msgid "Enable Alert"
+#~ msgstr "Activer l'alerte"
+
+#~ msgid "Purchasing Site(s)"
+#~ msgstr "Site d'achat(s)"
+
+#~ msgid "Edit Licenses"
+#~ msgstr "Modifier les licences"
+
+#~ msgid "add license"
+#~ msgstr "ajouter une licence"
+
+#~ msgid "remove license link"
+#~ msgstr "supprimer lien de la licence"
+
+#~ msgid " license"
+#~ msgstr " licence"
+
+#~ msgid "Licensing Status"
+#~ msgstr "Statut des licences"
+
+#~ msgid "Status:"
+#~ msgstr "Statut:"
+
+#~ msgid "History:"
+#~ msgstr "Historie:"
+
+#~ msgid " by "
+#~ msgstr " par "
+
+#~ msgid "No license status information available."
+#~ msgstr "L'information de statut de la licence n'est pas disponible."
+
+#~ msgid "Edit Access"
+#~ msgstr "Modifier l'accès"
+
+#~ msgid "Access"
+#~ msgstr "Acèss"
+
+#~ msgid "Authentication Type:"
+#~ msgstr "Type d'accès:"
+
+#~ msgid "Username:"
+#~ msgstr "Nom d'utilisateur:"
+
+#~ msgid "Access Method:"
+#~ msgstr "Mèthode d'accès:"
+
+#~ msgid "Password:"
+#~ msgstr "Mot de passe:"
+
+#~ msgid "Storage Location:"
+#~ msgstr "Lieu de stockage:"
+
+#~ msgid "Simultaneous User Limit:"
+#~ msgstr "Limite d'utilisateurs similtanées"
+
+#~ msgid "Coverage:"
+#~ msgstr "Coverture:"
+
+#~ msgid "Authorized Site(s)"
+#~ msgstr "Site(s) autorisé(s)"
+
+#~ msgid "Administering Site(s)"
+#~ msgstr "Administration du site(s)"
+
+#~ msgid "Edit Contact"
+#~ msgstr "Modifier le contact"
+
+#~ msgid "Add Contact"
+#~ msgstr "Ajouter un contact"
+
+#~ msgid "Title:"
+#~ msgstr "Titre:"
+
+#~ msgid "Phone:"
+#~ msgstr "Téléphone:"
+
+#~ msgid "Alt Phone:"
+#~ msgstr "Téléphone Alt:"
+
+#~ msgid "Address:"
+#~ msgstr "Adresse:"
+
+#~ msgid "Role(s):"
+#~ msgstr "Rôle(s)"
+
+#~ msgid "Edit Account"
+#~ msgstr "Modifier la compte"
+
+#~ msgid "Add Account"
+#~ msgstr "Ajouter une compte"
+
+#~ msgid "Login Type:"
+#~ msgstr "Type de connexion:"
+
+#~ msgid "Registered Email:"
+#~ msgstr "Email enregistré:"
+
+#~ msgid "Edit Attachment"
+#~ msgstr "Modifier la fixation"
+
+#~ msgid "Add Attachment"
+#~ msgstr "Ajouter fixation"
+
+#~ msgid "File:"
+#~ msgstr "Fichier:"
+
+#~ msgid "replace with new file"
+#~ msgstr "remplacer avec un nouveau fichier"
+
+#~ msgid "Details:"
+#~ msgstr "Détails:"
+
+#~ msgid "Edit "
+#~ msgstr "Modifier"
+
+#~ msgid "Add "
+#~ msgstr "Ajouter"
+
+#~ msgid "Show stats button?"
+#~ msgstr "Montrer les boutons de statistiques?"
+
+#~ msgid "Edit Currency"
+#~ msgstr "Modifier la Concurrence"
+
+#~ msgid "Add Currency"
+#~ msgstr "Ajouter Concurrence"
+
+#~ msgid "Code"
+#~ msgstr "Code"
+
+#~ msgid "Name"
+#~ msgstr "Nom"
+
+#~ msgid "Edit User"
+#~ msgstr "Modifier l'utilisateur"
+
+#~ msgid "Add New User"
+#~ msgstr "Ajouter un nouveau utilisateur"
+
+#~ msgid "Login ID"
+#~ msgstr "Identifiant de connexion"
+
+#~ msgid "First Name"
+#~ msgstr "Prènom"
+
+#~ msgid "Last Name"
+#~ msgstr "Nom"
+
+#~ msgid "Email Address"
+#~ msgstr "Adresse email"
+
+#~ msgid "Privilege"
+#~ msgstr "Privilège"
+
+#~ msgid "View Accounts"
+#~ msgstr "Montrer les comptes"
+
+#~ msgid "Edit Alert Email Address"
+#~ msgstr "Modifier l'alerte d'adresse email"
+
+#~ msgid "Add Alert Email Address"
+#~ msgstr "Ajouter alerte d'adresse email"
+
+#~ msgid "Edit Alert Days In Advance"
+#~ msgstr "Modifier l'alerte jours à l'avance"
+
+#~ msgid "Add Alert Days In Advance"
+#~ msgstr "Ajouter alerte jours à l'avance"
+
+#~ msgid "Edit Workflow"
+#~ msgstr "Modifier le workflow"
+
+#~ msgid "Resource Entry Requirements"
+#~ msgstr "Conditions d'entrée des ressources"
+
+#~ msgid "Workflow Steps"
+#~ msgstr "Étapes du Workflow"
+
+#~ msgid "Approval/Notification Group:"
+#~ msgstr "Approbation/Notification de Groupe"
+
+#~ msgid "Parent Step"
+#~ msgstr "Parent étape"
+
+#~ msgid "add step"
+#~ msgstr "ajouter une étape"
+
+#~ msgid "remove this step"
+#~ msgstr "effacer cet étape"
+
+#~ msgid "Edit User Group"
+#~ msgstr "Modifier le groupe d'utilisateur"
+
+#~ msgid "Add User Group"
+#~ msgstr "Ajouter une groupe d'utilisateur"
+
+#~ msgid "User Group"
+#~ msgstr "Groupe d'utilisateur"
+
+#~ msgid "Group Name:"
+#~ msgstr "Nom du groupe"
+
+#~ msgid "Email Address:"
+#~ msgstr "Adresse email"
+
+#~ msgid "Assigned Users"
+#~ msgstr "Utilisateurs asignés"
+
+#~ msgid "add user"
+#~ msgstr "Ajouter un utilisateur"
+
+#~ msgid "remove user from group"
+#~ msgstr "Supprimer un utilisateur du groupe"
+
+#~ msgid "Add / Edit Subject Relationships"
+#~ msgstr "Ajouter / Modifier la relation des sujets"
+
+#~ msgid "General Subject"
+#~ msgstr "Sujet général"
+
+#~ msgid "Detailed Subjects"
+#~ msgstr "Sujet détaillé"
+
+#~ msgid "add detail subject"
+#~ msgstr "Ajouter detail du sujet"
+
+#~ msgid "remove detailed subject"
+#~ msgstr "Supprimer le sujet détaillé"
+
+#~ msgid "subject in use"
+#~ msgstr "Sujet en utilisation"
+
+#~ msgid "Add General / Detail Subject Link"
+#~ msgstr "Ajouter général / détail lien du sujet"
+
+#~ msgid "General Subject Name"
+#~ msgstr "Nom général du sujet"
+
+#~ msgid "Detail Subject Name"
+#~ msgstr "Détail du nom de sujet"
+
+#~ msgid "add"
+#~ msgstr "ajouter"
+
+#~ msgid "(none found)"
+#~ msgstr "(non trouvé)"
+
+#~ msgid "Action "
+#~ msgstr "Action"
+
+#~ msgid " not set up!"
+#~ msgstr " ne pas etabli!"
+
+#~ msgid "edit"
+#~ msgstr "modifier"
+
+#~ msgid "edit resource"
+#~ msgstr "Modifier la ressource"
+
+#~ msgid "remove resource"
+#~ msgstr "Supprimer la ressource"
+
+#~ msgid "Record ID:"
+#~ msgstr "ID d'enregistrement:"
+
+#~ msgid "Created:"
+#~ msgstr "Créé:"
+
+#~ msgid "Last Update:"
+#~ msgstr "Dernière mise à jour:"
+
+#~ msgid "Related Products:"
+#~ msgstr "Produits connexes:"
+
+#~ msgid "Child:"
+#~ msgstr "Enfant:"
+
+#~ msgid "(Parent)"
+#~ msgstr "(Parent)"
+
+#~ msgid "view resource"
+#~ msgstr "Regarder la ressource"
+
+#~ msgid "View "
+#~ msgstr "Regarder "
+
+#~ msgid "Aliases:"
+#~ msgstr "Aliases:"
+
+#~ msgid "Organizations:"
+#~ msgstr "Organisations:"
+
+#~ msgid "Resource URL:"
+#~ msgstr "Ressource URL: "
+
+#~ msgid "Visit Resource URL"
+#~ msgstr "Ressource URL de visite"
+
+#~ msgid "Visit Secondary Resource URL"
+#~ msgstr "Ressource URL secondaire de visite"
+
+#~ msgid "edit product details"
+#~ msgstr "modifier les détails du produit"
+
+#~ msgid "remove subject"
+#~ msgstr "Supprimer le sujet"
+
+#~ msgid "add new subject"
+#~ msgstr "Ajouter nouveau sujet"
+
+#~ msgid "Additional Notes"
+#~ msgstr "Notes additionales"
+
+#~ msgid "add new note"
+#~ msgstr "ajouter une note"
+
+#~ msgid "edit note"
+#~ msgstr "modifier une note"
+
+#~ msgid "remove note"
+#~ msgstr "effacer une note"
+
+#~ msgid "edit order information"
+#~ msgstr "modifier l'order de l'information"
+
+#~ msgid "Purchasing Sites:"
+#~ msgstr "Site d'achats:"
+
+#~ msgid "Expiration Alert Enabled"
+#~ msgstr "Alerte d'expiration activé"
+
+#~ msgid "No payment information available."
+#~ msgstr "L'information du payment n'est pas disponible."
+
+#~ msgid "edit acquisitions information"
+#~ msgstr "modifier l'information des acquisitions"
+
+#~ msgid "License"
+#~ msgstr "Llicence"
+
+#~ msgid " on "
+#~ msgstr " sur "
+
+#~ msgid "Licenses:"
+#~ msgstr "Licences:"
+
+#~ msgid "No associated licenses available."
+#~ msgstr "Pas des licences associées disponibles."
+
+#~ msgid "edit license and status"
+#~ msgstr "Modifier la licence et le statut"
+
+#~ msgid "edit license status"
+#~ msgstr "Modifier le statut de la licence"
+
+#~ msgid "Access Information"
+#~ msgstr "Infromation d'accès"
+
+#~ msgid "Administering Sites:"
+#~ msgstr "Administration des sites:"
+
+#~ msgid "Authorized Sites:"
+#~ msgstr "Sites autorisés:"
+
+#~ msgid "Username / Password:"
+#~ msgstr "Nom d'utilisateur / Mot de passe:"
+
+#~ msgid "Registered IP Address:"
+#~ msgstr "Adresse IP enregistré:"
+
+#~ msgid "No access information available."
+#~ msgstr "Pas d'information d'accès disponible."
+
+#~ msgid "edit access information"
+#~ msgstr "modifier l'accès à l'information"
+
+#~ msgid "The following are archived contacts:"
+#~ msgstr "Les suivantes contacts sont archivées: "
+
+#~ msgid "Resource Specific:"
+#~ msgstr "Ressource spécifique:"
+
+#~ msgid "No Resource Specific Contacts"
+#~ msgstr "Il n'y a pas une ressource spécifique par les contacts"
+
+#~ msgid "add contact"
+#~ msgstr "Ajouter un contact"
+
+#~ msgid "Inherited:"
+#~ msgstr "Hérité:"
+
+#~ msgid "edit contact"
+#~ msgstr "Modifier le contact"
+
+#~ msgid "remove contact"
+#~ msgstr "Supprimer le contact"
+
+#~ msgid "Visit Contact in Organizations Module"
+#~ msgstr "Visitez contact dans le module Organisations"
+
+#~ msgid "No longer valid:"
+#~ msgstr "N'est plus valide:"
+
+#~ msgid "Location:"
+#~ msgstr "Emplacement:"
+
+#~ msgid "Last Updated:"
+#~ msgstr "Dernière mise à jour:"
+
+#~ msgid "No contacts available"
+#~ msgstr "Pas de contacts disponibles"
+
+#~ msgid " archived contact(s) available. "
+#~ msgstr " contact(s) archivée(s) disponible(s)."
+
+#~ msgid "show archived contacts"
+#~ msgstr "montrer les contacts archivées"
+
+#~ msgid "hide archived contacts"
+#~ msgstr "cacher les contacts archivées"
+
+#~ msgid "No Resource Specific Accounts"
+#~ msgstr "Il n'y a pas une ressource spécifié par les comptes"
+
+#~ msgid "add new account"
+#~ msgstr "ajouter une nouvelle compte"
+
+#~ msgid "edit account"
+#~ msgstr "Modifier la compte"
+
+#~ msgid "remove account"
+#~ msgstr "Supprimer une compte"
+
+#~ msgid "Visit Account in Organizations Module"
+#~ msgstr "Visitez Comptes sur le module Organisations"
+
+#~ msgid "Login URL:"
+#~ msgstr "URL de connexion:"
+
+#~ msgid "Visit Login URL"
+#~ msgstr "Source URL de connexion"
+
+#~ msgid "User Name:"
+#~ msgstr "Nom d'utilisateur:"
+
+#~ msgid "No accounts available"
+#~ msgstr "Pas des comptes disponibles"
+
+#~ msgid "view attachment"
+#~ msgstr "Regarder la fixation"
+
+#~ msgid "edit attachment"
+#~ msgstr "Modifier la fixation"
+
+#~ msgid "remove this attachment"
+#~ msgstr "suopprimer cette fixation"
+
+#~ msgid "No attachments available"
+#~ msgstr "Pas des fixations disponibles."
+
+#~ msgid "add new attachment"
+#~ msgstr "Ajouter une nouvelle fixation"
+
+#~ msgid ""
+#~ "No workflow steps have been set up for this resource's combination of "
+#~ "Acquisition Type and Resource Format."
+#~ msgstr ""
+#~ "Pas d'étapes de workflow ont été mis en place pour la combinaison de Type "
+#~ "d'Acquisition et le Format de Ressource."
+
+#~ msgid ""
+#~ "If you think this is in error, please contact your workflow administrator."
+#~ msgstr ""
+#~ "Si vous pensez qui cet un erreur, s'il vous plaît contactez à "
+#~ "l'administrateur de workflow"
+
+#~ msgid "Not entered into workflow."
+#~ msgstr "N'a pas entré dans le workflow"
+
+#~ msgid "Step"
+#~ msgstr "Étape"
+
+#~ msgid "Group"
+#~ msgstr "Groupe"
+
+#~ msgid "Start Date"
+#~ msgstr "Date de début"
+
+#~ msgid "Complete"
+#~ msgstr "Complète"
+
+#~ msgid "mark complete"
+#~ msgstr "marquer comme complète"
+
+#~ msgid "Workflow completed on "
+#~ msgstr "Workflow completé le "
+
+#~ msgid "Workflow restarted on "
+#~ msgstr "Workflow redémarré le "
+
+#~ msgid "restart workflow"
+#~ msgstr "Redémarrer le workflow"
+
+#~ msgid "mark entire workflow complete"
+#~ msgstr "marquer tout le workflow comme complète"
+
+#~ msgid "Print View"
+#~ msgstr "Imprimer ***"
+
+#~ msgid "Catalog View"
+#~ msgstr "Regarder le Catalogue"
+
+#~ msgid "Parent Record"
+#~ msgstr "Registre du parent"
+
+#~ msgid "Child Record(s)"
+#~ msgstr "Registre(s) enfant(s)"
+
+#~ msgid "Organizations Module"
+#~ msgstr "Module d'organisations"
+
+#~ msgid "Licensing Module"
+#~ msgstr "Module des licences"
+
+#~ msgid "Usage Statistics Module"
+#~ msgstr "Module des statistiques d'utilisation"
+
+#~ msgid "Get Statistics"
+#~ msgstr "Obtenir les statistiques"
+
+#~ msgid "Saved Requests"
+#~ msgstr "Rêquetes enregistrées"
+
+#~ msgid "No saved requests"
+#~ msgstr "Pas des requêtes enregistrées"
+
+#~ msgid "ID"
+#~ msgstr "Identifiant"
+
+#~ msgid "Date Created"
+#~ msgstr "Date de création"
+
+#~ msgid "Status"
+#~ msgstr "Statut"
+
+#~ msgid "edit request"
+#~ msgstr "modifier la requête"
+
+#~ msgid "remove request"
+#~ msgstr "supprimer la requête"
+
+#~ msgid "Submitted Requests"
+#~ msgstr "Requêtes soumises"
+
+#~ msgid "No submitted requests"
+#~ msgstr "Pas des requêtes soumises"
+
+#~ msgid "Outstanding Tasks"
+#~ msgstr "Tâches en suspens"
+
+#~ msgid "No outstanding requests"
+#~ msgstr "Pas des requêtes en suspens"
+
+#~ msgid "Routing Step"
+#~ msgstr "Etape de routage"
+
+#~ msgid "Sorry, no requests fit your query"
+#~ msgstr "Désolé, il n'y a pas des résultats par votre requête"
+
+#~ msgid "Displaying "
+#~ msgstr "En montrant "
+
+#~ msgid " to "
+#~ msgstr " sur "
+
+#~ msgid " of "
+#~ msgstr " de "
+
+#~ msgid " Resource Records"
+#~ msgstr " ressources enregistrées"
+
+#~ msgid "next page"
+#~ msgstr "page suivante"
+
+#~ msgid "Creator"
+#~ msgstr "Créateur"
+
+#~ msgid "previous page"
+#~ msgstr "page précédente"
+
+#~ msgid "records per page"
+#~ msgstr "resultats par page"
+
+#~ msgid "edit user"
+#~ msgstr "Modifier l'utilisateur"
+
+#~ msgid "remove"
+#~ msgstr "supprimer"
+
+#~ msgid "add new user"
+#~ msgstr "Ajouter un nouveau utilisateur"
+
+#~ msgid "add new currency"
+#~ msgstr "Ajouter une vouvelle concurrence"
+
+#~ msgid "Value"
+#~ msgstr "Valeur"
+
+#~ msgid "add new "
+#~ msgstr "ajouter un nouveau  "
+
+#~ msgid "add email address"
+#~ msgstr "Ajouter une nouvelle adresse email"
+
+#~ msgid "Days in advance of expiration"
+#~ msgstr "Jours à l'avance de expiration"
+
+#~ msgid "add days"
+#~ msgstr "ajouter jours"
+
+#~ msgid "Workflow Setup"
+#~ msgstr "Configuration du workflow"
+
+#~ msgid "You must set up at least one user group before you can add workflows"
+#~ msgstr ""
+#~ "Vous devez configurer au moins une groupe, après vous pouvez ajouter "
+#~ "workflows"
+
+#~ msgid "User Group Setup"
+#~ msgstr "Configuration de groupe d'utilisateur"
+
+#~ msgid "Group Name"
+#~ msgstr "Nom du groupe"
+
+#~ msgid "add user group"
+#~ msgstr "Ajouter groupe d'utilisateur"
+
+#~ msgid "Detailed Subject"
+#~ msgstr "Sujet détaillé"
+
+#~ msgid "Subject Relationships"
+#~ msgstr "Relation des sujets"
+
+#~ msgid "Note successfully deleted."
+#~ msgstr "La note a été supprimé avec succès."
+
+#~ msgid "Resource successfully deleted."
+#~ msgstr "La ressource a été supprimé avec succès"
+
+#~ msgid "success uploading!"
+#~ msgstr "Téléchargement correcte!"
+
+#~ msgid "There was a problem saving your file to "
+#~ msgstr "Il y avait un problème pour enregistrer votre fichier sur "
+
+#~ msgid "Please ensure your attachments directory is writable."
+#~ msgstr ""
+#~ "S'il vous plaît, verifiez que votre dossier de attachement a des droits "
+#~ "d'écriture."
+
+#~ msgid "Unable to delete  - this "
+#~ msgstr "N'est pas possible supprimer - "
+
+#~ msgid ""
+#~ " is in use.  Please make sure no resources are set up with this "
+#~ "information."
+#~ msgstr ""
+#~ " est en utilisation. S'il vous plaît, assurez-vous  qu'aucune ressource "
+#~ "est configurée avec cet information."
+
+#~ msgid ""
+#~ "Unable to delete.  Please make sure no resources are set up with this "
+#~ "information."
+#~ msgstr ""
+#~ "N'est pas possible supprimer. S'il vous plaît, assurez-vous qu'aucune "
+#~ "ressource est configurée avec cet information."
+
+#~ msgid "User successfully saved."
+#~ msgstr "Utilisateur enregistré avec succès"
+
+#~ msgid "A duplicate "
+#~ msgstr "Il y a un doublon "
+
+#~ msgid " exists."
+#~ msgstr " existant."
+
+#~ msgid "Search"
+#~ msgstr "Recherche"
+
+#~ msgid "new search"
+#~ msgstr "Nouvelle recherche"
+
+#~ msgid "Name (contains)"
+#~ msgstr "Nom (contains)"
+
+#~ msgid "go!"
+#~ msgstr "Valider!"
+
+#~ msgid "Fund"
+#~ msgstr "Fonds"
+
+#~ msgid "All"
+#~ msgstr "Tous"
+
+#~ msgid "(none)"
+#~ msgstr "(aucun)"
+
+#~ msgid "Record ID"
+#~ msgstr "ID d'enregistrement"
+
+#~ msgid "Starts with"
+#~ msgstr "Commence avec"
+
+#~ msgid "more options..."
+#~ msgstr "plus des options..."
+
+#~ msgid "Note (contains)"
+#~ msgstr "Note (contains)"
+
+#~ msgid "Date Created Between"
+#~ msgstr "Date de création entre"
+
+#~ msgid "and"
+#~ msgstr "et"
+
+#~ msgid "Purchase Site"
+#~ msgstr "Site d'achat"
+
+#~ msgid "My Queue"
+#~ msgstr "Ma liste"
+
+#~ msgid "Success!"
+#~ msgstr "Fait!"
+
+#~ msgid "New resource added"
+#~ msgstr "Nouvelle ressource ajouté"
+
+#~ msgid "Cataloging"
+#~ msgstr "Catalogage"
+
+#~ msgid "Identifier:"
+#~ msgstr "Identifiant:"
+
+#~ msgid "Source URL:"
+#~ msgstr "Source URL: "
+
+#~ msgid "Visit Source URL"
+#~ msgstr "Source URL de visite"
+
+#~ msgid "Cataloging Type:"
+#~ msgstr "Type de catalogage:"
+
+#~ msgid "Cataloging Status:"
+#~ msgstr "Stat de catalogage:"
+
+#~ msgid "# Records Available:"
+#~ msgstr "# Enregistrements disponibles"
+
+#~ msgid "# Records Loaded:"
+#~ msgstr "# Enregistrements chargées"
+
+#~ msgid "OCLC Holdings:"
+#~ msgstr "OCLC Holdings:"
+
+#~ msgid "Yes"
+#~ msgstr "Oui"
+
+#~ msgid "No"
+#~ msgstr "Non"
+
+#~ msgid "No cataloging information available."
+#~ msgstr "Le catalogue d'information n'est pas disponible."
+
+#~ msgid "edit cataloging details"
+#~ msgstr "modifier les détails du catalogage"
+
+#~ msgid "Edit Cataloging"
+#~ msgstr "Modifier le catalogage"
+
+#~ msgid "Record Set"
+#~ msgstr "Jeu d'enregistrement"
+
+#~ msgid "# Records Available"
+#~ msgstr "# Enregistrements disponibles"
+
+#~ msgid "# Records Loaded"
+#~ msgstr "# Enregistrements chargées"
+
+#~ msgid "OCLC Holdings"
+#~ msgstr "OCLC Holdings"
+
+#~ msgid "No Resources found fitting alert day criteria"
+#~ msgstr "Pas des ressources trouvées selon les critères d'alerte du jour"
+
+#~ msgid "Alerts not enabled in configuration.ini file"
+#~ msgstr "Les Alertes ne sont pas activées dans le fichier configuration.ini"
+
+#~ msgid ""
+#~ "LDAP Connection is not working or has timed out.  Please check "
+#~ "configuration.ini to verify settings."
+#~ msgstr ""
+#~ "La connexion LDAP ne marche pas ou a expiré. S'il vous plaît vérifiez la "
+#~ "configuration du configuration.ini."
+
+#~ msgid ""
+#~ "JavaScript must be enabled in order for you to use CORAL. However, it "
+#~ "seems JavaScript is either disabled or not supported by your browser. To "
+#~ "use CORAL, enable JavaScript by changing your browser options, then "
+#~ msgstr ""
+#~ "JavaScript doit être activé pour utiliser CORAL. Cependant, on semble qui "
+#~ "JavaScript est desactivé ou n'est pas supporté par votre navigateur. Pour "
+#~ "utiliser CORAL, activez JavaScript en modifiant la configuration de votre "
+#~ "navigateur, après "
+
+#~ msgid "try again"
+#~ msgstr "réessayez"
+
+#~ msgid "Hello, "
+#~ msgstr "Bonjour, "
+
+#~ msgid "logout"
+#~ msgstr "Se déconnecter"
+
+#~ msgid "New Resource"
+#~ msgstr "Nouvelle ressource"
+
+#~ msgid ""
+#~ "Login is not working.  Check the .htaccess file and the "
+#~ "remoteAuthVariableName specified in /admin/configuration.ini"
+#~ msgstr ""
+#~ "La connexion ne marche pas. Vérifiez le fichier .htaccess et "
+#~ "remoteAuthVariableName specifié en /admin/configuration.ini"
+
+#, fuzzy
+#~ msgid "CatalogingType"
+#~ msgstr "Stat de catalogue "
+
+#~ msgid "Valider!"
+#~ msgstr "Chercher"

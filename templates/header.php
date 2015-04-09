@@ -101,15 +101,17 @@ $coralURL = $util->getCORALURL();
 <td style='width:870px;height:19px;'>
 <?php
 if ($user->isAdmin()){ ?>
-	<a href='index.php'><img src="images/menu/menu-home<?php if ($currentPage == 'index.php') { echo "-on"; } ?>.gif" hover="images/menu/menu-home-over.gif" class="rollover" /></a><img src='images/menu/menu-bar.gif'><a href='ajax_forms.php?action=getLicenseForm&height=265&width=260&modal=true&newLicenseID=' class='thickbox' id='newLicense'><img src='images/menu/menu-newlicense.gif' hover="images/menu/menu-newlicense-over.gif" class="rollover"></a><img src='images/menu/menu-bar.gif'><a href='in_progress.php'><img src="images/menu/menu-licensesinprogress<?php if ($currentPage == 'in_progress.php') { echo "-on"; } ?>.gif" hover="images/menu/menu-licensesinprogress-over.gif" class="rollover" /></a><img src='images/menu/menu-bar.gif'><a href='compare.php'><img src="images/menu/menu-expressioncomparison<?php if ($currentPage == 'compare.php') { echo "-on"; } ?>.gif" hover="images/menu/menu-expressioncomparison-over.gif" class="rollover" /></a><?php if (($config->settings->resourcesModule == 'Y') && (strlen($config->settings->resourcesDatabaseName) > 0)) { ?><img src='images/menu/menu-bar.gif'><a href='calendar.php'><img src="images/menu/menu-calendar<?php if ($currentPage == 'calendar.php') { echo "-on"; } ?>.gif" hover="images/menu/menu-calendar-over.gif" class="rollover" /></a><?php } ?><img src='images/menu/menu-bar.gif'><a href='admin.php'><img src='images/menu/menu-admin<?php if ($currentPage == 'admin.php') { echo "-on"; } ?>.gif' hover="images/menu/menu-admin-over.gif" id="menu-last" class="rollover" /></a><img src='images/menu/menu-end<?php if ($currentPage == 'admin.php') { echo "-on"; } ?>.gif' hover="images/menu/menu-end-over.gif" id="menu-end" />
+    <a href='index.php'><span class="menubtn<?php if ($currentPage == 'index.php') { echo " active"; } ?>" id="firstmenubtn"><?= _("Home");?></span></a><a href='ajax_forms.php?action=getLicenseForm&height=265&width=260&modal=true&newLicenseID=' class='thickbox' id='newLicense'><span class="menubtn"><?= _("New License");?></span></a><a href='in_progress.php'><span class="menubtn<?php if ($currentPage == 'in_progress.php') { echo " active"; } ?>" ><?= _("Licenses in Progress");?></span></a><a href='compare.php'><span class="menubtn<?php if ($currentPage == 'compare.php') { echo " active"; } ?>">Expression Comparision</span></a><?php if (($config->settings->resourcesModule == 'Y') && (strlen($config->settings->resourcesDatabaseName) > 0)) { ?><a href='calendar.php'><span class="menubtn<?php if ($currentPage == 'calendar.php') { echo " active"; } ?>">Calendar</span></a><?php } ?><a href='admin.php'><span class="menubtn<?php if ($currentPage == 'admin.php') { echo " active"; } ?>" id="lastmenubtn"><?= _("Admin");?></span></a>
+
 <?php }else if ($user->canEdit()){ ?>
-	<a href='index.php'><img src="images/menu/menu-home<?php if ($currentPage == 'index.php') { echo "-on"; } ?>.gif" hover="images/menu/menu-home-over.gif" class="rollover" /></a><img src='images/menu/menu-bar.gif'><a href='ajax_forms.php?action=getLicenseForm&height=265&width=260&modal=true&newLicenseID=' class='thickbox' id='newLicense'><img src='images/menu/menu-newlicense.gif' hover="images/menu/menu-newlicense-over.gif" class="rollover"></a><img src='images/menu/menu-bar.gif'><a href='in_progress.php'><img src="images/menu/menu-licensesinprogress<?php if ($currentPage == 'in_progress.php') { echo "-on"; } ?>.gif" hover="images/menu/menu-licensesinprogress-over.gif" class="rollover" /></a><img src='images/menu/menu-bar.gif'><a href='compare.php'><img src="images/menu/menu-expressioncomparison<?php if ($currentPage == 'compare.php') { echo "-on"; } ?>.gif" hover="images/menu/menu-expressioncomparison-over.gif" class="rollover" /></a><?php if (($config->settings->resourcesModule == 'Y') && (strlen($config->settings->resourcesDatabaseName) > 0)) { ?><img src='images/menu/menu-bar.gif'><a href='calendar.php'><img src="images/menu/menu-calendar<?php if ($currentPage == 'calendar.php') { echo "-on"; } ?>.gif" hover="images/menu/menu-calendar-over.gif" id="menu-last" class="rollover" /></a><?php } ?><img src='images/menu/menu-end<?php if ($currentPage == 'calendar.php') { echo "-on"; } ?>.gif' hover="images/menu/menu-end-over.gif" id="menu-end" />
+	<a href='index.php'><span class="menubtn<?php if ($currentPage == 'index.php') { echo " active"; } ?>" id="firstmenubtn"><?= _("Home");?></span></a><a href='ajax_forms.php?action=getLicenseForm&height=265&width=260&modal=true&newLicenseID=' class='thickbox' id='newLicense'><span class="menubtn"><?= _("New License");?></span></a><!--<img src='images/menu/menu-bar.gif'>--><a href='in_progress.php'><span class="menubtn<?php if ($currentPage == 'in_progress.php') { echo " active"; } ?>" ><?= _("Licenses in Progress");?></span></a><!--<img src='images/menu/menu-bar.gif'>--><a href='compare.php'><span class="menubtn<?php if ($currentPage == 'compare.php') { echo " active"; } ?>">Expression Comparision</span></a><?php if (($config->settings->resourcesModule == 'Y') && (strlen($config->settings->resourcesDatabaseName) > 0)) { ?><!--<img src='images/menu/menu-bar.gif'>--><a href='calendar.php'><span class="menubtn<?php if ($currentPage == 'calendar.php') { echo " active"; } ?>" id="lastmenubtn">Calendar</span></a><?php } ?>
+
 <?php }else{ ?>
-	<a href='index.php'><img src="images/menu/menu-home<?php if ($currentPage == 'index.php') { echo "-on"; } ?>.gif" hover="images/menu/menu-home-over.gif" class="rollover" /></a><img src='images/menu/menu-bar.gif'><a href='in_progress.php'><img src="images/menu/menu-licensesinprogress<?php if ($currentPage == 'in_progress.php') { echo "-on"; } ?>.gif" hover="images/menu/menu-licensesinprogress-over.gif" class="rollover" /></a><a href='calendar.php'><img src="images/menu/menu-calendar<?php if ($currentPage == 'calendar.php') { echo "-on"; } ?>.gif" hover="images/menu/menu-calendar-over.gif" id="menu-last" class="rollover" /></a><img src='images/menu/menu-end<?php if ($currentPage == 'calendar.php') { echo "-on"; } ?>.gif' hover="images/menu/menu-end-over.gif" id="menu-end" />
+	<a href='index.php'><span class="menubtn<?php if ($currentPage == 'index.php') { echo " active"; } ?>" id="firstmenubtn"><?= _("Home");?></span></a><a href='in_progress.php'><span class="menubtn<?php if ($currentPage == 'in_progress.php') { echo " active"; } ?>" ><?= _("Licenses in Progress");?></span></a><a href='calendar.php'><span class="menubtn<?php if ($currentPage == 'calendar.php') { echo " active"; } ?>" id="lastmenubtn">Calendar</span></a>
 <?php } ?>
 </td>
 
-<td style='width:130px;height:19px;' align='right'>
+<td style='width:230px;height:19px;' align='right'>
 <?php
 
 //only show the 'Change Module' if there are other modules installed or if there is an index to the main CORAL page
@@ -121,7 +123,7 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
 
 	<div style='text-align:left;'>
 		<ul class="tabs">
-		<li style="background: url('images/change/coral-change.gif') no-repeat right;">&nbsp;
+		<li class="changeMod"><?= _("Change Module");?>&nbsp;▼
 			<ul class="coraldropdown">
 				<?php if (file_exists($util->getCORALPath() . "index.php")) {?>
 				<li><a href="<?php echo $coralURL; ?>" target='_blank'><img src='images/change/coral-main.gif'></a></li>
@@ -149,8 +151,42 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
 			</ul>
 		</li>
 		</ul>
+<select name="lang" id="lang" class="dropDownLang">
+               <?php
+                $fr="<option value='fr' selected='selected'>Français</option><option value='en'>English</option>";
+                $en="<option value='fr'>Français</option><option value='en' selected='selected'>English</option>";
+                if(isset($_COOKIE["lang"])){
+                    if($_COOKIE["lang"]=='fr'){
+                        echo $fr;
+                    }else{
+                        echo $en;
+                    }
+                }else{
+                    $defLang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,2);
+                    if($defLang=='fr'){
+                        echo $fr;
+                    }else{
+                        echo $en;
+                    }
+                }
+                ?>
 
-	</div>
+            </select>
+        </div>
+        <script>
+            $("#lang").change(function() {
+                setLanguage($("#lang").val());
+                location.reload();
+            });
+
+            function setLanguage(lang) {
+                var wl = window.location, now = new Date(), time = now.getTime();
+                var cookievalid=86400000; // 1 jour (1000*60*60*24)
+                time += cookievalid;
+                now.setTime(time);
+                document.cookie ='lang='+lang+';path=/'+';domain='+wl.host+';expires='+now;
+            }
+        </script>
 	<?php
 
 } else {
