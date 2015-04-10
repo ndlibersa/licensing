@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-10 14:10+0100\n"
-"PO-Revision-Date: 2015-04-10 14:10+0100\n"
+"POT-Creation-Date: 2015-04-10 15:16+0100\n"
+"PO-Revision-Date: 2015-04-10 15:16+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -102,7 +102,7 @@ msgstr "Ne peut pas recuperer une clé indefini ("
 
 #: ajax_forms.php:47 ajax_htmldata.php:628
 msgid "License"
-msgstr "Llicence"
+msgstr "Licence"
 
 #: ajax_forms.php:51
 msgid "License Name:"
@@ -185,13 +185,14 @@ msgstr "Date de l'archivage de document"
 msgid "Archive Date:"
 msgstr "Date d'archivage:"
 
-#: ajax_forms.php:305
+#: ajax_forms.php:305 ajax_processing.php:505 ajax_processing.php:517
+#: ajax_processing.php:530
 msgid "Continue"
 msgstr "Continuer"
 
 #: ajax_forms.php:335
 msgid "Terms Tool Resource Link"
-msgstr "Lien à les ressources de l'outil Terms"
+msgstr "Lien à les ressources d'outil Terms"
 
 #: ajax_forms.php:340 ajax_htmldata.php:1077
 msgid "For Document:"
@@ -199,7 +200,7 @@ msgstr "Pour le document:"
 
 #: ajax_forms.php:363
 msgid "Terms Tool Resource:"
-msgstr "Ressource de l'outil Terms"
+msgstr "Ressource d'outil Terms"
 
 #: ajax_forms.php:400 ajax_htmldata.php:771 ajax_htmldata.php:776
 #: ajax_htmldata.php:901 ajax_htmldata.php:906
@@ -355,7 +356,7 @@ msgstr ""
 
 #: ajax_forms.php:949
 msgid "Terms Tool Email"
-msgstr "Email de l'outil Terms"
+msgstr "Email d'outil Terms"
 
 #: ajax_forms.php:952
 msgid ""
@@ -363,7 +364,7 @@ msgid ""
 "when the terms tool box is checked on the Expressions tab."
 msgstr ""
 "Tapez l'adresse email si vous souhaitez que cet utilisateur reçoive des "
-"notifications par email lorsque la boîte de l'outil terms est activée dans "
+"notifications par email lorsque la boîte d'outil terms est activée dans "
 "l'onglet Expressions."
 
 #: ajax_forms.php:952
@@ -389,7 +390,7 @@ msgstr "Afficher"
 
 #: ajax_forms.php:1004
 msgid "Note type of display allows for terms tool use"
-msgstr "Type de note qui permet d'afficher l'utilisation de l'outil terms"
+msgstr "Type de note qui permet d'afficher l'utilisation d'outil terms"
 
 #: ajax_forms.php:1024
 msgid "Edit"
@@ -412,11 +413,11 @@ msgstr "Qualificateur"
 msgid "For Expression Type"
 msgstr "Pour le type de l'expression"
 
-#: ajax_forms.php:1194 ajax_htmldata.php:1561
+#: ajax_forms.php:1194 ajax_htmldata.php:1561 ajax_processing.php:1172
 msgid "Action "
 msgstr "Action"
 
-#: ajax_forms.php:1194 ajax_htmldata.php:1561
+#: ajax_forms.php:1194 ajax_htmldata.php:1561 ajax_processing.php:1172
 msgid " not set up!"
 msgstr " ne pas etabli!"
 
@@ -453,7 +454,7 @@ msgstr "(non trouvé)"
 
 #: ajax_htmldata.php:159
 msgid "add new terms tool resource link"
-msgstr "Ajouter un nouveau lien à les ressources de l'outil Terms"
+msgstr "Ajouter un nouveau lien à les ressources d'outil Terms"
 
 #: ajax_htmldata.php:183
 msgid "Details"
@@ -659,11 +660,131 @@ msgstr "Ajouter une nouvelle expression"
 
 #: ajax_htmldata.php:1265
 msgid "Terms Tool Update Email"
-msgstr "Mise à jour l'email de l'outil Terms"
+msgstr "Mise à jour l'email d'outil Terms"
 
 #: ajax_htmldata.php:1486
 msgid "Limit by Qualifier:"
 msgstr "Limite par le qualificateur:"
+
+#: ajax_processing.php:96
+msgid "License successfully deleted."
+msgstr "La licence a été supprimé avec succès."
+
+#: ajax_processing.php:172 ajax_processing.php:957
+msgid "success uploading!"
+msgstr "Téléchargement correcte!"
+
+#: ajax_processing.php:175 ajax_processing.php:960
+msgid "There was a problem saving your file to"
+msgstr "Il y avait un problème pour enregistrer votre fichier sur"
+
+#: ajax_processing.php:236
+msgid "Document Saved Successfully."
+msgstr "Le document a été enregistré avec succès."
+
+#: ajax_processing.php:250
+msgid "Signature Deleted Successfully."
+msgstr "Signature effacé avec succès."
+
+#: ajax_processing.php:312
+msgid "Expression Removed Successfully."
+msgstr "Expression supprimé avec succès."
+
+#: ajax_processing.php:335
+msgid ""
+"An expression in the licensing module has been approved for terms tool use."
+msgstr ""
+"Une expression dans le module licensing a été approuvé par l'utilisation "
+"d'outil terms."
+
+#: ajax_processing.php:336
+msgid "License:  "
+msgstr "Licence:  "
+
+#: ajax_processing.php:337
+msgid "View License Record:  "
+msgstr "Regarder la licence enregistrée:  "
+
+#: ajax_processing.php:341
+msgid "Licensing - expression set to production use"
+msgstr "Licensing - expression reglé pour l'utilisation en production"
+
+#: ajax_processing.php:346
+msgid "Approved for terms tool display."
+msgstr "Aprouvépor l'affichage dans l'outil terms."
+
+#: ajax_processing.php:348
+msgid "Removed from terms tool display."
+msgstr "Supprimé pour l'affichage dans l'outil terms."
+
+#: ajax_processing.php:375
+msgid "Expression Note Updated Successfully."
+msgstr "La note de l'expression a été mit à jour avec succès."
+
+#: ajax_processing.php:391
+msgid "Expression Note Added Successfully."
+msgstr "La note de l'expression a été enregistré avec succès."
+
+#: ajax_processing.php:415
+msgid "Note Removed Successfully."
+msgstr "La note a été supprimé avec succès."
+
+#: ajax_processing.php:452
+msgid "Terms Tool Resource Link successfully deleted"
+msgstr "Le lien de la ressource d'outil terms a été supprimé avec succès"
+
+#: ajax_processing.php:468
+msgid "License Updated Successfully."
+msgstr "La licence a été mit à jour avec succès."
+
+#: ajax_processing.php:477
+msgid "License Added Successfully."
+msgstr "La licence a été enregistré avec succès."
+
+#: ajax_processing.php:477
+msgid "Please continue to upload documents and add expressions or emails."
+msgstr ""
+"S'il vous plaît, continuez avec le téléchargement des documents et ajoutez "
+"expressions ou emails."
+
+#: ajax_processing.php:514 ajax_processing.php:527
+msgid "SQL Insert Failed."
+msgstr "L'insertion SQL a echouée."
+
+#: ajax_processing.php:514 ajax_processing.php:527
+msgid "Please make sure everything is filled out correctly."
+msgstr "S'il vous plaît, assurez-vous que tout est correctement rempli."
+
+#: ajax_processing.php:772
+msgid "Unable to delete  - this "
+msgstr "N'est pas possible supprimer - "
+
+#: ajax_processing.php:772
+msgid ""
+" is in use.  Please make sure no licenses are set up with this information."
+msgstr ""
+" est en utilisation. S'il vous plaît, assurez-vous qu'aucune licence est "
+"configurée avec cet information."
+
+#: ajax_processing.php:778
+msgid ""
+"Unable to delete.  Please make sure no licenses are set up with this "
+"information."
+msgstr ""
+"N'est pas possible supprimer. S'il vous plaît, assurez-vous qu'aucune "
+"licence est configurée avec cet information."
+
+#: ajax_processing.php:1027
+msgid "Attachment successfully deleted"
+msgstr "La fixation a été supprimé avec succès."
+
+#: ajax_processing.php:1041
+msgid "Attachment file successfully deleted"
+msgstr "Le fichier de la fixation a été supprimé avec succès."
+
+#: ajax_processing.php:1062
+msgid "Status has been updated"
+msgstr "Le statut a été mit à jour"
 
 #: templates/header.php:35
 msgid ""
@@ -1400,39 +1521,10 @@ msgstr "Changer le module"
 #~ msgid "Subject Relationships"
 #~ msgstr "Relation des sujets"
 
-#~ msgid "Note successfully deleted."
-#~ msgstr "La note a été supprimé avec succès."
-
-#~ msgid "Resource successfully deleted."
-#~ msgstr "La ressource a été supprimé avec succès"
-
-#~ msgid "success uploading!"
-#~ msgstr "Téléchargement correcte!"
-
-#~ msgid "There was a problem saving your file to "
-#~ msgstr "Il y avait un problème pour enregistrer votre fichier sur "
-
 #~ msgid "Please ensure your attachments directory is writable."
 #~ msgstr ""
 #~ "S'il vous plaît, verifiez que votre dossier de attachement a des droits "
 #~ "d'écriture."
-
-#~ msgid "Unable to delete  - this "
-#~ msgstr "N'est pas possible supprimer - "
-
-#~ msgid ""
-#~ " is in use.  Please make sure no resources are set up with this "
-#~ "information."
-#~ msgstr ""
-#~ " est en utilisation. S'il vous plaît, assurez-vous  qu'aucune ressource "
-#~ "est configurée avec cet information."
-
-#~ msgid ""
-#~ "Unable to delete.  Please make sure no resources are set up with this "
-#~ "information."
-#~ msgstr ""
-#~ "N'est pas possible supprimer. S'il vous plaît, assurez-vous qu'aucune "
-#~ "ressource est configurée avec cet information."
 
 #~ msgid "User successfully saved."
 #~ msgstr "Utilisateur enregistré avec succès"
