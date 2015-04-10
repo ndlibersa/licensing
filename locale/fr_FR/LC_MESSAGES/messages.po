@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-10 11:45+0100\n"
-"PO-Revision-Date: 2015-04-10 11:45+0100\n"
+"POT-Creation-Date: 2015-04-10 12:41+0100\n"
+"PO-Revision-Date: 2015-04-10 12:44+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -100,7 +100,7 @@ msgstr "Il y avait un problème avec la base de données: "
 msgid "Cannot get value for undefined key ("
 msgstr "Ne peut pas recuperer une clé indefini ("
 
-#: ajax_forms.php:47
+#: ajax_forms.php:47 ajax_htmldata.php:628
 msgid "License"
 msgstr "Llicence"
 
@@ -116,7 +116,7 @@ msgstr "Éditeur / Fournisseur:"
 msgid "Consortium:"
 msgstr "Consortium:"
 
-#: ajax_forms.php:94
+#: ajax_forms.php:94 ajax_htmldata.php:494
 msgid ""
 "There was an error processing this request - please verify configuration.ini "
 "is set up for organizations correctly and the database and tables have been "
@@ -193,7 +193,7 @@ msgstr "Continuer"
 msgid "Terms Tool Resource Link"
 msgstr "Lien à les ressources de l'outil Terms"
 
-#: ajax_forms.php:340
+#: ajax_forms.php:340 ajax_htmldata.php:1077
 msgid "For Document:"
 msgstr "Pour le document:"
 
@@ -201,7 +201,8 @@ msgstr "Pour le document:"
 msgid "Terms Tool Resource:"
 msgstr "Ressource de l'outil Terms"
 
-#: ajax_forms.php:400
+#: ajax_forms.php:400 ajax_htmldata.php:771 ajax_htmldata.php:776
+#: ajax_htmldata.php:901 ajax_htmldata.php:906
 msgid "Signatures"
 msgstr "Signatures"
 
@@ -209,11 +210,12 @@ msgstr "Signatures"
 msgid "Signer Name"
 msgstr "Nom de signataire"
 
-#: ajax_forms.php:407
+#: ajax_forms.php:407 ajax_htmldata.php:182
 msgid "Date"
 msgstr "Date"
 
-#: ajax_forms.php:408
+#: ajax_forms.php:408 ajax_htmldata.php:769 ajax_htmldata.php:774
+#: ajax_htmldata.php:899 ajax_htmldata.php:904 ajax_htmldata.php:1081
 msgid "Type"
 msgstr "Type"
 
@@ -221,11 +223,15 @@ msgstr "Type"
 msgid "commit update"
 msgstr "Mise à jour de l'engagement"
 
-#: ajax_forms.php:456 ajax_forms.php:725
+#: ajax_forms.php:456 ajax_forms.php:725 ajax_htmldata.php:234
+#: ajax_htmldata.php:1227 ajax_htmldata.php:1410
 msgid "edit"
 msgstr "modifier"
 
 #: ajax_forms.php:457 ajax_forms.php:726 ajax_forms.php:813
+#: ajax_htmldata.php:142 ajax_htmldata.php:234 ajax_htmldata.php:1148
+#: ajax_htmldata.php:1228 ajax_htmldata.php:1285 ajax_htmldata.php:1333
+#: ajax_htmldata.php:1450
 msgid "remove"
 msgstr "supprimer"
 
@@ -257,11 +263,11 @@ msgstr "Ajouter une expression"
 msgid "Qualifier:"
 msgstr "Qualificateur:"
 
-#: ajax_forms.php:634
+#: ajax_forms.php:634 ajax_htmldata.php:541
 msgid "Document Text:"
 msgstr "Texte de document"
 
-#: ajax_forms.php:672 ajax_forms.php:682
+#: ajax_forms.php:672 ajax_forms.php:682 ajax_htmldata.php:629
 msgid "Notes"
 msgstr "Notes"
 
@@ -290,7 +296,8 @@ msgstr "Fixations:"
 msgid "Update"
 msgstr "Mise à jour"
 
-#: ajax_forms.php:863
+#: ajax_forms.php:863 ajax_htmldata.php:1284 ajax_htmldata.php:1332
+#: ajax_htmldata.php:1449
 msgid "update"
 msgstr "Mise à jour"
 
@@ -306,19 +313,19 @@ msgstr "Ajouter un nouveau"
 msgid "User"
 msgstr "Utilisateur"
 
-#: ajax_forms.php:911
+#: ajax_forms.php:911 ajax_htmldata.php:1256
 msgid "Login ID"
 msgstr "Identifiant de connexion"
 
-#: ajax_forms.php:912
+#: ajax_forms.php:912 ajax_htmldata.php:1257
 msgid "First Name"
 msgstr "Prènom"
 
-#: ajax_forms.php:913
+#: ajax_forms.php:913 ajax_htmldata.php:1258
 msgid "Last Name"
 msgstr "Nom"
 
-#: ajax_forms.php:914
+#: ajax_forms.php:914 ajax_htmldata.php:1259
 msgid "Privilege"
 msgstr "Privilège"
 
@@ -364,11 +371,11 @@ msgid "Leave this field blank if the user shouldn't receive emails."
 msgstr ""
 "Laissez ce champ vide si l'utilisateur ne doit pas recevoir des emails."
 
-#: ajax_forms.php:993 ajax_forms.php:994
+#: ajax_forms.php:993 ajax_forms.php:994 ajax_htmldata.php:1322
 msgid "Expression Type"
 msgstr "Type d'expression"
 
-#: ajax_forms.php:995
+#: ajax_forms.php:995 ajax_htmldata.php:1323
 msgid "Note Type"
 msgstr "Type de note"
 
@@ -396,21 +403,308 @@ msgstr "Nom de la variable"
 msgid "Value"
 msgstr "Valeur"
 
-#: ajax_forms.php:1144 ajax_forms.php:1167
+#: ajax_forms.php:1144 ajax_forms.php:1167 ajax_htmldata.php:1084
+#: ajax_htmldata.php:1437
 msgid "Qualifier"
 msgstr "Qualificateur"
 
-#: ajax_forms.php:1146
+#: ajax_forms.php:1146 ajax_htmldata.php:1436
 msgid "For Expression Type"
 msgstr "Pour le type de l'expression"
 
-#: ajax_forms.php:1194
+#: ajax_forms.php:1194 ajax_htmldata.php:1561
 msgid "Action "
 msgstr "Action"
 
-#: ajax_forms.php:1194
+#: ajax_forms.php:1194 ajax_htmldata.php:1561
 msgid " not set up!"
 msgstr " ne pas etabli!"
+
+#: ajax_htmldata.php:50
+#, fuzzy
+msgid "edit license"
+msgstr " licence"
+
+#: ajax_htmldata.php:50
+#, fuzzy
+msgid "remove license"
+msgstr "supprimer lien de la licence"
+
+#: ajax_htmldata.php:61
+#, fuzzy
+msgid "edit organization"
+msgstr " organisation"
+
+#: ajax_htmldata.php:78
+#, fuzzy
+msgid "License Status:"
+msgstr "Statut des licences"
+
+#: ajax_htmldata.php:131
+#, fuzzy
+msgid "For Document"
+msgstr "Pour le document:"
+
+#: ajax_htmldata.php:132
+#, fuzzy
+msgid "Resource"
+msgstr "Nouvelle ressource"
+
+#: ajax_htmldata.php:155 ajax_htmldata.php:245 ajax_htmldata.php:850
+#: ajax_htmldata.php:968 ajax_htmldata.php:1025 ajax_htmldata.php:1194
+#: ajax_htmldata.php:1237 ajax_htmldata.php:1294 ajax_htmldata.php:1342
+#: ajax_htmldata.php:1419
+msgid "(none found)"
+msgstr "(non trouvé)"
+
+#: ajax_htmldata.php:159
+#, fuzzy
+msgid "add new terms tool resource link"
+msgstr "Lien à les ressources de l'outil Terms"
+
+#: ajax_htmldata.php:183
+#, fuzzy
+msgid "Details"
+msgstr "Détails:"
+
+#: ajax_htmldata.php:206 ajax_htmldata.php:673
+#, fuzzy
+msgid "more..."
+msgstr "plus des options..."
+
+#: ajax_htmldata.php:211 ajax_htmldata.php:678
+msgid "less..."
+msgstr ""
+
+#: ajax_htmldata.php:223 ajax_htmldata.php:863 ajax_htmldata.php:981
+#, fuzzy
+msgid "(none uploaded)"
+msgstr "(non trouvé)"
+
+#: ajax_htmldata.php:228
+#, fuzzy
+msgid "view attachment "
+msgstr "Regarder la fixation"
+
+#: ajax_htmldata.php:249
+msgid "add new attachment"
+msgstr "Ajouter une nouvelle fixation"
+
+#: ajax_htmldata.php:322
+#, fuzzy
+msgid "Sorry, no licenses fit your query"
+msgstr "Désolé, il n'y a pas des résultats par votre requête"
+
+#: ajax_htmldata.php:329
+#, fuzzy
+msgid "Displaying "
+msgstr "Afficher"
+
+#: ajax_htmldata.php:329
+msgid " to "
+msgstr " sur "
+
+#: ajax_htmldata.php:329
+msgid " of "
+msgstr " de "
+
+#: ajax_htmldata.php:329
+#, fuzzy
+msgid " License Records"
+msgstr " ressources enregistrées"
+
+#: ajax_htmldata.php:381 ajax_htmldata.php:461 ajax_htmldata.php:768
+#: ajax_htmldata.php:773 ajax_htmldata.php:898 ajax_htmldata.php:903
+msgid "Name"
+msgstr "Nom"
+
+#: ajax_htmldata.php:382 ajax_htmldata.php:462
+#, fuzzy
+msgid "Publisher / Provider"
+msgstr "Éditeur / Fournisseur:"
+
+#: ajax_htmldata.php:383 ajax_htmldata.php:463
+#, fuzzy
+msgid "Consortium"
+msgstr "Consortium:"
+
+#: ajax_htmldata.php:384 ajax_htmldata.php:464
+msgid "Status"
+msgstr "Statut"
+
+#: ajax_htmldata.php:430
+msgid "records per page"
+msgstr "resultats par page"
+
+#: ajax_htmldata.php:533
+#, fuzzy
+msgid "view / edit license"
+msgstr "Modifier les licences"
+
+#: ajax_htmldata.php:533
+msgid "view / edit "
+msgstr ""
+
+#: ajax_htmldata.php:533 ajax_htmldata.php:1174
+#, fuzzy
+msgid " notes"
+msgstr "Notes"
+
+#: ajax_htmldata.php:533 ajax_htmldata.php:535 ajax_htmldata.php:861
+#: ajax_htmldata.php:979
+#, fuzzy
+msgid "view document"
+msgstr "Regarder la fixation"
+
+#: ajax_htmldata.php:535 ajax_htmldata.php:637
+#, fuzzy
+msgid "view license"
+msgstr " licence"
+
+#: ajax_htmldata.php:545 ajax_htmldata.php:650 ajax_htmldata.php:1153
+#: ajax_htmldata.php:1155
+#, fuzzy
+msgid " Notes:"
+msgstr "Notes:"
+
+#: ajax_htmldata.php:571
+#, fuzzy
+msgid "Qualifiers:"
+msgstr "Qualificateurs"
+
+#: ajax_htmldata.php:630 ajax_htmldata.php:1082
+#, fuzzy
+msgid "Document Text"
+msgstr "Texte de document"
+
+#: ajax_htmldata.php:642
+msgid "(document text not entered)"
+msgstr ""
+
+#: ajax_htmldata.php:690
+#, fuzzy
+msgid "(none for "
+msgstr "(non trouvé)"
+
+#: ajax_htmldata.php:740
+#, fuzzy
+msgid "Archived Documents"
+msgstr "Date de l'archivage de document"
+
+#: ajax_htmldata.php:740
+#, fuzzy
+msgid "hide archives"
+msgstr "cacher les contacts archivées"
+
+#: ajax_htmldata.php:770 ajax_htmldata.php:775 ajax_htmldata.php:900
+#: ajax_htmldata.php:905
+#, fuzzy
+msgid "Effective Date"
+msgstr "Date effective:"
+
+#: ajax_htmldata.php:845 ajax_htmldata.php:963
+#, fuzzy
+msgid "add/view details"
+msgstr "Ajouter detail du sujet"
+
+#: ajax_htmldata.php:852 ajax_htmldata.php:970
+#, fuzzy
+msgid "add signatures"
+msgstr "Signatures"
+
+#: ajax_htmldata.php:868 ajax_htmldata.php:985
+#, fuzzy
+msgid "view expressions"
+msgstr "Expressions"
+
+#: ajax_htmldata.php:874 ajax_htmldata.php:991
+#, fuzzy
+msgid "edit document"
+msgstr "Modifier la compte"
+
+#: ajax_htmldata.php:874 ajax_htmldata.php:991
+#, fuzzy
+msgid "remove document"
+msgstr "Supprimer une compte"
+
+#: ajax_htmldata.php:884 ajax_htmldata.php:886
+#, fuzzy
+msgid "This document has "
+msgstr "Date de l'archivage de document"
+
+#: ajax_htmldata.php:884 ajax_htmldata.php:886
+msgid " children document(s) not displayed."
+msgstr ""
+
+#: ajax_htmldata.php:884 ajax_htmldata.php:886
+msgid "show all documents for this parent"
+msgstr ""
+
+#: ajax_htmldata.php:890 ajax_htmldata.php:892 ajax_htmldata.php:1000
+#: ajax_htmldata.php:1002
+msgid "The following "
+msgstr ""
+
+#: ajax_htmldata.php:890 ajax_htmldata.php:892 ajax_htmldata.php:1000
+#: ajax_htmldata.php:1002
+msgid " document(s) belong to "
+msgstr ""
+
+#: ajax_htmldata.php:890 ajax_htmldata.php:892
+msgid "hide children documents for this parent"
+msgstr ""
+
+#: ajax_htmldata.php:929
+#, fuzzy
+msgid "archive document"
+msgstr "Date de l'archivage de document"
+
+#: ajax_htmldata.php:931
+#, fuzzy
+msgid "archived on: "
+msgstr "Archivé:"
+
+#: ajax_htmldata.php:1029
+#, fuzzy
+msgid " archive(s) available."
+msgstr " contact(s) archivée(s) disponible(s)."
+
+#: ajax_htmldata.php:1029
+#, fuzzy
+msgid "show archives"
+msgstr "montrer les contacts archivées"
+
+#: ajax_htmldata.php:1035
+#, fuzzy
+msgid "upload new document"
+msgstr "Ajouter un nouveau type de document"
+
+#: ajax_htmldata.php:1123
+msgid "used in terms tool"
+msgstr ""
+
+#: ajax_htmldata.php:1168
+msgid "(none)"
+msgstr "(aucun)"
+
+#: ajax_htmldata.php:1174
+msgid "add/view "
+msgstr ""
+
+#: ajax_htmldata.php:1198
+#, fuzzy
+msgid "add new expression"
+msgstr "Ajouter un nouveau type de document"
+
+#: ajax_htmldata.php:1265
+#, fuzzy
+msgid "Terms Tool Update Email"
+msgstr "Email de l'outil Terms"
+
+#: ajax_htmldata.php:1486
+#, fuzzy
+msgid "Limit by Qualifier:"
+msgstr "Qualificateur:"
 
 #: templates/header.php:35
 msgid ""
@@ -544,9 +838,6 @@ msgstr "Changer le module"
 #~ msgid "Note Type:"
 #~ msgstr "Type de note:"
 
-#~ msgid "Notes:"
-#~ msgstr "Notes:"
-
 #~ msgid "Edit Saved Resource"
 #~ msgstr "Modifier ressource enregistré"
 
@@ -610,9 +901,6 @@ msgstr "Changer le module"
 #~ msgid "remove "
 #~ msgstr "supprimer "
 
-#~ msgid " organization"
-#~ msgstr " organisation"
-
 #~ msgid "Aliases"
 #~ msgstr "Des alias:"
 
@@ -652,17 +940,8 @@ msgstr "Changer le module"
 #~ msgid "Purchasing Site(s)"
 #~ msgstr "Site d'achat(s)"
 
-#~ msgid "Edit Licenses"
-#~ msgstr "Modifier les licences"
-
 #~ msgid "add license"
 #~ msgstr "ajouter une licence"
-
-#~ msgid "remove license link"
-#~ msgstr "supprimer lien de la licence"
-
-#~ msgid " license"
-#~ msgstr " licence"
 
 #~ msgid "Licensing Status"
 #~ msgstr "Statut des licences"
@@ -763,9 +1042,6 @@ msgstr "Changer le module"
 #~ msgid "Code"
 #~ msgstr "Code"
 
-#~ msgid "Name"
-#~ msgstr "Nom"
-
 #~ msgid "Edit User"
 #~ msgstr "Modifier l'utilisateur"
 
@@ -844,9 +1120,6 @@ msgstr "Changer le module"
 #~ msgid "Detailed Subjects"
 #~ msgstr "Sujet détaillé"
 
-#~ msgid "add detail subject"
-#~ msgstr "Ajouter detail du sujet"
-
 #~ msgid "remove detailed subject"
 #~ msgstr "Supprimer le sujet détaillé"
 
@@ -861,9 +1134,6 @@ msgstr "Changer le module"
 
 #~ msgid "Detail Subject Name"
 #~ msgstr "Détail du nom de sujet"
-
-#~ msgid "(none found)"
-#~ msgstr "(non trouvé)"
 
 #~ msgid "edit resource"
 #~ msgstr "Modifier la ressource"
@@ -997,26 +1267,11 @@ msgstr "Changer le module"
 #~ msgid "No contacts available"
 #~ msgstr "Pas de contacts disponibles"
 
-#~ msgid " archived contact(s) available. "
-#~ msgstr " contact(s) archivée(s) disponible(s)."
-
-#~ msgid "show archived contacts"
-#~ msgstr "montrer les contacts archivées"
-
-#~ msgid "hide archived contacts"
-#~ msgstr "cacher les contacts archivées"
-
 #~ msgid "No Resource Specific Accounts"
 #~ msgstr "Il n'y a pas une ressource spécifié par les comptes"
 
 #~ msgid "add new account"
 #~ msgstr "ajouter une nouvelle compte"
-
-#~ msgid "edit account"
-#~ msgstr "Modifier la compte"
-
-#~ msgid "remove account"
-#~ msgstr "Supprimer une compte"
 
 #~ msgid "Visit Account in Organizations Module"
 #~ msgstr "Visitez Comptes sur le module Organisations"
@@ -1030,9 +1285,6 @@ msgstr "Changer le module"
 #~ msgid "No accounts available"
 #~ msgstr "Pas des comptes disponibles"
 
-#~ msgid "view attachment"
-#~ msgstr "Regarder la fixation"
-
 #~ msgid "edit attachment"
 #~ msgstr "Modifier la fixation"
 
@@ -1041,9 +1293,6 @@ msgstr "Changer le module"
 
 #~ msgid "No attachments available"
 #~ msgstr "Pas des fixations disponibles."
-
-#~ msgid "add new attachment"
-#~ msgstr "Ajouter une nouvelle fixation"
 
 #~ msgid ""
 #~ "No workflow steps have been set up for this resource's combination of "
@@ -1124,9 +1373,6 @@ msgstr "Changer le module"
 #~ msgid "Date Created"
 #~ msgstr "Date de création"
 
-#~ msgid "Status"
-#~ msgstr "Statut"
-
 #~ msgid "edit request"
 #~ msgstr "modifier la requête"
 
@@ -1148,18 +1394,6 @@ msgstr "Changer le module"
 #~ msgid "Routing Step"
 #~ msgstr "Etape de routage"
 
-#~ msgid "Sorry, no requests fit your query"
-#~ msgstr "Désolé, il n'y a pas des résultats par votre requête"
-
-#~ msgid " to "
-#~ msgstr " sur "
-
-#~ msgid " of "
-#~ msgstr " de "
-
-#~ msgid " Resource Records"
-#~ msgstr " ressources enregistrées"
-
 #~ msgid "next page"
 #~ msgstr "page suivante"
 
@@ -1168,9 +1402,6 @@ msgstr "Changer le module"
 
 #~ msgid "previous page"
 #~ msgstr "page précédente"
-
-#~ msgid "records per page"
-#~ msgstr "resultats par page"
 
 #~ msgid "edit user"
 #~ msgstr "Modifier l'utilisateur"
@@ -1271,17 +1502,11 @@ msgstr "Changer le module"
 #~ msgid "All"
 #~ msgstr "Tous"
 
-#~ msgid "(none)"
-#~ msgstr "(aucun)"
-
 #~ msgid "Record ID"
 #~ msgstr "ID d'enregistrement"
 
 #~ msgid "Starts with"
 #~ msgstr "Commence avec"
-
-#~ msgid "more options..."
-#~ msgstr "plus des options..."
 
 #~ msgid "Note (contains)"
 #~ msgstr "Note (contains)"
@@ -1373,9 +1598,6 @@ msgstr "Changer le module"
 
 #~ msgid "Hello, "
 #~ msgstr "Bonjour, "
-
-#~ msgid "New Resource"
-#~ msgstr "Nouvelle ressource"
 
 #~ msgid ""
 #~ "Login is not working.  Check the .htaccess file and the "

@@ -594,7 +594,7 @@ switch ($_GET['action']) {
 		</tr>
 
 
-		<tr id='tr_Qualifiers' <?php if (count($expressionQualifierArray) == 0) echo "style='display:none;'"; ?>>
+		<tr id='tr_Qualifiers' <?php if (count($expressionQualifierArray) == 0) echo "style='display:none;'"; ?> >
 		<td colspan='2'><label for="qualifierID" class="formText"><?= _("Qualifier:");?></label><br />
 		<div id='div_Qualifiers'>
 
@@ -996,8 +996,8 @@ switch ($_GET['action']) {
             <tr><td><label for='noteType'><b><?= _("Note Type");?></b></label></td>
 		<td>
 		<select name='noteType' id='noteType' style='width:135px'>
-		<option value='Internal' <?php if ((isset($expressionType)) && ($expressionType->noteType == 'Internal')) echo "selected"; ?>><?= _("Internal");?></option>
-		<option value='Display' <?php if ((isset($expressionType)) && ($expressionType->noteType == 'Display')) echo "selected"; ?>><?= _("Display");?></option>
+		<option value='Internal' <?php if ((isset($expressionType)) && ($expressionType->noteType == 'Internal')) echo "selected"; ?> ><?= _("Internal");?></option>
+		<option value='Display' <?php if ((isset($expressionType)) && ($expressionType->noteType == 'Display')) echo "selected"; ?> ><?= _("Display");?></option>
 		</select>
 		</td>
 		</tr>
