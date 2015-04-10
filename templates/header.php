@@ -32,7 +32,7 @@ $currentPage = $parts[count($parts) - 1];
 //this will redirect back to the actual license record
 if ((isset($_GET['editLicenseForm'])) && ($_GET['editLicenseForm'] == "Y")){
 	if (((isset($_GET['licenseShortName'])) && ($_GET['licenseShortName'] == "")) && ((isset($_GET['licenseOrganizationID'])) && ($_GET['licenseOrganizationID'] == ""))){
-		$err="<span style='color:red;text-align:left;'>Both license name and organization must be filled out.  Please try again.</span>";
+		$err="<span style='color:red;text-align:left;'>"._("Both license name and organization must be filled out.  Please try again.")."</span>";
 	}else{
 		$util->fixLicenseFormEnter($_GET['editLicenseID']);
 	}
@@ -64,7 +64,7 @@ $coralURL = $util->getCORALURL();
 <script type="text/javascript" src="js/common.js"></script>
 </head>
 <body>
-<noscript><font face=arial>JavaScript must be enabled in order for you to use CORAL. However, it seems JavaScript is either disabled or not supported by your browser. To use CORAL, enable JavaScript by changing your browser options, then <a href="">try again</a>. </font></noscript>
+<noscript><font face='arial'><?= _("JavaScript must be enabled in order for you to use CORAL. However, it seems JavaScript is either disabled or not supported by your browser. To use CORAL, enable JavaScript by changing your browser options, then ");?><a href=""><?= _("try again");?></a>. </font></noscript>
 <center>
 <div class="wrapper">
 <center>
@@ -92,7 +92,7 @@ $coralURL = $util->getCORALURL();
 	}
 ?>
 </span>
-<br /><?php if($config->settings->authModule == 'Y'){ echo "<a href='" . $coralURL . "auth/?logout'>logout</a>"; } ?>
+<br /><?php if($config->settings->authModule == 'Y'){ echo "<a href='" . $coralURL . "auth/?logout'>"._("logout")."</a>"; } ?>
 </div>
 </td>
 </tr>
@@ -101,13 +101,13 @@ $coralURL = $util->getCORALURL();
 <td style='width:870px;height:19px;'>
 <?php
 if ($user->isAdmin()){ ?>
-    <a href='index.php'><span class="menubtn<?php if ($currentPage == 'index.php') { echo " active"; } ?>" id="firstmenubtn"><?= _("Home");?></span></a><a href='ajax_forms.php?action=getLicenseForm&height=265&width=260&modal=true&newLicenseID=' class='thickbox' id='newLicense'><span class="menubtn"><?= _("New License");?></span></a><a href='in_progress.php'><span class="menubtn<?php if ($currentPage == 'in_progress.php') { echo " active"; } ?>" ><?= _("Licenses in Progress");?></span></a><a href='compare.php'><span class="menubtn<?php if ($currentPage == 'compare.php') { echo " active"; } ?>">Expression Comparision</span></a><?php if (($config->settings->resourcesModule == 'Y') && (strlen($config->settings->resourcesDatabaseName) > 0)) { ?><a href='calendar.php'><span class="menubtn<?php if ($currentPage == 'calendar.php') { echo " active"; } ?>">Calendar</span></a><?php } ?><a href='admin.php'><span class="menubtn<?php if ($currentPage == 'admin.php') { echo " active"; } ?>" id="lastmenubtn"><?= _("Admin");?></span></a>
+    <a href='index.php'><span class="menubtn<?php if ($currentPage == 'index.php') { echo " active"; } ?>" id="firstmenubtn"><?= _("Home");?></span></a><a href='ajax_forms.php?action=getLicenseForm&height=265&width=260&modal=true&newLicenseID=' class='thickbox' id='newLicense'><span class="menubtn"><?= _("New License");?></span></a><a href='in_progress.php'><span class="menubtn<?php if ($currentPage == 'in_progress.php') { echo " active"; } ?>" ><?= _("Licenses in Progress");?></span></a><a href='compare.php'><span class="menubtn<?php if ($currentPage == 'compare.php') { echo " active"; } ?>"><?= _("Expression Comparision");?></span></a><?php if (($config->settings->resourcesModule == 'Y') && (strlen($config->settings->resourcesDatabaseName) > 0)) { ?><a href='calendar.php'><span class="menubtn<?php if ($currentPage == 'calendar.php') { echo " active"; } ?>"><?= _("Calendar");?></span></a><?php } ?><a href='admin.php'><span class="menubtn<?php if ($currentPage == 'admin.php') { echo " active"; } ?>" id="lastmenubtn"><?= _("Admin");?></span></a>
 
 <?php }else if ($user->canEdit()){ ?>
-	<a href='index.php'><span class="menubtn<?php if ($currentPage == 'index.php') { echo " active"; } ?>" id="firstmenubtn"><?= _("Home");?></span></a><a href='ajax_forms.php?action=getLicenseForm&height=265&width=260&modal=true&newLicenseID=' class='thickbox' id='newLicense'><span class="menubtn"><?= _("New License");?></span></a><!--<img src='images/menu/menu-bar.gif'>--><a href='in_progress.php'><span class="menubtn<?php if ($currentPage == 'in_progress.php') { echo " active"; } ?>" ><?= _("Licenses in Progress");?></span></a><!--<img src='images/menu/menu-bar.gif'>--><a href='compare.php'><span class="menubtn<?php if ($currentPage == 'compare.php') { echo " active"; } ?>">Expression Comparision</span></a><?php if (($config->settings->resourcesModule == 'Y') && (strlen($config->settings->resourcesDatabaseName) > 0)) { ?><!--<img src='images/menu/menu-bar.gif'>--><a href='calendar.php'><span class="menubtn<?php if ($currentPage == 'calendar.php') { echo " active"; } ?>" id="lastmenubtn">Calendar</span></a><?php } ?>
+	<a href='index.php'><span class="menubtn<?php if ($currentPage == 'index.php') { echo " active"; } ?>" id="firstmenubtn"><?= _("Home");?></span></a><a href='ajax_forms.php?action=getLicenseForm&height=265&width=260&modal=true&newLicenseID=' class='thickbox' id='newLicense'><span class="menubtn"><?= _("New License");?></span></a><a href='in_progress.php'><span class="menubtn<?php if ($currentPage == 'in_progress.php') { echo " active"; } ?>" ><?= _("Licenses in Progress");?></span></a><a href='compare.php'><span class="menubtn<?php if ($currentPage == 'compare.php') { echo " active"; } ?>"><?= _("Expression Comparision");?></span></a><?php if (($config->settings->resourcesModule == 'Y') && (strlen($config->settings->resourcesDatabaseName) > 0)) { ?><a href='calendar.php'><span class="menubtn<?php if ($currentPage == 'calendar.php') { echo " active"; } ?>" id="lastmenubtn"><?= _("Calendar");?></span></a><?php } ?>
 
 <?php }else{ ?>
-	<a href='index.php'><span class="menubtn<?php if ($currentPage == 'index.php') { echo " active"; } ?>" id="firstmenubtn"><?= _("Home");?></span></a><a href='in_progress.php'><span class="menubtn<?php if ($currentPage == 'in_progress.php') { echo " active"; } ?>" ><?= _("Licenses in Progress");?></span></a><a href='calendar.php'><span class="menubtn<?php if ($currentPage == 'calendar.php') { echo " active"; } ?>" id="lastmenubtn">Calendar</span></a>
+	<a href='index.php'><span class="menubtn<?php if ($currentPage == 'index.php') { echo " active"; } ?>" id="firstmenubtn"><?= _("Home");?></span></a><a href='in_progress.php'><span class="menubtn<?php if ($currentPage == 'in_progress.php') { echo " active"; } ?>" ><?= _("Licenses in Progress");?></span></a><a href='calendar.php'><span class="menubtn<?php if ($currentPage == 'calendar.php') { echo " active"; } ?>" id="lastmenubtn"><?= _("Calendar");?></span></a>
 <?php } ?>
 </td>
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-09 18:55+0100\n"
-"PO-Revision-Date: 2015-04-09 18:55+0100\n"
+"POT-Creation-Date: 2015-04-10 11:45+0100\n"
+"PO-Revision-Date: 2015-04-10 11:45+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -15,30 +15,456 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
+#: admin.php:35
+msgid "Users"
+msgstr "Utilisateurs"
+
+#: admin.php:36
+msgid "add new user"
+msgstr "Ajouter un nouveau utilisateur"
+
+#: admin.php:39 admin.php:56 admin.php:70 admin.php:83 admin.php:97
+#: admin.php:112 admin.php:132 admin.php:153 admin.php:167
+msgid "Loading..."
+msgstr "Chargement..."
+
+#: admin.php:52
+msgid "Document Types"
+msgstr "Type de document"
+
+#: admin.php:53
+msgid "add new document type"
+msgstr "Ajouter un nouveau type de document"
+
+#: admin.php:66
+msgid "Expression Types"
+msgstr "Types des expressions"
+
+#: admin.php:67
+msgid "add new expression type"
+msgstr "Ajouter un nouveau type de document"
+
+#: admin.php:79
+msgid "Qualifiers"
+msgstr "Qualificateurs"
+
+#: admin.php:80
+msgid "add new qualifier"
+msgstr "Ajouter un nouveau qualificateur"
+
+#: admin.php:93
+msgid "Signature Types"
+msgstr "Types des signatures"
+
+#: admin.php:94
+msgid "add new signature type"
+msgstr "Ajouter nouveau type de signature"
+
+#: admin.php:108
+msgid "License Statuses"
+msgstr "Statut des licences"
+
+#: admin.php:109
+msgid "add new license status"
+msgstr "Ajouter un nouveau statut de la licence"
+
+#: admin.php:129 ajax_forms.php:1033
+msgid "Calendar Settings"
+msgstr "Configuration du calendrier"
+
+#: admin.php:149
+msgid "Consortia"
+msgstr "Consortium"
+
+#: admin.php:150
+msgid "add new consortium"
+msgstr "ajouter un nouveau consortium"
+
+#: admin.php:163
+msgid "Providers"
+msgstr "Fournisseur"
+
+#: admin.php:164
+msgid "add new provider"
+msgstr "ajouter un nouveau fornisseur"
+
+#: admin.php:180
+msgid "You don't have permission to access this page"
+msgstr "Vous n'avez pas la permission d'accéder dans cette page"
+
+#: admin/classes/common/DBService.php:40
+msgid "There was a problem with the database: "
+msgstr "Il y avait un problème avec la base de données: "
+
+#: admin/classes/common/Object.php:72
+msgid "Cannot get value for undefined key ("
+msgstr "Ne peut pas recuperer une clé indefini ("
+
+#: ajax_forms.php:47
+msgid "License"
+msgstr "Llicence"
+
+#: ajax_forms.php:51
+msgid "License Name:"
+msgstr "Nom de la Licence:"
+
+#: ajax_forms.php:56
+msgid "Publisher / Provider:"
+msgstr "Éditeur / Fournisseur:"
+
+#: ajax_forms.php:66
+msgid "Consortium:"
+msgstr "Consortium:"
+
+#: ajax_forms.php:94
+msgid ""
+"There was an error processing this request - please verify configuration.ini "
+"is set up for organizations correctly and the database and tables have been "
+"created."
+msgstr ""
+"Il y avait un problème avec la requête, s'il vous plaît verifiez si la "
+"configuration pour les organisations est correcte dans configuration.ini et "
+"les tableaux de la base de données ont été créées."
+
+#: ajax_forms.php:106
+msgid "add consortium"
+msgstr "Ajouter un consortium"
+
+#: ajax_forms.php:113 ajax_forms.php:271 ajax_forms.php:368 ajax_forms.php:638
+#: ajax_forms.php:829
+msgid "submit"
+msgstr "Confirmer"
+
+#: ajax_forms.php:114 ajax_forms.php:271 ajax_forms.php:369 ajax_forms.php:639
+#: ajax_forms.php:830 ajax_forms.php:1009 ajax_forms.php:1117
+#: ajax_forms.php:1171
+msgid "cancel"
+msgstr "Annuler"
+
+#: ajax_forms.php:164
+msgid "Document Upload"
+msgstr "Télécharger un document"
+
+#: ajax_forms.php:167
+msgid "Effective Date:"
+msgstr "Date effective:"
+
+#: ajax_forms.php:174
+msgid "Document Type:"
+msgstr "Type de document"
+
+#: ajax_forms.php:195
+msgid "add document type"
+msgstr "Ajouter un type de document"
+
+#: ajax_forms.php:203
+msgid "Parent:"
+msgstr "Parent:"
+
+#: ajax_forms.php:235
+msgid "Name:"
+msgstr "Nom:"
+
+#: ajax_forms.php:241
+msgid "File:"
+msgstr "Fichier:"
+
+#: ajax_forms.php:247
+msgid "replace with new file"
+msgstr "remplacer avec un nouveau fichier"
+
+#: ajax_forms.php:263
+msgid "Archived:"
+msgstr "Archivé:"
+
+#: ajax_forms.php:297
+msgid "Archive Document Date"
+msgstr "Date de l'archivage de document"
+
+#: ajax_forms.php:302
+msgid "Archive Date:"
+msgstr "Date d'archivage:"
+
+#: ajax_forms.php:305
+msgid "Continue"
+msgstr "Continuer"
+
+#: ajax_forms.php:335
+msgid "Terms Tool Resource Link"
+msgstr "Lien à les ressources de l'outil Terms"
+
+#: ajax_forms.php:340
+msgid "For Document:"
+msgstr "Pour le document:"
+
+#: ajax_forms.php:363
+msgid "Terms Tool Resource:"
+msgstr "Ressource de l'outil Terms"
+
+#: ajax_forms.php:400
+msgid "Signatures"
+msgstr "Signatures"
+
+#: ajax_forms.php:406
+msgid "Signer Name"
+msgstr "Nom de signataire"
+
+#: ajax_forms.php:407
+msgid "Date"
+msgstr "Date"
+
+#: ajax_forms.php:408
+msgid "Type"
+msgstr "Type"
+
+#: ajax_forms.php:443 ajax_forms.php:703
+msgid "commit update"
+msgstr "Mise à jour de l'engagement"
+
+#: ajax_forms.php:456 ajax_forms.php:725
+msgid "edit"
+msgstr "modifier"
+
+#: ajax_forms.php:457 ajax_forms.php:726 ajax_forms.php:813
+msgid "remove"
+msgstr "supprimer"
+
+#: ajax_forms.php:479 ajax_forms.php:741
+msgid "add"
+msgstr "ajouter"
+
+#: ajax_forms.php:489 ajax_forms.php:751
+msgid "Close"
+msgstr "Fermer"
+
+#: ajax_forms.php:545
+msgid "Expressions"
+msgstr "Expressions"
+
+#: ajax_forms.php:550
+msgid "Document:"
+msgstr "Document:"
+
+#: ajax_forms.php:572
+msgid "Expression Type:"
+msgstr "Type d'expression:"
+
+#: ajax_forms.php:591
+msgid "add expression"
+msgstr "Ajouter une expression"
+
+#: ajax_forms.php:598
+msgid "Qualifier:"
+msgstr "Qualificateur:"
+
+#: ajax_forms.php:634
+msgid "Document Text:"
+msgstr "Texte de document"
+
+#: ajax_forms.php:672 ajax_forms.php:682
+msgid "Notes"
+msgstr "Notes"
+
+#: ajax_forms.php:673
+msgid "For Document Text:"
+msgstr "Pour le text de document:"
+
+#: ajax_forms.php:787
+msgid "Attachments"
+msgstr "Fixations"
+
+#: ajax_forms.php:791
+msgid "Date:"
+msgstr "Date:"
+
+#: ajax_forms.php:798
+msgid "Details:"
+msgstr "Détails:"
+
+#: ajax_forms.php:804
+msgid "Attachments:"
+msgstr "Fixations:"
+
+#: ajax_forms.php:858 ajax_forms.php:899 ajax_forms.php:982
+#: ajax_forms.php:1133
+msgid "Update"
+msgstr "Mise à jour"
+
+#: ajax_forms.php:863
+msgid "update"
+msgstr "Mise à jour"
+
+#: ajax_forms.php:870
+msgid "close"
+msgstr "Fermer"
+
+#: ajax_forms.php:902 ajax_forms.php:985 ajax_forms.php:1136
+msgid "Add New"
+msgstr "Ajouter un nouveau"
+
+#: ajax_forms.php:910
+msgid "User"
+msgstr "Utilisateur"
+
+#: ajax_forms.php:911
+msgid "Login ID"
+msgstr "Identifiant de connexion"
+
+#: ajax_forms.php:912
+msgid "First Name"
+msgstr "Prènom"
+
+#: ajax_forms.php:913
+msgid "Last Name"
+msgstr "Nom"
+
+#: ajax_forms.php:914
+msgid "Privilege"
+msgstr "Privilège"
+
+#: ajax_forms.php:917 ajax_forms.php:920
+msgid "Add/Edit users can add, edit, or remove licenses and associated fields"
+msgstr ""
+"Les utilisateurs 'Add/Edit' peuvent ajouter, modifier ou supprimer les "
+"licences et les champs associés"
+
+#: ajax_forms.php:917 ajax_forms.php:920
+msgid "Admin users have access to the Admin page and the SFX tab."
+msgstr ""
+"Les utilisateurs 'Admin' peuvent accéder à la page Admin et l'onglet SFX"
+
+#: ajax_forms.php:917 ajax_forms.php:920
+msgid "Restricted users do not have the ability to view documents"
+msgstr ""
+"Les utilisateurs 'Restricted' n'ont pas la possibilité de regarder les "
+"documents"
+
+#: ajax_forms.php:917 ajax_forms.php:920
+msgid ""
+"View only users can view all license information, including the license pdf"
+msgstr ""
+"Les utilisateurs 'View only' peuvent regarder l'information des licences, "
+"aussi le pdf de la licence"
+
+#: ajax_forms.php:949
+msgid "Terms Tool Email"
+msgstr "Email de l'outil Terms"
+
+#: ajax_forms.php:952
+msgid ""
+"Enter email address if you wish this user to receive email notifications "
+"when the terms tool box is checked on the Expressions tab."
+msgstr ""
+"Tapez l'adresse email si vous souhaitez que cet utilisateur reçoive des "
+"notifications par email lorsque la boîte de l'outil terms est activée dans "
+"l'onglet Expressions."
+
+#: ajax_forms.php:952
+msgid "Leave this field blank if the user shouldn't receive emails."
+msgstr ""
+"Laissez ce champ vide si l'utilisateur ne doit pas recevoir des emails."
+
+#: ajax_forms.php:993 ajax_forms.php:994
+msgid "Expression Type"
+msgstr "Type d'expression"
+
+#: ajax_forms.php:995
+msgid "Note Type"
+msgstr "Type de note"
+
+#: ajax_forms.php:998
+msgid "Internal"
+msgstr "Intern"
+
+#: ajax_forms.php:999
+msgid "Display"
+msgstr "Afficher"
+
+#: ajax_forms.php:1004
+msgid "Note type of display allows for terms tool use"
+msgstr "Type de note qui permet d'afficher l'utilisation de l'outil terms"
+
+#: ajax_forms.php:1024
+msgid "Edit"
+msgstr "Modifier"
+
+#: ajax_forms.php:1038 ajax_forms.php:1068 ajax_forms.php:1101
+msgid "Variable Name"
+msgstr "Nom de la variable"
+
+#: ajax_forms.php:1041 ajax_forms.php:1071 ajax_forms.php:1102
+msgid "Value"
+msgstr "Valeur"
+
+#: ajax_forms.php:1144 ajax_forms.php:1167
+msgid "Qualifier"
+msgstr "Qualificateur"
+
+#: ajax_forms.php:1146
+msgid "For Expression Type"
+msgstr "Pour le type de l'expression"
+
+#: ajax_forms.php:1194
+msgid "Action "
+msgstr "Action"
+
+#: ajax_forms.php:1194
+msgid " not set up!"
+msgstr " ne pas etabli!"
+
+#: templates/header.php:35
+msgid ""
+"Both license name and organization must be filled out.  Please try again."
+msgstr ""
+"Tant le nom de licence que l'organisation doivent être remplis. S'il vous "
+"plaît ressayez."
+
+#: templates/header.php:67
+msgid ""
+"JavaScript must be enabled in order for you to use CORAL. However, it seems "
+"JavaScript is either disabled or not supported by your browser. To use "
+"CORAL, enable JavaScript by changing your browser options, then "
+msgstr ""
+"JavaScript doit être activé pour utiliser CORAL. Cependant, on semble qui "
+"JavaScript est desactivé ou n'est pas supporté par votre navigateur. Pour "
+"utiliser CORAL, activez JavaScript en modifiant la configuration de votre "
+"navigateur, après "
+
+#: templates/header.php:67
+msgid "try again"
+msgstr "réessayez"
+
+#: templates/header.php:95
+msgid "logout"
+msgstr "Se déconnecter"
+
 #: templates/header.php:104 templates/header.php:107 templates/header.php:110
 msgid "Home"
 msgstr "Accueil"
 
 #: templates/header.php:104 templates/header.php:107
-#, fuzzy
 msgid "New License"
-msgstr "Regarder la licence"
+msgstr "Nouvelle licence"
 
 #: templates/header.php:104 templates/header.php:107 templates/header.php:110
-#, fuzzy
 msgid "Licenses in Progress"
-msgstr "Licences entregistrées"
+msgstr "Licences in avance"
+
+#: templates/header.php:104 templates/header.php:107
+msgid "Expression Comparision"
+msgstr "Comparaison de l'expression"
+
+#: templates/header.php:104 templates/header.php:107 templates/header.php:110
+msgid "Calendar"
+msgstr "Calendrier"
 
 #: templates/header.php:104
 msgid "Admin"
-msgstr "Administrateur"
+msgstr "Admin"
 
 #: templates/header.php:126
 msgid "Change Module"
 msgstr "Changer le module"
-
-#~ msgid "Users"
-#~ msgstr "Utilisateurs"
 
 #~ msgid "Workflow / User Group"
 #~ msgstr "Workflow / Groupe d'utilisateur"
@@ -46,23 +472,14 @@ msgstr "Changer le module"
 #~ msgid "Access Method"
 #~ msgstr "Mèthode d'accès"
 
-#~ msgid "Account Type"
-#~ msgstr "Type d'account"
-
 #~ msgid "Acquisition Type"
 #~ msgstr "Type d'acquisition"
 
 #~ msgid "Administering Site"
 #~ msgstr "Administration du site"
 
-#~ msgid "Alert Settings"
-#~ msgstr "Configuration des alertes"
-
 #~ msgid "Alias Type"
 #~ msgstr "Type d'alias"
-
-#~ msgid "Attachment Type"
-#~ msgstr "Type de fixation"
 
 #~ msgid "Authentication Type"
 #~ msgstr "Type d'accès"
@@ -81,12 +498,6 @@ msgstr "Changer le module"
 
 #~ msgid "Currency"
 #~ msgstr "Concurrence"
-
-#~ msgid "License Status"
-#~ msgstr "Statut de la licence"
-
-#~ msgid "Note Type"
-#~ msgstr "Type de note"
 
 #~ msgid "Order Type"
 #~ msgstr "Type d'ordre"
@@ -115,20 +526,8 @@ msgstr "Changer le module"
 #~ msgid "User Limit"
 #~ msgstr "Limit d'utilisateurs"
 
-#~ msgid "Loading..."
-#~ msgstr "Chargement..."
-
-#~ msgid "You do not have permissions to access this screen."
-#~ msgstr "Vous n'avez pas la permission d'accèder dans cette page."
-
-#~ msgid "There was a problem with the database: "
-#~ msgstr "Il y avait un problème avec la base de données: "
-
 #~ msgid "Could not connect to "
 #~ msgstr "Ne pouvait pas se connecter à "
-
-#~ msgid "Cannot set value for undefined key ("
-#~ msgstr "Ne peut pas asigner une clé indefini ("
 
 #~ msgid "Error: unexpected fgets() fail"
 #~ msgstr "Erreur: inattendu échoue fgets()"
@@ -142,20 +541,11 @@ msgstr "Changer le module"
 #~ msgid "Edit Note"
 #~ msgstr "Modifier une note"
 
-#~ msgid "Add Note"
-#~ msgstr "Ajouter une note"
-
 #~ msgid "Note Type:"
 #~ msgstr "Type de note:"
 
 #~ msgid "Notes:"
 #~ msgstr "Notes:"
-
-#~ msgid "submit"
-#~ msgstr "Confirmer"
-
-#~ msgid "cancel"
-#~ msgstr "Annuler"
 
 #~ msgid "Edit Saved Resource"
 #~ msgstr "Modifier ressource enregistré"
@@ -169,14 +559,8 @@ msgstr "Changer le module"
 #~ msgid "Product"
 #~ msgstr "Produit"
 
-#~ msgid "Name:"
-#~ msgstr "Nom:"
-
 #~ msgid "Description:"
 #~ msgstr "Description:"
-
-#~ msgid "Provider:"
-#~ msgstr "Fournisseur:"
 
 #~ msgid "Format"
 #~ msgstr "Format"
@@ -190,9 +574,6 @@ msgstr "Changer le module"
 #~ msgid "Price:"
 #~ msgstr "Prix:"
 
-#~ msgid "Type:"
-#~ msgstr "Type:"
-
 #~ msgid "add this payment"
 #~ msgstr "ajouter ce payment"
 
@@ -201,9 +582,6 @@ msgstr "Changer le module"
 
 #~ msgid "remove this payment"
 #~ msgstr "effacer ce payment"
-
-#~ msgid "Notes"
-#~ msgstr "Notes"
 
 #~ msgid "Include any additional information"
 #~ msgstr "Inclure quelque information additional"
@@ -214,14 +592,8 @@ msgstr "Changer le module"
 #~ msgid "Edit Resource"
 #~ msgstr "Modifier la ressource"
 
-#~ msgid "Parent:"
-#~ msgstr "Parent:"
-
 #~ msgid "Format:"
 #~ msgstr "Format:"
-
-#~ msgid "Archived:"
-#~ msgstr "Archivé:"
 
 #~ msgid "Role:"
 #~ msgstr "Rôle:"
@@ -261,9 +633,6 @@ msgstr "Changer le module"
 
 #~ msgid "Order"
 #~ msgstr "Ordre"
-
-#~ msgid "Acquisition Type:"
-#~ msgstr "Type d'acquisition:"
 
 #~ msgid "Order Number:"
 #~ msgstr "Numero d'ordre:"
@@ -379,21 +748,6 @@ msgstr "Changer le module"
 #~ msgid "Edit Attachment"
 #~ msgstr "Modifier la fixation"
 
-#~ msgid "Add Attachment"
-#~ msgstr "Ajouter fixation"
-
-#~ msgid "File:"
-#~ msgstr "Fichier:"
-
-#~ msgid "replace with new file"
-#~ msgstr "remplacer avec un nouveau fichier"
-
-#~ msgid "Details:"
-#~ msgstr "Détails:"
-
-#~ msgid "Edit "
-#~ msgstr "Modifier"
-
 #~ msgid "Add "
 #~ msgstr "Ajouter"
 
@@ -418,20 +772,8 @@ msgstr "Changer le module"
 #~ msgid "Add New User"
 #~ msgstr "Ajouter un nouveau utilisateur"
 
-#~ msgid "Login ID"
-#~ msgstr "Identifiant de connexion"
-
-#~ msgid "First Name"
-#~ msgstr "Prènom"
-
-#~ msgid "Last Name"
-#~ msgstr "Nom"
-
 #~ msgid "Email Address"
 #~ msgstr "Adresse email"
-
-#~ msgid "Privilege"
-#~ msgstr "Privilège"
 
 #~ msgid "View Accounts"
 #~ msgstr "Montrer les comptes"
@@ -520,35 +862,17 @@ msgstr "Changer le module"
 #~ msgid "Detail Subject Name"
 #~ msgstr "Détail du nom de sujet"
 
-#~ msgid "add"
-#~ msgstr "ajouter"
-
 #~ msgid "(none found)"
 #~ msgstr "(non trouvé)"
 
-#~ msgid "Action "
-#~ msgstr "Action"
-
-#~ msgid " not set up!"
-#~ msgstr " ne pas etabli!"
-
-#~ msgid "edit"
-#~ msgstr "modifier"
-
 #~ msgid "edit resource"
 #~ msgstr "Modifier la ressource"
-
-#~ msgid "remove resource"
-#~ msgstr "Supprimer la ressource"
 
 #~ msgid "Record ID:"
 #~ msgstr "ID d'enregistrement:"
 
 #~ msgid "Created:"
 #~ msgstr "Créé:"
-
-#~ msgid "Last Update:"
-#~ msgstr "Dernière mise à jour:"
 
 #~ msgid "Related Products:"
 #~ msgstr "Produits connexes:"
@@ -586,14 +910,8 @@ msgstr "Changer le module"
 #~ msgid "remove subject"
 #~ msgstr "Supprimer le sujet"
 
-#~ msgid "add new subject"
-#~ msgstr "Ajouter nouveau sujet"
-
 #~ msgid "Additional Notes"
 #~ msgstr "Notes additionales"
-
-#~ msgid "add new note"
-#~ msgstr "ajouter une note"
 
 #~ msgid "edit note"
 #~ msgstr "modifier une note"
@@ -616,23 +934,14 @@ msgstr "Changer le module"
 #~ msgid "edit acquisitions information"
 #~ msgstr "modifier l'information des acquisitions"
 
-#~ msgid "License"
-#~ msgstr "Llicence"
-
 #~ msgid " on "
 #~ msgstr " sur "
-
-#~ msgid "Licenses:"
-#~ msgstr "Licences:"
 
 #~ msgid "No associated licenses available."
 #~ msgstr "Pas des licences associées disponibles."
 
 #~ msgid "edit license and status"
 #~ msgstr "Modifier la licence et le statut"
-
-#~ msgid "edit license status"
-#~ msgstr "Modifier le statut de la licence"
 
 #~ msgid "Access Information"
 #~ msgstr "Infromation d'accès"
@@ -663,9 +972,6 @@ msgstr "Changer le module"
 
 #~ msgid "No Resource Specific Contacts"
 #~ msgstr "Il n'y a pas une ressource spécifique par les contacts"
-
-#~ msgid "add contact"
-#~ msgstr "Ajouter un contact"
 
 #~ msgid "Inherited:"
 #~ msgstr "Hérité:"
@@ -720,9 +1026,6 @@ msgstr "Changer le module"
 
 #~ msgid "Visit Login URL"
 #~ msgstr "Source URL de connexion"
-
-#~ msgid "User Name:"
-#~ msgstr "Nom d'utilisateur:"
 
 #~ msgid "No accounts available"
 #~ msgstr "Pas des comptes disponibles"
@@ -848,9 +1151,6 @@ msgstr "Changer le module"
 #~ msgid "Sorry, no requests fit your query"
 #~ msgstr "Désolé, il n'y a pas des résultats par votre requête"
 
-#~ msgid "Displaying "
-#~ msgstr "En montrant "
-
 #~ msgid " to "
 #~ msgstr " sur "
 
@@ -874,18 +1174,6 @@ msgstr "Changer le module"
 
 #~ msgid "edit user"
 #~ msgstr "Modifier l'utilisateur"
-
-#~ msgid "remove"
-#~ msgstr "supprimer"
-
-#~ msgid "add new user"
-#~ msgstr "Ajouter un nouveau utilisateur"
-
-#~ msgid "add new currency"
-#~ msgstr "Ajouter une vouvelle concurrence"
-
-#~ msgid "Value"
-#~ msgstr "Valeur"
 
 #~ msgid "add new "
 #~ msgstr "ajouter un nouveau  "
@@ -1083,24 +1371,8 @@ msgstr "Changer le module"
 #~ "La connexion LDAP ne marche pas ou a expiré. S'il vous plaît vérifiez la "
 #~ "configuration du configuration.ini."
 
-#~ msgid ""
-#~ "JavaScript must be enabled in order for you to use CORAL. However, it "
-#~ "seems JavaScript is either disabled or not supported by your browser. To "
-#~ "use CORAL, enable JavaScript by changing your browser options, then "
-#~ msgstr ""
-#~ "JavaScript doit être activé pour utiliser CORAL. Cependant, on semble qui "
-#~ "JavaScript est desactivé ou n'est pas supporté par votre navigateur. Pour "
-#~ "utiliser CORAL, activez JavaScript en modifiant la configuration de votre "
-#~ "navigateur, après "
-
-#~ msgid "try again"
-#~ msgstr "réessayez"
-
 #~ msgid "Hello, "
 #~ msgstr "Bonjour, "
-
-#~ msgid "logout"
-#~ msgstr "Se déconnecter"
 
 #~ msgid "New Resource"
 #~ msgstr "Nouvelle ressource"
