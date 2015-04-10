@@ -18,7 +18,7 @@
 
 include_once 'directory.php';
 
-$pageTitle='Not Available';
+$pageTitle=_('Not Available');
 
 ?>
 
@@ -63,7 +63,7 @@ $pageTitle='Not Available';
 if ($_GET['errorMessage']){
 	echo "<h3>" . $_GET['errorMessage'] . "</h3>";
 }else{
-	echo "<h3>You have not been set up to have access to the Licensing Module.</h3>";
+	echo "<h3>"._("You have not been set up to have access to the Licensing Module.")."</h3>";
 }
 ?>
 
