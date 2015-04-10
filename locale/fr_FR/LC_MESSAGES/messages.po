@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-10 12:41+0100\n"
-"PO-Revision-Date: 2015-04-10 12:44+0100\n"
+"POT-Creation-Date: 2015-04-10 14:10+0100\n"
+"PO-Revision-Date: 2015-04-10 14:10+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -226,14 +226,14 @@ msgstr "Mise à jour de l'engagement"
 #: ajax_forms.php:456 ajax_forms.php:725 ajax_htmldata.php:234
 #: ajax_htmldata.php:1227 ajax_htmldata.php:1410
 msgid "edit"
-msgstr "modifier"
+msgstr "Modifier"
 
 #: ajax_forms.php:457 ajax_forms.php:726 ajax_forms.php:813
 #: ajax_htmldata.php:142 ajax_htmldata.php:234 ajax_htmldata.php:1148
 #: ajax_htmldata.php:1228 ajax_htmldata.php:1285 ajax_htmldata.php:1333
 #: ajax_htmldata.php:1450
 msgid "remove"
-msgstr "supprimer"
+msgstr "Supprimer"
 
 #: ajax_forms.php:479 ajax_forms.php:741
 msgid "add"
@@ -421,34 +421,28 @@ msgid " not set up!"
 msgstr " ne pas etabli!"
 
 #: ajax_htmldata.php:50
-#, fuzzy
 msgid "edit license"
-msgstr " licence"
+msgstr "Modifier la licence"
 
 #: ajax_htmldata.php:50
-#, fuzzy
 msgid "remove license"
-msgstr "supprimer lien de la licence"
+msgstr "Supprimer la licence"
 
 #: ajax_htmldata.php:61
-#, fuzzy
 msgid "edit organization"
-msgstr " organisation"
+msgstr "Modifier l'organisation"
 
 #: ajax_htmldata.php:78
-#, fuzzy
 msgid "License Status:"
-msgstr "Statut des licences"
+msgstr "Statut de la licence:"
 
 #: ajax_htmldata.php:131
-#, fuzzy
 msgid "For Document"
-msgstr "Pour le document:"
+msgstr "Pour le document"
 
 #: ajax_htmldata.php:132
-#, fuzzy
 msgid "Resource"
-msgstr "Nouvelle ressource"
+msgstr "Ressource"
 
 #: ajax_htmldata.php:155 ajax_htmldata.php:245 ajax_htmldata.php:850
 #: ajax_htmldata.php:968 ajax_htmldata.php:1025 ajax_htmldata.php:1194
@@ -458,31 +452,26 @@ msgid "(none found)"
 msgstr "(non trouvé)"
 
 #: ajax_htmldata.php:159
-#, fuzzy
 msgid "add new terms tool resource link"
-msgstr "Lien à les ressources de l'outil Terms"
+msgstr "Ajouter un nouveau lien à les ressources de l'outil Terms"
 
 #: ajax_htmldata.php:183
-#, fuzzy
 msgid "Details"
-msgstr "Détails:"
+msgstr "Détails"
 
 #: ajax_htmldata.php:206 ajax_htmldata.php:673
-#, fuzzy
 msgid "more..."
-msgstr "plus des options..."
+msgstr "plus..."
 
 #: ajax_htmldata.php:211 ajax_htmldata.php:678
 msgid "less..."
-msgstr ""
+msgstr "moins..."
 
 #: ajax_htmldata.php:223 ajax_htmldata.php:863 ajax_htmldata.php:981
-#, fuzzy
 msgid "(none uploaded)"
-msgstr "(non trouvé)"
+msgstr "(non téléchargé)"
 
 #: ajax_htmldata.php:228
-#, fuzzy
 msgid "view attachment "
 msgstr "Regarder la fixation"
 
@@ -491,14 +480,12 @@ msgid "add new attachment"
 msgstr "Ajouter une nouvelle fixation"
 
 #: ajax_htmldata.php:322
-#, fuzzy
 msgid "Sorry, no licenses fit your query"
-msgstr "Désolé, il n'y a pas des résultats par votre requête"
+msgstr "Désolé, il n'y a pas des licences adaptées par votre requête"
 
 #: ajax_htmldata.php:329
-#, fuzzy
 msgid "Displaying "
-msgstr "Afficher"
+msgstr "Affichage"
 
 #: ajax_htmldata.php:329
 msgid " to "
@@ -509,9 +496,8 @@ msgid " of "
 msgstr " de "
 
 #: ajax_htmldata.php:329
-#, fuzzy
 msgid " License Records"
-msgstr " ressources enregistrées"
+msgstr " Licences enregistrées"
 
 #: ajax_htmldata.php:381 ajax_htmldata.php:461 ajax_htmldata.php:768
 #: ajax_htmldata.php:773 ajax_htmldata.php:898 ajax_htmldata.php:903
@@ -519,14 +505,12 @@ msgid "Name"
 msgstr "Nom"
 
 #: ajax_htmldata.php:382 ajax_htmldata.php:462
-#, fuzzy
 msgid "Publisher / Provider"
-msgstr "Éditeur / Fournisseur:"
+msgstr "Éditeur / Fournisseur"
 
 #: ajax_htmldata.php:383 ajax_htmldata.php:463
-#, fuzzy
 msgid "Consortium"
-msgstr "Consortium:"
+msgstr "Consortium"
 
 #: ajax_htmldata.php:384 ajax_htmldata.php:464
 msgid "Status"
@@ -537,151 +521,129 @@ msgid "records per page"
 msgstr "resultats par page"
 
 #: ajax_htmldata.php:533
-#, fuzzy
 msgid "view / edit license"
-msgstr "Modifier les licences"
+msgstr "Regarder / Modifier la licence"
 
 #: ajax_htmldata.php:533
 msgid "view / edit "
-msgstr ""
+msgstr "Voir / Modifier"
 
 #: ajax_htmldata.php:533 ajax_htmldata.php:1174
-#, fuzzy
 msgid " notes"
-msgstr "Notes"
+msgstr " notes"
 
 #: ajax_htmldata.php:533 ajax_htmldata.php:535 ajax_htmldata.php:861
 #: ajax_htmldata.php:979
-#, fuzzy
 msgid "view document"
-msgstr "Regarder la fixation"
+msgstr "Regarder le document"
 
 #: ajax_htmldata.php:535 ajax_htmldata.php:637
-#, fuzzy
 msgid "view license"
-msgstr " licence"
+msgstr "Regarder la licence"
 
 #: ajax_htmldata.php:545 ajax_htmldata.php:650 ajax_htmldata.php:1153
 #: ajax_htmldata.php:1155
-#, fuzzy
 msgid " Notes:"
-msgstr "Notes:"
+msgstr " Notes:"
 
 #: ajax_htmldata.php:571
-#, fuzzy
 msgid "Qualifiers:"
-msgstr "Qualificateurs"
+msgstr "Qualificateurs:"
 
 #: ajax_htmldata.php:630 ajax_htmldata.php:1082
-#, fuzzy
 msgid "Document Text"
 msgstr "Texte de document"
 
 #: ajax_htmldata.php:642
 msgid "(document text not entered)"
-msgstr ""
+msgstr "(il n'y a pas text dans le document)"
 
 #: ajax_htmldata.php:690
-#, fuzzy
 msgid "(none for "
-msgstr "(non trouvé)"
+msgstr "(non pour "
 
 #: ajax_htmldata.php:740
-#, fuzzy
 msgid "Archived Documents"
-msgstr "Date de l'archivage de document"
+msgstr "Documents archivés"
 
 #: ajax_htmldata.php:740
-#, fuzzy
 msgid "hide archives"
-msgstr "cacher les contacts archivées"
+msgstr "cacher les archives"
 
 #: ajax_htmldata.php:770 ajax_htmldata.php:775 ajax_htmldata.php:900
 #: ajax_htmldata.php:905
-#, fuzzy
 msgid "Effective Date"
-msgstr "Date effective:"
+msgstr "Date effective"
 
 #: ajax_htmldata.php:845 ajax_htmldata.php:963
-#, fuzzy
 msgid "add/view details"
-msgstr "Ajouter detail du sujet"
+msgstr "Ajouter/Regarder les détails"
 
 #: ajax_htmldata.php:852 ajax_htmldata.php:970
-#, fuzzy
 msgid "add signatures"
-msgstr "Signatures"
+msgstr "Ajouter signatures"
 
 #: ajax_htmldata.php:868 ajax_htmldata.php:985
-#, fuzzy
 msgid "view expressions"
-msgstr "Expressions"
+msgstr "Regarder les expressions"
 
 #: ajax_htmldata.php:874 ajax_htmldata.php:991
-#, fuzzy
 msgid "edit document"
-msgstr "Modifier la compte"
+msgstr "Modifier le document"
 
 #: ajax_htmldata.php:874 ajax_htmldata.php:991
-#, fuzzy
 msgid "remove document"
-msgstr "Supprimer une compte"
+msgstr "Supprimer le document"
 
 #: ajax_htmldata.php:884 ajax_htmldata.php:886
-#, fuzzy
 msgid "This document has "
-msgstr "Date de l'archivage de document"
+msgstr "Ce document a été"
 
 #: ajax_htmldata.php:884 ajax_htmldata.php:886
 msgid " children document(s) not displayed."
-msgstr ""
+msgstr " les documents des enfants ne sont pas affichés."
 
 #: ajax_htmldata.php:884 ajax_htmldata.php:886
 msgid "show all documents for this parent"
-msgstr ""
+msgstr "montrer tous les documents du parent"
 
 #: ajax_htmldata.php:890 ajax_htmldata.php:892 ajax_htmldata.php:1000
 #: ajax_htmldata.php:1002
 msgid "The following "
-msgstr ""
+msgstr "La suivante "
 
 #: ajax_htmldata.php:890 ajax_htmldata.php:892 ajax_htmldata.php:1000
 #: ajax_htmldata.php:1002
 msgid " document(s) belong to "
-msgstr ""
+msgstr " document(s) appartient(nent) à "
 
 #: ajax_htmldata.php:890 ajax_htmldata.php:892
 msgid "hide children documents for this parent"
-msgstr ""
+msgstr "cacher les documents des enfants de ce parent"
 
 #: ajax_htmldata.php:929
-#, fuzzy
 msgid "archive document"
-msgstr "Date de l'archivage de document"
+msgstr "archiver le document"
 
 #: ajax_htmldata.php:931
-#, fuzzy
 msgid "archived on: "
-msgstr "Archivé:"
+msgstr "Archivé sur: "
 
 #: ajax_htmldata.php:1029
-#, fuzzy
 msgid " archive(s) available."
-msgstr " contact(s) archivée(s) disponible(s)."
+msgstr " archive(s) disponible(s)."
 
 #: ajax_htmldata.php:1029
-#, fuzzy
 msgid "show archives"
-msgstr "montrer les contacts archivées"
+msgstr "montrer les archives"
 
 #: ajax_htmldata.php:1035
-#, fuzzy
 msgid "upload new document"
-msgstr "Ajouter un nouveau type de document"
+msgstr "Télécharger un nouveau document"
 
 #: ajax_htmldata.php:1123
 msgid "used in terms tool"
-msgstr ""
+msgstr "utilisé dans l'outil terms"
 
 #: ajax_htmldata.php:1168
 msgid "(none)"
@@ -689,22 +651,19 @@ msgstr "(aucun)"
 
 #: ajax_htmldata.php:1174
 msgid "add/view "
-msgstr ""
+msgstr "ajouter/regarder"
 
 #: ajax_htmldata.php:1198
-#, fuzzy
 msgid "add new expression"
-msgstr "Ajouter un nouveau type de document"
+msgstr "Ajouter une nouvelle expression"
 
 #: ajax_htmldata.php:1265
-#, fuzzy
 msgid "Terms Tool Update Email"
-msgstr "Email de l'outil Terms"
+msgstr "Mise à jour l'email de l'outil Terms"
 
 #: ajax_htmldata.php:1486
-#, fuzzy
 msgid "Limit by Qualifier:"
-msgstr "Qualificateur:"
+msgstr "Limite par le qualificateur:"
 
 #: templates/header.php:35
 msgid ""
