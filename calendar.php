@@ -18,7 +18,7 @@
 ** but it was not retrofitted to more tightly integrate into the Licensing module.
 */
 include_once 'directory.php';
-$pageTitle='Home';
+$pageTitle=_('Home');
 include 'templates/header.php';
 //used for creating a "sticky form" for back buttons
 //except we don't want it to retain if they press the 'index' button
@@ -31,22 +31,22 @@ include 'templates/header.php';
 $_SESSION['ref_script']=$currentPage;
 //below includes search options in left pane only - the results are refreshed through ajax and placed in div searchResults
 //print header
-$pageTitle='Calendar';
+$pageTitle=_('Calendar');
 $config = new Configuration;
 $host = $config->database->host;
 $username = $config->database->username;
 $password = $config->database->password;
 $license_databaseName = $config->database->name;
 $resource_databaseName = $config->settings->resourcesDatabaseName;
-$link = mysqli_connect($host, $username, $password) or die("Could not connect to host.");
-mysqli_select_db($link, $license_databaseName) or die("Could not find License database.");
-mysqli_select_db($link, $resource_databaseName) or die("Could not find Resource database.");
+$link = mysqli_connect($host, $username, $password) or die(_("Could not connect to host."));
+mysqli_select_db($link, $license_databaseName) or die(_("Could not find License database."));
+mysqli_select_db($link, $resource_databaseName) or die(_("Could not find Resource database."));
 $display = array();
 $calendarSettings = new CalendarSettings();
 try{
 	$calendarSettingsArray = $calendarSettings->allAsArray();
 }catch(Exception $e){
-	echo "<span style='color:red'>There was an error with the CalendarSettings Table please verify the table has been created.</span>";
+	echo "<span style='color:red'>"._("There was an error with the CalendarSettings Table please verify the table has been created.")."</span>";
 	exit;
 }
 // Check for earlier version of Resource Module.  With update of 1.3 the table definition changed.
@@ -87,7 +87,7 @@ $result = mysqli_query($link, $query);
 
 	// Validate the config settings
 	if ($config_error) {
-		echo "<span style='color:red'>There was an error with the CalendarSettings Configuration.</span>";
+		echo "<span style='color:red'>"._("There was an error with the CalendarSettings Configuration.")."</span>";
 		exit;
 	}
 
@@ -119,7 +119,7 @@ $result = mysqli_query($link, $query) or die("Bad Query Failure");
 	<table class="headerTable" style="background-image:url('images/header.gif');background-repeat:no-repeat;">
 		<tr style='vertical-align:top;'>
 			<td>
-				<b>Upcoming License Renewals</b>
+				<b><?= _("Upcoming License Renewals");?></b>
 			</td>
 		</tr>
 	</table>
@@ -207,20 +207,20 @@ $result = mysqli_query($link, $query) or die("Bad Query Failure");
 					$html = $html . "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='../resources/resource.php?resourceID=" . $row["resourceID"] . "'><b>". $row["titleText"] . "</b></a>";
 					$html = $html . "&nbsp;&nbsp;[License: ";
 						if (is_null($row["licenseID"])) {
-							$html = $html . "<i>No associated licenses available.</i>";
+							$html = $html . "<i>"._("No associated licenses available.")."</i>";
 						} else {
 							$html = $html . "<a href='license.php?licenseID=" . $row["licenseID"] . "'>". $row["shortName"] . "</a>";
 						}
 					$html = $html . " ] - " . $row["resourceTypeName"] . " ";
                     if ($interval->invert) {
-                        $html = $html . "- <strong style='color:red'>Expired $num_days days ago</strong>";
+                        $html = $html . "- <strong style='color:red'>"._("Expired ").$num_days._(" days ago")."</strong>";
                     } else {
-					    $html = $html . "- Expires in ";
+					    $html = $html . _("- Expires in ");
 
 						if ($date1 > $date2) {
-							$html = $html . "<span style='color:red'>(" . $num_days . " days)</span>"; ;
+							$html = $html . "<span style='color:red'>(" . $num_days . _(" days)")."</span>";
 						} else {
-							$html = $html . $num_days . " days "; ;
+							$html = $html . $num_days . _(" days ");
 						}
 					}
 					$k = 0;
@@ -231,7 +231,7 @@ $result = mysqli_query($link, $query) or die("Bad Query Failure");
 								$html = $html . "</td></tr>";
 								$html = $html . "<tr>
 									<td class='$alt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-									<td class='$alt'>Participants:  ";
+									<td class='$alt'>"._("Participants:  ");
 							} else {
 								$html = $html . ", ";
 							}

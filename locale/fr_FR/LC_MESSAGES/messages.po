@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-10 15:16+0100\n"
-"PO-Revision-Date: 2015-04-10 15:16+0100\n"
+"POT-Creation-Date: 2015-04-10 16:20+0100\n"
+"PO-Revision-Date: 2015-04-10 16:20+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -24,7 +24,8 @@ msgid "add new user"
 msgstr "Ajouter un nouveau utilisateur"
 
 #: admin.php:39 admin.php:56 admin.php:70 admin.php:83 admin.php:97
-#: admin.php:112 admin.php:132 admin.php:153 admin.php:167
+#: admin.php:112 admin.php:132 admin.php:153 admin.php:167 in_progress.php:38
+#: license.php:70 license.php:94 license.php:113 license.php:133
 msgid "Loading..."
 msgstr "Chargement..."
 
@@ -116,7 +117,7 @@ msgstr "Éditeur / Fournisseur:"
 msgid "Consortium:"
 msgstr "Consortium:"
 
-#: ajax_forms.php:94 ajax_htmldata.php:494
+#: ajax_forms.php:94 ajax_htmldata.php:494 index.php:92
 msgid ""
 "There was an error processing this request - please verify configuration.ini "
 "is set up for organizations correctly and the database and tables have been "
@@ -244,7 +245,8 @@ msgstr "ajouter"
 msgid "Close"
 msgstr "Fermer"
 
-#: ajax_forms.php:545
+#: ajax_forms.php:545 license.php:63 license.php:87 license.php:107
+#: license.php:126
 msgid "Expressions"
 msgstr "Expressions"
 
@@ -276,7 +278,8 @@ msgstr "Notes"
 msgid "For Document Text:"
 msgstr "Pour le text de document:"
 
-#: ajax_forms.php:787
+#: ajax_forms.php:787 license.php:65 license.php:89 license.php:109
+#: license.php:128
 msgid "Attachments"
 msgstr "Fixations"
 
@@ -372,7 +375,7 @@ msgid "Leave this field blank if the user shouldn't receive emails."
 msgstr ""
 "Laissez ce champ vide si l'utilisateur ne doit pas recevoir des emails."
 
-#: ajax_forms.php:993 ajax_forms.php:994 ajax_htmldata.php:1322
+#: ajax_forms.php:993 ajax_forms.php:994 ajax_htmldata.php:1322 index.php:180
 msgid "Expression Type"
 msgstr "Type d'expression"
 
@@ -405,7 +408,7 @@ msgid "Value"
 msgstr "Valeur"
 
 #: ajax_forms.php:1144 ajax_forms.php:1167 ajax_htmldata.php:1084
-#: ajax_htmldata.php:1437
+#: ajax_htmldata.php:1437 index.php:205
 msgid "Qualifier"
 msgstr "Qualificateur"
 
@@ -509,11 +512,11 @@ msgstr "Nom"
 msgid "Publisher / Provider"
 msgstr "Éditeur / Fournisseur"
 
-#: ajax_htmldata.php:383 ajax_htmldata.php:463
+#: ajax_htmldata.php:383 ajax_htmldata.php:463 index.php:101
 msgid "Consortium"
 msgstr "Consortium"
 
-#: ajax_htmldata.php:384 ajax_htmldata.php:464
+#: ajax_htmldata.php:384 ajax_htmldata.php:464 index.php:124
 msgid "Status"
 msgstr "Statut"
 
@@ -646,7 +649,7 @@ msgstr "Télécharger un nouveau document"
 msgid "used in terms tool"
 msgstr "utilisé dans l'outil terms"
 
-#: ajax_htmldata.php:1168
+#: ajax_htmldata.php:1168 index.php:105
 msgid "(none)"
 msgstr "(aucun)"
 
@@ -786,6 +789,136 @@ msgstr "Le fichier de la fixation a été supprimé avec succès."
 msgid "Status has been updated"
 msgstr "Le statut a été mit à jour"
 
+#: calendar.php:26 in_progress.php:23 index.php:23 templates/header.php:104
+#: templates/header.php:107 templates/header.php:110
+msgid "Home"
+msgstr "Accueil"
+
+#: calendar.php:44 templates/header.php:104 templates/header.php:107
+#: templates/header.php:110
+msgid "Calendar"
+msgstr "Calendrier"
+
+#: calendar.php:54
+msgid "Could not connect to host."
+msgstr "Ne pouvait pas se connecter au host."
+
+#: calendar.php:55
+msgid "Could not find License database."
+msgstr "N'a pas pu trouver la base de données Licence"
+
+#: calendar.php:56
+msgid "Could not find Resource database."
+msgstr "N'a pas pu trouver la base de données Resource."
+
+#: calendar.php:64
+msgid ""
+"There was an error with the CalendarSettings Table please verify the table "
+"has been created."
+msgstr ""
+"Il y avait un erreur avec la table CalendarSettings, s'il vous plaît, "
+"verifiez que la table a été créée."
+
+#: calendar.php:95
+msgid "There was an error with the CalendarSettings Configuration."
+msgstr "Il y avait un erreur avec la configuation de CalendarSettings."
+
+#: calendar.php:130
+msgid "Upcoming License Renewals"
+msgstr "Renouvellements de licence à venir"
+
+#: calendar.php:222
+msgid "No associated licenses available."
+msgstr "Pas des licences associées disponibles."
+
+#: calendar.php:228
+msgid "Expired "
+msgstr "Expiré"
+
+#: calendar.php:228
+msgid " days ago"
+msgstr " *********"
+
+#: calendar.php:230
+msgid "- Expires in "
+msgstr "- Expirerai en "
+
+#: calendar.php:233
+msgid " days)"
+msgstr " jours)"
+
+#: calendar.php:235
+msgid " days "
+msgstr " jours "
+
+#: calendar.php:247
+msgid "Participants:  "
+msgstr "Participants:"
+
+#: compare.php:22
+msgid "Expression Comparison"
+msgstr "Comparaison de l'expression"
+
+#: compare.php:39
+msgid "Limit by Expression Type:"
+msgstr "Limite par le type d'expression:"
+
+#: in_progress.php:33
+msgid "Licenses In Progress"
+msgstr "Licences in avance"
+
+#: in_progress.php:33
+msgid "Browse All"
+msgstr "Chercher tous"
+
+#: index.php:48
+msgid "Search"
+msgstr "Recherche"
+
+#: index.php:49 index.php:238
+msgid "new search"
+msgstr "Nouvelle recherche"
+
+#: index.php:58
+msgid "Name (contains)"
+msgstr "Nom (contains)"
+
+#: index.php:61
+msgid "go!"
+msgstr "Valider!"
+
+#: index.php:67
+msgid "Publisher/Provider"
+msgstr "Éditeur/Fournisseur"
+
+#: index.php:78 index.php:104
+msgid "All"
+msgstr "Tous"
+
+#: index.php:149
+msgid "Document Type"
+msgstr "Type de document"
+
+#: index.php:215
+msgid "Starts with"
+msgstr "Commence avec"
+
+#: license.php:62 license.php:86 license.php:106 license.php:125
+msgid "Documents"
+msgstr "Documents"
+
+#: license.php:64 license.php:88 license.php:108 license.php:127
+msgid "Terms Tool"
+msgstr "Outil Terms"
+
+#: not_available.php:21
+msgid "Not Available"
+msgstr "No disponible"
+
+#: not_available.php:66
+msgid "You have not been set up to have access to the Licensing Module."
+msgstr "Vous n'avez pas été la configuration pour accéder au Module Licencing."
+
 #: templates/header.php:35
 msgid ""
 "Both license name and organization must be filled out.  Please try again."
@@ -812,10 +945,6 @@ msgstr "réessayez"
 msgid "logout"
 msgstr "Se déconnecter"
 
-#: templates/header.php:104 templates/header.php:107 templates/header.php:110
-msgid "Home"
-msgstr "Accueil"
-
 #: templates/header.php:104 templates/header.php:107
 msgid "New License"
 msgstr "Nouvelle licence"
@@ -828,10 +957,6 @@ msgstr "Licences in avance"
 msgid "Expression Comparision"
 msgstr "Comparaison de l'expression"
 
-#: templates/header.php:104 templates/header.php:107 templates/header.php:110
-msgid "Calendar"
-msgstr "Calendrier"
-
 #: templates/header.php:104
 msgid "Admin"
 msgstr "Admin"
@@ -839,6 +964,10 @@ msgstr "Admin"
 #: templates/header.php:126
 msgid "Change Module"
 msgstr "Changer le module"
+
+#: terms_report.php:22
+msgid "Terms Report"
+msgstr "Report terms"
 
 #~ msgid "Workflow / User Group"
 #~ msgstr "Workflow / Groupe d'utilisateur"
@@ -899,9 +1028,6 @@ msgstr "Changer le module"
 
 #~ msgid "User Limit"
 #~ msgstr "Limit d'utilisateurs"
-
-#~ msgid "Could not connect to "
-#~ msgstr "Ne pouvait pas se connecter à "
 
 #~ msgid "Error: unexpected fgets() fail"
 #~ msgstr "Erreur: inattendu échoue fgets()"
@@ -1287,9 +1413,6 @@ msgstr "Changer le module"
 #~ msgid " on "
 #~ msgstr " sur "
 
-#~ msgid "No associated licenses available."
-#~ msgstr "Pas des licences associées disponibles."
-
 #~ msgid "edit license and status"
 #~ msgstr "Modifier la licence et le statut"
 
@@ -1343,9 +1466,6 @@ msgstr "Changer le module"
 
 #~ msgid "Last Updated:"
 #~ msgstr "Dernière mise à jour:"
-
-#~ msgid "No contacts available"
-#~ msgstr "Pas de contacts disponibles"
 
 #~ msgid "No Resource Specific Accounts"
 #~ msgstr "Il n'y a pas une ressource spécifié par les comptes"
@@ -1495,9 +1615,6 @@ msgstr "Changer le module"
 #~ msgid "Days in advance of expiration"
 #~ msgstr "Jours à l'avance de expiration"
 
-#~ msgid "add days"
-#~ msgstr "ajouter jours"
-
 #~ msgid "Workflow Setup"
 #~ msgstr "Configuration du workflow"
 
@@ -1535,29 +1652,11 @@ msgstr "Changer le module"
 #~ msgid " exists."
 #~ msgstr " existant."
 
-#~ msgid "Search"
-#~ msgstr "Recherche"
-
-#~ msgid "new search"
-#~ msgstr "Nouvelle recherche"
-
-#~ msgid "Name (contains)"
-#~ msgstr "Nom (contains)"
-
-#~ msgid "go!"
-#~ msgstr "Valider!"
-
 #~ msgid "Fund"
 #~ msgstr "Fonds"
 
-#~ msgid "All"
-#~ msgstr "Tous"
-
 #~ msgid "Record ID"
 #~ msgstr "ID d'enregistrement"
-
-#~ msgid "Starts with"
-#~ msgstr "Commence avec"
 
 #~ msgid "Note (contains)"
 #~ msgstr "Note (contains)"
