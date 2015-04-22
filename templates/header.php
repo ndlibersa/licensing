@@ -61,6 +61,19 @@ $coralURL = $util->getCORALURL();
 <script type="text/javascript" src="js/plugins/jquery.datePicker.js"></script>
 <script type="text/javascript" src="js/plugins/jquery.autocomplete.js"></script>
 <script type="text/javascript" src="js/plugins/jquery.tooltip.js"></script>
+<script type="text/javascript" src="js/plugins/Gettext.js"></script>
+<?php
+   if(isset($_COOKIE["lang"])){
+        if($_COOKIE["lang"]=='fr'){
+            echo "<link rel='gettext' type='application/x-po' href='./locale/fr_FR/LC_MESSAGES/messages.po'>";
+        }
+    }else{
+        $defLang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,2);
+        if($defLang=='fr'){
+            echo "<link rel='gettext' type='application/x-po' href='./locale/fr_FR/LC_MESSAGES/messages.po'>";
+        }
+    } 
+?>
 <script type="text/javascript" src="js/common.js"></script>
 </head>
 <body>
@@ -83,7 +96,7 @@ $coralURL = $util->getCORALURL();
 <div style='margin-top:1px;'>
 <span class='smallText' style='color:#526972;'>
 <?php
-	echo "Hello, ";
+	echo _("Hello, ");
 	//user may not have their first name / last name set up
 	if ($user->lastName){
 		echo $user->firstName . " " . $user->lastName;
@@ -181,7 +194,7 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
 
             function setLanguage(lang) {
                 var wl = window.location, now = new Date(), time = now.getTime();
-                var cookievalid=86400000; // 1 jour (1000*60*60*24)
+                var cookievalid=86400000; // 1 day (1000*60*60*24)
                 time += cookievalid;
                 now.setTime(time);
                 document.cookie ='lang='+lang+';path=/'+';domain='+wl.host+';expires='+now;
