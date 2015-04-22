@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-15 14:01+0100\n"
-"PO-Revision-Date: 2015-04-15 14:01+0100\n"
+"POT-Creation-Date: 2015-04-22 17:12+0100\n"
+"PO-Revision-Date: 2015-04-22 17:12+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -14,6 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: /var/www/Coral/licensing/js/plugins\n"
 
 #: admin.php:35
 msgid "Users"
@@ -233,11 +234,13 @@ msgstr "Modifier"
 #: ajax_forms.php:457 ajax_forms.php:726 ajax_forms.php:813
 #: ajax_htmldata.php:142 ajax_htmldata.php:234 ajax_htmldata.php:1148
 #: ajax_htmldata.php:1228 ajax_htmldata.php:1285 ajax_htmldata.php:1333
-#: ajax_htmldata.php:1450
+#: ajax_htmldata.php:1450 js/forms/attachmentForm.js:84
 msgid "remove"
 msgstr "Supprimer"
 
-#: ajax_forms.php:479 ajax_forms.php:741
+#: ajax_forms.php:479 ajax_forms.php:741 js/admin.js:327
+#: js/forms/documentForm.js:188 js/forms/expressionForm.js:78
+#: js/forms/licenseForm.js:172 js/forms/signatureForm.js:103
 msgid "add"
 msgstr "ajouter"
 
@@ -281,7 +284,7 @@ msgstr "Pour le text de document:"
 #: ajax_forms.php:787 license.php:65 license.php:89 license.php:109
 #: license.php:128
 msgid "Attachments"
-msgstr "Fixations"
+msgstr "Pièces jointes"
 
 #: ajax_forms.php:791
 msgid "Date:"
@@ -293,7 +296,7 @@ msgstr "Détails:"
 
 #: ajax_forms.php:804
 msgid "Attachments:"
-msgstr "Fixations:"
+msgstr "Pièces jointes:"
 
 #: ajax_forms.php:858 ajax_forms.php:899 ajax_forms.php:982
 #: ajax_forms.php:1133
@@ -477,11 +480,11 @@ msgstr "(non téléchargé)"
 
 #: ajax_htmldata.php:228
 msgid "view attachment "
-msgstr "Regarder la fixation"
+msgstr "Regarder la pièce jointe "
 
 #: ajax_htmldata.php:249
 msgid "add new attachment"
-msgstr "Ajouter une nouvelle fixation"
+msgstr "Ajouter une nouvelle pièce jointe"
 
 #: ajax_htmldata.php:322
 msgid "Sorry, no licenses fit your query"
@@ -779,23 +782,23 @@ msgstr ""
 
 #: ajax_processing.php:1027
 msgid "Attachment successfully deleted"
-msgstr "La fixation a été supprimé avec succès."
+msgstr "La pièce jointe a été supprimé avec succès."
 
 #: ajax_processing.php:1041
 msgid "Attachment file successfully deleted"
-msgstr "Le fichier de la fixation a été supprimé avec succès."
+msgstr "Le fichier de la pièce jointe a été supprimé avec succès."
 
 #: ajax_processing.php:1062
 msgid "Status has been updated"
 msgstr "Le statut a été mit à jour"
 
-#: calendar.php:26 in_progress.php:23 index.php:23 templates/header.php:104
-#: templates/header.php:107 templates/header.php:110
+#: calendar.php:26 in_progress.php:23 index.php:23 templates/header.php:117
+#: templates/header.php:120 templates/header.php:123
 msgid "Home"
 msgstr "Accueil"
 
-#: calendar.php:44 templates/header.php:104 templates/header.php:107
-#: templates/header.php:110
+#: calendar.php:44 templates/header.php:117 templates/header.php:120
+#: templates/header.php:123
 msgid "Calendar"
 msgstr "Calendrier"
 
@@ -926,7 +929,7 @@ msgstr ""
 "Tant le nom de licence que l'organisation doivent être remplis. S'il vous "
 "plaît ressayez."
 
-#: templates/header.php:67
+#: templates/header.php:80
 msgid ""
 "JavaScript must be enabled in order for you to use CORAL. However, it seems "
 "JavaScript is either disabled or not supported by your browser. To use "
@@ -937,42 +940,207 @@ msgstr ""
 "utiliser CORAL, activez JavaScript en modifiant la configuration de votre "
 "navigateur, après "
 
-#: templates/header.php:67
+#: templates/header.php:80
 msgid "try again"
 msgstr "réessayez"
 
-#: templates/header.php:95
+#: templates/header.php:99
+msgid "Hello, "
+msgstr "Bonjour, "
+
+#: templates/header.php:108
 msgid "logout"
 msgstr "Se déconnecter"
 
-#: templates/header.php:104 templates/header.php:107
+#: templates/header.php:117 templates/header.php:120
 msgid "New License"
 msgstr "Nouvelle licence"
 
-#: templates/header.php:104 templates/header.php:107 templates/header.php:110
+#: templates/header.php:117 templates/header.php:120 templates/header.php:123
 msgid "Licenses in Progress"
 msgstr "Licences in avance"
 
-#: templates/header.php:104 templates/header.php:107
+#: templates/header.php:117 templates/header.php:120
 msgid "Expression Comparision"
 msgstr "Comparaison de l'expression"
 
-#: templates/header.php:104
+#: templates/header.php:117
 msgid "Admin"
 msgstr "Admin"
 
-#: templates/header.php:126
+#: templates/header.php:139
 msgid "Change Module"
 msgstr "Changer le module"
 
-#: templates/header.php:156 templates/header.php:157
+#: templates/header.php:169 templates/header.php:170
 msgid "French"
 msgstr "Français"
 
-#: templates/header.php:156 templates/header.php:157
+#: templates/header.php:169 templates/header.php:170
 msgid "English"
 msgstr "Anglais"
 
 #: terms_report.php:22
 msgid "Terms Report"
 msgstr "Report terms"
+
+#: js/admin.js:122 js/admin.js:227 js/admin.js:252 js/admin.js:278
+#: js/admin.js:305 js/index.js:43
+msgid "Processing..."
+msgstr "En traitement..."
+
+#: js/admin.js:225 js/admin.js:303
+msgid "Do you really want to delete this data?"
+msgstr "Voulez-vous vraiment supprimer cette donnée?"
+
+#: js/admin.js:250
+msgid "Do you really want to delete this user?"
+msgstr "Voulez-vous vraiment supprimer cet utilisateur?"
+
+#: js/admin.js:276
+msgid ""
+"Do you really want to delete this expression type?  Any associated "
+"Qualifiers will be deleted as well."
+msgstr ""
+"Voulez-vous vraiment supprimer ce type d'expression? Tous les qualificatifs "
+"associés seront supprimés aussi."
+
+#: js/forms/attachmentForm.js:41 js/forms/attachmentForm.js:54
+#: js/forms/documentForm.js:102
+msgid "File name is already being used..."
+msgstr "Le nom du fichier est en use..."
+
+#: js/forms/attachmentForm.js:46
+msgid "The attachments directory is not writable."
+msgstr "Le dossier des pièces jointes n'a pas des droits d'écriture."
+
+#: js/forms/attachmentForm.js:84 js/forms/documentForm.js:134
+#: js/license.js:440
+msgid " successfully uploaded."
+msgstr " téléchargé avec succès."
+
+#: js/forms/attachmentForm.js:101 js/forms/attachmentForm.js:109
+msgid "Do you really want to delete this attachment?"
+msgstr "Voulez-vous vraiment supprimer cette pièce jointe?"
+
+#: js/forms/documentForm.js:38 js/forms/licenseForm.js:34
+msgid "This name is already being used!"
+msgstr "Ce nom est déjà utilisé!"
+
+#: js/forms/documentForm.js:106
+msgid ""
+"File name may not contain special characters - ampersand, single quote, "
+"double quote or less than/greater than characters"
+msgstr ""
+"Le nom du fichier ne peut pas contenir des caractères spéciaux - "
+"esperluètte, apostrophe, guillemet ou caractères de moins que / plus que."
+
+#: js/forms/documentForm.js:110
+msgid "The documents directory is not writable."
+msgstr "Le dossier des documents n'a pas des droits d'écriture."
+
+#: js/forms/documentForm.js:176
+msgid "Document Type is required."
+msgstr "Le type de document est nécessaire"
+
+#: js/forms/documentForm.js:177
+msgid "Short Name is required."
+msgstr "Nom court est nécessaire."
+
+#: js/forms/documentForm.js:207
+msgid "DocumentType has been added"
+msgstr "Le type de document a été ajouté"
+
+#: js/forms/expressionForm.js:89
+msgid "ExpressionType has been added"
+msgstr "Le Type d'Expression a été ajouté"
+
+#: js/forms/licenseForm.js:57 js/forms/licenseForm.js:118
+msgid "Warning!  This organization will be added new."
+msgstr "Attention! Cette organisation sera ajouté à nouveau."
+
+#: js/forms/licenseForm.js:191
+msgid "Consortium has been added"
+msgstr "Le consortium a été ajouté"
+
+#: js/forms/licenseForm.js:200
+msgid "License Name is required."
+msgstr "Nom de la licence est nécessaire."
+
+#: js/forms/licenseForm.js:201
+msgid "Provider is required."
+msgstr "Un fournisseur est nécessaire."
+
+#: js/forms/sfxForm.js:59
+msgid "A document must be selected to continue."
+msgstr "Un document doit être selectionné pour continuer."
+
+#: js/forms/sfxForm.js:60
+msgid "Terms Tool Resource must be entered to continue."
+msgstr "L'outil Terms Resource doit être entré pour continuer."
+
+#: js/forms/signatureForm.js:41
+msgid "No match!"
+msgstr "Pas des coincidences!"
+
+#: js/forms/signatureForm.js:41
+msgid "Selected: "
+msgstr "Sélectionné: "
+
+#: js/forms/signatureForm.js:84
+msgid "Do you really want to delete this signature?"
+msgstr "Voulez-vous vraiment supprimer cette signature?"
+
+#: js/forms/signatureForm.js:114
+msgid "SignatureType has been added"
+msgstr "Le type de signature a été ajouté"
+
+#: js/license.js:102
+msgid "Do you really want to delete this license?"
+msgstr "Voulez-vous vraiment supprimer cette licence?"
+
+#: js/license.js:262
+msgid " record)"
+msgstr " registre)"
+
+#: js/license.js:264
+msgid " records)"
+msgstr " registres)"
+
+#: js/license.js:297
+msgid "Do you really want to archive this document?"
+msgstr "Voulez-vous vraiment archiver cette document?"
+
+#: js/license.js:315
+msgid "Do you really want to delete this document?"
+msgstr "Voulez-vous vraiment supprimer cette document?"
+
+#: js/license.js:322
+msgid ""
+"There was a problem with deleting the document.  You may not delete a "
+"document if there are associated expressions.  Remove all expressions and "
+"try again."
+msgstr ""
+"Il y avait un priblème pour supprimer le document. Vous ne pouvez pas "
+"supprimer un document s'il y a des expressions associées. Enlevez tous les "
+"expressions et reéssayez."
+
+#: js/license.js:336
+msgid "Do you really want to delete this expression?"
+msgstr "Voulez-vous vraiment supprimer cette expression?"
+
+#: js/license.js:351
+msgid ""
+"Do you really want to delete this attachment?  This will also delete all "
+"attached files."
+msgstr ""
+"Voulez-vous vraiment supprimer cette pièce jointe? Ça effacera aussi tous "
+"les fichiers enregistrés."
+
+#: js/license.js:368
+msgid "Do you really want to delete this terms tool resource link?"
+msgstr "Voulez-vous vraiment supprimer ce lien à l'outil terms resource?"
+
+#: js/license.js:408 js/license.js:438
+msgid "File name is already being used."
+msgstr "Le nom du fichier est en use."

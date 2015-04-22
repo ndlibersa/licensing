@@ -35,7 +35,7 @@ $(function(){
 					$("#submitDocument").removeAttr("disabled");
 					canSubmit=1;
 				}else{
-				  	$("#span_error_shortName").html("This name is already being used!");
+				  	$("#span_error_shortName").html(_("This name is already being used!"));
 				  	$("#submitDocument").attr("disabled","disabled");
 				  	canSubmit=0;
 					
@@ -99,15 +99,15 @@ function checkUploadDocument (file, extension){
 		 success:    function(response) {
 			if (response == "1"){
 				exists = "1";
-				$("#div_file_message").html("  <font color='red'>File name is already being used...</font>");
+				$("#div_file_message").html("  <font color='red'>"+_("File name is already being used...")+"</font>");
 				return false;
 			}else if (response == "2"){
 				exists = "2";
-				$("#div_file_message").html("  <font color='red'>File name may not contain special characters - ampersand, single quote, double quote or less than/greater than characters</font>");
+				$("#div_file_message").html("  <font color='red'>"+_("File name may not contain special characters - ampersand, single quote, double quote or less than/greater than characters")+"</font>");
 				return false;	
 			} else if (response == "3"){
 				exists = "3";
-				$("#div_file_message").html("  <font color='red'>The documents directory is not writable.</font>");
+				$("#div_file_message").html("  <font color='red'>"+_("The documents directory is not writable.")+"</font>");
 				return false;	
 			}else{
 				exists = "";
@@ -131,7 +131,7 @@ new AjaxUpload('upload_button',
           if (errorMessage.size() > 0) {
             $("#div_file_message").html("<font color='red'>" + errorMessage.html() + "</font>");
           } else {
-  					$("#div_file_message").html("<img src='images/paperclip.gif'>" + fileName + " successfully uploaded.");
+  					$("#div_file_message").html("<img src='images/paperclip.gif'>" + fileName + _(" successfully uploaded."));
   					$("#div_uploadFile").html("<br />");
           }
 				}
@@ -173,8 +173,8 @@ function doSubmitDocument(){
 function validateForm (){
 
 	myReturn=0;
-	if (!validateRequired('documentTypeID','Document Type is required.')) myReturn="1";
-	if (!validateRequired('shortName','Short Name is required.')) myReturn="1";
+	if (!validateRequired('documentTypeID',_("Document Type is required."))) myReturn="1";
+	if (!validateRequired('shortName',_("Short Name is required."))) myReturn="1";
 
 	if (myReturn == "1"){
 		return false;
@@ -185,7 +185,7 @@ function validateForm (){
 
 
 function newDocumentType(){
-  $('#span_newDocumentType').html("<input type='text' name='newDocumentType' id='newDocumentType' style='width:80px;padding-top:1px;' />  <a href='javascript:addDocumentType();'>add</a>");
+  $('#span_newDocumentType').html("<input type='text' name='newDocumentType' id='newDocumentType' style='width:80px;padding-top:1px;' />  <a href='javascript:addDocumentType();'>"+_("add")+"</a>");
          
          //attach enter key event to new input and call add data when hit
          $('#newDocumentType').keyup(function(e) {
@@ -204,6 +204,6 @@ function addDocumentType(){
 	 url:        "ajax_processing.php?action=addDocumentType",
 	 cache:      false,
 	 data:       { shortName: $("#newDocumentType").val() },
-	 success:    function(html) { $('#span_documentType').html(html); $('#span_newDocumentType').html("<font color='red'>DocumentType has been added</font>"); }
+	 success:    function(html) { $('#span_documentType').html(html); $('#span_newDocumentType').html("<font color='red'>"+_("DocumentType has been added")+"</font>"); }
  });
 }
