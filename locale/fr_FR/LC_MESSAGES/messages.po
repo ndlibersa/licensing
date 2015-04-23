@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-23 12:37+0100\n"
-"PO-Revision-Date: 2015-04-23 12:37+0100\n"
+"POT-Creation-Date: 2015-04-23 13:58+0100\n"
+"PO-Revision-Date: 2015-04-23 14:14+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -839,11 +839,11 @@ msgstr "Pas des licences associées disponibles."
 
 #: calendar.php:228
 msgid "Expired "
-msgstr "Expiré"
+msgstr "Expiré il y a "
 
 #: calendar.php:228
 msgid " days ago"
-msgstr " *********"
+msgstr " jours"
 
 #: calendar.php:230
 msgid "- Expires in "
