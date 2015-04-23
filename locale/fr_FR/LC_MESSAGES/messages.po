@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-23 11:07+0100\n"
-"PO-Revision-Date: 2015-04-23 11:07+0100\n"
+"POT-Creation-Date: 2015-04-23 12:37+0100\n"
+"PO-Revision-Date: 2015-04-23 12:37+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -247,7 +247,7 @@ msgstr "Supprimer"
 msgid "add"
 msgstr "ajouter"
 
-#: ajax_forms.php:489 ajax_forms.php:751
+#: ajax_forms.php:489 ajax_forms.php:751 js/plugins/jquery.datePicker.js:1133
 msgid "Close"
 msgstr "Fermer"
 
@@ -795,13 +795,13 @@ msgstr "Le fichier de la pièce jointe a été supprimé avec succès."
 msgid "Status has been updated"
 msgstr "Le statut a été mit à jour"
 
-#: calendar.php:26 in_progress.php:23 index.php:23 templates/header.php:117
-#: templates/header.php:120 templates/header.php:123
+#: calendar.php:26 in_progress.php:23 index.php:23 templates/header.php:118
+#: templates/header.php:121 templates/header.php:124
 msgid "Home"
 msgstr "Accueil"
 
-#: calendar.php:44 templates/header.php:117 templates/header.php:120
-#: templates/header.php:123
+#: calendar.php:44 templates/header.php:118 templates/header.php:121
+#: templates/header.php:124
 msgid "Calendar"
 msgstr "Calendrier"
 
@@ -932,7 +932,7 @@ msgstr ""
 "Tant le nom de licence que l'organisation doivent être remplis. S'il vous "
 "plaît ressayez."
 
-#: templates/header.php:80
+#: templates/header.php:81
 msgid ""
 "JavaScript must be enabled in order for you to use CORAL. However, it seems "
 "JavaScript is either disabled or not supported by your browser. To use "
@@ -943,43 +943,43 @@ msgstr ""
 "utiliser CORAL, activez JavaScript en modifiant la configuration de votre "
 "navigateur, après "
 
-#: templates/header.php:80
+#: templates/header.php:81
 msgid "try again"
 msgstr "réessayez"
 
-#: templates/header.php:99
+#: templates/header.php:100
 msgid "Hello, "
 msgstr "Bonjour, "
 
-#: templates/header.php:108
+#: templates/header.php:109
 msgid "logout"
 msgstr "Se déconnecter"
 
-#: templates/header.php:117 templates/header.php:120
+#: templates/header.php:118 templates/header.php:121
 msgid "New License"
 msgstr "Nouvelle licence"
 
-#: templates/header.php:117 templates/header.php:120 templates/header.php:123
+#: templates/header.php:118 templates/header.php:121 templates/header.php:124
 msgid "Licenses in Progress"
 msgstr "Licences in avance"
 
-#: templates/header.php:117 templates/header.php:120
+#: templates/header.php:118 templates/header.php:121
 msgid "Expression Comparision"
 msgstr "Comparaison de l'expression"
 
-#: templates/header.php:117
+#: templates/header.php:118
 msgid "Admin"
 msgstr "Admin"
 
-#: templates/header.php:139
+#: templates/header.php:140
 msgid "Change Module"
 msgstr "Changer le module"
 
-#: templates/header.php:169 templates/header.php:170
+#: templates/header.php:170 templates/header.php:171
 msgid "French"
 msgstr "Français"
 
-#: templates/header.php:169 templates/header.php:170
+#: templates/header.php:170 templates/header.php:171
 msgid "English"
 msgstr "Anglais"
 
@@ -1274,7 +1274,7 @@ msgstr "Jui"
 
 #: js/plugins/date.js:66
 msgid "Jul"
-msgstr "Jui"
+msgstr "Juil"
 
 #: js/plugins/date.js:66
 msgid "Aug"
@@ -1295,3 +1295,23 @@ msgstr "Nov"
 #: js/plugins/date.js:66
 msgid "Dec"
 msgstr "Déc"
+
+#: js/plugins/jquery.datePicker.js:1129
+msgid "Previous year"
+msgstr "Année précédente"
+
+#: js/plugins/jquery.datePicker.js:1130
+msgid "Previous month"
+msgstr "Mois précédent"
+
+#: js/plugins/jquery.datePicker.js:1131
+msgid "Next year"
+msgstr "Année suivante"
+
+#: js/plugins/jquery.datePicker.js:1132
+msgid "Next month"
+msgstr "Mois suivant"
+
+#: js/plugins/jquery.datePicker.js:1134
+msgid "Choose date"
+msgstr "Choissir la date"
