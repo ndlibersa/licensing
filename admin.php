@@ -19,7 +19,7 @@
 
 include_once 'directory.php';
 
-$pageTitle='Administration';
+$pageTitle=_('Administration');
 include 'templates/header.php';
 
 //set referring page

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-22 17:12+0100\n"
-"PO-Revision-Date: 2015-04-22 17:12+0100\n"
+"POT-Creation-Date: 2015-04-23 11:07+0100\n"
+"PO-Revision-Date: 2015-04-23 11:07+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -14,7 +14,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: /var/www/Coral/licensing/js/plugins\n"
+
+#: admin.php:22
+msgid "Administration"
+msgstr "Administration"
 
 #: admin.php:35
 msgid "Users"
@@ -271,7 +274,7 @@ msgstr "Qualificateur:"
 
 #: ajax_forms.php:634 ajax_htmldata.php:541
 msgid "Document Text:"
-msgstr "Texte de document"
+msgstr "Texte du document"
 
 #: ajax_forms.php:672 ajax_forms.php:682 ajax_htmldata.php:629
 msgid "Notes"
@@ -559,7 +562,7 @@ msgstr "Qualificateurs:"
 
 #: ajax_htmldata.php:630 ajax_htmldata.php:1082
 msgid "Document Text"
-msgstr "Texte de document"
+msgstr "Texte du document"
 
 #: ajax_htmldata.php:642
 msgid "(document text not entered)"
@@ -1144,3 +1147,151 @@ msgstr "Voulez-vous vraiment supprimer ce lien à l'outil terms resource?"
 #: js/license.js:408 js/license.js:438
 msgid "File name is already being used."
 msgstr "Le nom du fichier est en use."
+
+#: js/plugins/date.js:30
+msgid "Sunday"
+msgstr "Dimanche"
+
+#: js/plugins/date.js:30
+msgid "Monday"
+msgstr "Lundi"
+
+#: js/plugins/date.js:30
+msgid "Tuesday"
+msgstr "Mardi"
+
+#: js/plugins/date.js:30
+msgid "Wednesday"
+msgstr "Mercredi"
+
+#: js/plugins/date.js:30
+msgid "Thursday"
+msgstr "Jeudi"
+
+#: js/plugins/date.js:30
+msgid "Friday"
+msgstr "Vendredi"
+
+#: js/plugins/date.js:30
+msgid "Saturday"
+msgstr "Samedi"
+
+#: js/plugins/date.js:42
+msgid "Sun"
+msgstr "Dim"
+
+#: js/plugins/date.js:42
+msgid "Mon"
+msgstr "Lun"
+
+#: js/plugins/date.js:42
+msgid "Tue"
+msgstr "Mar"
+
+#: js/plugins/date.js:42
+msgid "Wed"
+msgstr "Mer"
+
+#: js/plugins/date.js:42
+msgid "Thu"
+msgstr "Jeu"
+
+#: js/plugins/date.js:42
+msgid "Fri"
+msgstr "Ven"
+
+#: js/plugins/date.js:42
+msgid "Sat"
+msgstr "Sam"
+
+#: js/plugins/date.js:54
+msgid "January"
+msgstr "Janvier"
+
+#: js/plugins/date.js:54
+msgid "February"
+msgstr "Février"
+
+#: js/plugins/date.js:54
+msgid "March"
+msgstr "Mars"
+
+#: js/plugins/date.js:54
+msgid "April"
+msgstr "Avril"
+
+#: js/plugins/date.js:54 js/plugins/date.js:66
+msgid "May"
+msgstr "Mai"
+
+#: js/plugins/date.js:54
+msgid "June"
+msgstr "Juin"
+
+#: js/plugins/date.js:54
+msgid "July"
+msgstr "Juillet"
+
+#: js/plugins/date.js:54
+msgid "August"
+msgstr "Août"
+
+#: js/plugins/date.js:54
+msgid "September"
+msgstr "Septembre"
+
+#: js/plugins/date.js:54
+msgid "October"
+msgstr "Octobre"
+
+#: js/plugins/date.js:54
+msgid "November"
+msgstr "Novembre"
+
+#: js/plugins/date.js:54
+msgid "December"
+msgstr "Décembre"
+
+#: js/plugins/date.js:66
+msgid "Jan"
+msgstr "Jan"
+
+#: js/plugins/date.js:66
+msgid "Feb"
+msgstr "Fév"
+
+#: js/plugins/date.js:66
+msgid "Mar"
+msgstr "Mar"
+
+#: js/plugins/date.js:66
+msgid "Apr"
+msgstr "Avr"
+
+#: js/plugins/date.js:66
+msgid "Jun"
+msgstr "Jui"
+
+#: js/plugins/date.js:66
+msgid "Jul"
+msgstr "Jui"
+
+#: js/plugins/date.js:66
+msgid "Aug"
+msgstr "Aoû"
+
+#: js/plugins/date.js:66
+msgid "Sep"
+msgstr "Sep"
+
+#: js/plugins/date.js:66
+msgid "Oct"
+msgstr "Oct"
+
+#: js/plugins/date.js:66
+msgid "Nov"
+msgstr "Nov"
+
+#: js/plugins/date.js:66
+msgid "Dec"
+msgstr "Déc"
