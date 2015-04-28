@@ -37,7 +37,7 @@ class DBService extends Object {
 
 	protected function checkForError() {
 		if ($this->error = mysql_error($this->db)) {
-			throw new Exception("There was a problem with the database: " . $this->error);
+			throw new Exception(_("There was a problem with the database: ") . $this->error);
 		}
 	}
 
@@ -47,6 +47,7 @@ class DBService extends Object {
 		$password = $this->config->database->password;
 		$this->db = mysql_connect($host, $username, $password);
 		$this->checkForError();
+        mysql_set_charset('utf8', $this->db);
 
 		$databaseName = $this->config->database->name;
 		mysql_select_db($databaseName, $this->db);

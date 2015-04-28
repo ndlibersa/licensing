@@ -38,12 +38,12 @@ function checkUploadAttachment (file, extension){
 		 data:       { uploadAttachment: file },
 		 success:    function(response) {
 					if (response == "1"){
-						$("#div_file_message").html("  <font color='red'>File name is already being used...</font>");
+						$("#div_file_message").html("  <font color='red'>"+_("File name is already being used...")+"</font>");
 						exists=1;
 						return false;
     			} else if (response == "3"){
     				exists = "3";
-    				$("#div_file_message").html("  <font color='red'>The attachments directory is not writable.</font>");
+    				$("#div_file_message").html("  <font color='red'>"+_("The attachments directory is not writable.")+"</font>");
     				return false;
           }
 
@@ -51,7 +51,7 @@ function checkUploadAttachment (file, extension){
 					//check if it's already been uploaded in current array
 					//note: using indexOf prototype in common.js for IE
 					 if (URLArray.indexOf(file) >= 0){
-						$("#div_file_message").html("  <font color='red'>File name is already being used...</font>");
+						$("#div_file_message").html("  <font color='red'>"+_("File name is already being used...")+"</font>");
 						exists=1;
 						return false;
 					 }
@@ -81,7 +81,7 @@ new AjaxUpload('upload_attachment_button',
   					arrayLocation = URLArray.length;
   					URLArray.push(fileName);
 
-  					$("#div_file_success").append("<div id='div_" + arrayLocation + "'><img src='images/paperclip.gif'>" + fileName + " successfully uploaded.  <a class='smallLink' href='javascript:removeFile(\"" + arrayLocation + "\");'>remove</a><br /></div>");
+  					$("#div_file_success").append("<div id='div_" + arrayLocation + "'><img src='images/paperclip.gif'>" + fileName + _(" successfully uploaded.")+"  <a class='smallLink' href='javascript:removeFile(\"" + arrayLocation + "\");'>"+_("remove")+"</a><br /></div>");
           }
 				}
 
@@ -98,7 +98,7 @@ new AjaxUpload('upload_attachment_button',
 
 
 function removeFile(arrayLocation){
-	if (confirm("Do you really want to delete this attachment?") == true) {
+	if (confirm(_("Do you really want to delete this attachment?")) == true) {
 		//URLArray.splice(URLArray.indexOf(value), 1);
 		URLArray.splice(arrayLocation, 1);
 		$("#div_" + arrayLocation).remove();
@@ -106,7 +106,7 @@ function removeFile(arrayLocation){
 }
 
 function removeExistingAttachment(attachmentFileID){
-	if (confirm("Do you really want to delete this attachment?") == true) {
+	if (confirm(_("Do you really want to delete this attachment?")) == true) {
 		$.get("ajax_processing.php?action=deleteAttachmentFile&attachmentFileID=" + attachmentFileID,
 			function(data){
 			$("#div_existing_" + attachmentFileID).remove();

@@ -69,7 +69,7 @@ class Object {
 		if (property_exists($this, $key)) {
 			return $this->$key;
 		} else {
-			throw new Exception("Cannot get value for undefined key ($key).");
+			throw new Exception(_("Cannot get value for undefined key (").$key.").");
 		}
 	}
 

@@ -19,7 +19,7 @@
 
 include_once 'directory.php';
 
-$pageTitle='Expression Comparison';
+$pageTitle=_('Expression Comparison');
 include 'templates/header.php';
 
 //set referring page
@@ -36,7 +36,7 @@ $_SESSION['ref_script']=$currentPage;
 
 		<div class="left-element">
 
-			<b>Limit by Expression Type:</b>&nbsp;
+			<b><?= _("Limit by Expression Type:");?></b>&nbsp;
 
 			<select name='expressionTypeID' id='expressionTypeID' style='width:200px;'>
 
