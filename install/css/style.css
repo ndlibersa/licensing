@@ -1,7 +1,7 @@
 html {
  height: 100%;
  margin: 0;
- padding: 0
+ padding: 0;
 }
 
 body {
@@ -10,7 +10,6 @@ body {
  color:  #2c3c42;
  font-family: "arial";
  font-size: 10pt;
- font-weight: heavy;
  background: #FFFFFF;
  margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
  padding: 0;
@@ -49,21 +48,21 @@ span.redText{color:red;}
 span.span_AttachmentNumber{font-size:small;font-weight:normal; color:gray}
 
 .space {
-line-height: 1 em;
-font-size:2;
+line-height: 1em;
+font-size:2pt;
 } 
 
 img {border:0;}
 fieldset {border:0;}
 
-select option { color: #3D545D; font-family: "arial"; font-size: 8pt; font-weight: medium; }
-.optionStyle { color: #3D545D; font-family: "arial"; font-size: 8pt; font-weight: medium; }
+select option { color: #3D545D; font-family: "arial"; font-size: 8pt; }
+.optionStyle { color: #3D545D; font-family: "arial"; font-size: 8pt; }
 .errorText { color: red;font-size:95%; }
 
-input, select, multiple, textarea{color: #3D545D; font-family: "arial"; font-size: 8pt; font-weight: medium;}
+input, select, multiple, textarea{color: #3D545D; font-family: "arial"; font-size: 8pt;}
 
 table.titleTable {width:900px;background-image:url('../images/licensingtitle.gif');background-repeat:no-repeat;height:87px;}
-table.headerTable {width:900px;min-height:40px;background-image:url('../images/header.gif');background-repeat:no-repeat;text-align:left}
+table.headerTable {width:900px;min-height:40px;background-image:url('../images/header.gif');background-repeat:no-repeat;text-align:left;}
 
 .headerText {font-size:125%;font-weight:bold; }
 .titleText {font-size:130%;font-weight:bold; }
@@ -151,7 +150,6 @@ table.dataTable tr {vertical-align: top;}
     border-top: 1px solid #dad5c9;
     border-right: 1px solid #dad5c9;
     border-bottom: 1px solid #dad5c9;
-    background-color: white;
     vertical-align: top;
     
 }
@@ -170,7 +168,7 @@ table.verticalFormTable {
 
 table.verticalFormTable td {
 	margin: 0;
-	padding: 3px 3px 3px 3px;
+	padding: 3px;
 	border-width: 1px 1px 0 0;
 	border-style: solid;
 	border-color: #e0dfe3;
@@ -181,7 +179,7 @@ table.verticalFormTable td {
 
 table.verticalFormTable td.alt {
 	margin: 0;
-	padding: 3px 3px 3px 3px;
+	padding: 3px;
 	border-width: 1px 1px 0 0;
 	border-style: solid;
 	border-color: #e0dfe3;
@@ -232,7 +230,6 @@ table.thickboxTable{
  color:  #2c3c42;
  font-family: "arial";
  font-size: 8pt;
- font-weight: heavy;
 }
 
 .smallText{font-size:small;}
@@ -275,7 +272,7 @@ input.dp-applied {
 }
 
 .adminAddInput{margin-top:5px;}
-.licenseAddInput{margin-top:5px;margin-bottom;5px;}
+.licenseAddInput{margin-top:5px;margin-bottom:5px;}
 
 
 
