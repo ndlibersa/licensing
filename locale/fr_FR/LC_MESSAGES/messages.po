@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-27 17:28+0100\n"
-"PO-Revision-Date: 2015-04-27 17:28+0100\n"
+"POT-Creation-Date: 2015-04-28 15:34+0100\n"
+"PO-Revision-Date: 2015-04-28 15:34+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -923,7 +923,7 @@ msgstr "No disponible"
 
 #: not_available.php:66
 msgid "You have not been set up to have access to the Licensing Module."
-msgstr "Vous n'avez pas configuré l'accès au Module Licencing."
+msgstr "Vous n'avez pas configuré l'accès au Module Licensing."
 
 #: templates/header.php:35
 msgid ""
