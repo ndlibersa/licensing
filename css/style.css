@@ -31,13 +31,12 @@ body {
 }
 
 .footer {
-height: 3em;
-font-size:80%;
-color:red;
-text-align:center;
-width:900px;
-font-style: italic;
-} 
+    height: 2em;
+    font-size:80%;
+    color:#526972;
+    text-align:center;
+    width:100%;
+}
 
 
 a {color:#3D545D;font-size:9pt;}
