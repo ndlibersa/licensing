@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-05-06 14:46+0100\n"
+"POT-Creation-Date: 2015-05-06 15:21+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
@@ -538,7 +538,7 @@ msgstr "Regarder / Modifier la licence"
 
 #: ajax_htmldata.php:533
 msgid "view / edit "
-msgstr "Voir / Modifier"
+msgstr "Voir / Modifier "
 
 #: ajax_htmldata.php:533 ajax_htmldata.php:1174
 msgid " notes"
@@ -885,7 +885,7 @@ msgstr "Limite par le type d'expression:"
 
 #: in_progress.php:33
 msgid "Licenses In Progress"
-msgstr "Licences in avance"
+msgstr "Licences en avance"
 
 #: in_progress.php:33
 msgid "Browse All"
