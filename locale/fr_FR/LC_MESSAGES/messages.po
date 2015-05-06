@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-30 12:26+0100\n"
-"PO-Revision-Date: 2015-04-30 12:26+0100\n"
+"POT-Creation-Date: 2015-05-06 11:31+0100\n"
+"PO-Revision-Date: \n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -10,10 +10,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.6.10\n"
-"X-Poedit-Basepath: /var/www/Coral/licensing\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: /var/www/Coral/licensing\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: /var/www/Coral/licensing/js/plugins\n"
 
 #: admin.php:22
 msgid "Administration"
@@ -95,19 +95,15 @@ msgstr "ajouter un nouveau fornisseur"
 
 #: admin.php:180
 msgid "You don't have permission to access this page"
-msgstr "Vous n'avez pas la permission d'accéder dans cette page"
+msgstr "Vous n'avez pas la permission d'accÃ©der dans cette page"
 
 #: admin/classes/common/DBService.php:40
 msgid "There was a problem with the database: "
-msgstr "Il y avait un problème avec la base de données: "
+msgstr "Il y avait un problÃ¨me avec la base de donnÃ©es: "
 
 #: admin/classes/common/Object.php:72
 msgid "Cannot get value for undefined key ("
-msgstr "Ne peut pas recuperer une clé indefini ("
-
-#: admin/classes/domain/User.php:64
-msgid "ADD/EDIT"
-msgstr "AJOUTER/MODIFIER"
+msgstr "Ne peut pas recuperer une clÃ© indefini ("
 
 #: ajax_forms.php:47 ajax_htmldata.php:628
 msgid "License"
@@ -119,7 +115,7 @@ msgstr "Nom de la Licence:"
 
 #: ajax_forms.php:56
 msgid "Publisher / Provider:"
-msgstr "Éditeur / Fournisseur:"
+msgstr "Ãditeur / Fournisseur:"
 
 #: ajax_forms.php:66
 msgid "Consortium:"
@@ -131,9 +127,9 @@ msgid ""
 "is set up for organizations correctly and the database and tables have been "
 "created."
 msgstr ""
-"Il y avait un problème avec la requête, s'il vous plaît verifiez si la "
+"Il y avait un problÃ¨me avec la requÃªte, s'il vous plaÃ®t verifiez si la "
 "configuration pour les organisations est correcte dans configuration.ini et "
-"les tableaux de la base de données ont été créées."
+"les tableaux de la base de donnÃ©es ont Ã©tÃ© crÃ©Ã©es."
 
 #: ajax_forms.php:106
 msgid "add consortium"
@@ -152,7 +148,7 @@ msgstr "Annuler"
 
 #: ajax_forms.php:164
 msgid "Document Upload"
-msgstr "Télécharger un document"
+msgstr "TÃ©lÃ©charger un document"
 
 #: ajax_forms.php:167
 msgid "Effective Date:"
@@ -184,7 +180,7 @@ msgstr "remplacer avec un nouveau fichier"
 
 #: ajax_forms.php:263
 msgid "Archived:"
-msgstr "Archivé:"
+msgstr "ArchivÃ©:"
 
 #: ajax_forms.php:297
 msgid "Archive Document Date"
@@ -201,7 +197,7 @@ msgstr "Continuer"
 
 #: ajax_forms.php:335
 msgid "Terms Tool Resource Link"
-msgstr "Lien à les ressources d'outil Terms"
+msgstr "Lien Ã  les ressources d'outil Terms"
 
 #: ajax_forms.php:340 ajax_htmldata.php:1077
 msgid "For Document:"
@@ -231,7 +227,7 @@ msgstr "Type"
 
 #: ajax_forms.php:443 ajax_forms.php:703
 msgid "commit update"
-msgstr "Mise à jour de l'engagement"
+msgstr "Mise Ã  jour de l'engagement"
 
 #: ajax_forms.php:456 ajax_forms.php:725 ajax_htmldata.php:234
 #: ajax_htmldata.php:1227 ajax_htmldata.php:1410
@@ -291,7 +287,7 @@ msgstr "Pour le text de document:"
 #: ajax_forms.php:787 license.php:65 license.php:89 license.php:109
 #: license.php:128
 msgid "Attachments"
-msgstr "Pièces jointes"
+msgstr "PiÃ¨ces jointes"
 
 #: ajax_forms.php:791
 msgid "Date:"
@@ -299,21 +295,21 @@ msgstr "Date:"
 
 #: ajax_forms.php:798
 msgid "Details:"
-msgstr "Détails:"
+msgstr "DÃ©tails:"
 
 #: ajax_forms.php:804
 msgid "Attachments:"
-msgstr "Pièces jointes:"
+msgstr "PiÃ¨ces jointes:"
 
 #: ajax_forms.php:858 ajax_forms.php:899 ajax_forms.php:982
 #: ajax_forms.php:1133
 msgid "Update"
-msgstr "Mise à jour"
+msgstr "Mise Ã  jour"
 
 #: ajax_forms.php:863 ajax_htmldata.php:1284 ajax_htmldata.php:1332
 #: ajax_htmldata.php:1449
 msgid "update"
-msgstr "Mise à jour"
+msgstr "Mise Ã  jour"
 
 #: ajax_forms.php:870
 msgid "close"
@@ -333,7 +329,7 @@ msgstr "Identifiant de connexion"
 
 #: ajax_forms.php:912 ajax_htmldata.php:1257
 msgid "First Name"
-msgstr "Prènom"
+msgstr "PrÃ¨nom"
 
 #: ajax_forms.php:913 ajax_htmldata.php:1258
 msgid "Last Name"
@@ -341,23 +337,23 @@ msgstr "Nom"
 
 #: ajax_forms.php:914 ajax_htmldata.php:1259
 msgid "Privilege"
-msgstr "Privilège"
+msgstr "PrivilÃ¨ge"
 
 #: ajax_forms.php:917 ajax_forms.php:920
 msgid "Add/Edit users can add, edit, or remove licenses and associated fields"
 msgstr ""
 "Les utilisateurs 'Add/Edit' peuvent ajouter, modifier ou supprimer les "
-"licences et les champs associés"
+"licences et les champs associÃ©s"
 
 #: ajax_forms.php:917 ajax_forms.php:920
 msgid "Admin users have access to the Admin page and the SFX tab."
 msgstr ""
-"Les utilisateurs 'Admin' peuvent accéder à la page Admin et l'onglet SFX"
+"Les utilisateurs 'Admin' peuvent accÃ©der Ã  la page Admin et l'onglet SFX"
 
 #: ajax_forms.php:917 ajax_forms.php:920
 msgid "Restricted users do not have the ability to view documents"
 msgstr ""
-"Les utilisateurs 'Restricted' n'ont pas la possibilité de regarder les "
+"Les utilisateurs 'Restricted' n'ont pas la possibilitÃ© de regarder les "
 "documents"
 
 #: ajax_forms.php:917 ajax_forms.php:920
@@ -376,8 +372,8 @@ msgid ""
 "Enter email address if you wish this user to receive email notifications "
 "when the terms tool box is checked on the Expressions tab."
 msgstr ""
-"Tapez l'adresse email si vous souhaitez que cet utilisateur reçoive des "
-"notifications par email lorsque la boîte d'outil terms est activée dans "
+"Tapez l'adresse email si vous souhaitez que cet utilisateur reÃ§oive des "
+"notifications par email lorsque la boÃ®te d'outil terms est activÃ©e dans "
 "l'onglet Expressions."
 
 #: ajax_forms.php:952
@@ -463,15 +459,15 @@ msgstr "Ressource"
 #: ajax_htmldata.php:1237 ajax_htmldata.php:1294 ajax_htmldata.php:1342
 #: ajax_htmldata.php:1419
 msgid "(none found)"
-msgstr "(non trouvé)"
+msgstr "(non trouvÃ©)"
 
 #: ajax_htmldata.php:159
 msgid "add new terms tool resource link"
-msgstr "Ajouter un nouveau lien à les ressources d'outil Terms"
+msgstr "Ajouter un nouveau lien Ã  les ressources d'outil Terms"
 
 #: ajax_htmldata.php:183
 msgid "Details"
-msgstr "Détails"
+msgstr "DÃ©tails"
 
 #: ajax_htmldata.php:206 ajax_htmldata.php:673
 msgid "more..."
@@ -483,19 +479,19 @@ msgstr "moins..."
 
 #: ajax_htmldata.php:223 ajax_htmldata.php:863 ajax_htmldata.php:981
 msgid "(none uploaded)"
-msgstr "(non téléchargé)"
+msgstr "(non tÃ©lÃ©chargÃ©)"
 
 #: ajax_htmldata.php:228
 msgid "view attachment "
-msgstr "Regarder la pièce jointe "
+msgstr "Regarder la piÃ¨ce jointe "
 
 #: ajax_htmldata.php:249
 msgid "add new attachment"
-msgstr "Ajouter une nouvelle pièce jointe"
+msgstr "Ajouter une nouvelle piÃ¨ce jointe"
 
 #: ajax_htmldata.php:322
 msgid "Sorry, no licenses fit your query"
-msgstr "Désolé, il n'y a pas des licences adaptées par votre requête"
+msgstr "DÃ©solÃ©, il n'y a pas des licences adaptÃ©es par votre requÃªte"
 
 #: ajax_htmldata.php:329
 msgid "Displaying "
@@ -511,7 +507,7 @@ msgstr " de "
 
 #: ajax_htmldata.php:329
 msgid " License Records"
-msgstr " Licences enregistrées"
+msgstr " Licences enregistrÃ©es"
 
 #: ajax_htmldata.php:381 ajax_htmldata.php:461 ajax_htmldata.php:768
 #: ajax_htmldata.php:773 ajax_htmldata.php:898 ajax_htmldata.php:903
@@ -520,7 +516,7 @@ msgstr "Nom"
 
 #: ajax_htmldata.php:382 ajax_htmldata.php:462
 msgid "Publisher / Provider"
-msgstr "Éditeur / Fournisseur"
+msgstr "Ãditeur / Fournisseur"
 
 #: ajax_htmldata.php:383 ajax_htmldata.php:463 index.php:101
 msgid "Consortium"
@@ -578,7 +574,7 @@ msgstr "(non pour "
 
 #: ajax_htmldata.php:740
 msgid "Archived Documents"
-msgstr "Documents archivés"
+msgstr "Documents archivÃ©s"
 
 #: ajax_htmldata.php:740
 msgid "hide archives"
@@ -589,9 +585,13 @@ msgstr "cacher les archives"
 msgid "Effective Date"
 msgstr "Date effective"
 
+#: ajax_htmldata.php:811 ajax_htmldata.php:931
+msgid "archived on: "
+msgstr "ArchivÃ© sur: "
+
 #: ajax_htmldata.php:845 ajax_htmldata.php:963
 msgid "add/view details"
-msgstr "Ajouter/Regarder les détails"
+msgstr "Ajouter/Regarder les dÃ©tails"
 
 #: ajax_htmldata.php:852 ajax_htmldata.php:970
 msgid "add signatures"
@@ -611,11 +611,11 @@ msgstr "Supprimer le document"
 
 #: ajax_htmldata.php:884 ajax_htmldata.php:886
 msgid "This document has "
-msgstr "Ce document a été"
+msgstr "Ce document a Ã©tÃ©"
 
 #: ajax_htmldata.php:884 ajax_htmldata.php:886
 msgid " children document(s) not displayed."
-msgstr " les documents des enfants ne sont pas affichés."
+msgstr " les documents des enfants ne sont pas affichÃ©s."
 
 #: ajax_htmldata.php:884 ajax_htmldata.php:886
 msgid "show all documents for this parent"
@@ -629,7 +629,7 @@ msgstr "La suivante "
 #: ajax_htmldata.php:890 ajax_htmldata.php:892 ajax_htmldata.php:1000
 #: ajax_htmldata.php:1002
 msgid " document(s) belong to "
-msgstr " document(s) appartient(nent) à "
+msgstr " document(s) appartient(nent) Ã  "
 
 #: ajax_htmldata.php:890 ajax_htmldata.php:892
 msgid "hide children documents for this parent"
@@ -638,10 +638,6 @@ msgstr "cacher les documents des enfants de ce parent"
 #: ajax_htmldata.php:929
 msgid "archive document"
 msgstr "archiver le document"
-
-#: ajax_htmldata.php:931
-msgid "archived on: "
-msgstr "Archivé sur: "
 
 #: ajax_htmldata.php:1029
 msgid " archive(s) available."
@@ -653,11 +649,11 @@ msgstr "montrer les archives"
 
 #: ajax_htmldata.php:1035
 msgid "upload new document"
-msgstr "Télécharger un nouveau document"
+msgstr "TÃ©lÃ©charger un nouveau document"
 
 #: ajax_htmldata.php:1123
 msgid "used in terms tool"
-msgstr "utilisé dans l'outil terms"
+msgstr "utilisÃ© dans l'outil terms"
 
 #: ajax_htmldata.php:1168 index.php:105
 msgid "(none)"
@@ -673,7 +669,7 @@ msgstr "Ajouter une nouvelle expression"
 
 #: ajax_htmldata.php:1265
 msgid "Terms Tool Update Email"
-msgstr "Mise à jour l'email d'outil Terms"
+msgstr "Mise Ã  jour l'email d'outil Terms"
 
 #: ajax_htmldata.php:1486
 msgid "Limit by Qualifier:"
@@ -681,33 +677,33 @@ msgstr "Limite par le qualificateur:"
 
 #: ajax_processing.php:96
 msgid "License successfully deleted."
-msgstr "La licence a été supprimé avec succès."
+msgstr "La licence a Ã©tÃ© supprimÃ© avec succÃ¨s."
 
 #: ajax_processing.php:172 ajax_processing.php:957
 msgid "success uploading!"
-msgstr "Téléchargement correcte!"
+msgstr "TÃ©lÃ©chargement correcte!"
 
 #: ajax_processing.php:175 ajax_processing.php:960
 msgid "There was a problem saving your file to"
-msgstr "Il y avait un problème pour enregistrer votre fichier sur"
+msgstr "Il y avait un problÃ¨me pour enregistrer votre fichier sur"
 
 #: ajax_processing.php:236
 msgid "Document Saved Successfully."
-msgstr "Le document a été enregistré avec succès."
+msgstr "Le document a Ã©tÃ© enregistrÃ© avec succÃ¨s."
 
 #: ajax_processing.php:250
 msgid "Signature Deleted Successfully."
-msgstr "Signature effacé avec succès."
+msgstr "Signature effacÃ© avec succÃ¨s."
 
 #: ajax_processing.php:312
 msgid "Expression Removed Successfully."
-msgstr "Expression supprimé avec succès."
+msgstr "Expression supprimÃ© avec succÃ¨s."
 
 #: ajax_processing.php:335
 msgid ""
 "An expression in the licensing module has been approved for terms tool use."
 msgstr ""
-"Une expression dans le module licensing a été approuvé par l'utilisation "
+"Une expression dans le module licensing a Ã©tÃ© approuvÃ© par l'utilisation "
 "d'outil terms."
 
 #: ajax_processing.php:336
@@ -716,57 +712,57 @@ msgstr "Licence:  "
 
 #: ajax_processing.php:337
 msgid "View License Record:  "
-msgstr "Regarder la licence enregistrée:  "
+msgstr "Regarder la licence enregistrÃ©e:  "
 
 #: ajax_processing.php:341
 msgid "Licensing - expression set to production use"
-msgstr "Licensing - expression reglé pour l'utilisation en production"
+msgstr "Licensing - expression reglÃ© pour l'utilisation en production"
 
 #: ajax_processing.php:346
 msgid "Approved for terms tool display."
-msgstr "Aprouvépor l'affichage dans l'outil terms."
+msgstr "AprouvÃ©por l'affichage dans l'outil terms."
 
 #: ajax_processing.php:348
 msgid "Removed from terms tool display."
-msgstr "Supprimé pour l'affichage dans l'outil terms."
+msgstr "SupprimÃ© pour l'affichage dans l'outil terms."
 
 #: ajax_processing.php:375
 msgid "Expression Note Updated Successfully."
-msgstr "La note de l'expression a été mit à jour avec succès."
+msgstr "La note de l'expression a Ã©tÃ© mit Ã  jour avec succÃ¨s."
 
 #: ajax_processing.php:391
 msgid "Expression Note Added Successfully."
-msgstr "La note de l'expression a été enregistré avec succès."
+msgstr "La note de l'expression a Ã©tÃ© enregistrÃ© avec succÃ¨s."
 
 #: ajax_processing.php:415
 msgid "Note Removed Successfully."
-msgstr "La note a été supprimé avec succès."
+msgstr "La note a Ã©tÃ© supprimÃ© avec succÃ¨s."
 
 #: ajax_processing.php:452
 msgid "Terms Tool Resource Link successfully deleted"
-msgstr "Le lien de la ressource d'outil terms a été supprimé avec succès"
+msgstr "Le lien de la ressource d'outil terms a Ã©tÃ© supprimÃ© avec succÃ¨s"
 
 #: ajax_processing.php:468
 msgid "License Updated Successfully."
-msgstr "La licence a été mit à jour avec succès."
+msgstr "La licence a Ã©tÃ© mit Ã  jour avec succÃ¨s."
 
 #: ajax_processing.php:477
 msgid "License Added Successfully."
-msgstr "La licence a été enregistré avec succès."
+msgstr "La licence a Ã©tÃ© enregistrÃ© avec succÃ¨s."
 
 #: ajax_processing.php:477
 msgid "Please continue to upload documents and add expressions or emails."
 msgstr ""
-"S'il vous plaît, continuez avec le téléchargement des documents et ajoutez "
-"expressions ou emails."
+"S'il vous plaÃ®t, continuez avec le tÃ©lÃ©chargement des documents et "
+"ajoutez expressions ou emails."
 
 #: ajax_processing.php:514 ajax_processing.php:527
 msgid "SQL Insert Failed."
-msgstr "L'insertion SQL a echouée."
+msgstr "L'insertion SQL a echouÃ©e."
 
 #: ajax_processing.php:514 ajax_processing.php:527
 msgid "Please make sure everything is filled out correctly."
-msgstr "S'il vous plaît, assurez-vous que tout est correctement rempli."
+msgstr "S'il vous plaÃ®t, assurez-vous que tout est correctement rempli."
 
 #: ajax_processing.php:772
 msgid "Unable to delete  - this "
@@ -776,28 +772,28 @@ msgstr "N'est pas possible supprimer - "
 msgid ""
 " is in use.  Please make sure no licenses are set up with this information."
 msgstr ""
-" est en utilisation. S'il vous plaît, assurez-vous qu'aucune licence est "
-"configurée avec cet information."
+" est en utilisation. S'il vous plaÃ®t, assurez-vous qu'aucune licence est "
+"configurÃ©e avec cet information."
 
 #: ajax_processing.php:778
 msgid ""
 "Unable to delete.  Please make sure no licenses are set up with this "
 "information."
 msgstr ""
-"N'est pas possible supprimer. S'il vous plaît, assurez-vous qu'aucune "
-"licence est configurée avec cet information."
+"N'est pas possible supprimer. S'il vous plaÃ®t, assurez-vous qu'aucune "
+"licence est configurÃ©e avec cet information."
 
 #: ajax_processing.php:1027
 msgid "Attachment successfully deleted"
-msgstr "La pièce jointe a été supprimé avec succès."
+msgstr "La piÃ¨ce jointe a Ã©tÃ© supprimÃ© avec succÃ¨s."
 
 #: ajax_processing.php:1041
 msgid "Attachment file successfully deleted"
-msgstr "Le fichier de la pièce jointe a été supprimé avec succès."
+msgstr "Le fichier de la piÃ¨ce jointe a Ã©tÃ© supprimÃ© avec succÃ¨s."
 
 #: ajax_processing.php:1062
 msgid "Status has been updated"
-msgstr "Le statut a été mit à jour"
+msgstr "Le statut a Ã©tÃ© mit Ã  jour"
 
 #: calendar.php:26 in_progress.php:23 index.php:23 templates/header.php:118
 #: templates/header.php:121 templates/header.php:124
@@ -815,19 +811,19 @@ msgstr "Ne pouvait pas se connecter au host."
 
 #: calendar.php:55
 msgid "Could not find License database."
-msgstr "N'a pas pu trouver la base de données Licence"
+msgstr "N'a pas pu trouver la base de donnÃ©es Licence"
 
 #: calendar.php:56
 msgid "Could not find Resource database."
-msgstr "N'a pas pu trouver la base de données Resource."
+msgstr "N'a pas pu trouver la base de donnÃ©es Resource."
 
 #: calendar.php:64
 msgid ""
 "There was an error with the CalendarSettings Table please verify the table "
 "has been created."
 msgstr ""
-"Il y avait un erreur avec la table CalendarSettings, s'il vous plaît, "
-"verifiez que la table a été créée."
+"Il y avait un erreur avec la table CalendarSettings, s'il vous plaÃ®t, "
+"verifiez que la table a Ã©tÃ© crÃ©Ã©e."
 
 #: calendar.php:95
 msgid "There was an error with the CalendarSettings Configuration."
@@ -835,15 +831,15 @@ msgstr "Il y avait un erreur avec la configuation de CalendarSettings."
 
 #: calendar.php:130
 msgid "Upcoming License Renewals"
-msgstr "Renouvellements de licence à venir"
+msgstr "Renouvellements de licence Ã  venir"
 
 #: calendar.php:222
 msgid "No associated licenses available."
-msgstr "Pas des licences associées disponibles."
+msgstr "Pas des licences associÃ©es disponibles."
 
 #: calendar.php:228
 msgid "Expired "
-msgstr "Expiré il y a "
+msgstr "ExpirÃ© il y a "
 
 #: calendar.php:228
 msgid " days ago"
@@ -899,7 +895,7 @@ msgstr "Valider!"
 
 #: index.php:67
 msgid "Publisher/Provider"
-msgstr "Éditeur/Fournisseur"
+msgstr "Ãditeur/Fournisseur"
 
 #: index.php:78 index.php:104
 msgid "All"
@@ -927,14 +923,14 @@ msgstr "No disponible"
 
 #: not_available.php:66
 msgid "You have not been set up to have access to the Licensing Module."
-msgstr "Vous n'avez pas configuré l'accès au Module Licensing."
+msgstr "Vous n'avez pas configurÃ© l'accÃ¨s au Module Licensing."
 
 #: templates/header.php:35
 msgid ""
 "Both license name and organization must be filled out.  Please try again."
 msgstr ""
-"Tant le nom de licence que l'organisation doivent être remplis. S'il vous "
-"plaît ressayez."
+"Tant le nom de licence que l'organisation doivent Ãªtre remplis. S'il vous "
+"plaÃ®t ressayez."
 
 #: templates/header.php:81
 msgid ""
@@ -942,14 +938,14 @@ msgid ""
 "JavaScript is either disabled or not supported by your browser. To use "
 "CORAL, enable JavaScript by changing your browser options, then "
 msgstr ""
-"JavaScript doit être activé pour utiliser CORAL. Cependant, on semble qui "
-"JavaScript est desactivé ou n'est pas supporté par votre navigateur. Pour "
+"JavaScript doit Ãªtre activÃ© pour utiliser CORAL. Cependant, on semble qui "
+"JavaScript est desactivÃ© ou n'est pas supportÃ© par votre navigateur. Pour "
 "utiliser CORAL, activez JavaScript en modifiant la configuration de votre "
-"navigateur, après "
+"navigateur, aprÃ¨s "
 
 #: templates/header.php:81
 msgid "try again"
-msgstr "réessayez"
+msgstr "rÃ©essayez"
 
 #: templates/header.php:100
 msgid "Hello, "
@@ -957,7 +953,7 @@ msgstr "Bonjour, "
 
 #: templates/header.php:109
 msgid "logout"
-msgstr "Se déconnecter"
+msgstr "Se dÃ©connecter"
 
 #: templates/header.php:118 templates/header.php:121
 msgid "New License"
@@ -981,7 +977,7 @@ msgstr "Changer le module"
 
 #: templates/header.php:170 templates/header.php:171
 msgid "French"
-msgstr "Français"
+msgstr "FranÃ§ais"
 
 #: templates/header.php:170 templates/header.php:171
 msgid "English"
@@ -998,7 +994,7 @@ msgstr "En traitement..."
 
 #: js/admin.js:225 js/admin.js:303
 msgid "Do you really want to delete this data?"
-msgstr "Voulez-vous vraiment supprimer cette donnée?"
+msgstr "Voulez-vous vraiment supprimer cette donnÃ©e?"
 
 #: js/admin.js:250
 msgid "Do you really want to delete this user?"
@@ -1010,7 +1006,7 @@ msgid ""
 "Qualifiers will be deleted as well."
 msgstr ""
 "Voulez-vous vraiment supprimer ce type d'expression? Tous les qualificatifs "
-"associés seront supprimés aussi."
+"associÃ©s seront supprimÃ©s aussi."
 
 #: js/forms/attachmentForm.js:41 js/forms/attachmentForm.js:54
 #: js/forms/documentForm.js:102
@@ -1019,72 +1015,72 @@ msgstr "Le nom du fichier est en use..."
 
 #: js/forms/attachmentForm.js:46
 msgid "The attachments directory is not writable."
-msgstr "Le dossier des pièces jointes n'a pas des droits d'écriture."
+msgstr "Le dossier des piÃ¨ces jointes n'a pas des droits d'Ã©criture."
 
 #: js/forms/attachmentForm.js:84 js/forms/documentForm.js:134
 #: js/license.js:440
 msgid " successfully uploaded."
-msgstr " téléchargé avec succès."
+msgstr " tÃ©lÃ©chargÃ© avec succÃ¨s."
 
 #: js/forms/attachmentForm.js:101 js/forms/attachmentForm.js:109
 msgid "Do you really want to delete this attachment?"
-msgstr "Voulez-vous vraiment supprimer cette pièce jointe?"
+msgstr "Voulez-vous vraiment supprimer cette piÃ¨ce jointe?"
 
 #: js/forms/documentForm.js:38 js/forms/licenseForm.js:34
 msgid "This name is already being used!"
-msgstr "Ce nom est déjà utilisé!"
+msgstr "Ce nom est dÃ©jÃ  utilisÃ©!"
 
 #: js/forms/documentForm.js:106
 msgid ""
 "File name may not contain special characters - ampersand, single quote, "
 "double quote or less than/greater than characters"
 msgstr ""
-"Le nom du fichier ne peut pas contenir des caractères spéciaux - "
-"esperluètte, apostrophe, guillemet ou caractères de moins que / plus que."
+"Le nom du fichier ne peut pas contenir des caractÃ¨res spÃ©ciaux - "
+"esperluÃ¨tte, apostrophe, guillemet ou caractÃ¨res de moins que / plus que."
 
 #: js/forms/documentForm.js:110
 msgid "The documents directory is not writable."
-msgstr "Le dossier des documents n'a pas des droits d'écriture."
+msgstr "Le dossier des documents n'a pas des droits d'Ã©criture."
 
 #: js/forms/documentForm.js:176
 msgid "Document Type is required."
-msgstr "Le type de document est nécessaire"
+msgstr "Le type de document est nÃ©cessaire"
 
 #: js/forms/documentForm.js:177
 msgid "Short Name is required."
-msgstr "Nom court est nécessaire."
+msgstr "Nom court est nÃ©cessaire."
 
 #: js/forms/documentForm.js:207
 msgid "DocumentType has been added"
-msgstr "Le type de document a été ajouté"
+msgstr "Le type de document a Ã©tÃ© ajoutÃ©"
 
 #: js/forms/expressionForm.js:89
 msgid "ExpressionType has been added"
-msgstr "Le Type d'Expression a été ajouté"
+msgstr "Le Type d'Expression a Ã©tÃ© ajoutÃ©"
 
 #: js/forms/licenseForm.js:57 js/forms/licenseForm.js:118
 msgid "Warning!  This organization will be added new."
-msgstr "Attention! Cette organisation sera ajouté à nouveau."
+msgstr "Attention! Cette organisation sera ajoutÃ© Ã  nouveau."
 
 #: js/forms/licenseForm.js:191
 msgid "Consortium has been added"
-msgstr "Le consortium a été ajouté"
+msgstr "Le consortium a Ã©tÃ© ajoutÃ©"
 
 #: js/forms/licenseForm.js:200
 msgid "License Name is required."
-msgstr "Nom de la licence est nécessaire."
+msgstr "Nom de la licence est nÃ©cessaire."
 
 #: js/forms/licenseForm.js:201
 msgid "Provider is required."
-msgstr "Un fournisseur est nécessaire."
+msgstr "Un fournisseur est nÃ©cessaire."
 
 #: js/forms/sfxForm.js:59
 msgid "A document must be selected to continue."
-msgstr "Un document doit être selectionné pour continuer."
+msgstr "Un document doit Ãªtre selectionnÃ© pour continuer."
 
 #: js/forms/sfxForm.js:60
 msgid "Terms Tool Resource must be entered to continue."
-msgstr "L'outil Terms Resource doit être entré pour continuer."
+msgstr "L'outil Terms Resource doit Ãªtre entrÃ© pour continuer."
 
 #: js/forms/signatureForm.js:41
 msgid "No match!"
@@ -1092,7 +1088,7 @@ msgstr "Pas des coincidences!"
 
 #: js/forms/signatureForm.js:41
 msgid "Selected: "
-msgstr "Sélectionné: "
+msgstr "SÃ©lectionnÃ©: "
 
 #: js/forms/signatureForm.js:84
 msgid "Do you really want to delete this signature?"
@@ -1100,7 +1096,7 @@ msgstr "Voulez-vous vraiment supprimer cette signature?"
 
 #: js/forms/signatureForm.js:114
 msgid "SignatureType has been added"
-msgstr "Le type de signature a été ajouté"
+msgstr "Le type de signature a Ã©tÃ© ajoutÃ©"
 
 #: js/license.js:102
 msgid "Do you really want to delete this license?"
@@ -1128,9 +1124,9 @@ msgid ""
 "document if there are associated expressions.  Remove all expressions and "
 "try again."
 msgstr ""
-"Il y avait un priblème pour supprimer le document. Vous ne pouvez pas "
-"supprimer un document s'il y a des expressions associées. Enlevez tous les "
-"expressions et reéssayez."
+"Il y avait un priblÃ¨me pour supprimer le document. Vous ne pouvez pas "
+"supprimer un document s'il y a des expressions associÃ©es. Enlevez tous les "
+"expressions et reÃ©ssayez."
 
 #: js/license.js:336
 msgid "Do you really want to delete this expression?"
@@ -1141,12 +1137,12 @@ msgid ""
 "Do you really want to delete this attachment?  This will also delete all "
 "attached files."
 msgstr ""
-"Voulez-vous vraiment supprimer cette pièce jointe? Ça effacera aussi tous "
-"les fichiers enregistrés."
+"Voulez-vous vraiment supprimer cette piÃ¨ce jointe? Ãa effacera aussi tous "
+"les fichiers enregistrÃ©s."
 
 #: js/license.js:368
 msgid "Do you really want to delete this terms tool resource link?"
-msgstr "Voulez-vous vraiment supprimer ce lien à l'outil terms resource?"
+msgstr "Voulez-vous vraiment supprimer ce lien Ã  l'outil terms resource?"
 
 #: js/license.js:408 js/license.js:438
 msgid "File name is already being used."
@@ -1214,7 +1210,7 @@ msgstr "Janvier"
 
 #: js/plugins/date.js:54
 msgid "February"
-msgstr "Février"
+msgstr "FÃ©vrier"
 
 #: js/plugins/date.js:54
 msgid "March"
@@ -1238,7 +1234,7 @@ msgstr "Juillet"
 
 #: js/plugins/date.js:54
 msgid "August"
-msgstr "Août"
+msgstr "AoÃ»t"
 
 #: js/plugins/date.js:54
 msgid "September"
@@ -1254,7 +1250,7 @@ msgstr "Novembre"
 
 #: js/plugins/date.js:54
 msgid "December"
-msgstr "Décembre"
+msgstr "DÃ©cembre"
 
 #: js/plugins/date.js:66
 msgid "Jan"
@@ -1262,7 +1258,7 @@ msgstr "Jan"
 
 #: js/plugins/date.js:66
 msgid "Feb"
-msgstr "Fév"
+msgstr "FÃ©v"
 
 #: js/plugins/date.js:66
 msgid "Mar"
@@ -1282,7 +1278,7 @@ msgstr "Juil"
 
 #: js/plugins/date.js:66
 msgid "Aug"
-msgstr "Aoû"
+msgstr "AoÃ»"
 
 #: js/plugins/date.js:66
 msgid "Sep"
@@ -1298,19 +1294,19 @@ msgstr "Nov"
 
 #: js/plugins/date.js:66
 msgid "Dec"
-msgstr "Déc"
+msgstr "DÃ©c"
 
 #: js/plugins/jquery.datePicker.js:1129
 msgid "Previous year"
-msgstr "Année précédente"
+msgstr "AnnÃ©e prÃ©cÃ©dente"
 
 #: js/plugins/jquery.datePicker.js:1130
 msgid "Previous month"
-msgstr "Mois précédent"
+msgstr "Mois prÃ©cÃ©dent"
 
 #: js/plugins/jquery.datePicker.js:1131
 msgid "Next year"
-msgstr "Année suivante"
+msgstr "AnnÃ©e suivante"
 
 #: js/plugins/jquery.datePicker.js:1132
 msgid "Next month"
@@ -1319,3 +1315,6 @@ msgstr "Mois suivant"
 #: js/plugins/jquery.datePicker.js:1134
 msgid "Choose date"
 msgstr "Choissir la date"
+
+#~ msgid "ADD/EDIT"
+#~ msgstr "AJOUTER/MODIFIER"
