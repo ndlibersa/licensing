@@ -854,14 +854,14 @@ switch ($_GET['action']) {
 
 		?>
 		<div id='div_updateForm'>
-		<table class="thickboxTable" style="width:200px;">
+		<table class="thickboxTable" style="width:250px;">
 		<tr>
 		<td colspan='2'><br /><span class='headerText'><?php echo _("Update");?></span><br /><span id='span_errors' style='color:#F00;'></span><br /></td>
 		</tr>
 		<tr>
 		<td>
 		<?php
-		echo "<input type='text' id='updateVal' name='updateVal' value='" . $instance->shortName . "' style='width:190px;'/></td><td><a href='javascript:updateData(\"" . $className . "\", \"" . $updateID . "\");'>"._("update")."</a>";
+		echo "<input type='text' id='updateVal' name='updateVal' value='" . $instance->shortName . "' style='width:160px;'/></td><td><a href='javascript:updateData(\"" . $className . "\", \"" . $updateID . "\");'>"._("update")."</a>";
 		?>
 
 
@@ -960,8 +960,8 @@ switch ($_GET['action']) {
 		<?php } else { echo "<input type='hidden' id='emailAddressForTermsTool' name='emailAddressForTermsTool' value='' /><br />"; }?>
 
 		<tr style="vertical-align:middle;">
-		<td colspan='2' style="padding-top:8px;text-align:right;">&nbsp;</td>
-		<td style="padding-top:18px;padding-right:8px;text-align:left;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitUserData("<?php echo $loginID; ?>");'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' value='cancel' onclick="window.parent.tb_remove(); return false"></td>
+		<!--<td colspan='2' style="padding-top:8px;text-align:right;">&nbsp;</td>-->
+		<td colspan="3" style="padding-top:18px;padding-right:8px;text-align:center;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitUserData("<?php echo $loginID; ?>");'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' value="<?php echo _("cancel");?>" onclick="window.parent.tb_remove(); return false"></td>
 		</tr>
 
 		</table>

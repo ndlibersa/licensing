@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-05-06 14:09+0100\n"
+"POT-Creation-Date: 2015-05-06 14:46+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
@@ -141,8 +141,8 @@ msgid "submit"
 msgstr "Confirmer"
 
 #: ajax_forms.php:114 ajax_forms.php:271 ajax_forms.php:369 ajax_forms.php:639
-#: ajax_forms.php:830 ajax_forms.php:1009 ajax_forms.php:1117
-#: ajax_forms.php:1171
+#: ajax_forms.php:830 ajax_forms.php:963 ajax_forms.php:1009
+#: ajax_forms.php:1117 ajax_forms.php:1171
 msgid "cancel"
 msgstr "Annuler"
 
@@ -230,7 +230,8 @@ msgid "commit update"
 msgstr "Mise à jour de l'engagement"
 
 #: ajax_forms.php:456 ajax_forms.php:725 ajax_htmldata.php:141
-#: ajax_htmldata.php:234 ajax_htmldata.php:1227 ajax_htmldata.php:1410
+#: ajax_htmldata.php:234 ajax_htmldata.php:1148 ajax_htmldata.php:1227
+#: ajax_htmldata.php:1410
 msgid "edit"
 msgstr "Modifier"
 
@@ -496,7 +497,7 @@ msgstr "Désolé, il n'y a pas des licences adaptées par votre requête"
 
 #: ajax_htmldata.php:329
 msgid "Displaying "
-msgstr "Affichage"
+msgstr "Affichage "
 
 #: ajax_htmldata.php:329
 msgid " to "
