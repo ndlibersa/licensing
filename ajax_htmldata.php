@@ -808,7 +808,7 @@ switch ($_GET['action']) {
 				}
 
 				if (($document->expirationDate != "0000-00-00") && ($document->expirationDate != "")){
-					$displayExpirationDate = 'archived on: ' . format_date($document->expirationDate);
+					$displayExpirationDate = _("archived on: ") . format_date($document->expirationDate);
 				}else{
 					$displayExpirationDate = '';
 				}
