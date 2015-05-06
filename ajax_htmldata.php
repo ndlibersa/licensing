@@ -47,7 +47,7 @@ switch ($_GET['action']) {
 		<?php
 
 		if ($user->canEdit()){?>
-			<a href='ajax_forms.php?action=getLicenseForm&licenseID=<?php echo $licenseID; ?>&height=260&width=260&modal=true' class='thickbox'><?= _("edit license");?></a>  |  <a href='javascript:deleteLicense("<?php echo $licenseID; ?>");'><?= _("remove license");?></a>
+			<a href='ajax_forms.php?action=getLicenseForm&licenseID=<?php echo $licenseID; ?>&height=260&width=260&modal=true' class='thickbox'><?php echo _("edit license");?></a>  |  <a href='javascript:deleteLicense("<?php echo $licenseID; ?>");'><?php echo _("remove license");?></a>
 		<?php }
 
 		echo "<div style='margin-bottom:8px;'>";
@@ -75,7 +75,7 @@ switch ($_GET['action']) {
 		</td>
 		<td style='text-align:right'>
 		<?php if ($user->canEdit()){ ?>
-			<b><?= _("License Status:");?></b><br />
+			<b><?php echo _("License Status:");?></b><br />
 			<select id='statusID' name='statusID' onchange='javascript:updateStatus();'>
 			<option value=''></option>
 			<?php
@@ -128,8 +128,8 @@ switch ($_GET['action']) {
 				?>
 						<table class='verticalFormTable'>
 						<tr>
-						<th><?= _("For Document");?></th>
-						<th><?= _("Resource");?></th>
+						<th><?php echo _("For Document");?></th>
+						<th><?php echo _("Resource");?></th>
 						<th>&nbsp;</th>
 						<th>&nbsp;</th>
 						</tr>
@@ -138,7 +138,7 @@ switch ($_GET['action']) {
 				echo "<tr>";
 				echo "<td>" . $document->shortName . "</td>";
 				echo "<td>" . $sfxProvider->shortName . "</td>";
-				echo "<td><a href='ajax_forms.php?action=getSFXForm&height=178&width=260&modal=true&licenseID=" . $licenseID . "&providerID=" . $sfxProvider->sfxProviderID . "' class='thickbox' id='editSFXProvider'>edit</a></td>";
+				echo "<td><a href='ajax_forms.php?action=getSFXForm&height=178&width=260&modal=true&licenseID=" . $licenseID . "&providerID=" . $sfxProvider->sfxProviderID . "' class='thickbox' id='editSFXProvider'>"._("edit")."</a></td>";
 				echo "<td><a href='javascript:deleteSFXProvider(\"" . $sfxProvider->sfxProviderID . "\");'>"._("remove")."</a></td>";
 				echo "</tr>";
 			}
@@ -179,8 +179,8 @@ switch ($_GET['action']) {
 
 		<table class='verticalFormTable'>
 		<tr>
-		<th style='width:80px;'><?= _("Date");?></th>
-		<th style='width:540px;'><?= _("Details");?></th>
+		<th style='width:80px;'><?php echo _("Date");?></th>
+		<th style='width:540px;'><?php echo _("Details");?></th>
 		<th style='width:150px;'>&nbsp;</th>
 		<?php if ($user->canEdit()){ ?>
 			<th style='width:100px;'>&nbsp;</th>
@@ -378,10 +378,10 @@ switch ($_GET['action']) {
 			?>
 			<table class='dataTable' style='width:727px'>
 			<tr>
-			<th><table class='noBorderTable'><tr><td><?= _("Name");?></td><td class='arrow'><a href='javascript:setOrder("L.shortName","asc");'><img src='images/arrowup.gif' border=0></a>&nbsp;<a href='javascript:setOrder("L.shortName","desc");'><img src='images/arrowdown.gif' border=0></a></td></tr></table></th>
-			<th><table class='noBorderTable'><tr><td><?= _("Publisher / Provider");?></td><td class='arrow'><a href='javascript:setOrder("providerName","asc");'><img src='images/arrowup.gif' border=0></a>&nbsp;<a href='javascript:setOrder("providerName","desc");'><img src='images/arrowdown.gif' border=0></a></td></tr></table></th>
-			<th style='width:100px;'><table class='noBorderTable'><tr><td><?= _("Consortium");?></td><td class='arrow'><a href='javascript:setOrder("C.shortName","asc");'><img src='images/arrowup.gif' border=0></a>&nbsp;<a href='javascript:setOrder("C.shortName","desc");'><img src='images/arrowdown.gif' border=0></a></td></tr></table></th>
-			<th style='width:65px;'><table class='noBorderTable'><tr><td><?= _("Status");?></td><td class='arrow'><a href='javascript:setOrder("S.shortName","asc");'><img src='images/arrowup.gif' border=0></a>&nbsp;<a href='javascript:setOrder("S.shortName","desc");'><img src='images/arrowdown.gif' border=0></a></td></tr></table></th>
+			<th><table class='noBorderTable'><tr><td><?php echo _("Name");?></td><td class='arrow'><a href='javascript:setOrder("L.shortName","asc");'><img src='images/arrowup.gif' border=0></a>&nbsp;<a href='javascript:setOrder("L.shortName","desc");'><img src='images/arrowdown.gif' border=0></a></td></tr></table></th>
+			<th><table class='noBorderTable'><tr><td><?php echo _("Publisher / Provider");?></td><td class='arrow'><a href='javascript:setOrder("providerName","asc");'><img src='images/arrowup.gif' border=0></a>&nbsp;<a href='javascript:setOrder("providerName","desc");'><img src='images/arrowdown.gif' border=0></a></td></tr></table></th>
+			<th style='width:100px;'><table class='noBorderTable'><tr><td><?php echo _("Consortium");?></td><td class='arrow'><a href='javascript:setOrder("C.shortName","asc");'><img src='images/arrowup.gif' border=0></a>&nbsp;<a href='javascript:setOrder("C.shortName","desc");'><img src='images/arrowdown.gif' border=0></a></td></tr></table></th>
+			<th style='width:65px;'><table class='noBorderTable'><tr><td><?php echo _("Status");?></td><td class='arrow'><a href='javascript:setOrder("S.shortName","asc");'><img src='images/arrowup.gif' border=0></a>&nbsp;<a href='javascript:setOrder("S.shortName","desc");'><img src='images/arrowdown.gif' border=0></a></td></tr></table></th>
 			</tr>
 
 			<?php
@@ -427,7 +427,7 @@ switch ($_GET['action']) {
 				}
 				?>
 			</select>
-			<span class='smallText'><?= _("records per page");?></span>
+			<span class='smallText'><?php echo _("records per page");?></span>
 			</td>
 			</tr>
 			</table>
@@ -458,10 +458,10 @@ switch ($_GET['action']) {
 			?>
 				<table class='dataTable'>
 				<tr>
-				<th><?= _("Name");?></th>
-				<th><?= _("Publisher / Provider");?></th>
-				<th style='width:135px;'><?= _("Consortium");?></th>
-				<th style='width:115px;'><?= _("Status");?></th>
+				<th><?php echo _("Name");?></th>
+				<th><?php echo _("Publisher / Provider");?></th>
+				<th style='width:135px;'><?php echo _("Consortium");?></th>
+				<th style='width:115px;'><?php echo _("Status");?></th>
 				</tr>
 
 				<?php
@@ -625,9 +625,9 @@ switch ($_GET['action']) {
 				?>
 
 				<tr style='width:900px;'>
-				<th style='width:50px;'><?= _("License");?></th>
-				<th style='width:300px;'><?php echo ucfirst($expressionType->noteType); ?> <?= _("Notes");?></th>
-				<th style='width:255px;'><?= _("Document Text");?></th>
+				<th style='width:50px;'><?php echo _("License");?></th>
+				<th style='width:300px;'><?php echo ucfirst($expressionType->noteType); ?> <?php echo _("Notes");?></th>
+				<th style='width:255px;'><?php echo _("Document Text");?></th>
 				</tr>
 
 				<?php
@@ -765,15 +765,15 @@ switch ($_GET['action']) {
 		<tr>
 
 		<?php if ($isArchive == 'N') { ?>
-		<th><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?= _("Name");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setParentOrder("D.shortName","asc");'><img src='images/arrowup<?php if ($parentOrderBy == 'D.shortName asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setParentOrder("D.shortName","desc");'><img src='images/arrowdown<?php if ($parentOrderBy == 'D.shortName desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
-		<th><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?= _("Type");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setParentOrder("DT.shortName","asc");'><img src='images/arrowup<?php if ($parentOrderBy == 'DT.shortName asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setParentOrder("DT.shortName","desc");'><img src='images/arrowdown<?php if ($parentOrderBy == 'DT.shortName desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
-		<th style='width:120px;'><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?= _("Effective Date");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setParentOrder("D.effectiveDate","asc");'><img src='images/arrowup<?php if ($parentOrderBy == 'D.effectiveDate asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setParentOrder("D.effectiveDate","desc");'><img src='images/arrowdown<?php if ($parentOrderBy == 'D.effectiveDate desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
-		<th style='width:180px;'><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?= _("Signatures");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setParentOrder("min(signatureDate) asc, min(signerName)","asc");'><img src='images/arrowup<?php if ($parentOrderBy == 'min(signatureDate) asc, min(signerName) asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setParentOrder("max(signatureDate) desc, max(signerName)","desc");'><img src='images/arrowdown<?php if ($parentOrderBy == 'max(signatureDate) desc, max(signerName) desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
+		<th><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?php echo _("Name");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setParentOrder("D.shortName","asc");'><img src='images/arrowup<?php if ($parentOrderBy == 'D.shortName asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setParentOrder("D.shortName","desc");'><img src='images/arrowdown<?php if ($parentOrderBy == 'D.shortName desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
+		<th><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?php echo _("Type");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setParentOrder("DT.shortName","asc");'><img src='images/arrowup<?php if ($parentOrderBy == 'DT.shortName asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setParentOrder("DT.shortName","desc");'><img src='images/arrowdown<?php if ($parentOrderBy == 'DT.shortName desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
+		<th style='width:120px;'><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?php echo _("Effective Date");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setParentOrder("D.effectiveDate","asc");'><img src='images/arrowup<?php if ($parentOrderBy == 'D.effectiveDate asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setParentOrder("D.effectiveDate","desc");'><img src='images/arrowdown<?php if ($parentOrderBy == 'D.effectiveDate desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
+		<th style='width:180px;'><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?php echo _("Signatures");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setParentOrder("min(signatureDate) asc, min(signerName)","asc");'><img src='images/arrowup<?php if ($parentOrderBy == 'min(signatureDate) asc, min(signerName) asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setParentOrder("max(signatureDate) desc, max(signerName)","desc");'><img src='images/arrowdown<?php if ($parentOrderBy == 'max(signatureDate) desc, max(signerName) desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
 		<?php }else{ ?>
-		<th><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?= _("Name");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setParentArchivedOrder("D.shortName","asc");'><img src='images/arrowup<?php if ($parentArchivedOrderBy == 'D.shortName asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setParentArchivedOrder("D.shortName","desc");'><img src='images/arrowdown<?php if ($parentArchivedOrderBy == 'D.shortName desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
-		<th><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?= _("Type");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setParentArchivedOrder("DT.shortName","asc");'><img src='images/arrowup<?php if ($parentArchivedOrderBy == 'DT.shortName asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setParentArchivedOrder("DT.shortName","desc");'><img src='images/arrowdown<?php if ($parentArchivedOrderBy == 'DT.shortName desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
-		<th style='width:120px;'><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?= _("Effective Date");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setParentArchivedOrder("D.effectiveDate","asc");'><img src='images/arrowup<?php if ($parentArchivedOrderBy == 'D.effectiveDate asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setParentArchivedOrder("D.effectiveDate","desc");'><img src='images/arrowdown<?php if ($parentArchivedOrderBy == 'D.effectiveDate desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
-		<th style='width:180px;'><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?= _("Signatures");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setParentArchivedOrder("min(signatureDate) asc, min(signerName)","asc");'><img src='images/arrowup<?php if ($parentArchivedOrderBy == 'min(signatureDate) asc, min(signerName) asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setParentArchivedOrder("max(signatureDate) desc, max(signerName)","desc");'><img src='images/arrowdown<?php if ($parentArchivedOrderBy == 'max(signatureDate) desc, max(signerName) desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
+		<th><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?php echo _("Name");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setParentArchivedOrder("D.shortName","asc");'><img src='images/arrowup<?php if ($parentArchivedOrderBy == 'D.shortName asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setParentArchivedOrder("D.shortName","desc");'><img src='images/arrowdown<?php if ($parentArchivedOrderBy == 'D.shortName desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
+		<th><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?php echo _("Type");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setParentArchivedOrder("DT.shortName","asc");'><img src='images/arrowup<?php if ($parentArchivedOrderBy == 'DT.shortName asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setParentArchivedOrder("DT.shortName","desc");'><img src='images/arrowdown<?php if ($parentArchivedOrderBy == 'DT.shortName desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
+		<th style='width:120px;'><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?php echo _("Effective Date");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setParentArchivedOrder("D.effectiveDate","asc");'><img src='images/arrowup<?php if ($parentArchivedOrderBy == 'D.effectiveDate asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setParentArchivedOrder("D.effectiveDate","desc");'><img src='images/arrowdown<?php if ($parentArchivedOrderBy == 'D.effectiveDate desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
+		<th style='width:180px;'><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?php echo _("Signatures");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setParentArchivedOrder("min(signatureDate) asc, min(signerName)","asc");'><img src='images/arrowup<?php if ($parentArchivedOrderBy == 'min(signatureDate) asc, min(signerName) asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setParentArchivedOrder("max(signatureDate) desc, max(signerName)","desc");'><img src='images/arrowdown<?php if ($parentArchivedOrderBy == 'max(signatureDate) desc, max(signerName) desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
 		<?php } ?>
 
 
@@ -831,7 +831,7 @@ switch ($_GET['action']) {
 						if (($signature['signatureDate'] != '') && ($signature['signatureDate'] != "0000-00-00")) {
 							$signatureDate = format_date($signature['signatureDate']);
 						}else{
-							$signatureDate='(no date)';
+							$signatureDate=_("(no date)");
 						}
 
 						echo "<tr>";
@@ -895,15 +895,15 @@ switch ($_GET['action']) {
 						?>
 						<tr>
 						<?php if ($isArchive == 'N') { ?>
-						<th><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?= _("Name");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setChildOrder("D.shortName","asc");'><img src='images/arrowup<?php if ($childOrderBy == 'D.shortName asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setChildOrder("D.shortName","desc");'><img src='images/arrowdown<?php if ($childOrderBy == 'D.shortName desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
-						<th><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?= _("Type");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setChildOrder("DT.shortName","asc");'><img src='images/arrowup<?php if ($childOrderBy == 'DT.shortName asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setChildOrder("DT.shortName","desc");'><img src='images/arrowdown<?php if ($childOrderBy == 'DT.shortName desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
-						<th style='width:120px;'><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?= _("Effective Date");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setChildOrder("D.effectiveDate","asc");'><img src='images/arrowup<?php if ($childOrderBy == 'D.effectiveDate asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setChildOrder("D.effectiveDate","desc");'><img src='images/arrowdown<?php if ($childOrderBy == 'D.effectiveDate desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
-						<th style='width:180px;'><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?= _("Signatures");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setChildOrder("min(signatureDate) asc, min(signerName)","asc");'><img src='images/arrowup<?php if ($childOrderBy == 'min(signatureDate) asc, min(signerName) asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setChildOrder("max(signatureDate) desc, max(signerName)","desc");'><img src='images/arrowdown<?php if ($childOrderBy == 'max(signatureDate) desc, max(signerName) desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
+						<th><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?php echo _("Name");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setChildOrder("D.shortName","asc");'><img src='images/arrowup<?php if ($childOrderBy == 'D.shortName asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setChildOrder("D.shortName","desc");'><img src='images/arrowdown<?php if ($childOrderBy == 'D.shortName desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
+						<th><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?php echo _("Type");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setChildOrder("DT.shortName","asc");'><img src='images/arrowup<?php if ($childOrderBy == 'DT.shortName asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setChildOrder("DT.shortName","desc");'><img src='images/arrowdown<?php if ($childOrderBy == 'DT.shortName desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
+						<th style='width:120px;'><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?php echo _("Effective Date");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setChildOrder("D.effectiveDate","asc");'><img src='images/arrowup<?php if ($childOrderBy == 'D.effectiveDate asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setChildOrder("D.effectiveDate","desc");'><img src='images/arrowdown<?php if ($childOrderBy == 'D.effectiveDate desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
+						<th style='width:180px;'><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?php echo _("Signatures");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setChildOrder("min(signatureDate) asc, min(signerName)","asc");'><img src='images/arrowup<?php if ($childOrderBy == 'min(signatureDate) asc, min(signerName) asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setChildOrder("max(signatureDate) desc, max(signerName)","desc");'><img src='images/arrowdown<?php if ($childOrderBy == 'max(signatureDate) desc, max(signerName) desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
 						<?php }else{ ?>
-						<th><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?= _("Name");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setChildArchivedOrder("D.shortName","asc");'><img src='images/arrowup<?php if ($childArchivedOrderBy == 'D.shortName asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setChildArchivedOrder("D.shortName","desc");'><img src='images/arrowdown<?php if ($childArchivedOrderBy == 'D.shortName desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
-						<th><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?= _("Type");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setChildArchivedOrder("DT.shortName","asc");'><img src='images/arrowup<?php if ($childArchivedOrderBy == 'DT.shortName asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setChildArchivedOrder("DT.shortName","desc");'><img src='images/arrowdown<?php if ($childArchivedOrderBy == 'DT.shortName desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
-						<th style='width:120px;'><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?= _("Effective Date");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setChildArchivedOrder("D.effectiveDate","asc");'><img src='images/arrowup<?php if ($childArchivedOrderBy == 'D.effectiveDate asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setChildArchivedOrder("D.effectiveDate","desc");'><img src='images/arrowdown<?php if ($childArchivedOrderBy == 'D.effectiveDate desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
-						<th style='width:180px;'><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?= _("Signatures");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setChildArchivedOrder("min(signatureDate) asc, min(signerName)","asc");'><img src='images/arrowup<?php if ($childArchivedOrderBy == 'min(signatureDate) asc, min(signerName) asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setChildArchivedOrder("max(signatureDate) desc, max(signerName)","desc");'><img src='images/arrowdown<?php if ($childArchivedOrderBy == 'max(signatureDate) desc, max(signerName) desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
+						<th><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?php echo _("Name");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setChildArchivedOrder("D.shortName","asc");'><img src='images/arrowup<?php if ($childArchivedOrderBy == 'D.shortName asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setChildArchivedOrder("D.shortName","desc");'><img src='images/arrowdown<?php if ($childArchivedOrderBy == 'D.shortName desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
+						<th><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?php echo _("Type");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setChildArchivedOrder("DT.shortName","asc");'><img src='images/arrowup<?php if ($childArchivedOrderBy == 'DT.shortName asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setChildArchivedOrder("DT.shortName","desc");'><img src='images/arrowdown<?php if ($childArchivedOrderBy == 'DT.shortName desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
+						<th style='width:120px;'><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?php echo _("Effective Date");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setChildArchivedOrder("D.effectiveDate","asc");'><img src='images/arrowup<?php if ($childArchivedOrderBy == 'D.effectiveDate asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setChildArchivedOrder("D.effectiveDate","desc");'><img src='images/arrowdown<?php if ($childArchivedOrderBy == 'D.effectiveDate desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
+						<th style='width:180px;'><table class='noBorderTable'><tr><td style='background-color: #e5ebef'><?php echo _("Signatures");?></td><td class='arrow' style='background-color: #e5ebef'><a href='javascript:setChildArchivedOrder("min(signatureDate) asc, min(signerName)","asc");'><img src='images/arrowup<?php if ($childArchivedOrderBy == 'min(signatureDate) asc, min(signerName) asc') echo "_sel"; ?>.gif' border=0></a>&nbsp;<a href='javascript:setChildArchivedOrder("max(signatureDate) desc, max(signerName)","desc");'><img src='images/arrowdown<?php if ($childArchivedOrderBy == 'max(signatureDate) desc, max(signerName) desc') echo "_sel"; ?>.gif' border=0></a></td></tr></table></th>
 						<?php } ?>
 						<th style='width:100px;'>&nbsp;</th>
 						<?php if ($user->canEdit()){ ?>
@@ -949,7 +949,7 @@ switch ($_GET['action']) {
 									if (($signature['signatureDate'] != '') && ($signature['signatureDate'] != "0000-00-00")) {
 										$signatureDate = format_date($signature['signatureDate']);
 									}else{
-										$signatureDate='(no date)';
+										$signatureDate=_("(no date)");
 									}
 
 									echo "<tr>";
@@ -1074,14 +1074,14 @@ switch ($_GET['action']) {
 
 			?>
 
-				<b><?= _("For Document:");?>  </b><?php echo $documentObj->shortName; ?>
+				<b><?php echo _("For Document:");?>  </b><?php echo $documentObj->shortName; ?>
 
 				<table class='verticalFormTable'>
 				<tr>
-				<th style='width:80px;'><?= _("Type");?></th>
-				<th><?= _("Document Text");?></th>
+				<th style='width:80px;'><?php echo _("Type");?></th>
+				<th><?php echo _("Document Text");?></th>
 				<?php if ($user->canEdit()){ ?>
-					<th><?= _("Qualifier");?></th>
+					<th><?php echo _("Qualifier");?></th>
 					<th>&nbsp;</th>
 				<?php } ?>
 				</tr>
@@ -1253,10 +1253,10 @@ switch ($_GET['action']) {
 			?>
 			<table class='dataTable' style='width:550px'>
 				<tr>
-				<th><?= _("Login ID");?></th>
-				<th><?= _("First Name");?></th>
-				<th><?= _("Last Name");?></th>
-				<th><?= _("Privilege");?>
+				<th><?php echo _("Login ID");?></th>
+				<th><?php echo _("First Name");?></th>
+				<th><?php echo _("Last Name");?></th>
+				<th><?php echo _("Privilege");?>
 
 				</th>
 				<?php
@@ -1319,8 +1319,8 @@ switch ($_GET['action']) {
 			?>
 			<table class='dataTable' style='width:400px'>
 				<tr>
-				<th><?= _("Expression Type");?></th>
-				<th><?= _("Note Type");?></th>
+				<th><?php echo _("Expression Type");?></th>
+				<th><?php echo _("Note Type");?></th>
 				<th>&nbsp;</th>
 				<th>&nbsp;</th>
 				<?php
@@ -1360,8 +1360,8 @@ switch ($_GET['action']) {
 			?>
 			<table class='dataTable' style='width:400px'>
 				<tr>
-				<th>Setting</th>
-				<th>Value</th>
+				<th><?php echo _("Setting");?></th>
+				<th><?php echo _("Value");?></th>
 				<th>&nbsp;</th>
 
 				<?php
@@ -1433,8 +1433,8 @@ switch ($_GET['action']) {
 		?>
 		<table class='dataTable' style='width:400px'>
 			<tr>
-			<th><?= _("For Expression Type");?></th>
-			<th><?= _("Qualifier");?></th>
+			<th><?php echo _("For Expression Type");?></th>
+			<th><?php echo _("Qualifier");?></th>
 			<th>&nbsp;</th>
 			<th>&nbsp;</th>
 			<?php

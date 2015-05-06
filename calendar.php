@@ -112,14 +112,14 @@ $result = mysqli_query($link, $query);
 		$query = $query . " AND `$resource_databaseName`.`Resource`.`resourceTypeID` IN ( ". $resourceType . " ) ";
 	}
 $query = $query . "ORDER BY `sortdate`, `$resource_databaseName`.`Resource`.`titleText`";
-$result = mysqli_query($link, $query) or die("Bad Query Failure");
+$result = mysqli_query($link, $query) or die(_("Bad Query Failure"));
 ?>
 
 <div style='text-align:left;'>
 	<table class="headerTable" style="background-image:url('images/header.gif');background-repeat:no-repeat;">
 		<tr style='vertical-align:top;'>
 			<td>
-				<b><?= _("Upcoming License Renewals");?></b>
+				<b><?php echo _("Upcoming License Renewals");?></b>
 			</td>
 		</tr>
 	</table>
@@ -149,7 +149,7 @@ $result = mysqli_query($link, $query) or die("Bad Query Failure");
 					WHERE
 					  `$resource_databaseName`.`Resource`.`resourceID` = " . $row["resourceID"] .
 					  " order by `$resource_databaseName`.`AuthorizedSite`.`shortName`";
-					$result2 = mysqli_query($link, $query2) or die("Bad Query Failure");
+					$result2 = mysqli_query($link, $query2) or die(_("Bad Query Failure"));
 
 					$i = $i + 1;
 					$html = "";

@@ -36,7 +36,7 @@ $_SESSION['ref_script']=$currentPage;
 
 		<div class="left-element">
 
-			<b><?= _("Limit by Expression Type:");?></b>&nbsp;
+			<b><?php echo _("Limit by Expression Type:");?></b>&nbsp;
 
 			<select name='expressionTypeID' id='expressionTypeID' style='width:200px;'>
 

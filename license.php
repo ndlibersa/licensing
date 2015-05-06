@@ -59,15 +59,15 @@ if ($license->shortName){
 	<table cellpadding="0" cellspacing="0" style="width: 100%; table-layout: fixed;">
 		<tr>
 			<td class="sidemenu">
-				<div class="sidemenuselected" style='position: relative; width: 91px'><a href='javascript:void(0)' class='showDocuments'><?= _("Documents");?></a></div>
-				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showExpressions'><?= _("Expressions");?></a></div>
-				<?php if ($displaySFX == "1"){ ?><div class='sidemenuunselected'><a href='javascript:void(0)' class='showSFXProviders'><?= _("Terms Tool");?></a></div><?php } ?>
-				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showAttachments'><?= _("Attachments");?></a><br />&nbsp;<span class='span_AttachmentNumber'></span></div>
+				<div class="sidemenuselected" style='position: relative; width: 91px'><a href='javascript:void(0)' class='showDocuments'><?php echo _("Documents");?></a></div>
+				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showExpressions'><?php echo _("Expressions");?></a></div>
+				<?php if ($displaySFX == "1"){ ?><div class='sidemenuunselected'><a href='javascript:void(0)' class='showSFXProviders'><?php echo _("Terms Tool");?></a></div><?php } ?>
+				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showAttachments'><?php echo _("Attachments");?></a><br />&nbsp;<span class='span_AttachmentNumber'></span></div>
 			</td>
 			<td class='mainContent'>
 
 				<div id='div_documents'>
-				<img src = "images/circle.gif"><?= _("Loading...");?>
+				<img src = "images/circle.gif"><?php echo _("Loading...");?>
 				</div>
 				<br />
 				<div id='div_archives'>
@@ -83,15 +83,15 @@ if ($license->shortName){
 	<table cellpadding="0" cellspacing="0" style="width: 100%; table-layout: fixed;">
 		<tr>
 			<td class="sidemenu">
-				<div class="sidemenuunselected"><a href='javascript:void(0)' class='showDocuments'><?= _("Documents");?></a></div>
-				<div class='sidemenuselected' style='position: relative; width: 91px'><a href='javascript:void(0)' class='showExpressions'><?= _("Expressions");?></a></div>
-				<?php if ($displaySFX == "1"){ ?><div class='sidemenuunselected'><a href='javascript:void(0)' class='showSFXProviders'><?= _("Terms Tool");?></a></div><?php } ?>
-				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showAttachments'><?= _("Attachments");?></a><br />&nbsp;<span class='span_AttachmentNumber'></span></div>
+				<div class="sidemenuunselected"><a href='javascript:void(0)' class='showDocuments'><?php echo _("Documents");?></a></div>
+				<div class='sidemenuselected' style='position: relative; width: 91px'><a href='javascript:void(0)' class='showExpressions'><?php echo _("Expressions");?></a></div>
+				<?php if ($displaySFX == "1"){ ?><div class='sidemenuunselected'><a href='javascript:void(0)' class='showSFXProviders'><?php echo _("Terms Tool");?></a></div><?php } ?>
+				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showAttachments'><?php echo _("Attachments");?></a><br />&nbsp;<span class='span_AttachmentNumber'></span></div>
 			</td>
 			<td class='mainContent'>
 
 				<div id='div_expressions'>
-				<img src = "images/circle.gif"><?= _("Loading...");?>
+				<img src = "images/circle.gif"><?php echo _("Loading...");?>
 				</div>
 			</td>
 		</tr>
@@ -103,14 +103,14 @@ if ($license->shortName){
 	<table cellpadding="0" cellspacing="0" style="width: 100%; table-layout: fixed;">
 		<tr>
 			<td class="sidemenu">
-				<div class="sidemenuunselected"><a href='javascript:void(0)' class='showDocuments'><?= _("Documents");?></a></div>
-				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showExpressions'><?= _("Expressions");?></a></div>
-				<div class='sidemenuselected' style='position: relative; width: 91px'><a href='javascript:void(0)' class='showSFXProviders'><?= _("Terms Tool");?></a></div>
-				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showAttachments'><?= _("Attachments");?></a><br />&nbsp;<span class='span_AttachmentNumber'></span></div>
+				<div class="sidemenuunselected"><a href='javascript:void(0)' class='showDocuments'><?php echo _("Documents");?></a></div>
+				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showExpressions'><?php echo _("Expressions");?></a></div>
+				<div class='sidemenuselected' style='position: relative; width: 91px'><a href='javascript:void(0)' class='showSFXProviders'><?php echo _("Terms Tool");?></a></div>
+				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showAttachments'><?php echo _("Attachments");?></a><br />&nbsp;<span class='span_AttachmentNumber'></span></div>
 			</td>
 			<td class='mainContent'>
 				<div id='div_sfxProviders'>
-				<img src = "images/circle.gif"><?= _("Loading...");?>
+				<img src = "images/circle.gif"><?php echo _("Loading...");?>
 				</div>
 			</td>
 		</tr>
@@ -122,15 +122,15 @@ if ($license->shortName){
 	<table cellpadding="0" cellspacing="0" style="width: 100%; table-layout: fixed;">
 		<tr>
 			<td class="sidemenu">
-				<div class="sidemenuunselected"><a href='javascript:void(0)' class='showDocuments'><?= _("Documents");?></a></div>
-				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showExpressions'><?= _("Expressions");?></a></div>
-				<?php if ($displaySFX == "1"){ ?><div class='sidemenuunselected'><a href='javascript:void(0)' class='showSFXProviders'><?= _("Terms Tool");?></a></div><?php } ?>
-				<div class='sidemenuselected' style='position: relative; width: 91px'><a href='javascript:void(0)' class='showAttachments'><?= _("Attachments");?></a><br />&nbsp;<span class='span_AttachmentNumber'></span></div>
+				<div class="sidemenuunselected"><a href='javascript:void(0)' class='showDocuments'><?php echo _("Documents");?></a></div>
+				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showExpressions'><?php echo _("Expressions");?></a></div>
+				<?php if ($displaySFX == "1"){ ?><div class='sidemenuunselected'><a href='javascript:void(0)' class='showSFXProviders'><?php echo _("Terms Tool");?></a></div><?php } ?>
+				<div class='sidemenuselected' style='position: relative; width: 91px'><a href='javascript:void(0)' class='showAttachments'><?php echo _("Attachments");?></a><br />&nbsp;<span class='span_AttachmentNumber'></span></div>
 			</td>
 			<td class='mainContent'>
 
 				<div id='div_attachments'>
-				<img src = "images/circle.gif"><?= _("Loading...");?>
+				<img src = "images/circle.gif"><?php echo _("Loading...");?>
 				</div>
 			</td>
 		</tr>

@@ -45,8 +45,8 @@ $_SESSION['ref_script']=$currentPage;
 <td style="width:155px;padding-right:10px;">
 	<table class='noBorder'>
 	<tr><td style="width:75px;">
-	<span style='font-size:130%;font-weight:bold;'><?= _("Search");?></span><br />
-	<a href='javascript:void(0)' class='newSearch'><?= _("new search");?></a>
+	<span style='font-size:130%;font-weight:bold;'><?php echo _("Search");?></span><br />
+	<a href='javascript:void(0)' class='newSearch'><?php echo _("new search");?></a>
 	</td>
 	<td><div id='div_feedback'>&nbsp;</div>
 	</td></tr>
@@ -55,16 +55,16 @@ $_SESSION['ref_script']=$currentPage;
 	<table class='borderedFormTable' style="width:150px">
 
 	<tr>
-	<td class='searchRow'><label for='searchName'><b><?= _("Name (contains)");?></b></label>
+	<td class='searchRow'><label for='searchName'><b><?php echo _("Name (contains)");?></b></label>
 	<br />
 	<input type='text' name='searchName' id='searchName' style='width:145px' value="<?php if (isset($_SESSION['license_shortName']) && ($reset != 'Y')) echo $_SESSION['license_shortName']; ?>" /><br />
-	<div id='div_searchName' style='<?php if ((!isset($_SESSION['license_shortName'])) || ($reset == 'Y')) echo "display:none;"; ?>margin-left:123px;'><input type='button' name='searchName' value='<?= _("go!");?>' class='searchButton' /></div>
+	<div id='div_searchName' style='<?php if ((!isset($_SESSION['license_shortName'])) || ($reset == 'Y')) echo "display:none;"; ?>margin-left:123px;'><input type='button' name='searchName' value='<?php echo _("go!");?>' class='searchButton' /></div>
 	</td>
 	</tr>
 
 
 	<tr>
-	<td class='searchRow'><label for='organizationID'><b><?= _("Publisher/Provider");?></b></label>
+	<td class='searchRow'><label for='organizationID'><b><?php echo _("Publisher/Provider");?></b></label>
 	<br />
 	<?php
 		$license = new License();
@@ -75,7 +75,7 @@ $_SESSION['ref_script']=$currentPage;
 			?>
 
 			<select name='organizationID' id='organizationID' style='width:150px' onchange='javsacript:updateSearch();'>
-			<option value=''><?= _("All");?></option>
+			<option value=''><?php echo _("All");?></option>
 
 			<?php
 			foreach($license->getOrganizationList() as $display) {
@@ -98,11 +98,11 @@ $_SESSION['ref_script']=$currentPage;
 
 
 	<tr>
-	<td class='searchRow'><label for='consortium'><b><?= _("Consortium");?></b></label>
+	<td class='searchRow'><label for='consortium'><b><?php echo _("Consortium");?></b></label>
 	<br />
 	<select name='consortiumID' id='consortiumID' style='width:150px' onchange='javsacript:updateSearch();'>
-	<option value=''><?= _("All");?></option>
-	<option value='0'><?= _("(none)");?></option>
+	<option value=''><?php echo _("All");?></option>
+	<option value='0'><?php echo _("(none)");?></option>
 	<?php
 
 		$display = array();
@@ -121,7 +121,7 @@ $_SESSION['ref_script']=$currentPage;
 	</tr>
 
 	<tr>
-	<td class='searchRow'><label for='statusID'><b><?= _("Status");?></b></label>
+	<td class='searchRow'><label for='statusID'><b><?php echo _("Status");?></b></label>
 	<br />
 	<select name='statusID' id='statusID' style='width:150px' onchange='javsacript:updateSearch();'>
 	<option value='' selected></option>
@@ -146,7 +146,7 @@ $_SESSION['ref_script']=$currentPage;
 
 
 	<tr>
-	<td class='searchRow'><label for='documentTypeID'><b><?= _("Document Type");?></b></label>
+	<td class='searchRow'><label for='documentTypeID'><b><?php echo _("Document Type");?></b></label>
 	<br />
 	<select name='documentTypeID' id='documentTypeID' style='width:150px' onchange='javsacript:updateSearch();'>
 	<option value='' selected></option>
@@ -177,7 +177,7 @@ $_SESSION['ref_script']=$currentPage;
 
 
 	<tr>
-	<td class='searchRow'><label for='expressionTypeID'><b><?= _("Expression Type");?></b></label>
+	<td class='searchRow'><label for='expressionTypeID'><b><?php echo _("Expression Type");?></b></label>
 	<br />
 	<select name='expressionTypeID' id='expressionTypeID' style='width:150px'>
 	<option value='' selected></option>
@@ -202,7 +202,7 @@ $_SESSION['ref_script']=$currentPage;
 	</tr>
 
 	<tr id='tr_Qualifiers'>
-	<td class='searchRow'><label for='qualifierID'><b><?= _("Qualifier");?></b></label>
+	<td class='searchRow'><label for='qualifierID'><b><?php echo _("Qualifier");?></b></label>
 	<br />
 	<div id='div_Qualifiers'>
 	<input type='hidden' id='qualifierID' value='<?php if ((isset($_SESSION['license_qualifierID'])) && ($_SESSION['license_qualifierID']) && ($reset != 'Y')) echo $_SESSION['license_qualifierID']; ?>' />
@@ -212,7 +212,7 @@ $_SESSION['ref_script']=$currentPage;
 
 
 	<tr>
-	<td class='searchRow'><label for='searchFirstLetter'><b><?= _("Starts with");?></b></label>
+	<td class='searchRow'><label for='searchFirstLetter'><b><?php echo _("Starts with");?></b></label>
 	<br />
 	<?php
 	$license = new License();
@@ -235,7 +235,7 @@ $_SESSION['ref_script']=$currentPage;
 	</td>
 	</tr>
 	</table>
-	&nbsp;<a href='javascript:void(0)' class='newSearch'><?= _("new search");?></a>
+	&nbsp;<a href='javascript:void(0)' class='newSearch'><?php echo _("new search");?></a>
 	<input type='hidden' id='reset' value='<?php echo $reset; ?>'>
 
 </td>
