@@ -22,6 +22,10 @@ include_once 'user.php';
 $util = new Utility();
 $config = new Configuration();
 
+// Include file of language codes
+include_once 'LangCodes.php';
+$lang_name = new LangCodes();
+
 //get the current page to determine which menu button should be depressed
 $currentPage = $_SERVER["SCRIPT_NAME"];
 $parts = Explode('/', $currentPage);
@@ -61,16 +65,13 @@ $coralURL = $util->getCORALURL();
 <script type="text/javascript" src="js/plugins/jquery.tooltip.js"></script>
 <script type="text/javascript" src="js/plugins/Gettext.js"></script>
 <?php
-   if(isset($_COOKIE["lang"])){
-        if($_COOKIE["lang"]=='fr'){
-            echo "<link rel='gettext' type='application/x-po' href='./locale/fr_FR/LC_MESSAGES/messages.po'>";
+   // Add translation for the JavaScript files
+    global $http_lang;
+    if(isset($_COOKIE["lang"])){
+        if($_COOKIE["lang"]==$http_lang && $_COOKIE["lang"] != "en_US"){
+            echo "<link rel='gettext' type='application/x-po' href='./locale/".$http_lang."/LC_MESSAGES/messages.po' />";
         }
-    }else{
-        $defLang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,2);
-        if($defLang=='fr'){
-            echo "<link rel='gettext' type='application/x-po' href='./locale/fr_FR/LC_MESSAGES/messages.po'>";
-        }
-    } 
+    }
 ?>
 <script type="text/javascript" src="js/plugins/translate.js"></script>
 <script type="text/javascript" src="js/plugins/date.js"></script>
@@ -125,7 +126,7 @@ if ($user->isAdmin()){ ?>
 <?php } ?>
 </td>
 
-<td style='width:230px;height:19px;' align='right'>
+<td style='width:260px;height:19px;' align='right'>
 <?php
 
 //only show the 'Change Module' if there are other modules installed or if there is an index to the main CORAL page
@@ -169,20 +170,41 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
                <?php
                 $fr="<option value='fr' selected='selected'>"._("French")."</option><option value='en'>"._("English")."</option>";
                 $en="<option value='fr'>"._("French")."</option><option value='en' selected='selected'>"._("English")."</option>";
+                // Get all translations on the 'locale' folder
+            $route='locale';
+            $lang[]="en_US"; // add default language
+            if (is_dir($route)) { 
+                if ($dh = opendir($route)) { 
+                    while (($file = readdir($dh)) !== false) {
+                        if (is_dir("$route/$file") && $file!="." && $file!=".."){
+                            $lang[]=$file;
+                        } 
+                    } 
+                    closedir($dh); 
+                } 
+            }else {
+                echo "<br>"._("Invalid translation route!"); 
+            }
+            // Get language of navigator
+            $defLang = str_replace('-','_',substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,5));
+            
+            // Show an ordered list
+            sort($lang); 
+            for($i=0; $i<count($lang); $i++){
                 if(isset($_COOKIE["lang"])){
-                    if($_COOKIE["lang"]=='fr'){
-                        echo $fr;
+                    if($_COOKIE["lang"]==$lang[$i]){
+                        echo "<option value='".$lang[$i]."' selected='selected'>".$lang_name->getLanguage($lang[$i])."</option>";
                     }else{
-                        echo $en;
+                        echo "<option value='".$lang[$i]."'>".$lang_name->getLanguage($lang[$i])."</option>";
                     }
                 }else{
-                    $defLang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,2);
-                    if($defLang=='fr'){
-                        echo $fr;
+                    if($defLang==$lang[$i]){
+                        echo "<option value='".$lang[$i]."' selected='selected'>".$lang_name->getLanguage($lang[$i])."</option>";
                     }else{
-                        echo $en;
+                        echo "<option value='".$lang[$i]."'>".$lang_name->getLanguage($lang[$i])."</option>";
                     }
                 }
+            }
                 ?>
 
             </select>
