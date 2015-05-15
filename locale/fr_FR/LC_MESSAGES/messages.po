@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-05-13 14:12+0100\n"
+"POT-Creation-Date: 2015-05-15 16:19+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
@@ -15,25 +15,13 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: /var/www/Coral/licensing/js/plugins\n"
 
-#: LangCodes.php:9
-msgid "French, FR"
-msgstr "Français, FR"
+#: LangCodes.php:17
+msgid "French"
+msgstr "Français"
 
-#: LangCodes.php:10
-msgid "English, US"
-msgstr "Anglais, US"
-
-#: LangCodes.php:11
-msgid "Spanish, ES"
-msgstr "Espagnol, ES"
-
-#: LangCodes.php:12
-msgid "Spanish, MX"
-msgstr "Espagnol, MX"
-
-#: LangCodes.php:13
-msgid "Italian, IT"
-msgstr "Italien, IT"
+#: LangCodes.php:18
+msgid "English"
+msgstr "Anglais"
 
 #: admin.php:22
 msgid "Administration"
@@ -825,13 +813,13 @@ msgstr "Le fichier de la pièce jointe a été supprimé avec succès."
 msgid "Status has been updated"
 msgstr "Le statut a été mit à jour"
 
-#: calendar.php:26 in_progress.php:23 index.php:23 templates/header.php:119
-#: templates/header.php:122 templates/header.php:125
+#: calendar.php:26 in_progress.php:23 index.php:23 templates/header.php:120
+#: templates/header.php:123 templates/header.php:126
 msgid "Home"
 msgstr "Accueil"
 
-#: calendar.php:44 templates/header.php:119 templates/header.php:122
-#: templates/header.php:125
+#: calendar.php:44 templates/header.php:120 templates/header.php:123
+#: templates/header.php:126
 msgid "Calendar"
 msgstr "Calendrier"
 
@@ -959,14 +947,14 @@ msgstr "No disponible"
 msgid "You have not been set up to have access to the Licensing Module."
 msgstr "Vous n'avez pas configuré l'accès au Module Licensing."
 
-#: templates/header.php:39
+#: templates/header.php:35
 msgid ""
 "Both license name and organization must be filled out.  Please try again."
 msgstr ""
 "Tant le nom de licence que l'organisation doivent être remplis. S'il vous "
 "plaît ressayez."
 
-#: templates/header.php:82
+#: templates/header.php:83
 msgid ""
 "JavaScript must be enabled in order for you to use CORAL. However, it seems "
 "JavaScript is either disabled or not supported by your browser. To use "
@@ -977,47 +965,39 @@ msgstr ""
 "utiliser CORAL, activez JavaScript en modifiant la configuration de votre "
 "navigateur, après "
 
-#: templates/header.php:82
+#: templates/header.php:83
 msgid "try again"
 msgstr "réessayez"
 
-#: templates/header.php:101
+#: templates/header.php:102
 msgid "Hello, "
 msgstr "Bonjour, "
 
-#: templates/header.php:110
+#: templates/header.php:111
 msgid "logout"
 msgstr "Se déconnecter"
 
-#: templates/header.php:119 templates/header.php:122
+#: templates/header.php:120 templates/header.php:123
 msgid "New License"
 msgstr "Nouvelle licence"
 
-#: templates/header.php:119 templates/header.php:122 templates/header.php:125
+#: templates/header.php:120 templates/header.php:123 templates/header.php:126
 msgid "Licenses in Progress"
 msgstr "Licences en avance"
 
-#: templates/header.php:119 templates/header.php:122
+#: templates/header.php:120 templates/header.php:123
 msgid "Expression Comparision"
 msgstr "Comparaison de l'expression"
 
-#: templates/header.php:119
+#: templates/header.php:120
 msgid "Admin"
 msgstr "Admin"
 
-#: templates/header.php:141
+#: templates/header.php:142
 msgid "Change Module"
 msgstr "Changer le module"
 
-#: templates/header.php:171 templates/header.php:172
-msgid "French"
-msgstr "Français"
-
-#: templates/header.php:171 templates/header.php:172
-msgid "English"
-msgstr "Anglais"
-
-#: templates/header.php:186
+#: templates/header.php:185
 msgid "Invalid translation route!"
 msgstr "Le chemin aux traductions n'est pas valide!"
 
@@ -1353,6 +1333,21 @@ msgstr "Mois suivant"
 #: js/plugins/jquery.datePicker.js:1134
 msgid "Choose date"
 msgstr "Choissir la date"
+
+#~ msgid "French, FR"
+#~ msgstr "Français, FR"
+
+#~ msgid "English, US"
+#~ msgstr "Anglais, US"
+
+#~ msgid "Spanish, ES"
+#~ msgstr "Espagnol, ES"
+
+#~ msgid "Spanish, MX"
+#~ msgstr "Espagnol, MX"
+
+#~ msgid "Italian, IT"
+#~ msgstr "Italien, IT"
 
 #~ msgid "ADD/EDIT"
 #~ msgstr "AJOUTER/MODIFIER"
