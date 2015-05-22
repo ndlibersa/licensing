@@ -223,7 +223,7 @@ $result = mysql_query($query, $linkID) or die("Bad Query Failure");
 						}
 
 					$date1 = new DateTime(date("m/d/y"));
-					$date2 = new DateTime($row["currentEndDate"]);
+					$date2 = new DateTime($row["$endDateName"]);
 					$interval = $date1->diff($date2);
 
 					$num_days = ((($interval->y) * 365) + (($interval->m) * 30) + ($interval->d));
