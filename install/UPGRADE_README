@@ -22,9 +22,7 @@ Default settings for the calendar can be changed in the admin menu.
 Database changes include:
     * Create table CalendarSettings
 
-For manual installation, you will need to first modify the update_1.3.sql script located in the protected 
-directory to replace _DATABASE_NAME_ with your MySQL schema name (e.g. coral_licensing_pprd).
-Next, run the update_1.3.sql script in your MySQL client.
+For install this update, you must run the file 'update.php' located in the install directory and that's all the update will be installed. This file detects the last version to install.
 
 The javascript is changed in the admin console.  You might need to clear your cache or force reload
 to ensure new javascript is loaded.
