@@ -671,6 +671,7 @@ switch ($_GET['action']) {
 		<tr>
 		<td><span class='headerText'><?php echo ucfirst($noteType); ?> Notes</span><br />
 		<b>For Document Text:</b>  <?php echo $documentText; ?>
+		<span id='span_errors' style='color:#F00;'></span>
 		<br /><br /></td>
 		</tr>
 		<tr>
@@ -907,11 +908,11 @@ switch ($_GET['action']) {
 		?>
 		<div id='div_updateForm'>
 		<table class="thickboxTable" style="width:285px;padding:2px;">
-		<tr><td colspan='3'><span class='headerText'><?php echo $update; ?> User</span><br /><br /></td></tr>
-		<tr><td colspan='2' style='width:135px;'><label for='loginID'><b>Login ID</b></label</td><td><input type='text' id='loginID' name='loginID' value='<?php echo $loginID; ?>' style='width:140px;' /></td></tr>
-		<tr><td colspan='2'><label for='firstName'><b>First Name</b></label</td><td><input type='text' id='firstName' name='firstName' value="<?php if (isset($updateUser)) echo $updateUser->firstName; ?>" style='width:140px;' /></td></tr>
-		<tr><td colspan='2'><label for='lastName'><b>Last Name</b></label</td><td><input type='text' id='lastName' name='lastName' value="<?php if (isset($updateUser)) echo $updateUser->lastName; ?>" style='width:140px;' /></td></tr>
-		<tr><td><label for='privilegeID'><b>Privilege</b></label</td>
+		<tr><td colspan='3'><span class='headerText'><?php echo $update; ?> User</span><br /><span id='span_errors' style='color:#F00;'></span><br /></td></tr>
+            <tr><td colspan='2' style='width:135px;'><label for='loginID'><b>Login ID</b></label></td><td><input type='text' id='loginID' name='loginID' value='<?php echo $loginID; ?>' style='width:140px;' /></td></tr>
+            <tr><td colspan='2'><label for='firstName'><b>First Name</b></label></td><td><input type='text' id='firstName' name='firstName' value="<?php if (isset($updateUser)) echo $updateUser->firstName; ?>" style='width:140px;' /></td></tr>
+            <tr><td colspan='2'><label for='lastName'><b>Last Name</b></label></td><td><input type='text' id='lastName' name='lastName' value="<?php if (isset($updateUser)) echo $updateUser->lastName; ?>" style='width:140px;' /></td></tr>
+            <tr><td><label for='privilegeID'><b>Privilege</b></label></td>
 		<td>
 				<fieldset id="fieldsetPrivilege">
 				<a title = "Add/Edit users can add, edit, or remove licenses and associated fields<br /><br />Admin users have access to the Admin page and the SFX tab.<br /><br />Restricted users do not have the ability to view documents<br /><br />View only users can view all license information, including the license pdf" href=""><img src='images/help.gif'></a>

@@ -157,23 +157,31 @@
 
 
 
+function submitUserData(orgLoginID){
+    if(validateUserForm() === true){
+       $.ajax({
+            type:       "POST",
+            url:        "ajax_processing.php?action=submitUserData",
+            cache:      false,
+            data:       { orgLoginID: orgLoginID, loginID: $('#loginID').val(), firstName: $('#firstName').val(), lastName: $('#lastName').val(), privilegeID: $('#privilegeID').val(), emailAddressForTermsTool: $('#emailAddressForTermsTool').val() },
+            success:    function(html) { 
+                updateUserList();
+                window.parent.tb_remove();
+            }
+        }); 
+    }
+}
 
-
- function submitUserData(orgLoginID){
-	$.ajax({
-          type:       "POST",
-          url:        "ajax_processing.php?action=submitUserData",
-          cache:      false,
-          data:       { orgLoginID: orgLoginID, loginID: $('#loginID').val(), firstName: $('#firstName').val(), lastName: $('#lastName').val(), privilegeID: $('#privilegeID').val(), emailAddressForTermsTool: $('#emailAddressForTermsTool').val() },
-          success:    function(html) { 
-          updateUserList();
-          window.parent.tb_remove();
-          }
-       });
-
- }
-
-
+// Validate user form
+function validateUserForm() {
+    if($("#loginID").val() == ''){
+        $("#span_errors").html('Error - Please add a Login ID for the user');
+        $("#loginID").focus();
+        return false;
+    }else{
+        return true;
+    }
+}
 
  function submitExpressionType(){
 	$.ajax({
