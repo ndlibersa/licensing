@@ -47,20 +47,32 @@ $(function(){
 
 
 $("#commitUpdate").click(function () {
-
-  $.ajax({
-	 type:       "POST",
-	 url:        "ajax_processing.php?action=submitSignature",
-	 cache:      false,
-	 data:       { signatureID: $("#signatureID").val(), signerName: $("#signerName").val(), signatureTypeID: $("#signatureTypeID").val(), signatureDate: $("#signatureDate").val(), documentID: $("#documentID").val() },
-	 success:    function(response) {
-		updateSignatureForm();
-	 }
-
-
- });
+    if(validateSignature() === true){
+        $.ajax({
+            type:       "POST",
+            url:        "ajax_processing.php?action=submitSignature",
+            cache:      false,
+            data:       { signatureID: $("#signatureID").val(), signerName: $("#signerName").val(), signatureTypeID: $("#signatureTypeID").val(), signatureDate: $("#signatureDate").val(), documentID: $("#documentID").val() },
+            success:    function(response) {
+                updateSignatureForm();
+            }
+        });
+    }
 });
 
+function validateSignature() {
+    if($("#signerName").val() == '') {
+        $("#span_errors").html('Error - Please add a signer name');
+        $("#signerName").focus();
+        return false;
+    }else if($("#signatureDate").val() == ''){
+        $("#span_errors").html('Error - Please add a date for the signer');
+        $("#signatureDate").focus();
+        return false;
+    }else{
+        return true;
+    }
+}
 
 function updateSignatureForm(signatureID){
 

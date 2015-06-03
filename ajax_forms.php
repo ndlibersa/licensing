@@ -397,7 +397,7 @@ switch ($_GET['action']) {
 		<div id='div_signatureForm'>
 		<table class="thickboxTable" style="background-image:url('images/tbtitle.gif');width:450px;">
 		<tr>
-		<td><span class='headerText'>Signatures</span><br /></td>
+		<td><span class='headerText'>Signatures</span><br /><span id='span_errors' style='color:#F00;'></td>
 		</tr>
 		<tr>
 
@@ -947,7 +947,7 @@ switch ($_GET['action']) {
 		//if not configured to use SFX, hide the Terms Tool Report
 		if ($util->useTermsTool()) {
 		?>
-		<tr><td><label for='emailAddressForTermsTool'><b>Terms Tool Email</b></label</td>
+            <tr><td><label for='emailAddressForTermsTool'><b>Terms Tool Email</b></label></td>
 		<td>
 				<fieldset id="fieldsetEmail">
 				<a title = "Enter email address if you wish this user to receive email notifications when the terms tool box is checked on the Expressions tab.<br /><br />Leave this field blank if the user shouldn't receive emails." href=""><img src='images/help.gif'></a>
@@ -992,8 +992,8 @@ switch ($_GET['action']) {
 		<input type='hidden' name='expressionTypeID' id='expressionTypeID' value='<?php echo $expressionTypeID; ?>' />
 		<table class="thickboxTable" style="width:260px;padding:2px;">
 		<tr><td colspan='2'><span class='headerText'><?php echo $update; ?> Expression Type</span><br /><br /></td></tr>
-		<tr><td><label for='shortName'><b>Expression Type</b></label</td><td><input type='text' id='shortName' name='shortName' value='<?php if (isset($expressionType)) echo $expressionType->shortName; ?>' style='width:130px;'/></td></tr>
-		<tr><td><label for='noteType'><b>Note Type</b></label</td>
+            <tr><td><label for='shortName'><b>Expression Type</b></label></td><td><input type='text' id='shortName' name='shortName' value='<?php if (isset($expressionType)) echo $expressionType->shortName; ?>' style='width:130px;'/></td></tr>
+            <tr><td><label for='noteType'><b>Note Type</b></label></td>
 		<td>
 		<select name='noteType' id='noteType' style='width:135px'>
 		<option value='Internal' <?php if ((isset($expressionType)) && ($expressionType->noteType == 'Internal')) echo "selected"; ?>>Internal</option>
@@ -1036,10 +1036,10 @@ switch ($_GET['action']) {
 		<?php 
 		
 		if (strtolower($calendarSettings->shortName) == strtolower('Resource Type(s)')) { ?>
-			<tr><td><label for='shortName'><b>Variable Name</b></label</td><td><?php if (isset($calendarSettings)) echo $calendarSettings->shortName; ?></td></tr>
+            <tr><td><label for='shortName'><b>Variable Name</b></label></td><td><?php if (isset($calendarSettings)) echo $calendarSettings->shortName; ?></td></tr>
 			<tr>
 			
-			<td><label for='value'><b>Value</b></label</td>
+                <td><label for='value'><b>Value</b></label></td>
 			<td>
 			
 			
@@ -1066,10 +1066,10 @@ switch ($_GET['action']) {
 		<?php 
 		
 		} elseif (strtolower($calendarSettings->shortName) == strtolower('Authorized Site(s)')) { ?>
-			<tr><td><label for='shortName'><b>Variable Name</b></label</td><td><?php if (isset($calendarSettings)) echo $calendarSettings->shortName; ?></td></tr>
+            <tr><td><label for='shortName'><b>Variable Name</b></label></td><td><?php if (isset($calendarSettings)) echo $calendarSettings->shortName; ?></td></tr>
 			<tr>
 			
-			<td><label for='value'><b>Value</b></label</td>
+                <td><label for='value'><b>Value</b></label></td>
 			<td>
 			<select multiple name='value' id='value' style='width:155px'>
 			<?php
@@ -1099,8 +1099,8 @@ switch ($_GET['action']) {
 		} else { 
 		
 		?>
-			<tr><td><label for='shortName'><b>Variable Name</b></label</td><td><?php if (isset($calendarSettings)) echo $calendarSettings->shortName; ?></td></tr>
-			<tr><td><label for='value'><b>Value</b></label</td>
+            <tr><td><label for='shortName'><b>Variable Name</b></label></td><td><?php if (isset($calendarSettings)) echo $calendarSettings->shortName; ?></td></tr>
+            <tr><td><label for='value'><b>Value</b></label></td>
 			<td><input type='text' id='value' name='value' value='<?php if (isset($calendarSettings)) echo $calendarSettings->value; ?>' style='width:130px;'/></td>
 			</tr>
 		
@@ -1144,7 +1144,7 @@ switch ($_GET['action']) {
 		<table class="thickboxTable" style="width:290px;padding:2px;">
 		<tr><td colspan='2'><span class='headerText'><?php echo $update; ?> Qualifier</span><br /><br /></td></tr>
 
-		<tr><td><label for='expressionTypeID'><b>For Expression Type</b></label</td>
+            <tr><td><label for='expressionTypeID'><b>For Expression Type</b></label></td>
 		<td>
 		<select name='expressionTypeID' id='expressionTypeID' style='width:155px'>
 		<?php
@@ -1165,7 +1165,7 @@ switch ($_GET['action']) {
 		</td>
 		</tr>
 
-		<tr><td><label for='shortName'><b>Qualifier</b></label</td><td><input type='text' id='shortName' name='shortName' value='<?php if (isset($qualifier)) echo $qualifier->shortName; ?>' style='width:150px;'/></td></tr>
+            <tr><td><label for='shortName'><b>Qualifier</b></label></td><td><input type='text' id='shortName' name='shortName' value='<?php if (isset($qualifier)) echo $qualifier->shortName; ?>' style='width:150px;'/></td></tr>
 
 		<tr>
 		<td style="padding-top:18px;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitQualifier();' id='submitQualifier'></td>
