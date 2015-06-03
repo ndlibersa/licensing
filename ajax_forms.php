@@ -397,7 +397,7 @@ switch ($_GET['action']) {
 		<div id='div_signatureForm'>
 		<table class="thickboxTable" style="background-image:url('images/tbtitle.gif');width:450px;">
 		<tr>
-		<td><span class='headerText'>Signatures</span><br /><span id='span_errors' style='color:#F00;'></td>
+            <td><span class='headerText'>Signatures</span><br /><span id='span_errors' style='color:#F00;'></span></td>
 		</tr>
 		<tr>
 
