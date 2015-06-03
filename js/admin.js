@@ -183,19 +183,31 @@ function validateUserForm() {
     }
 }
 
- function submitExpressionType(){
-	$.ajax({
-          type:       "POST",
-          url:        "ajax_processing.php?action=submitExpressionType",
-          cache:      false,
-          data:       { expressionTypeID: $('#expressionTypeID').val(), shortName: $('#shortName').val(), noteType: $('#noteType').val() },
-          success:    function(html) { 
-          updateExpressionTypeList();
-          window.parent.tb_remove();
-          }
-       });
+// Validate Expression Type form
+function validateExpressionType() {
+    if($('#shortName').val() == ''){
+        $("#span_errors").html('Error - Please add an Expression Type');
+        $("#shortName").focus();
+        return false;
+    }else{
+        return true;
+    }
+}
 
- }
+function submitExpressionType(){
+    if(validateExpressionType() === true) {
+        $.ajax({
+            type:       "POST",
+            url:        "ajax_processing.php?action=submitExpressionType",
+            cache:      false,
+            data:       { expressionTypeID: $('#expressionTypeID').val(), shortName: $('#shortName').val(), noteType: $('#noteType').val() },
+            success:    function(html) { 
+                updateExpressionTypeList();
+                window.parent.tb_remove();
+            }
+        });
+    }
+}
 
  function submitCalendarSettings(){
  

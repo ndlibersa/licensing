@@ -991,7 +991,7 @@ switch ($_GET['action']) {
 		<div id='div_updateForm'>
 		<input type='hidden' name='expressionTypeID' id='expressionTypeID' value='<?php echo $expressionTypeID; ?>' />
 		<table class="thickboxTable" style="width:260px;padding:2px;">
-		<tr><td colspan='2'><span class='headerText'><?php echo $update; ?> Expression Type</span><br /><br /></td></tr>
+		<tr><td colspan='2'><span class='headerText'><?php echo $update; ?> Expression Type</span><br /><span id='span_errors' style='color:#F00;'></span><br /></td></tr>
             <tr><td><label for='shortName'><b>Expression Type</b></label></td><td><input type='text' id='shortName' name='shortName' value='<?php if (isset($expressionType)) echo $expressionType->shortName; ?>' style='width:130px;'/></td></tr>
             <tr><td><label for='noteType'><b>Note Type</b></label></td>
 		<td>
