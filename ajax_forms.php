@@ -1142,7 +1142,7 @@ switch ($_GET['action']) {
 		<div id='div_updateForm'>
 		<input type='hidden' name='qualifierID' id='qualifierID' value='<?php echo $qualifierID; ?>' />
 		<table class="thickboxTable" style="width:290px;padding:2px;">
-		<tr><td colspan='2'><span class='headerText'><?php echo $update; ?> Qualifier</span><br /><br /></td></tr>
+		<tr><td colspan='2'><span class='headerText'><?php echo $update; ?> Qualifier</span><br /><span id='span_errors' style='color:#F00;'></span><br /></td></tr>
 
             <tr><td><label for='expressionTypeID'><b>For Expression Type</b></label></td>
 		<td>

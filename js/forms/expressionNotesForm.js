@@ -15,7 +15,7 @@
 **************************************************************************************************************************
 */
  
-// Validate exxpression note
+// Validate expression note
 function validateExpressionNote(){
     if($("#expressionNote").val() == '') {
         $("#span_errors").html('Error - Please add some text for the note');

@@ -183,10 +183,10 @@ function validateUserForm() {
     }
 }
 
-// Validate Expression Type form
-function validateExpressionType() {
+// Validate Expression Type form and Qualifier form
+function validateData() {
     if($('#shortName').val() == ''){
-        $("#span_errors").html('Error - Please add an Expression Type');
+        $("#span_errors").html('Error - Please add a value');
         $("#shortName").focus();
         return false;
     }else{
@@ -195,7 +195,7 @@ function validateExpressionType() {
 }
 
 function submitExpressionType(){
-    if(validateExpressionType() === true) {
+    if(validateData() === true) {
         $.ajax({
             type:       "POST",
             url:        "ajax_processing.php?action=submitExpressionType",
@@ -225,20 +225,20 @@ function submitExpressionType(){
 
  }
 
- function submitQualifier(){
- 	$("#submitQualifier").attr("disabled","disabled");
-	$.ajax({
-          type:       "POST",
-          url:        "ajax_processing.php?action=submitQualifier",
-          cache:      false,
-          data:       { qualifierID: $('#qualifierID').val(), shortName: $('#shortName').val(), expressionTypeID: $('#expressionTypeID').val() },
-          success:    function(html) { 
-          updateQualifierList();
-          window.parent.tb_remove();
-          }
-       });
-
- }
+function submitQualifier(){
+    if(validateData() === true) {
+        $.ajax({
+            type:       "POST",
+            url:        "ajax_processing.php?action=submitQualifier",
+            cache:      false,
+            data:       { qualifierID: $('#qualifierID').val(), shortName: $('#shortName').val(), expressionTypeID: $('#expressionTypeID').val() },
+            success:    function(html) { 
+                updateQualifierList();
+                window.parent.tb_remove();
+            }
+        });
+    }
+}
 
  function deleteData(tableName, deleteID){
  
