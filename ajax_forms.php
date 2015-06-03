@@ -670,7 +670,7 @@ switch ($_GET['action']) {
 		<table class="thickboxTable" style="width:420px;">
 		<tr>
 		<td><span class='headerText'><?php echo ucfirst($noteType); ?> Notes</span><br />
-		<b>For Document Text:</b>  <?php echo $documentText; ?>
+		<b>For Document Text:</b>  <?php echo $documentText; ?><br />
 		<span id='span_errors' style='color:#F00;'></span>
 		<br /><br /></td>
 		</tr>
