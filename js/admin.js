@@ -141,21 +141,31 @@
 
  }
 
- function updateData(tableName, updateID){
-	$.ajax({
-          type:       "POST",
-          url:        "ajax_processing.php?action=updateData",
-          cache:      false,
-          data:       { tableName: tableName, updateID: updateID, shortName: $('#updateVal').val() },
-          success:    function(html) { 
-          updateForm(tableName);
-          window.parent.tb_remove();
-          }
-       });
+function updateData(tableName, updateID){
+    if(validateUpdateData() === true){
+        $.ajax({
+            type:       "POST",
+            url:        "ajax_processing.php?action=updateData",
+            cache:      false,
+            data:       { tableName: tableName, updateID: updateID, shortName: $('#updateVal').val() },
+            success:    function(html) { 
+                updateForm(tableName);
+                window.parent.tb_remove();
+            }
+        });
+    }
+}
 
- }
-
-
+// Validate updateData
+function validateUpdateData(){
+    if($("#updateVal").val() == ''){
+        $("#span_errors").html('Error - Please enter a value');
+        $("#updateVal").focus();
+        return false;
+    }else{
+        return true;
+    }
+}
 
 function submitUserData(orgLoginID){
     if(validateUserForm() === true){
