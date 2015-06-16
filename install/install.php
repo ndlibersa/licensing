@@ -33,21 +33,21 @@ if ($step == "3"){
 	}else{
 
 		//first check connecting to host
-		$link = @mysql_connect("$database_host", "$database_username", "$database_password");
+		$link = @mysqli_connect("$database_host", "$database_username", "$database_password");
 		if (!$link) {
-			$errorMessage[] = "Could not connect to the server '" . $database_host . "'<br />MySQL Error: " . mysql_error();
+			$errorMessage[] = "Could not connect to the server '" . $database_host . "'<br />MySQL Error: " . mysqli_error($link);
 		}else{
 
 			//next check that the database exists
-			$dbcheck = @mysql_select_db("$database_name");
+			$dbcheck = @mysqli_select_db($link, "$database_name");
 			if (!$dbcheck) {
-				$errorMessage[] = "Unable to access the database '" . $database_name . "'.  Please verify it has been created.<br />MySQL Error: " . mysql_error();
+				$errorMessage[] = "Unable to access the database '" . $database_name . "'.  Please verify it has been created.<br />MySQL Error: " . mysqli_error($link);
 			}else{
 				//make sure the tables don't already exist - otherwise this script will overwrite all of the data!
 				$query = "SELECT count(*) count FROM information_schema.`COLUMNS` WHERE table_schema = '" . $database_name . "' AND table_name='License'";
 
 				//if License table exists, error out
-				if (!$row = mysql_fetch_array(mysql_query($query))){
+				if (!$row = mysqli_fetch_array(mysqli_query($link, $query))){
 					$errorMessage[] = "Please verify your database user has access to select from the information_schema MySQL metadata database.";
 				}else{
 					if ($row['count'] > 0){
@@ -74,9 +74,9 @@ if ($step == "3"){
 									//replace the DATABASE_NAME parameter with what was actually input
 									$stmt = str_replace("_DATABASE_NAME_", $database_name, $stmt);
 
-									$result = mysql_query($stmt);
+									$result = mysqli_query($link, $stmt);
 									if (!$result){
-										$errorMessage[] = mysql_error() . "<br /><br />For statement: " . $stmt;
+										$errorMessage[] = mysqli_error($link) . "<br /><br />For statement: " . $stmt;
 										 break;
 									}
 								}
@@ -103,9 +103,9 @@ if ($step == "3"){
 										//replace the DATABASE_NAME parameter with what was actually input
 										$stmt = str_replace("_DATABASE_NAME_", $database_name, $stmt);
 
-										$result = mysql_query($stmt);
+										$result = mysqli_query($link, $stmt);
 										if (!$result){
-											$errorMessage[] = mysql_error() . "<br /><br />For statement: " . $stmt;
+											$errorMessage[] = mysqli_error($link) . "<br /><br />For statement: " . $stmt;
 											 break;
 										}
 									}
@@ -144,30 +144,30 @@ if ($step == "3"){
 	}else{
 
 		//first check connecting to host
-		$link = @mysql_connect("$database_host", "$database_username", "$database_password");
+		$link = @mysqli_connect("$database_host", "$database_username", "$database_password");
 		if (!$link) {
-			$errorMessage[] = "Could not connect to the server '" . $database_host . "'<br />MySQL Error: " . mysql_error();
+			$errorMessage[] = "Could not connect to the server '" . $database_host . "'<br />MySQL Error: " . mysqli_error($link);
 		}else{
 
 			//next check that the database exists
-			$dbcheck = @mysql_select_db("$database_name");
+			$dbcheck = @mysqli_select_db($link, "$database_name");
 			if (!$dbcheck) {
-				$errorMessage[] = "Unable to access the database '" . $database_name . "'.  Please verify it has been created.<br />MySQL Error: " . mysql_error();
+				$errorMessage[] = "Unable to access the database '" . $database_name . "'.  Please verify it has been created.<br />MySQL Error: " . mysqli_error($link);
 			}else{
 				//passed db host, name check, test that user can select from License database
-				$result = mysql_query("SELECT privilegeID FROM " . $database_name . ".Privilege WHERE shortName like '%admin%';");
+				$result = mysqli_query($link, "SELECT privilegeID FROM " . $database_name . ".Privilege WHERE shortName like '%admin%';");
 				if (!$result){
-					$errorMessage[] = "Unable to select from the Privilege table in database '" . $database_name . "' with user '" . $database_username . "'.  Error: " . mysql_error();
+					$errorMessage[] = "Unable to select from the Privilege table in database '" . $database_name . "' with user '" . $database_username . "'.  Error: " . mysqli_error($link);
 				}else{
-					while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
+					while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
 						$privilegeID = $row[0];
 					}
 
 					//delete admin user if they exist, then set them back up
 					$query = "DELETE FROM " . $database_name . ".User WHERE loginID = '" . $admin_login . "';";
-					mysql_query($query);
+					mysqli_query($link, $query);
 					$query = "INSERT INTO " . $database_name . ".User (loginID, privilegeID) values ('" . $admin_login . "', " . $privilegeID . ");";
-					mysql_query($query);
+					mysqli_query($link, $query);
 				}
 
 			}
@@ -211,7 +211,7 @@ if ($step == "3"){
 
 	}
 	if ((!$organizationsDatabaseName) && ($_POST['organizationsModule'])) $errorMessage[] = "If you are using the organizations module you must enter the organizations module database name.  It doesn't need to be created yet.";
-	if ((!$resourcesDatabaseName) && ($_POST['resourcesModule'])) $errorMessage[] = "If you are using the resources module you must enter the resources module database name.  It doesn't need to be created yet.";	
+	if ((!$resourcesDatabaseName) && ($_POST['resourcesModule'])) $errorMessage[] = "If you are using the resources module you must enter the resources module database name.  It doesn't need to be created yet.";
 	if ((!$authDatabaseName) && ($_POST['authModule'])) $errorMessage[] = "If you are using the authentication module you must enter the auth module database name.  It should be created already so that you can log in.";
 
 
@@ -219,21 +219,21 @@ if ($step == "3"){
 	if (($authDatabaseName) && ($_POST['authModule'])){
 
 		//first check connecting to host
-		$link = @mysql_connect("$database_host", "$database_username", "$database_password");
+		$link = @mysqli_connect("$database_host", "$database_username", "$database_password");
 		if (!$link) {
-			$errorMessage[] = "Could not connect to the server '" . $database_host . "'<br />MySQL Error: " . mysql_error();
+			$errorMessage[] = "Could not connect to the server '" . $database_host . "'<br />MySQL Error: " . mysqli_error($link);
 		}else{
 
 			//next check that the database exists
-			$dbcheck = @mysql_select_db("$authDatabaseName");
+			$dbcheck = @mysqli_select_db($link, "$authDatabaseName");
 			if (!$dbcheck) {
-				$errorMessage[] = "Unable to access the auth database '" . $authDatabaseName . "'.  Please verify it has been created.<br />MySQL Error: " . mysql_error();
+				$errorMessage[] = "Unable to access the auth database '" . $authDatabaseName . "'.  Please verify it has been created.<br />MySQL Error: " . mysqli_error($link);
 			}else{
 				//make sure the tables don't already exist - otherwise this script will overwrite all of the data!
 				$query = "SELECT count(*) count FROM information_schema.`COLUMNS` WHERE table_schema = '" . $authDatabaseName . "' AND table_name='Session'";
 
 				//if auth table exists, error out
-				if (!$row = mysql_fetch_array(mysql_query($query))){
+				if (!$row = mysqli_fetch_array(mysqli_query($link, $query))){
 					$errorMessage[] = "Please verify your database user has access to select from the the auth tables and the information_schema MySQL metadata database.";
 				}else{
 					if ($row['count'] == 0){
@@ -274,7 +274,7 @@ if ($step == "3"){
 			$iniData[] = "authDatabaseName=" . $authDatabaseName;
 			$iniData[] = "usageModule=" . $usageModule;
 			$iniData[] = "resourcesModule=" . $resourcesModule;
-			$iniData[] = "resourcesDatabaseName=" . $resourcesDatabaseName;			
+			$iniData[] = "resourcesDatabaseName=" . $resourcesDatabaseName;
 			$iniData[] = "useTermsToolFunctionality=" . $useTermsToolFunctionality;
 			$iniData[] = "remoteAuthVariableName=\"" . $remoteAuthVariableName . "\"";
       $iniData[] = "";
@@ -574,7 +574,7 @@ if ($step == "3"){
 				<td>
 					<input type="text" name="resourcesDatabaseName" size="30" value="<?php echo $resourcesDatabaseName?>">
 				</td>
-			</tr>			
+			</tr>
 			<tr>
 				<td>&nbsp;Are you using the usage module?</td>
 				<td>
