@@ -1,15 +1,15 @@
-ALTER TABLE `_DATABASE_NAME_`.`Qualification` RENAME TO `_DATABASE_NAME_`.`Qualifier`,
+ALTER TABLE `Qualification` RENAME TO `Qualifier`,
  CHANGE COLUMN `qualificationID` `qualifierID` INTEGER UNSIGNED NOT NULL DEFAULT NULL AUTO_INCREMENT,
  DROP PRIMARY KEY,
  ADD PRIMARY KEY  USING BTREE(`qualifierID`);
 
 
-DELETE FROM `_DATABASE_NAME_`.`Qualifier`;
-ALTER TABLE `_DATABASE_NAME_`.`Qualifier` 
+DELETE FROM `Qualifier`;
+ALTER TABLE `Qualifier` 
 ADD COLUMN `expressionTypeID` INTEGER UNSIGNED NOT NULL AFTER `qualifierID`;
 
 
-CREATE TABLE IF NOT EXISTS  `_DATABASE_NAME_`.`ExpressionQualifierProfile` (
+CREATE TABLE IF NOT EXISTS  `ExpressionQualifierProfile` (
   `expressionID` INTEGER UNSIGNED NOT NULL,
   `qualifierID` INTEGER UNSIGNED NOT NULL,
   PRIMARY KEY (`expressionID`, `qualifierID`)
@@ -17,4 +17,4 @@ CREATE TABLE IF NOT EXISTS  `_DATABASE_NAME_`.`ExpressionQualifierProfile` (
 
 
 
-ALTER TABLE `_DATABASE_NAME_`.`Expression` DROP COLUMN `qualificationID`;
+ALTER TABLE `Expression` DROP COLUMN `qualificationID`;
