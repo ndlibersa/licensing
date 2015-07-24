@@ -22,7 +22,8 @@ Default settings for the calendar can be changed in the admin menu.
 Database changes include:
     * Create table CalendarSettings
 
-For install this update, you must run the file 'update.php' located in the install directory and that's all the update will be installed. This file detects the last version to install.
+To install this update, you must open the file 'install/update.php' from a
+web browser. This file detects the needed updates and installs them for you.
 
 The javascript is changed in the admin console.  You might need to clear your cache or force reload
 to ensure new javascript is loaded.
