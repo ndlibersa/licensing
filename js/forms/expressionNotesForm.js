@@ -15,36 +15,44 @@
 **************************************************************************************************************************
 */
  
+// Validate expression note
+function validateExpressionNote(){
+    if($("#expressionNote").val() == '') {
+        $("#span_errors").html('Error - Please add some text for the note');
+        $("#expressionNote").focus();
+        return false;
+    }else{
+        return true;
+    }
+}
 
 
 function addExpressionNote(){
-
-  $.ajax({
-	 type:       "POST",
-	 url:        "ajax_processing.php?action=submitExpressionNote",
-	 cache:      false,
-	 data:       { expressionNote: $("#expressionNote").val(), expressionID: $("#expressionID").val(), displayOrderSeqNumber: $("#displayOrderSeqNumber").val() } ,
-	 success:    function(response) {
-		updateExpressionNoteForm();
-	 }
-
-
- });
+    if(validateExpressionNote() === true) {
+        $.ajax({
+            type:       "POST",
+            url:        "ajax_processing.php?action=submitExpressionNote",
+            cache:      false,
+            data:       { expressionNote: $("#expressionNote").val(), expressionID: $("#expressionID").val(), displayOrderSeqNumber: $("#displayOrderSeqNumber").val() } ,
+            success:    function(response) {
+                updateExpressionNoteForm();
+            }
+        });
+    }
 }
 
 $("#commitUpdate").click(function () {
-
-  $.ajax({
-	 type:       "POST",
-	 url:        "ajax_processing.php?action=submitExpressionNote",
-	 cache:      false,
-	 data:       { expressionNote: $("#expressionNote").val(), expressionNoteID: $("#expressionNoteID").val(), displayOrderSeqNumber: $("#displayOrderSeqNumber").val() },
-	 success:    function(response) {
-		updateExpressionNoteForm();
-	 }
-
-
- });
+    if(validateExpressionNote() === true) {
+        $.ajax({
+            type:       "POST",
+            url:        "ajax_processing.php?action=submitExpressionNote",
+            cache:      false,
+            data:       { expressionNote: $("#expressionNote").val(), expressionNoteID: $("#expressionNoteID").val(), displayOrderSeqNumber: $("#displayOrderSeqNumber").val() },
+            success:    function(response) {
+                updateExpressionNoteForm();
+            }
+        });
+    }
 });
 
 
