@@ -437,7 +437,7 @@ class Organization extends DatabaseObject {
 	//search used for the autocomplete
 	public function autocompleteSearch($q){
 		$orgArray = array();
-		$result = mysql_query("SELECT CONCAT(A.name, ' (', O.name, ')') name, O.organizationID
+		$result = mysqli_query($this->db->getDatabase(), "SELECT CONCAT(A.name, ' (', O.name, ')') name, O.organizationID
 								FROM Alias A, Organization O
 								WHERE A.organizationID=O.organizationID
 								AND upper(A.name) like upper('%" . $q . "%')
@@ -447,7 +447,7 @@ class Organization extends DatabaseObject {
 								WHERE upper(name) like upper('%" . $q . "%')
 								ORDER BY 1;");
 
-		while ($row = mysql_fetch_assoc($result)){
+		while ($row = mysqli_fetch_assoc($result)){
 			$orgArray[] = $row['name'] . "|" . $row['organizationID'];
 		}
 
@@ -460,12 +460,12 @@ class Organization extends DatabaseObject {
 	//used for A-Z on search (index)
 	public function getAlphabeticalList(){
 		$alphArray = array();
-		$result = mysql_query("SELECT DISTINCT UPPER(SUBSTR(TRIM(LEADING 'The ' FROM name),1,1)) letter, COUNT(SUBSTR(TRIM(LEADING 'The ' FROM name),1,1)) letter_count
+		$result = mysqli_query($this->db->getDatabase(), "SELECT DISTINCT UPPER(SUBSTR(TRIM(LEADING 'The ' FROM name),1,1)) letter, COUNT(SUBSTR(TRIM(LEADING 'The ' FROM name),1,1)) letter_count
 								FROM Organization O
 								GROUP BY SUBSTR(TRIM(LEADING 'The ' FROM name),1,1)
 								ORDER BY 1;");
 
-		while ($row = mysql_fetch_assoc($result)){
+		while ($row = mysqli_fetch_assoc($result)){
 			$alphArray[$row['letter']] = $row['letter_count'];
 		}
 

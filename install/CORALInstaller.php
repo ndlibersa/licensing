@@ -9,7 +9,7 @@ if (!function_exists('debug')) {
 }
 
 class CORALInstaller {
-  
+
   protected $db;
   public $error;
   protected $config;
@@ -34,14 +34,14 @@ class CORALInstaller {
       "description" => "This update will connect to MySQL and run the CORAL Licensing database changes. Manual changes to the configuration file are required.  This update adds a CalendarSettings tables in the Licensing module database.  To see a list of the specifics, see the file located at install/UPGRADE_README in this module."
     )
   );
-  
+
   public function __construct() {
     if (is_file($this->configFilePath())) {
       $this->config = new Configuration();
       $this->connect();
     }
   }
-  
+
   public function connect($username = null, $password = null) {
     $this->error = '';
 		$host = $this->config->database->host;
@@ -51,62 +51,66 @@ class CORALInstaller {
 		if ($password === null) {
 		  $password = $this->config->database->password;
 	  }
-		$this->db = @mysql_connect($host, $username, $password);
+		$this->db = @mysqli_connect($host, $username, $password);
 		if (!$this->db) {
-		  
-		  $this->error = mysql_error();
+
+		  $this->error = mysqli_error($this->db);
 		  if (!$this->error) {
 		    $this->error = "Access denied for user '$username'";
 		  }
 	  } else {
   		$databaseName = $this->config->database->name;
-  		mysql_select_db($databaseName, $this->db);
-  		$this->error = mysql_error($this->db);
+  		mysqli_select_db($this->db, $databaseName);
+  		$this->error = mysqli_error($this->db);
 		}
-		
+
 		if ($this->error) {
 		  $this->db = null;
 		}
 	}
-	
+
 	public function query($sql) {
-		$result = mysql_query($sql, $this->db);
-		
+		$result = mysqli_query($this->db, $sql);
+
 		$this->checkForError();
 		$data = array();
 
-		if (is_resource($result)) {
-			while ($row = mysql_fetch_array($result)) {
+		if ($result instanceof mysqli_result) {
+			while ($row = mysqli_fetch_array($result)) {
 				array_push($data, $row);
 			}
 		} else if ($result) {
-			$data = mysql_insert_id($this->db);
+			$data = mysqli_insert_id($this->db);
 		}
 
 		return $data;
 	}
-	
+
 	protected function checkForError() {
-		if ($this->error = mysql_error($this->db)) {
+		if ($this->error = mysqli_error($this->db)) {
 			throw new Exception("There was a problem with the database: " . $this->error);
 		}
 	}
-	
+
+  public function getDatabase() {
+    return $this->db;
+  }
+
 	public function getDatabaseName() {
 	  return $this->config->database->name;
 	}
-  
+
   public function addErrorMessage($error) {
     if (!$this->hasErrorMessages()) {
       $_SESSION['installer_error_messages'] = array();
     }
     $_SESSION['installer_error_messages'] []= $error;
   }
-  
+
   public function hasErrorMessages() {
     return isset($_SESSION['installer_error_messages']);
   }
-  
+
   public function displayErrorMessages() {
     if ($this->hasErrorMessages()) {
 			echo "<div style='color:red'><p><b>The following errors occurred:</b></p><ul>";
@@ -117,18 +121,18 @@ class CORALInstaller {
 			unset($_SESSION['installer_error_messages']);
 		}
   }
-  
+
   public function addMessage($msg) {
     if (!$this->hasMessages()) {
       $_SESSION['installer_messages'] = array();
     }
     $_SESSION['installer_messages'] []= $msg;
   }
-  
+
   public function hasMessages() {
     return isset($_SESSION['installer_messages']);
   }
-  
+
   public function displayMessages() {
     if ($this->hasMessages()) {
 			echo "<div style='color:green'><ul>";
@@ -139,7 +143,7 @@ class CORALInstaller {
 			unset($_SESSION['installer_messages']);
 		}
   }
-  
+
   public function modulePath() {
     //returns file path for this module, i.e. /coral/licensing/
     $replace_path = preg_quote(DIRECTORY_SEPARATOR."install");
@@ -149,11 +153,11 @@ class CORALInstaller {
   public function configFilePath() {
     return $this->modulePath().'/admin/configuration.ini';
   }
-  
+
   public function isDatabaseConfigValid() {
     return $this->config && $this->db;
   }
-  
+
   public function hasPermission($permission) {
     if ($this->isDatabaseConfigValid()) {
       $grants = array();
@@ -169,7 +173,7 @@ class CORALInstaller {
     }
     return false;
   }
-  
+
   public function hasPermissions($permissions) {
     foreach($permissions as $permission) {
       if (!$this->hasPermission($permission)) {
@@ -178,7 +182,7 @@ class CORALInstaller {
     }
     return true;
   }
-  
+
   public function tableExists($table) {
     foreach ($this->query("SHOW TABLES") as $row) {
       if (strtolower($row[0]) == strtolower($table)) {
@@ -187,12 +191,12 @@ class CORALInstaller {
     }
     return false;
   }
-  
+
   public function indexExists($table, $index) {
     $result = $this->query("SHOW INDEXES FROM $table WHERE Key_name = '$index'");
     return count($result) > 0;
   }
-  
+
   public function installed() {
     if ($this->isDatabaseConfigValid()) {
       foreach (array("License","Document","Expression") as $table) {
@@ -204,7 +208,7 @@ class CORALInstaller {
     }
     return false;
   }
-  
+
   public function getNextUpdateVersion() {
     foreach($this->updates as $version => $details) {
       if (!$this->isUpdateInstalled($version)) {
@@ -212,11 +216,11 @@ class CORALInstaller {
       }
     }
   }
-  
+
   public function isUpdateReady($version) {
     return $this->getNextUpdateVersion() == $version;
   }
-  
+
   public function isUpdateInstalled($version) {
     if ($this->installed()) {
       switch ($version) {
@@ -225,22 +229,22 @@ class CORALInstaller {
         case "1.2":
           return $this->indexExists("Document", "licenseID");
         case "1.3":
-          return $this->tableExists("CalendarSettings");		  
+          return $this->tableExists("CalendarSettings");
       }
     }
     return false;
   }
-  
+
   public function getUpdate($version) {
     return $this->updates[$version];
   }
-  
+
   public function header($title = 'CORAL Installation') {
-    include('header.php');  
+    include('header.php');
   }
-  
+
   public function footer() {
-    include('footer.php');  
+    include('footer.php');
   }
 }
 ?>
