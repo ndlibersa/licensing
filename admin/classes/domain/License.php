@@ -277,15 +277,15 @@ class License extends DatabaseObject {
 									" . $whereStatement;
 
 		}
-		
+
 		if ($orderBy) {
 		  $query .= "\nORDER BY " . $orderBy;
 		}
-		
+
 		if ($limit) {
   	  $query .= "\nLIMIT " . $limit;
 		}
-		
+
 		return $query;
   }
 
@@ -443,9 +443,9 @@ class License extends DatabaseObject {
 									WHERE upper(name) like upper('%" . $q . "%')
 									ORDER BY 1;";
 
-			$result = mysql_query($query);
+			$result = mysqli_query($this->db->getDatabase(), $query);
 
-			while ($row = mysql_fetch_assoc($result)){
+			while ($row = mysqli_fetch_assoc($result)){
 				$orgArray[] = $row['organizationID'] . "|" . $row['name'];
 			}
 
@@ -457,9 +457,9 @@ class License extends DatabaseObject {
 									WHERE upper(shortName) like upper('%" . $q . "%')
 									ORDER BY 1;";
 
-			$result = mysql_query($query);
+			$result = mysqli_query($this->db->getDatabase(), $query);
 
-			while ($row = mysql_fetch_assoc($result)){
+			while ($row = mysqli_fetch_assoc($result)){
 				$orgArray[] = $row['organizationID'] . "|" . $row['shortName'];
 			}
 
@@ -529,9 +529,9 @@ class License extends DatabaseObject {
 			$orgArray = array();
 			$query = "SELECT name FROM " . $dbName . ".Organization WHERE organizationID = " . $this->organizationID;
 
-			if ($result = mysql_query($query)){
+			if ($result = mysqli_query($this->db->getDatabase(), $query)){
 
-				while ($row = mysql_fetch_assoc($result)){
+				while ($row = mysqli_fetch_assoc($result)){
 					return $row['name'];
 				}
 			}
@@ -647,9 +647,9 @@ class License extends DatabaseObject {
 
 			$orgArray = array();
 			$query = "SELECT name FROM " . $dbName . ".Organization WHERE organizationID = " . $this->consortiumID;
-			$result = mysql_query($query);
+			$result = mysqli_query($this->db->getDatabase(), $query);
 
-			while ($row = mysql_fetch_assoc($result)){
+			while ($row = mysqli_fetch_assoc($result)){
 				return $row['name'];
 			}
 		//otherwise if the org module is not installed get the consortium name from this database
@@ -664,12 +664,12 @@ class License extends DatabaseObject {
 	//used for A-Z on search (index)
 	public function getAlphabeticalList(){
 		$alphArray = array();
-		$result = mysql_query("SELECT DISTINCT UPPER(SUBSTR(TRIM(LEADING 'The ' FROM shortName),1,1)) letter, COUNT(SUBSTR(TRIM(LEADING 'The ' FROM shortName),1,1)) letter_count
+		$result = mysqli_query($this->db->getDatabase(), "SELECT DISTINCT UPPER(SUBSTR(TRIM(LEADING 'The ' FROM shortName),1,1)) letter, COUNT(SUBSTR(TRIM(LEADING 'The ' FROM shortName),1,1)) letter_count
 								FROM License L
 								GROUP BY SUBSTR(TRIM(LEADING 'The ' FROM shortName),1,1)
 								ORDER BY 1;");
 
-		while ($row = mysql_fetch_assoc($result)){
+		while ($row = mysqli_fetch_assoc($result)){
 			$alphArray[$row['letter']] = $row['letter_count'];
 		}
 
