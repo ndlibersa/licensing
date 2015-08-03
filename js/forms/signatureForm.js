@@ -66,7 +66,7 @@ function validateSignature() {
         $("#signerName").focus();
         return false;
     }else if($("#signatureDate").val() == ''){
-        $("#span_errors").html('Error - Please add a date for the signer');
+        $("#span_errors").html('Error - Please add a date for the signature');
         $("#signatureDate").focus();
         return false;
     }else{
