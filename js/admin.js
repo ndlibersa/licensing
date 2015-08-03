@@ -141,53 +141,83 @@
 
  }
 
- function updateData(tableName, updateID){
-	$.ajax({
-          type:       "POST",
-          url:        "ajax_processing.php?action=updateData",
-          cache:      false,
-          data:       { tableName: tableName, updateID: updateID, shortName: $('#updateVal').val() },
-          success:    function(html) { 
-          updateForm(tableName);
-          window.parent.tb_remove();
-          }
-       });
+function updateData(tableName, updateID){
+    if(validateUpdateData() === true){
+        $.ajax({
+            type:       "POST",
+            url:        "ajax_processing.php?action=updateData",
+            cache:      false,
+            data:       { tableName: tableName, updateID: updateID, shortName: $('#updateVal').val() },
+            success:    function(html) { 
+                updateForm(tableName);
+                window.parent.tb_remove();
+            }
+        });
+    }
+}
 
- }
+// Validate updateData
+function validateUpdateData(){
+    if($("#updateVal").val() == ''){
+        $("#span_errors").html('Error - Please enter a value');
+        $("#updateVal").focus();
+        return false;
+    }else{
+        return true;
+    }
+}
 
+function submitUserData(orgLoginID){
+    if(validateUserForm() === true){
+       $.ajax({
+            type:       "POST",
+            url:        "ajax_processing.php?action=submitUserData",
+            cache:      false,
+            data:       { orgLoginID: orgLoginID, loginID: $('#loginID').val(), firstName: $('#firstName').val(), lastName: $('#lastName').val(), privilegeID: $('#privilegeID').val(), emailAddressForTermsTool: $('#emailAddressForTermsTool').val() },
+            success:    function(html) { 
+                updateUserList();
+                window.parent.tb_remove();
+            }
+        }); 
+    }
+}
 
+// Validate user form
+function validateUserForm() {
+    if($("#loginID").val() == ''){
+        $("#span_errors").html('Error - Please add a Login ID for the user');
+        $("#loginID").focus();
+        return false;
+    }else{
+        return true;
+    }
+}
 
+// Validate Expression Type form and Qualifier form
+function validateData() {
+    if($('#shortName').val() == ''){
+        $("#span_errors").html('Error - Please add a value');
+        $("#shortName").focus();
+        return false;
+    }else{
+        return true;
+    }
+}
 
-
- function submitUserData(orgLoginID){
-	$.ajax({
-          type:       "POST",
-          url:        "ajax_processing.php?action=submitUserData",
-          cache:      false,
-          data:       { orgLoginID: orgLoginID, loginID: $('#loginID').val(), firstName: $('#firstName').val(), lastName: $('#lastName').val(), privilegeID: $('#privilegeID').val(), emailAddressForTermsTool: $('#emailAddressForTermsTool').val() },
-          success:    function(html) { 
-          updateUserList();
-          window.parent.tb_remove();
-          }
-       });
-
- }
-
-
-
- function submitExpressionType(){
-	$.ajax({
-          type:       "POST",
-          url:        "ajax_processing.php?action=submitExpressionType",
-          cache:      false,
-          data:       { expressionTypeID: $('#expressionTypeID').val(), shortName: $('#shortName').val(), noteType: $('#noteType').val() },
-          success:    function(html) { 
-          updateExpressionTypeList();
-          window.parent.tb_remove();
-          }
-       });
-
- }
+function submitExpressionType(){
+    if(validateData() === true) {
+        $.ajax({
+            type:       "POST",
+            url:        "ajax_processing.php?action=submitExpressionType",
+            cache:      false,
+            data:       { expressionTypeID: $('#expressionTypeID').val(), shortName: $('#shortName').val(), noteType: $('#noteType').val() },
+            success:    function(html) { 
+                updateExpressionTypeList();
+                window.parent.tb_remove();
+            }
+        });
+    }
+}
 
  function submitCalendarSettings(){
  
@@ -205,20 +235,20 @@
 
  }
 
- function submitQualifier(){
- 	$("#submitQualifier").attr("disabled","disabled");
-	$.ajax({
-          type:       "POST",
-          url:        "ajax_processing.php?action=submitQualifier",
-          cache:      false,
-          data:       { qualifierID: $('#qualifierID').val(), shortName: $('#shortName').val(), expressionTypeID: $('#expressionTypeID').val() },
-          success:    function(html) { 
-          updateQualifierList();
-          window.parent.tb_remove();
-          }
-       });
-
- }
+function submitQualifier(){
+    if(validateData() === true) {
+        $.ajax({
+            type:       "POST",
+            url:        "ajax_processing.php?action=submitQualifier",
+            cache:      false,
+            data:       { qualifierID: $('#qualifierID').val(), shortName: $('#shortName').val(), expressionTypeID: $('#expressionTypeID').val() },
+            success:    function(html) { 
+                updateQualifierList();
+                window.parent.tb_remove();
+            }
+        });
+    }
+}
 
  function deleteData(tableName, deleteID){
  
