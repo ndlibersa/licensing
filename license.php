@@ -56,13 +56,13 @@ if ($license->shortName){
 <input type='hidden' name='licenseID' id='licenseID' value='<?php echo $license->licenseID; ?>'>
 
 <div style="width: 899px;" id ='div_displayDocuments'>
-	<table cellpadding="0" cellspacing="0" style="width: 100%; table-layout: fixed;">
+	<table cellpadding="0" cellspacing="0" style="width: 100%;">
 		<tr>
 			<td class="sidemenu">
 				<div class="sidemenuselected" style='position: relative; width: 91px'><a href='javascript:void(0)' class='showDocuments'>Documents</a></div>
 				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showExpressions'>Expressions</a></div>
 				<?php if ($displaySFX == "1"){ ?><div class='sidemenuunselected'><a href='javascript:void(0)' class='showSFXProviders'>Terms Tool</a></div><?php } ?>
-				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showAttachments'>Attachments</a><br />&nbsp;<span class='span_AttachmentNumber'></span></div>
+				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showAttachments'>Attachments</a>&nbsp;<span class='span_AttachmentNumber'></span></div>
 			</td>
 			<td class='mainContent'>
 
@@ -80,13 +80,13 @@ if ($license->shortName){
 
 
 <div id ='div_displayExpressions' style='display:none;width:899px;'>
-	<table cellpadding="0" cellspacing="0" style="width: 100%; table-layout: fixed;">
+	<table cellpadding="0" cellspacing="0" style="width: 100%;">
 		<tr>
 			<td class="sidemenu">
 				<div class="sidemenuunselected"><a href='javascript:void(0)' class='showDocuments'>Documents</a></div>
 				<div class='sidemenuselected' style='position: relative; width: 91px'><a href='javascript:void(0)' class='showExpressions'>Expressions</a></div>
 				<?php if ($displaySFX == "1"){ ?><div class='sidemenuunselected'><a href='javascript:void(0)' class='showSFXProviders'>Terms Tool</a></div><?php } ?>
-				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showAttachments'>Attachments</a><br />&nbsp;<span class='span_AttachmentNumber'></span></div>
+				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showAttachments'>Attachments</a>&nbsp;<span class='span_AttachmentNumber'></span></div>
 			</td>
 			<td class='mainContent'>
 
@@ -100,13 +100,13 @@ if ($license->shortName){
 
 
 <div id ='div_displaySFXProviders' style='display:none;width:899px;'>
-	<table cellpadding="0" cellspacing="0" style="width: 100%; table-layout: fixed;">
+	<table cellpadding="0" cellspacing="0" style="width: 100%;">
 		<tr>
 			<td class="sidemenu">
 				<div class="sidemenuunselected"><a href='javascript:void(0)' class='showDocuments'>Documents</a></div>
 				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showExpressions'>Expressions</a></div>
 				<div class='sidemenuselected' style='position: relative; width: 91px'><a href='javascript:void(0)' class='showSFXProviders'>Terms Tool</a></div>
-				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showAttachments'>Attachments</a><br />&nbsp;<span class='span_AttachmentNumber'></span></div>
+				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showAttachments'>Attachments</a>&nbsp;<span class='span_AttachmentNumber'></span></div>
 			</td>
 			<td class='mainContent'>
 				<div id='div_sfxProviders'>
@@ -119,13 +119,13 @@ if ($license->shortName){
 
 
 <div id ='div_displayAttachments' style='display:none;width:899px;'>
-	<table cellpadding="0" cellspacing="0" style="width: 100%; table-layout: fixed;">
+	<table cellpadding="0" cellspacing="0" style="width: 100%;">
 		<tr>
 			<td class="sidemenu">
 				<div class="sidemenuunselected"><a href='javascript:void(0)' class='showDocuments'>Documents</a></div>
 				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showExpressions'>Expressions</a></div>
 				<?php if ($displaySFX == "1"){ ?><div class='sidemenuunselected'><a href='javascript:void(0)' class='showSFXProviders'>Terms Tool</a></div><?php } ?>
-				<div class='sidemenuselected' style='position: relative; width: 91px'><a href='javascript:void(0)' class='showAttachments'>Attachments</a><br />&nbsp;<span class='span_AttachmentNumber'></span></div>
+				<div class='sidemenuselected' style='position: relative; width: 91px'><a href='javascript:void(0)' class='showAttachments'>Attachments</a>&nbsp;<span class='span_AttachmentNumber'></span></div>
 			</td>
 			<td class='mainContent'>
 

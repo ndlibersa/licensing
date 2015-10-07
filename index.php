@@ -28,9 +28,9 @@ include 'templates/header.php';
 //check what referring script is
 
 if (isset($_SESSION['ref_script']) && ($_SESSION['ref_script'] != "license.php")){
-	$reset='Y';
+  $reset='Y';
 }else{
-	$reset='N';
+  $reset='N';
 }
 
 $_SESSION['ref_script']=$currentPage;
@@ -235,7 +235,7 @@ $_SESSION['ref_script']=$currentPage;
 	</td>
 	</tr>
 	</table>
-	&nbsp;<a href='javascript:void(0)' class='newSearch'>new search</a>
+	&nbsp;<a href='javascript:void(0)' class='newSearch' id='sidebar-link-bottom'>new search</a>
 	<input type='hidden' id='reset' value='<?php echo $reset; ?>'>
 
 </td>

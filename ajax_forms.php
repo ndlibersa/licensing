@@ -42,19 +42,19 @@ switch ($_GET['action']) {
 		<form id='licenseForm'>
 		<input type='hidden' id='editLicenseID' name='editLicenseID' value='<?php echo $licenseID; ?>'>
 		<input type='hidden' id='editLicenseForm' name='editLicenseForm' value='Y'>
-		<table class="thickboxTable" style="width:260px;">
+		<table class="thickboxTable">
 		<tr>
-		<td colspan='2'><span class='headerText'>License</span><br /><br /></td>
+		<td colspan='2' id='license-form-title'><span class='headerText'>License</span><br /></td>
 		</tr>
 
 		<tr>
-		<td colspan='2'><label for="shortName" class="formText">License Name:</label>  <span id='span_error_licenseShortName' class='errorText'></span><br /><textarea name='licenseShortName' id = 'licenseShortName' cols='38' rows='2'><?php echo $license->shortName; ?></textarea></td>
+		<td colspan='2' class='below-title'><label for="shortName" class="formText">License Name:</label>  <span id='span_error_licenseShortName' class='errorText'></span><br /><textarea name='licenseShortName' id = 'licenseShortName' cols='38' rows='2'><?php echo $license->shortName; ?></textarea></td>
 		</tr>
 
 
 		<tr>
 		<td colspan='2'><label for="licenseOrganizationID" class="formText">Publisher / Provider:</label>  <span id='span_error_organizationName' class='errorText'></span><br />
-		<input type='textbox' id='organizationName' name='organizationName' value="<?php echo $organizationName; ?>" style='width:232px;' />
+		<input type='textbox' id='organizationName' name='organizationName' value="<?php echo $organizationName; ?>" style='width:100%;' />
 		<input type='hidden' id='licenseOrganizationID' name='licenseOrganizationID' value='<?php echo $license->organizationID; ?>'>
 		<span id='span_error_organizationNameResult' class='errorText'></span>
 		<br />
@@ -110,8 +110,8 @@ switch ($_GET['action']) {
 		</tr>
 
 		<tr style="vertical-align:middle;">
-		<td style="padding-top:8px;"><input type='button' value='submit' name='submitLicense' id ='submitLicense'></td>
-		<td style="padding-top:8px;padding-right:8px;text-align:right;"><input type='button' value='cancel' onclick="tb_remove()"></td>
+		<td style="padding-top:8px;float:left"><input type='button' value='submit' name='submitLicense' id ='submitLicense'></td>
+		<td style="padding-top:8px;padding-right:8px;float:left;margin-left:6px;"><input type='button' value='cancel' onclick="tb_remove()"></td>
 		</tr>
 		</table>
 
@@ -716,11 +716,11 @@ switch ($_GET['action']) {
 					}else{
 						//calculate which arrows to show for reordering
 						if ($rowNumber == "1"){
-							echo "<td style='text-align:right;'><a href='javascript:reorder(\"" . $expressionNote->expressionNoteID . "\", \"" . $expressionNote->displayOrderSeqNumber . "\",\"down\");'><img src='images/arrowdown.gif' border=0></a></td>";
+							echo "<td style='text-align:right;'><a href='javascript:reorder(\"" . $expressionNote->expressionNoteID . "\", \"" . $expressionNote->displayOrderSeqNumber . "\",\"down\");'><img src='images/arrowdown.png' border=0></a></td>";
 						}else if($rowNumber == $rowCount){
-							echo "<td><a href='javascript:reorder(\"" . $expressionNote->expressionNoteID . "\", \"" . $expressionNote->displayOrderSeqNumber . "\",\"up\");'><img src='images/arrowup.gif' border=0></a></td>";
+							echo "<td><a href='javascript:reorder(\"" . $expressionNote->expressionNoteID . "\", \"" . $expressionNote->displayOrderSeqNumber . "\",\"up\");'><img src='images/arrowup.png' border=0></a></td>";
 						}else{
-							echo "<td><a href='javascript:reorder(\"" . $expressionNote->expressionNoteID . "\", \"" . $expressionNote->displayOrderSeqNumber . "\",\"up\");'><img src='images/arrowup.gif' border=0></a>&nbsp;<a href='javascript:reorder(\"" . $expressionNote->expressionNoteID . "\", \"" . $expressionNote->displayOrderSeqNumber . "\",\"down\");'><img src='images/arrowdown.gif' border=0></a></td>";
+							echo "<td><a href='javascript:reorder(\"" . $expressionNote->expressionNoteID . "\", \"" . $expressionNote->displayOrderSeqNumber . "\",\"up\");'><img src='images/arrowup.png' border=0></a>&nbsp;<a href='javascript:reorder(\"" . $expressionNote->expressionNoteID . "\", \"" . $expressionNote->displayOrderSeqNumber . "\",\"down\");'><img src='images/arrowdown.png' border=0></a></td>";
 						}
 						echo "<td>" .  nl2br($expressionNote->note) . "</td>";
 						echo "<td><a href='javascript:updateExpressionNoteForm(\"" . $expressionNote->expressionNoteID . "\");'>edit</a></td>";
