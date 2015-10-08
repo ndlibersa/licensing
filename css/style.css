@@ -80,6 +80,15 @@ select option { color: #3D545D; font-family: "arial"; font-size: 8pt; font-weigh
 
 input, select, multiple, textarea{color: #3D545D; font-family: "arial"; font-size: 8pt; font-weight: medium;}
 
+/*---
+table.titleTable {
+     width: 900px;
+     background-image: url('../images/licensingtitle.jpg');
+     background-repeat: no-repeat;
+     height: 120px;
+}
+---*/
+
 table.headerTable {
  padding: 1px;
  width: 900px;

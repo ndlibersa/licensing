@@ -75,7 +75,7 @@ $coralURL = $util->getCORALURL();
 <div style="text-align:left;">
 
 <center>
-<table class="titleTable" style="background-image:url('images/licensingtitle.gif');background-repeat:no-repeat;width:900px;text-align:left;">
+<table class="titleTable" style="background-image:url('images/licensingtitle.jpg');background-repeat:no-repeat;width:900px;text-align:left;">
 <tr style='vertical-align:top;'>
 <td style='height:53px;'>
 &nbsp;
@@ -93,7 +93,7 @@ $coralURL = $util->getCORALURL();
 	}
 ?>
 </span>
-<br /><?php if($config->settings->authModule == 'Y'){ echo "<a href='" . $coralURL . "auth/?logout'>logout</a>"; } ?>
+<br /><?php if($config->settings->authModule == 'Y'){ echo "<a href='" . $coralURL . "auth/?logout' id='logout'>logout</a>"; } ?>
 </div>
 </td>
 </tr>
