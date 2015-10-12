@@ -19,7 +19,7 @@
 
 include_once 'directory.php';
 
-$pageTitle='Terms Report';
+$pageTitle=_('Terms Report');
 include 'templates/header.php';
 
 //set referring page

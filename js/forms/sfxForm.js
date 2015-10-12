@@ -56,8 +56,8 @@ function submitSFXForm(){
 
 function validateForm (){
 	myReturn=0;
-	if (!validateRequired('documentID','<br />A document must be selected to continue.')) myReturn="1";
-	if (!validateRequired('shortName','<br />Terms Tool Resource must be entered to continue.')) myReturn="1";
+	if (!validateRequired('documentID',"<br />"+_("A document must be selected to continue."))) myReturn="1";
+	if (!validateRequired('shortName',"<br />"+_("Terms Tool Resource must be entered to continue."))) myReturn="1";
 
 
 	if (myReturn == "1"){

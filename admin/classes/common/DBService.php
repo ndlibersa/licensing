@@ -37,7 +37,7 @@ class DBService extends Object {
 
 	protected function checkForError() {
 		if ($this->error = mysqli_error($this->db)) {
-			throw new Exception("There was a problem with the database: " . $this->error);
+			throw new Exception(_("There was a problem with the database: ") . $this->error);
 		}
 	}
 
@@ -48,6 +48,7 @@ class DBService extends Object {
 		$databaseName = $this->config->database->name;
 		$this->db = mysqli_connect($host, $username, $password, $databaseName);
 		$this->checkForError();
+                mysqli_set_charset($this->db, 'utf8');
 	}
 
 	protected function disconnect() {

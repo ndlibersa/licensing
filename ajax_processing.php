@@ -93,7 +93,7 @@ switch ($_GET['action']) {
 		//remove licenses removes all children data as well
 		try {
 			$license->removeLicense();
-			echo "License successfully deleted.";
+			echo _("License successfully deleted.");
 		} catch (Exception $e) {
 			echo $e->getMessage();
 		}
@@ -169,10 +169,10 @@ switch ($_GET['action']) {
 				//set to web rwx, everyone else rw
 				//this way we can edit the document directly on the server
 				chmod ($target_path, 0766);
-				echo "success uploading!";
+				echo _("success uploading!");
 			}else{
 			  header('HTTP/1.1 500 Internal Server Error');
-			  echo "<div id=\"error\">There was a problem saving your file to $target_path.</div>";
+			  echo "<div id=\"error\">"._("There was a problem saving your file to")." $target_path.</div>";
 			}
 
 		}
@@ -233,7 +233,7 @@ switch ($_GET['action']) {
 
 		try {
 			$signature->save();
-			echo "Document Saved Successfully.";
+			echo _("Document Saved Successfully.");
 		} catch (Exception $e) {
 			echo $e->getMessage();
 		}
@@ -247,7 +247,7 @@ switch ($_GET['action']) {
 
 		try {
 			$signature->delete();
-			echo "Signature Deleted Successfully.";
+			echo _("Signature Deleted Successfully.");
 		} catch (Exception $e) {
 			echo $e->getMessage();
 		}
@@ -309,7 +309,7 @@ switch ($_GET['action']) {
 
 		try {
 			$expression->delete();
-			echo "Expression Removed Successfully.";
+			echo _("Expression Removed Successfully.");
 		} catch (Exception $e) {
 			echo $e->getMessage();
 		}
@@ -332,20 +332,20 @@ switch ($_GET['action']) {
 			$license = new License(new NamedArguments(array('primaryKey' => $licenseID)));
 			$util = new Utility();
 
-			$emailMessage = "An expression in the licensing module has been approved for terms tool use.\n";
-			$emailMessage.= "License:  " . $license->shortName . "\n\n";
-			$emailMessage.= "View License Record:  " . $util->getPageURL() . "license.php?licenseID=" . $licenseID;
+			$emailMessage = _("An expression in the licensing module has been approved for terms tool use.")."\n";
+			$emailMessage.= _("License:  ") . $license->shortName . "\n\n";
+			$emailMessage.= _("View License Record:  ") . $util->getPageURL() . "license.php?licenseID=" . $licenseID;
 
 			$email = new Email();
 			$email->to 			= implode(", ", $toList);
-			$email->subject		= "Licensing - expression set to production use";
+			$email->subject		= _("Licensing - expression set to production use");
 			$email->message		= $emailMessage;
 
 			$email->send();
 
-			$response = "Approved for terms tool display.";
+			$response = _("Approved for terms tool display.");
 		}else{
-			$response = "Removed from terms tool display.";
+			$response = _("Removed from terms tool display.");
 		}
 
 		//save it in the expression record
@@ -372,7 +372,7 @@ switch ($_GET['action']) {
 
 			try {
 				$expressionNote->save();
-				echo "Expression Note Updated Successfully.";
+				echo _("Expression Note Updated Successfully.");
 			} catch (Exception $e) {
 				echo $e->getMessage();
 			}
@@ -388,7 +388,7 @@ switch ($_GET['action']) {
 
 			try {
 				$expressionNote->save();
-				echo "Expression Note Added Successfully.";
+				echo _("Expression Note Added Successfully.");
 			} catch (Exception $e) {
 				echo $e->getMessage();
 			}
@@ -412,7 +412,7 @@ switch ($_GET['action']) {
 
 		try {
 			$expressionNote->delete();
-			echo "Note Removed Successfully.";
+			echo _("Note Removed Successfully.");
 		} catch (Exception $e) {
 			echo $e->getMessage();
 		}
@@ -449,7 +449,7 @@ switch ($_GET['action']) {
 
 		try {
 			$sfxProvider->delete();
-			echo "Terms Tool Resource Link successfully deleted";
+			echo _("Terms Tool Resource Link successfully deleted");
 		} catch (Exception $e) {
 			echo $e->getMessage();
 		}
@@ -465,7 +465,7 @@ switch ($_GET['action']) {
 			if ($_POST['licenseID'] <> ""){
 				//update data
 				$license = new License(new NamedArguments(array('primaryKey' => $_POST['licenseID'])));
-				$response = "License Updated Successfully.";
+				$response = _("License Updated Successfully.");
 
 			}else{
 				//add data
@@ -474,7 +474,7 @@ switch ($_GET['action']) {
 				$license->createDate = date( 'Y-m-d H:i:s' );
 				$license->statusID='';
 				$license->statusDate ='';
-				$response = "License Added Successfully.<br />Please continue to upload documents and add expressions or emails.";
+				$response = _("License Added Successfully.")."<br />"._("Please continue to upload documents and add expressions or emails.");
 
 			}
 
@@ -502,7 +502,7 @@ switch ($_GET['action']) {
 				<td colspan='2'><br /><span class='headerText'><?php echo $response; ?></span><br /></td>
 				</tr>
 				<tr>
-				<td colspan='2'><p><a href='#' onclick='window.parent.tb_remove(); window.parent.location=("license.php?licenseID=<?php echo $licenseID; ?>"); return false'>Continue</a></td>
+				<td colspan='2'><p><a href='#' onclick='window.parent.tb_remove(); window.parent.location=("license.php?licenseID=<?php echo $licenseID; ?>"); return false'><?php echo _("Continue");?></a></td>
 				</tr>
 
 				</table>
@@ -511,10 +511,10 @@ switch ($_GET['action']) {
 				?>
 				<table class="thickboxTable" style="background-image:url('images/title.gif');background-repeat:no-repeat;width:260px;">
 				<tr>
-				<td colspan='2'><br /><span class='headerText'>SQL Insert Failed. <?php echo $e->getMessage(); ?>  Please make sure everything is filled out correctly.</span><br /></td>
+				<td colspan='2'><br /><span class='headerText'><?php echo _("SQL Insert Failed.");?> <?php echo $e->getMessage(); ?>  <?php echo _("Please make sure everything is filled out correctly.");?></span><br /></td>
 				</tr>
 				<tr>
-				<td colspan='2'><p><a href='#' onclick='window.parent.tb_remove(); return false'>Continue</a></td>
+				<td colspan='2'><p><a href='#' onclick='window.parent.tb_remove(); return false'><?php echo _("Continue");?></a></td>
 				</tr>
 
 				</table>
@@ -524,10 +524,10 @@ switch ($_GET['action']) {
 			?>
 			<table class="thickboxTable" style="background-image:url('images/title.gif');background-repeat:no-repeat;width:260px;">
 			<tr>
-			<td colspan='2'><br /><span class='headerText'>SQL Insert Failed. <?php echo $e->getMessage(); ?>  Please make sure everything is filled out correctly.</span><br /></td>
+			<td colspan='2'><br /><span class='headerText'><?php echo _("SQL Insert Failed.");?> <?php echo $e->getMessage(); ?>  <?php echo _("Please make sure everything is filled out correctly.");?></span><br /></td>
 			</tr>
 			<tr>
-			<td colspan='2'><p><a href='#' onclick='window.parent.tb_remove(); return false'>Continue</a></td>
+			<td colspan='2'><p><a href='#' onclick='window.parent.tb_remove(); return false'><?php echo _("Continue");?></a></td>
 			</tr>
 
 			</table>
@@ -769,13 +769,13 @@ switch ($_GET['action']) {
 
 		if ($numberOfChildren > 0){
 			//print out a friendly message...
-			echo "Unable to delete  - this " . strtolower(preg_replace("/[A-Z]/", " \\0" , lcfirst($className))) . " is in use.  Please make sure no licenses are set up with this information.";
+			echo _("Unable to delete  - this ") . strtolower(preg_replace("/[A-Z]/", " \\0" , lcfirst($className))) . _(" is in use.  Please make sure no licenses are set up with this information.");
 		}else{
 			try {
 				$instance->delete();
 			} catch (Exception $e) {
 				//print out a friendly message...
-				echo "Unable to delete.  Please make sure no licenses are set up with this information.";
+				echo _("Unable to delete.  Please make sure no licenses are set up with this information.");
 			}
 		}
 		echo "</font>";
@@ -954,10 +954,10 @@ switch ($_GET['action']) {
 				//set to web rwx, everyone else rw
 				//this way we can edit the document directly on the server
 				chmod ($target_path, 0766);
-				echo "success uploading!";
+				echo _("success uploading!");
 			}else{
 				header('HTTP/1.1 500 Internal Server Error');
-			  echo "<div id=\"error\">There was a problem saving your file to $target_path.</div>";
+			  echo "<div id=\"error\">"._("There was a problem saving your file to")." $target_path.</div>";
 			}
 		}
 
@@ -1024,7 +1024,7 @@ switch ($_GET['action']) {
 
 		try {
 			$attachment->delete();
-			echo "Attachment successfully deleted";
+			echo _("Attachment successfully deleted");
 		} catch (Exception $e) {
 			echo $e->getMessage();
 		}
@@ -1038,7 +1038,7 @@ switch ($_GET['action']) {
 
 		try {
 			$attachmentFile->delete();
-			echo "Attachment file successfully deleted";
+			echo _("Attachment file successfully deleted");
 		} catch (Exception $e) {
 			echo $e->getMessage();
 		}
@@ -1059,7 +1059,7 @@ switch ($_GET['action']) {
 
 		try {
 			$license->save();
-			echo "Status has been updated";
+			echo _("Status has been updated");
 		} catch (Exception $e) {
 			echo $e->getMessage();
 		}
@@ -1169,7 +1169,7 @@ switch ($_GET['action']) {
 		break;
 
 	default:
-       echo "Action " . $action . " not set up!";
+       echo _("Action ") . $action . _(" not set up!");
        break;
 
 
