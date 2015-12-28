@@ -961,7 +961,7 @@ switch ($_GET['action']) {
 
 		<tr style="vertical-align:middle;">
 		<td colspan='2' style="padding-top:8px;text-align:right;">&nbsp;</td>
-		<td style="padding-top:18px;padding-right:8px;text-align:left;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitUserData("<?php echo $loginID; ?>");'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' value='cancel' onclick="window.parent.tb_remove(); return false"></td>
+		<td style="padding-top:18px;padding-right:8px;text-align:left;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitUserData("<?php echo $loginID; ?>");'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' value='cancel' onclick="window.parent.tb_remove(); return false" id='update-user-cancel'></td>
 		</tr>
 
 		</table>
@@ -1169,7 +1169,7 @@ switch ($_GET['action']) {
 
 		<tr>
 		<td style="padding-top:18px;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitQualifier();' id='submitQualifier'></td>
-		<td style="padding-top:18px;padding-right:8px;text-align:right;"><input type='button' value='cancel' onclick="window.parent.tb_remove(); return false"></td>
+		<td style="padding-top:18px;padding-right:8px;text-align:right;"><input type='button' value='cancel' onclick="window.parent.tb_remove(); return false" id='update-qualifier-cancel'></td>
 		</tr>
 		</table>
 		</div>

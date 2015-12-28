@@ -64,7 +64,7 @@ $coralURL = $util->getCORALURL();
 <script type="text/javascript" src="js/plugins/jquery.tooltip.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
 </head>
-<body>
+<body id="licensing">
 <noscript><font face=arial>JavaScript must be enabled in order for you to use CORAL. However, it seems JavaScript is either disabled or not supported by your browser. To use CORAL, enable JavaScript by changing your browser options, then <a href="">try again</a>. </font></noscript>
 <center>
 <div class="wrapper">
@@ -75,7 +75,7 @@ $coralURL = $util->getCORALURL();
 <div style="text-align:left;">
 
 <center>
-<table class="titleTable" style="background-image:url('images/licensingtitle.jpg');background-repeat:no-repeat;width:900px;text-align:left;">
+<table class="titleTable" style="background-image:url('images/licensingtitle.jpg');background-repeat:no-repeat;width:1024px;text-align:left;">
 <tr style='vertical-align:top;'>
 <td style='height:53px;'>
 &nbsp;
@@ -108,7 +108,7 @@ if ($user->isAdmin()){ ?>
 <?php } ?>
 	<img src='images/menu/menu-bar.gif'><?php if ($currentPage == 'compare.php') { echo "-on"; } ?>.gif' hover="images/menu/menu-end-over.gif" id="menu-end" />
 <?php }else{ ?>
-	<a href='index.php'><img src="images/menu/menu-home<?php if ($currentPage == 'index.php') { echo "-on"; } ?>.gif" hover="images/menu/menu-home-over.gif" class="rollover" /></a><img src='images/menu/menu-bar.gif'><a href='in_progress.php'><img src="images/menu/menu-licensesinprogress<?php if ($currentPage == 'in_progress.php') { echo "-on"; } ?>.gif" hover="images/menu/menu-licensesinprogress-over.gif" id="menu-last" class="rollover" /></a><a href='calendar.php'><img src="images/menu/menu-calendar<?php if ($currentPage == 'calendar.php') { echo "-on"; } ?>.gif" hover="images/menu/menu-calendar-over.gif" class="rollover" /></a><a href='updates.php'><img src="images/menu/menu-updates<?php if ($currentPage == 'updates.php') { echo "-on"; } ?>.gif" hover="images/menu/menu-updates-over.gif" class="rollover" /></a><img src='images/menu/menu-end<?php if ($currentPage == 'in_progress.php') { echo "-on"; } ?>.gif' hover="images/menu/menu-end-over.gif" id="menu-end" />
+			<a href='index.php'><img src="images/menu/menu-home<?php if ($currentPage == 'index.php') { echo "-on"; } ?>.gif" hover="images/menu/menu-home-over.gif" class="rollover" /></a><img src='images/menu/menu-bar.gif'><a href='ajax_forms.php?action=getLicenseForm&height=265&width=260&modal=true&newLicenseID=' class='thickbox' id='newLicense'><img src='images/menu/menu-newlicense.gif' hover="images/menu/menu-newlicense-over.gif" class="rollover"></a><img src='images/menu/menu-bar.gif'><a href='in_progress.php'><img src="images/menu/menu-licensesinprogress<?php if ($currentPage == 'in_progress.php') { echo "-on"; } ?>.gif" hover="images/menu/menu-licensesinprogress-over.gif" class="rollover" /></a><img src='images/menu/menu-bar.gif'><a href='compare.php'><img src="images/menu/menu-expressioncomparison<?php if ($currentPage == 'compare.php') { echo "-on"; } ?>.gif" hover="images/menu/menu-expressioncomparison-over.gif" class="rollover" /></a><?php if (($config->settings->resourcesModule == 'Y') && (strlen($config->settings->resourcesDatabaseName) > 0)) { ?><img src='images/menu/menu-bar.gif'><a href='calendar.php'><img src="images/menu/menu-calendar<?php if ($currentPage == 'calendar.php') { echo "-on"; } ?>.gif" hover="images/menu/menu-calendar-over.gif" class="rollover" /></a><?php } ?><img src='images/menu/menu-bar.gif'><a href='admin.php'><img src='images/menu/menu-admin<?php if ($currentPage == 'admin.php') { echo "-on"; } ?>.gif' hover="images/menu/menu-admin-over.gif" id="menu-last" class="rollover" /></a><img src='images/menu/menu-end<?php if ($currentPage == 'admin.php') { echo "-on"; } ?>.gif' hover="images/menu/menu-end-over.gif" id="menu-end" />
 <?php } ?>
 </td>
 
@@ -122,36 +122,41 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
 
 	?>
 
-	<div style='text-align:left;'>
-		<ul class="tabs">
-		<li style="background: url('images/change/coral-change.gif') no-repeat right;">&nbsp;
-			<ul class="coraldropdown">
-				<?php if (file_exists($util->getCORALPath() . "index.php")) {?>
-				<li><a href="<?php echo $coralURL; ?>" target='_blank'><img src='images/change/coral-main.png'></a></li>
-				<?php
-				}
-				if ($config->settings->organizationsModule == 'Y') {
-				?>
-				<li><a href="<?php echo $coralURL; ?>organizations/" target='_blank'><img src='images/change/coral-organizations.png'></a></li>
-				<?php
-				}
-				if ($config->settings->resourcesModule == 'Y') {
-				?>
-				<li><a href="<?php echo $coralURL; ?>resources/" target='_blank'><img src='images/change/coral-resources.png'></a></li>
-				<?php
-				}
-				if ($config->settings->cancellationModule == 'Y') {
-				?>
-				<li><a href="<?php echo $coralURL; ?>cancellation/" target='_blank'><img src='images/change/coral-cancellation.png'></a></li>
-				<?php
-				}
-				if ($config->settings->usageModule == 'Y') {
-				?>
-				<li><a href="<?php echo $coralURL; ?>usage/" target='_blank'><img src='images/change/coral-usage.png'></a></li>
-				<?php } ?>
-			</ul>
-		</li>
-		</ul>
+			<div style='text-align:left;'>
+					<ul class="tabs">
+					<li style="background: url('images/change/coral-change.gif') no-repeat right;">&nbsp;
+								<ul class="coraldropdown">
+										<?php if (file_exists($util->getCORALPath() . "index.php")) {?>
+										<li><a href="<?php echo $coralURL; ?>" target='_blank'><img src='images/change/coral-main.png'></a></li>
+										<?php
+										}
+										if ($config->settings->organizationsModule == 'Y') {
+										?>
+										<li><a href="<?php echo $coralURL; ?>organizations/" target='_blank'><img src='images/change/coral-organizations.png'></a></li>
+										<?php
+										}
+										if ($config->settings->resourcesModule == 'Y') {
+										?>
+										<li><a href="<?php echo $coralURL; ?>resources/" target='_blank'><img src='images/change/coral-resources.png'></a></li>
+										<?php
+										}
+										if ($config->settings->cancellationModule == 'Y') {
+										?>
+										<li><a href="<?php echo $coralURL; ?>cancellation/" target='_blank'><img src='images/change/coral-cancellation.png'></a></li>
+										<?php
+										}
+										if ($config->settings->usageModule == 'Y') {
+										?>
+										<li><a href="<?php echo $coralURL; ?>usage/" target='_blank'><img src='images/change/coral-usage.png'></a></li>
+										<?php
+										}
+										if ($config->settings->managementModule == 'Y') {
+										?>
+										<li><a href="<?php echo $coralURL; ?>management/" target='_blank'><img src='images/change/coral-management.png'></a></li>
+										<?php } ?>
+								</ul>
+					</li>
+					</ul>
 
 	</div>
 	<?php

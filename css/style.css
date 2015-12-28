@@ -26,7 +26,6 @@ body {
  -webkit-font-smoothing: antialiased;
 }
 
-
 .wrapper {
  margin: 0 auto -2em;
  height; 120px;
@@ -91,7 +90,7 @@ table.titleTable {
 
 table.headerTable {
  padding: 1px;
- width: 900px;
+ width: 1024px;
  min-height:40px;
  background: none !important;
  border-collapse: collapse;
@@ -235,8 +234,8 @@ table.dataTable {
 	border-color: #e0dfe3;
 	border-collapse: collapse;
 	border-spacing: 0;
-	max-width:895px;
-	width:895px;
+	max-width:840px;
+	width:840px;
 	font-size:90%;
 	margin-top: 11px;
 	margin-bottom: 10px;
@@ -257,7 +256,7 @@ table.dataTable td {
 table.dataTable td.alt {
 	margin: 0;
 	padding: 6px;
-	-width: 1px 1px 0 0;
+	border-width: 1px 1px 0 0;
 	border-style: solid;
 	border-color: #e0dfe3;
 	background-color: #fff;
@@ -337,8 +336,6 @@ table.dataTable tr {vertical-align: top;}
     border: solid 1px #e0dfe3;
 }
 
-
-
 table.verticalFormTable {	
 	border-width: 0 0 1px 1px;
 	border-style: solid;
@@ -394,16 +391,9 @@ table.verticalFormTable tr {
 	vertical-align:top;
 }
 
-
-
 table.verticalFormTable td.archive {	
 	background-color:#ebecec;
 }
-
-
-
-
-
 
 table.noBorder td { border:0; }
 
@@ -527,16 +517,16 @@ table.borderedFormTable tr {vertical-align: top;}
 
 .titleTable {
      height: 120px;
-     /*-*/margin-bottom: 25px;
+     margin-bottom: 25px;
 }
 
 .titleTable td {
-     /*-*/height: 40px !important;
-     /*-*/padding-top: 20px !important;
+     height: 40px !important;
+     padding-top: 20px !important;
 }
 
 .titleTable td a {
-     /*-*/padding-left: 0px;
+     padding-left: 0px;
 }
 
 .titleTable ul.tabs {
@@ -556,9 +546,9 @@ table.borderedFormTable tr {vertical-align: top;}
 }
 
 .noBorder > tbody > tr > td:nth-child(1) {
-  /*-*/width: 100px !important;
-  /*-*/padding-bottom: 20px;
-  /*-*/padding-left: 20px;
+  width: 100px !important;
+  padding-bottom: 20px;
+  padding-left: 20px;
 }
 
 a.newSearch:hover {
@@ -649,8 +639,6 @@ table.dataTable th:nth-of-type(5) {
 table.dataTable th:nth-of-type(6) {
      min-width: 68px;
 }
-
-/*-----*/
 
 #div_searchResults > span:nth-child(2) {
      padding-right: 20px;
@@ -792,6 +780,19 @@ a.showAttachments:hover {
      color: #ccc;
 }
 
+a.showSFXProviders:before {
+ font-family: FontAwesome;
+ content: "\f00b";
+ font-size: 11px;
+ margin-right: 5px;
+}
+
+a.showSFXProviders {
+ text-decoration: none;
+ text-transform: capitalize;
+ font-size: 12px;
+}
+
 /*--- Licensing  Expression Comparison Section Icons ---*/
 
 a#view-license:before {
@@ -828,8 +829,6 @@ a#view-doc {
 a#view-doc:hover {
      color: #ccc;
 }
-
-/*---------------*/
 
 td.searchRow > b {
      color: #fff;
@@ -1049,8 +1048,6 @@ a.helpfulLink {
     width: 451px;
 }
 
-/*----------*/
-
 .below-title {
   padding-top: 10px !important;
 }
@@ -1059,14 +1056,332 @@ a.helpfulLink {
   width: auto;
 }
 
-#license-form-title {
-  width: auto !important;
-  margin: 0;
-  padding: 6px;
-  border-width: 1px 0 0 0;
-  border-style: solid;
-  border-color: #e6e5e9;
-  background-color: #cad7e1;
-  -moz-border-radius: 0px;
-  background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
+/*--- Align Text When No Documents Fit the Query ---*/
+
+div#searchResults > i {
+ font-size: 18px;
+ position: relative;
+ top: 20px;
+ left: 20px;
+}
+
+/*--- Capitalize All Links ---*/
+
+#div_displayDocuments a {
+ text-transform: capitalize;
+}
+
+.mainContent a {
+ text-transform: capitalize;
+}
+
+.thickboxTable a {
+ text-transform: capitalize;
+}
+
+.headerTable a {
+ text-transform: capitalize;
+}
+
+/*--- Form Modal Windows ---*/
+
+table.thickboxTable .headerText {
+ width: auto !important;
+ margin: 0;
+ padding: 6px;
+ border-width: 1px 0 0 0;
+ border-style: solid;
+ border-color: #e6e5e9;
+ background-color: #cad7e1;
+ -moz-border-radius: 0px;
+ background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
+ display: block;
+}
+
+/*--- Adjust Document Upload Form Modal Window ---*/
+
+#div_uploadDoc input#submitDocument {
+ color: #FFFFFF;
+ font-family: "Arial", sans-serif;
+ font-size: 11px;
+ font-weight: normal;
+ background: #1b76a9;
+ border: none;
+ padding: 5px 10px;
+ text-transform: capitalize;
+ margin-left: 5px;
+}
+
+#div_uploadDoc input#submitDocument:hover {
+ cursor: pointer;
+}
+
+#div_uploadDoc input[value=cancel] {
+ color: #FFFFFF;
+ font-family: "Arial", sans-serif;
+ font-size: 11px;
+ font-weight: normal;
+ background: #1b76a9;
+ border: none;
+ padding: 5px 10px;
+ text-transform: capitalize;
+ margin-left: 5px;
+ position: relative;
+ left: -82px;
+}
+
+#div_uploadDoc input[value=cancel]:hover {
+ cursor: pointer;
+}
+
+/*--- Login Form Modal Window ---*/
+
+#TB_window form[name=loginForm] #login-form {
+ width: 452px !important;
+ height: 190px !important;
+ text-align: center !important;
+ padding-top: 118px;
+}
+
+#TB_window form[name=loginForm] label {
+ margin-top: 5px;
+}
+
+#TB_window form[name=loginForm] label[for=loginID] {
+ display: block;
+ margin-top: -25px !important;
+}
+
+#TB_window form[name=loginForm] label[for=password] {
+ display: block;
+}
+
+#TB_window form[name=loginForm] .smallerText {
+ padding-top: 12px;
+}
+
+#TB_window form[name=loginForm] .smallText {
+ float: none !important;
+}
+
+
+/*--- Signatures Modal Window ---*/
+
+#div_signatureForm table.dataTable th:nth-of-type(2) {
+ min-width: 120px;
+}
+
+#div_signatureForm table.dataTable th:nth-of-type(4) {
+ min-width: 0;
+}
+
+#div_signatureForm table.dataTable th:nth-of-type(5),
+#div_signatureForm table.dataTable td:nth-of-type(5) {
+ display: none;
+}
+
+#div_signatureForm table.thickboxTable {
+ background-image: none !important;
+}
+
+/*--- Adjust Document Upload Form Modal Window ---*/
+
+#div_expressionForm input#submitExpression {
+ color: #FFFFFF;
+ font-family: "Arial", sans-serif;
+ font-size: 11px;
+ font-weight: normal;
+ background: #1b76a9;
+ border: none;
+ padding: 5px 10px;
+ text-transform: capitalize;
+ margin-left: 5px;
+}
+
+#div_expressionForm input#submitExpression:hover {
+ cursor: pointer;
+}
+
+#div_expressionForm input[value=cancel] {
+ color: #FFFFFF;
+ font-family: "Arial", sans-serif;
+ font-size: 11px;
+ font-weight: normal;
+ background: #1b76a9;
+ border: none;
+ padding: 5px 10px;
+ text-transform: capitalize;
+ margin-left: 5px;
+ position: relative;
+ left: -208px;
+}
+
+#div_expressionForm input[value=cancel]:hover {
+ cursor: pointer;
+}
+
+/*--- Adjust Terms Tool Resource Link Form Modal Window ---*/
+
+#div_sfxForm input#submitSFX {
+ color: #FFFFFF;
+ font-family: "Arial", sans-serif;
+ font-size: 11px;
+ font-weight: normal;
+ background: #1b76a9;
+ border: none;
+ padding: 5px 10px;
+ text-transform: capitalize;
+ margin-left: 5px;
+}
+
+#div_sfxForm input#submitSFX:hover {
+ cursor: pointer;
+}
+
+#div_sfxForm input[value=cancel] {
+ color: #FFFFFF;
+ font-family: "Arial", sans-serif;
+ font-size: 11px;
+ font-weight: normal;
+ background: #1b76a9;
+ border: none;
+ padding: 5px 10px;
+ text-transform: capitalize;
+ margin-left: 5px;
+ position: relative;
+ left: -135px;
+}
+
+#div_sfxForm input[value=cancel]:hover {
+ cursor: pointer;
+}
+
+/*--- Adjust Attachments Form Modal Window ---*/
+
+#div_attachmentForm input#submitAttachment {
+ color: #FFFFFF;
+ font-family: "Arial", sans-serif;
+ font-size: 11px;
+ font-weight: normal;
+ background: #1b76a9;
+ border: none;
+ padding: 5px 10px;
+ text-transform: capitalize;
+ margin-left: 5px;
+}
+
+#div_attachmentForm input#submitAttachment:hover {
+ cursor: pointer;
+}
+
+#div_attachmentForm input[value=cancel] {
+ color: #FFFFFF;
+ font-family: "Arial", sans-serif;
+ font-size: 11px;
+ font-weight: normal;
+ background: #1b76a9;
+ border: none;
+ padding: 5px 10px;
+ text-transform: capitalize;
+ margin-left: 5px;
+ position: relative;
+ left: -170px;
+}
+
+#div_attachmentForm input[value=cancel]:hover {
+ cursor: pointer;
+}
+
+/*--- Adjust Update User/Expression Types/Qualifier/ Form Modal Window ---*/
+
+#div_updateForm input[value=Update] {
+ color: #FFFFFF;
+ font-family: "Arial", sans-serif;
+ font-size: 11px;
+ font-weight: normal;
+ background: #1b76a9;
+ border: none;
+ padding: 5px 10px;
+ text-transform: capitalize;
+ margin-left: 5px;
+ float: left;
+}
+
+#div_updateForm input[value=Update]:hover {
+ cursor: pointer;
+}
+
+#div_updateForm input[value=cancel] {
+ color: #FFFFFF;
+ font-family: "Arial", sans-serif;
+ font-size: 11px;
+ font-weight: normal;
+ background: #1b76a9;
+ border: none;
+ padding: 5px 10px;
+ text-transform: capitalize;
+ margin-left: 5px;
+ position: relative;
+ left: -128px;
+}
+
+#div_updateForm input[value=cancel]:hover {
+ cursor: pointer;
+}
+
+#div_updateForm input#update-user-cancel {
+ color: #FFFFFF;
+ font-family: "Arial", sans-serif;
+ font-size: 11px;
+ font-weight: normal;
+ background: #1b76a9;
+ border: none;
+ padding: 5px 10px;
+ text-transform: capitalize;
+ margin-left: 5px;
+ position: relative;
+ left: 4px;
+ top: -16px;
+}
+
+#div_updateForm input#update-user-cancel:hover {
+ cursor: pointer;
+}
+
+#div_updateForm input#update-qualifier-cancel {
+ color: #FFFFFF;
+ font-family: "Arial", sans-serif;
+ font-size: 11px;
+ font-weight: normal;
+ background: #1b76a9;
+ border: none;
+ padding: 5px 10px;
+ text-transform: capitalize;
+ margin-left: 5px;
+ position: relative;
+ left: -158px;
+}
+
+#div_updateForm input#update-qualifier-cancel:hover {
+ cursor: pointer;
+}
+
+/*--- Adjust Edit Calendar Settings Form Modal Window ---*/
+
+#div_updateForm input[value=Edit] {
+ color: #FFFFFF;
+ font-family: "Arial", sans-serif;
+ font-size: 11px;
+ font-weight: normal;
+ background: #1b76a9;
+ border: none;
+ padding: 5px 10px;
+ text-transform: capitalize;
+ margin-left: 5px;
+ float: left;
+ width: 54px;
+}
+
+#div_updateForm input[value=Edit]:hover {
+ cursor: pointer;
 }
