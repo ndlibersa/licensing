@@ -1,58 +1,58 @@
 * {
-     padding: 0;
-     margin: 0;
-     border-spacing: 0;
+			padding: 0;
+			margin: 0;
+			border-spacing: 0;
 }
 
 html {
- height: 100%;
- margin: 0;
- padding: 0;
- -webkit-font-smoothing: antialiased;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
 }
 
 body {
- height: 100%;
- text-decoration: none;
- color:  #666;
- font-family: Arial, sans-serif;
- font-size: 14px;
- font-weight: 30;
- background: #E7E8E8;
- margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
- padding: 0;
- text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
- background: #E7E8E8 url(../images/bg-gray-texture.jpg) repeat top left;
- -webkit-font-smoothing: antialiased;
+	height: 100%;
+	text-decoration: none;
+	color:  #666;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 30;
+	background: #E7E8E8;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	background: #E7E8E8 url(../images/bg-gray-texture.jpg) repeat top left;
+	-webkit-font-smoothing: antialiased;
 }
 
 .wrapper {
- margin: 0 auto -2em;
- height; 120px;
- background-image: url("../images/back-header.jpg");
- background-repeat: repeat-x;
+	margin: 0 auto -2em;
+	height; 120px;
+	background-image: url("../images/back-header.jpg");
+	background-repeat: repeat-x;
 }
 
 table {
- border-collapse: collapse;
- border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 table:nth-of-type(1) td {
- padding-top: 0;
+	padding-top: 0;
 }
 
 .push {
- height: 2em;
+	height: 2em;
 }
 
 .footer {
-    height: 3em;
-    font-size:80%;
-    color:red;
-    text-align:center;
-    width:900px;
-    font-style: italic;
+		height: 3em;
+		font-size:80%;
+		color:red;
+		text-align:center;
+		width:900px;
+		font-style: italic;
 }
 
 
@@ -68,7 +68,7 @@ span.redText{color:red;}
 .space {
 line-height: 1 em;
 font-size:2;
-} 
+}
 
 img {border:0;}
 fieldset {border:0;}
@@ -81,56 +81,56 @@ input, select, multiple, textarea{color: #3D545D; font-family: "arial"; font-siz
 
 /*---
 table.titleTable {
-     width: 900px;
-     background-image: url('../images/licensingtitle.jpg');
-     background-repeat: no-repeat;
-     height: 120px;
+			width: 900px;
+			background-image: url('../images/licensingtitle.jpg');
+			background-repeat: no-repeat;
+			height: 120px;
 }
 ---*/
 
 table.headerTable {
- padding: 1px;
- width: 1024px;
- min-height:40px;
- background: none !important;
- border-collapse: collapse;
+	padding: 1px;
+	width: 1024px;
+	min-height:40px;
+	background: none !important;
+	border-collapse: collapse;
 }
 
 .headerText {font-size:125%;font-weight:bold; }
 .titleText {font-size:130%;font-weight:bold; }
 
 hr {
- border:0;
- border-bottom: 1px solid #e0dfe3;
- height: 0;
- width: auto !important;
- background: #e0dfe3;
+	border:0;
+	border-bottom: 1px solid #e0dfe3;
+	height: 0;
+	width: auto !important;
+	background: #e0dfe3;
 }
 
 span.searchLetter {
- margin: 0px;
- padding-left: 1px;
- padding-right: 1px;
- color: #fff;
- font-family: Courier, monospace;
+	margin: 0px;
+	padding-left: 1px;
+	padding-right: 1px;
+	color: #fff;
+	font-family: Courier, monospace;
 }
 
 span.searchLetter a {
- color: #fff;
+	color: #fff;
 }
 
 span.searchLetterSelected {
- margin: 0px;
- padding-left: 1px;
- padding-right: 1px;
- background-color: #A9D0E0;
- color: #fff;
+	margin: 0px;
+	padding-left: 1px;
+	padding-right: 1px;
+	background-color: #A9D0E0;
+	color: #fff;
 }
 
 span.searchLetter a:hover {
-     text-decoration: none;
-     background-color: #4d4d4d;
-     margin: 0px;
+			text-decoration: none;
+			background-color: #4d4d4d;
+			margin: 0px;
 }
 
 span.searchLetterSelected a:focus{color:#3D545D;}
@@ -140,10 +140,10 @@ span.searchLetterSelected a:active{color:#3D545D;}
 *************************/
 .container {position: relative; width:800px; height: 30px; }
 .left-element { position: absolute; left: 0; width: 400px; margin-top:10px; }
-.right-element {position: absolute; width: 400px; margin-left:400px; margin-top:10px; text-align: left; } 
-   
-   
-   
+.right-element {position: absolute; width: 400px; margin-left:400px; margin-top:10px; text-align: left; }
+		
+		
+		
 
 /* Coral Change Module Menu  -  tabs
 *************************/
@@ -228,7 +228,7 @@ ul.coraldropdown li a:hover{
 /* More Custom classes...
 *************************/
 
-table.dataTable {	
+table.dataTable {
 	border-width: 0 0 1px 1px;
 	border-style: solid;
 	border-color: #e0dfe3;
@@ -306,37 +306,37 @@ table.dataTable tr {vertical-align: top;}
 	color: #ccc;
 }
 .sidemenu span.icon{
-     display: none;
+			display: none;
 }
 .sidemenuselected{
-    padding: 10px;
-    border-bottom: 1px solid #1b77aa;
-    background-color: #DAE6EA;
-    width: 150px !important;
+		padding: 10px;
+		border-bottom: 1px solid #1b77aa;
+		background-color: #DAE6EA;
+		width: 150px !important;
 }
 
 .sidemenuselected:last-child {
-    border-bottom: 1px solid #DAE6EA ;
+		border-bottom: 1px solid #DAE6EA ;
 }
 
 .sidemenuunselected {
-     padding: 10px;
-     border-bottom: 1px solid #5295ba;
-     width: 150px !important;
+			padding: 10px;
+			border-bottom: 1px solid #5295ba;
+			width: 150px !important;
 }
 
 .sidemenuselected a {
-     color: #1b77aa !important;
+			color: #1b77aa !important;
 }
 
 .mainContent{
-    background-color: #f9fafb;
-    text-align:left;
-    vertical-align: top;
-    border: solid 1px #e0dfe3;
+		background-color: #f9fafb;
+		text-align:left;
+		vertical-align: top;
+		border: solid 1px #e0dfe3;
 }
 
-table.verticalFormTable {	
+table.verticalFormTable {
 	border-width: 0 0 1px 1px;
 	border-style: solid;
 	border-color: #e0dfe3;
@@ -387,11 +387,11 @@ table.verticalFormTable th {
 }
 
 
-table.verticalFormTable tr {	
+table.verticalFormTable tr {
 	vertical-align:top;
 }
 
-table.verticalFormTable td.archive {	
+table.verticalFormTable td.archive {
 	background-color:#ebecec;
 }
 
@@ -402,22 +402,22 @@ table.noBorder td { border:0; }
 div.thickboxDiv{display:none;}
 
 table.thickboxTable{
- padding:6px;
- text-decoration: none;
- color:  #2c3c42;
- font-size: 10px
+	padding:6px;
+	text-decoration: none;
+	color:  #2c3c42;
+	font-size: 10px
 }
 
 table.thickboxTable td{
-  padding:1px;
-  vertical-align:top;
+	padding:1px;
+	vertical-align:top;
 }
 
 
 table.thickboxTable tr{
-  vertical-align:top;
-} 
- 
+	vertical-align:top;
+}
+	
 .smallText{font-size:small;}
 
 .arrowContainer{text-align:right;}
@@ -443,15 +443,15 @@ a.dp-choose-date {
 	display: block;
 	text-indent: -2000px;
 	overflow: hidden;
-	background: url('../images/calendar.gif') no-repeat; 
+	background: url('../images/calendar.gif') no-repeat;
 }
 a.dp-choose-date.dp-disabled {
 	background-position: 0 -20px;
 	cursor: default;
 }
 /* makes the input field shorter once the date picker code
- * has run (to allow space for the calendar icon
- */
+	* has run (to allow space for the calendar icon
+	*/
 input.dp-applied {
 	width: 140px;
 	float: left;
@@ -462,7 +462,7 @@ input.dp-applied {
 
 
 
-table.borderedFormTable {	
+table.borderedFormTable {
 	border-width: 0;
 	border-style: solid;
 	border-color: #5295ba;
@@ -498,9 +498,9 @@ table.borderedFormTable td.searchRow {
 }
 
 table.borderedFormTable td.searchRow label b {
-     color: #fff;
-     font-weight: 100;
-     font-size: 11px;
+			color: #fff;
+			font-weight: 100;
+			font-size: 11px;
 }
 
 table.borderedFormTable th {
@@ -516,872 +516,928 @@ table.borderedFormTable th {
 table.borderedFormTable tr {vertical-align: top;}
 
 .titleTable {
-     height: 120px;
-     margin-bottom: 25px;
+			height: 120px;
+			margin-bottom: 25px;
 }
 
 .titleTable td {
-     height: 40px !important;
-     padding-top: 20px !important;
+			height: 40px !important;
+			padding-top: 20px !important;
 }
 
 .titleTable td a {
-     padding-left: 0px;
+			padding-left: 0px;
 }
 
 .titleTable ul.tabs {
-     padding-right: 15px;
+			padding-right: 15px;
 }
 
 .titleTable tr:first-child td div {
-     padding-right: 20px;
+			padding-right: 20px;
 }
 
 .titleTable tr:first-child td div a:hover {
-     color: #ccc;
+			color: #ccc;
 }
 
 #menu-end {
-     display: none;
+			display: none;
 }
 
 .noBorder > tbody > tr > td:nth-child(1) {
-  width: 100px !important;
-  padding-bottom: 20px;
-  padding-left: 20px;
+	width: 100px !important;
+	padding-bottom: 20px;
+	padding-left: 20px;
 }
 
 a.newSearch:hover {
-     color: #ccc;
+			color: #ccc;
 }
 
 a#showMoreOptions:hover {
-     color: #ccc;
+			color: #ccc;
 }
 
 #sidebar-link-bottom {
-  padding: 10px;
-  float: left;
+	padding: 10px;
+	float: left;
 }
 
 #div_searchName {
-     margin-left: 0 !important;
-     margin-top: 6px;
+			margin-left: 0 !important;
+			margin-top: 6px;
 }
 
 #div_searchISBNOrISSN {
-     margin-left: 0 !important;
-     margin-top: 6px;
+			margin-left: 0 !important;
+			margin-top: 6px;
 }
 
 #div_searchFund {
-     margin-left: 0 !important;
-     margin-top: 6px;
+			margin-left: 0 !important;
+			margin-top: 6px;
 }
 
 #div_searchID {
-     margin-left: 0 !important;
-     margin-top: 6px;
+			margin-left: 0 !important;
+			margin-top: 6px;
 }
 
 #div_searchResourceNote {
-     margin-left: 0 !important;
-     margin-top: 6px;
+			margin-left: 0 !important;
+			margin-top: 6px;
 }
 
 .searchButton {
-     text-transform: uppercase;
+			text-transform: uppercase;
 }
 
 #searchResourceIDButton {
-     text-transform: uppercase;
+			text-transform: uppercase;
 }
 
 #searchCreateDateEnd {
-     margin-left: 7px;
-     margin-bottom: 10px;
+			margin-left: 7px;
+			margin-bottom: 10px;
 }
 
 img[src*="menu-bar.gif"] {
-    display: none;
+		display: none;
 }
 
 img[src*="arrowup.png"] {
-    padding-left: 6px;
+		padding-left: 6px;
 }
 
 .noBorderTable td {
-     vertical-align: middle !important;
+			vertical-align: middle !important;
 }
 
 /*--- Table Column Widths ---*/
 
 table.dataTable th:nth-of-type(1) {
-     min-width: 36px;
+			min-width: 36px;
 }
 
 table.dataTable th:nth-of-type(2) {
-     min-width: 250px;
+			min-width: 250px;
 }
 
 table.dataTable th:nth-of-type(3) {
-     min-width: 68px;
+			min-width: 68px;
 }
 
 table.dataTable th:nth-of-type(4) {
-     min-width: 100px;
+			min-width: 100px;
 }
 
 table.dataTable th:nth-of-type(5) {
-     min-width: 120px;
+			min-width: 120px;
 }
 
 table.dataTable th:nth-of-type(6) {
-     min-width: 68px;
+			min-width: 68px;
 }
 
 #div_searchResults > span:nth-child(2) {
-     padding-right: 20px;
+			padding-right: 20px;
 }
 
 a.setPage:hover {
-     text-decoration: none;
-     color: #ccc;
+			text-decoration: none;
+			color: #ccc;
 }
 
 .noBorderTable tr td {
-     background: none;
-  background-color: transparent !important;
+			background: none;
+	background-color: transparent !important;
 }
 
 /*--- Links with Icons ---*/
 
 a.newSearch:before {
-  font-family: FontAwesome;
-  content: "\f00e";
-  font-size: 11px;
-  margin-right: 3px;
+	font-family: FontAwesome;
+	content: "\f00e";
+	font-size: 11px;
+	margin-right: 3px;
 }
 
 a.newSearch {
-     text-decoration: none;
-     text-transform: capitalize;
-     font-size: 12px;
+			text-decoration: none;
+			text-transform: capitalize;
+			font-size: 12px;
 }
 
 a.newSearch:hover {
-     color: #ccc;
+			color: #ccc;
 }
 
 a#logout:before {
-  font-family: FontAwesome;
-  content: "\f007";
-  font-size: 11px;
-  margin-right: 3px;
+	font-family: FontAwesome;
+	content: "\f007";
+	font-size: 11px;
+	margin-right: 3px;
 }
 
 a#logout {
-     text-decoration: none;
-     text-transform: capitalize;
-     font-size: 12px;
-     position: relative;
-     top: 4px;
-     left: -4px;
+			text-decoration: none;
+			text-transform: capitalize;
+			font-size: 12px;
+			position: relative;
+			top: 4px;
+			left: -4px;
 }
 
 a#logout:hover {
-     color: #ccc;
+			color: #ccc;
 }
 
 a#showMoreOptions:before {
-  font-family: FontAwesome;
-  content: "\f055";
-  font-size: 11px;
-  margin-right: 3px;
+	font-family: FontAwesome;
+	content: "\f055";
+	font-size: 11px;
+	margin-right: 3px;
 }
 
 a#showMoreOptions {
-     text-decoration: none;
-     text-transform: capitalize;
-     font-size: 12px;
+			text-decoration: none;
+			text-transform: capitalize;
+			font-size: 12px;
 }
 
 a#showMoreOptions:hover {
-     color: #ccc;
+			color: #ccc;
 }
 
 #print-view a:before {
-  font-family: FontAwesome;
-  content: "\f02f";
-  font-size: 11px;
-  margin-right: 3px;
+	font-family: FontAwesome;
+	content: "\f02f";
+	font-size: 11px;
+	margin-right: 3px;
 }
 
 #print-view a {
-     text-decoration: none;
-     text-transform: capitalize;
-     font-size: 12px;
+			text-decoration: none;
+			text-transform: capitalize;
+			font-size: 12px;
 }
 
 #print-view a:hover {
-     color: #ccc;
+			color: #ccc;
 }
 
 /*--- Licensing Side Menu Icons ---*/
 
 a.showDocuments:before {
-  font-family: FontAwesome;
-  content: "\f15c";
-  font-size: 11px;
-  margin-right: 5px;
+	font-family: FontAwesome;
+	content: "\f15c";
+	font-size: 11px;
+	margin-right: 5px;
 }
 
 a.showDocuments {
-     text-decoration: none;
-     text-transform: capitalize;
-     font-size: 12px;
+			text-decoration: none;
+			text-transform: capitalize;
+			font-size: 12px;
 }
 
 a.showDocuments:hover {
-     color: #ccc;
+			color: #ccc;
 }
 
 a.showExpressions:before {
-  font-family: FontAwesome;
-  content: "\f0fe";
-  font-size: 11px;
-  margin-right: 5px;
+	font-family: FontAwesome;
+	content: "\f0fe";
+	font-size: 11px;
+	margin-right: 5px;
 }
 
 a.showExpressions {
-     text-decoration: none;
-     text-transform: capitalize;
-     font-size: 12px;
+			text-decoration: none;
+			text-transform: capitalize;
+			font-size: 12px;
 }
 
 a.showExpressions:hover {
-     color: #ccc;
+			color: #ccc;
 }
 
 a.showAttachments:before {
-  font-family: FontAwesome;
-  content: "\f0c6";
-  font-size: 11px;
-  margin-right: 5px;
+	font-family: FontAwesome;
+	content: "\f0c6";
+	font-size: 11px;
+	margin-right: 5px;
 }
 
 a.showAttachments {
-     text-decoration: none;
-     text-transform: capitalize;
-     font-size: 12px;
+			text-decoration: none;
+			text-transform: capitalize;
+			font-size: 12px;
 }
 
 a.showAttachments:hover {
-     color: #ccc;
+			color: #ccc;
 }
 
 a.showSFXProviders:before {
- font-family: FontAwesome;
- content: "\f00b";
- font-size: 11px;
- margin-right: 5px;
+	font-family: FontAwesome;
+	content: "\f00b";
+	font-size: 11px;
+	margin-right: 5px;
 }
 
 a.showSFXProviders {
- text-decoration: none;
- text-transform: capitalize;
- font-size: 12px;
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 12px;
 }
 
 /*--- Licensing  Expression Comparison Section Icons ---*/
 
 a#view-license:before {
-  font-family: FontAwesome;
-  content: "\f06e";
-  font-size: 11px;
-  margin-right: 5px;
+	font-family: FontAwesome;
+	content: "\f06e";
+	font-size: 11px;
+	margin-right: 5px;
 }
 
 a#view-license {
-     text-decoration: none;
-     text-transform: capitalize;
-     font-size: 12px;
+			text-decoration: none;
+			text-transform: capitalize;
+			font-size: 12px;
 }
 
 a#view-license:hover {
-     color: #ccc;
+			color: #ccc;
 }
 
 a#view-doc:before {
-  font-family: FontAwesome;
-  content: "\f152";
-  font-size: 11px;
-  margin-right: 5px;
-  margin-left: 10px;
+	font-family: FontAwesome;
+	content: "\f152";
+	font-size: 11px;
+	margin-right: 5px;
+	margin-left: 10px;
 }
 
 a#view-doc {
-     text-decoration: none;
-     text-transform: capitalize;
-     font-size: 12px;
+			text-decoration: none;
+			text-transform: capitalize;
+			font-size: 12px;
 }
 
 a#view-doc:hover {
-     color: #ccc;
+			color: #ccc;
 }
 
 td.searchRow > b {
-     color: #fff;
-     font-weight: normal;
-     position: relative;
-     top: 6px;
+			color: #fff;
+			font-weight: normal;
+			position: relative;
+			top: 6px;
 }
 
 td.searchRow input,
 td.searchRow select,
 td.searchRow multiple,
 td.searchRow textarea {
-  margin-top: 5px;
+	margin-top: 5px;
 }
 
 #div_additionalSearch > table > tbody > tr:nth-child(3) > td a.dp-choose-date {
-     margin-top: 5px;
+			margin-top: 5px;
 }
 
 #span_resourceName {
-     padding: 25px 20px;
-     padding-top: 0;
+			padding: 25px 20px;
+			padding-top: 0;
 }
 
 .span_AttachmentNumber {
-     color: #FFF654;
-     margin-left: 0px !important;
+			color: #FFF654;
+			margin-left: 0px !important;
 }
 
 .sidemenuselected .span_AttachmentNumber {
-     color: #666672;
+			color: #666672;
 }
 
 .span_AttachmentNumber {
-  font-size: 85%;
+	font-size: 85%;
 }
 
 .resource_tab_content {
-     width: 630px !important;
+			width: 630px !important;
 }
 
 .sidemenu {
-     width: 170px;
-     float: left;
+			width: 170px;
+			float: left;
 }
 
 .mainContent {
-  width: 680px;
-  padding: 15px;
-  padding-top: 10px !important;
+	width: 680px;
+	padding: 15px;
+	padding-top: 10px !important;
 }
 
 .linedFormTable {
-     width: 430px !important;
+			width: 430px !important;
 }
 
 .rightPanel {
-     text-align: left;
+			text-align: left;
 }
 
 div.rightPanelLink {
-     margin: 0;
-     font-size: 12px;
+			margin: 0;
+			font-size: 12px;
 }
 
 div.rightPanelHeader {
-     color: #1B76A9;
-     margin-bottom: 5px;
+			color: #1B76A9;
+			margin-bottom: 5px;
 }
 
 #title-search {
-     padding: 20px;
-     padding-top: 0;
+			padding: 20px;
+			padding-top: 0;
 }
 
 input[type="button"]:hover {
-     cursor: pointer;
+			cursor: pointer;
 }
 
 table.surroundBox table.noBorder {
-     margin: 15px !important;
+			margin: 15px !important;
 }
 
 #div_licenseForm table.thickboxTable input[type="button"] {
-     color: #FFFFFF;
-     font-family: "Arial", sans-serif;
-     font-size: 11px;
-     font-weight: normal;
-     background: #1b76a9;
-     border: none;
-     padding: 5px 10px;
-     text-transform: capitalize;
+			color: #FFFFFF;
+			font-family: "Arial", sans-serif;
+			font-size: 11px;
+			font-weight: normal;
+			background: #1b76a9;
+			border: none;
+			padding: 5px 10px;
+			text-transform: capitalize;
 }
 
 /*--- My Queue Page Side Menu ---*/
 
 a#OutstandingTasks:before {
-  font-family: FontAwesome;
-  content: "\f192";
-  font-size: 11px;
-  margin-right: 5px;
+	font-family: FontAwesome;
+	content: "\f192";
+	font-size: 11px;
+	margin-right: 5px;
 }
 
 a#OutstandingTasks {
-     text-decoration: none;
-     text-transform: capitalize;
-     font-size: 12px;
+			text-decoration: none;
+			text-transform: capitalize;
+			font-size: 12px;
 }
 
 a#OutstandingTasks:hover {
-     color: #ccc;
+			color: #ccc;
 }
 
 a#SavedRequests:before {
-  font-family: FontAwesome;
-  content: "\f0fe";
-  font-size: 11px;
-  margin-right: 5px;
+	font-family: FontAwesome;
+	content: "\f0fe";
+	font-size: 11px;
+	margin-right: 5px;
 }
 
 a#SavedRequests {
-     text-decoration: none;
-     text-transform: capitalize;
-     font-size: 12px;
+			text-decoration: none;
+			text-transform: capitalize;
+			font-size: 12px;
 }
 
 a#SavedRequests:hover {
-     color: #ccc;
+			color: #ccc;
 }
 
 a#SubmittedRequests:before {
-  font-family: FontAwesome;
-  content: "\f045";
-  font-size: 11px;
-  margin-right: 5px;
+	font-family: FontAwesome;
+	content: "\f045";
+	font-size: 11px;
+	margin-right: 5px;
 }
 
 a#SubmittedRequests {
-     text-decoration: none;
-     text-transform: capitalize;
-     font-size: 12px;
+			text-decoration: none;
+			text-transform: capitalize;
+			font-size: 12px;
 }
 
 a#SubmittedRequests:hover {
-     color: #ccc;
+			color: #ccc;
 }
 
 .span_OutstandingTasksNumber {
-     color: #FFF654;
-     font-size: 85%;
-     margin-left: 15px !important;
+			color: #FFF654;
+			font-size: 85%;
+			margin-left: 15px !important;
 }
 
 .span_SubmittedRequestsNumber {
-     color: #FFF654;
-     font-size: 85%;
-     margin-left: 15px !important;
+			color: #FFF654;
+			font-size: 85%;
+			margin-left: 15px !important;
 }
 
 .span_SavedRequestsNumber {
-     color: #FFF654;
-     font-size: 85%;
-     margin-left: 15px !important;
+			color: #FFF654;
+			font-size: 85%;
+			margin-left: 15px !important;
 }
 
 .selected .span_OutstandingTasksNumber {
-     color: #666672;
-     font-size: 85%;
-     margin-left: 15px !important;
+			color: #666672;
+			font-size: 85%;
+			margin-left: 15px !important;
 }
 
 .selected  .span_SubmittedRequestsNumber {
-     color: #666672;
-     font-size: 85%;
-     margin-left: 15px !important;
+			color: #666672;
+			font-size: 85%;
+			margin-left: 15px !important;
 }
 
 .selected .span_SavedRequestsNumber {
-     color: #666672;
-     font-size: 85%;
-     margin-left: 15px !important;
+			color: #666672;
+			font-size: 85%;
+			margin-left: 15px !important;
 }
 
 #print-view a.helpfulLink {
-     text-decoration: underline !important;
+			text-decoration: underline !important;
 }
 
 a.helpfulLink {
-     text-decoration: underline !important;
+			text-decoration: underline !important;
 }
 
 #pagination-div {
-  vertical-align: bottom;
-  text-align: left;
-  clear: both;
-  margin-top: 12px;
+	vertical-align: bottom;
+	text-align: left;
+	clear: both;
+	margin-top: 12px;
 }
 
 #pagination-empty-div {
-  height: 29px;
+	height: 29px;
 }
 
 #records-per-page {
-  float: left;
-  clear: both;
+	float: left;
+	clear: both;
 }
 
 /*--- Login Form Inline with Search Body ---*/
 
 #licensing #login-form {
-  text-align: center;
-    width: 451px;
+	text-align: center;
+		width: 451px;
 }
 
 #TB_ajaxContent #login-form {
-  text-align: center;
-    width: 451px;
+	text-align: center;
+		width: 451px;
 }
 
 .below-title {
-  padding-top: 10px !important;
+	padding-top: 10px !important;
 }
 
 #TB_window {
-  width: auto;
+	width: auto;
 }
 
 /*--- Align Text When No Documents Fit the Query ---*/
 
 div#searchResults > i {
- font-size: 18px;
- position: relative;
- top: 20px;
- left: 20px;
+	font-size: 18px;
+	position: relative;
+	top: 20px;
+	left: 20px;
 }
 
 /*--- Capitalize All Links ---*/
 
 #div_displayDocuments a {
- text-transform: capitalize;
+	text-transform: capitalize;
 }
 
 .mainContent a {
- text-transform: capitalize;
+	text-transform: capitalize;
 }
 
 .thickboxTable a {
- text-transform: capitalize;
+	text-transform: capitalize;
 }
 
 .headerTable a {
- text-transform: capitalize;
+	text-transform: capitalize;
 }
 
 /*--- Form Modal Windows ---*/
 
 table.thickboxTable .headerText {
- width: auto !important;
- margin: 0;
- padding: 6px;
- border-width: 1px 0 0 0;
- border-style: solid;
- border-color: #e6e5e9;
- background-color: #cad7e1;
- -moz-border-radius: 0px;
- background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
- display: block;
+	width: auto !important;
+	margin: 0;
+	padding: 6px;
+	border-width: 1px 0 0 0;
+	border-style: solid;
+	border-color: #e6e5e9;
+	background-color: #cad7e1;
+	-moz-border-radius: 0px;
+	background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
+	display: block;
 }
 
 /*--- Adjust Document Upload Form Modal Window ---*/
 
 #div_uploadDoc input#submitDocument {
- color: #FFFFFF;
- font-family: "Arial", sans-serif;
- font-size: 11px;
- font-weight: normal;
- background: #1b76a9;
- border: none;
- padding: 5px 10px;
- text-transform: capitalize;
- margin-left: 5px;
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	margin-left: 5px;
 }
 
 #div_uploadDoc input#submitDocument:hover {
- cursor: pointer;
+	cursor: pointer;
 }
 
 #div_uploadDoc input[value=cancel] {
- color: #FFFFFF;
- font-family: "Arial", sans-serif;
- font-size: 11px;
- font-weight: normal;
- background: #1b76a9;
- border: none;
- padding: 5px 10px;
- text-transform: capitalize;
- margin-left: 5px;
- position: relative;
- left: -82px;
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	margin-left: 5px;
+	position: relative;
+	left: -82px;
 }
 
 #div_uploadDoc input[value=cancel]:hover {
- cursor: pointer;
+	cursor: pointer;
 }
 
 /*--- Login Form Modal Window ---*/
 
 #TB_window form[name=loginForm] #login-form {
- width: 452px !important;
- height: 190px !important;
- text-align: center !important;
- padding-top: 118px;
+	width: 452px !important;
+	height: 190px !important;
+	text-align: center !important;
+	padding-top: 118px;
 }
 
 #TB_window form[name=loginForm] label {
- margin-top: 5px;
+	margin-top: 5px;
 }
 
 #TB_window form[name=loginForm] label[for=loginID] {
- display: block;
- margin-top: -25px !important;
+	display: block;
+	margin-top: -25px !important;
 }
 
 #TB_window form[name=loginForm] label[for=password] {
- display: block;
+	display: block;
 }
 
 #TB_window form[name=loginForm] .smallerText {
- padding-top: 12px;
+	padding-top: 12px;
 }
 
 #TB_window form[name=loginForm] .smallText {
- float: none !important;
+	float: none !important;
 }
 
 
 /*--- Signatures Modal Window ---*/
 
 #div_signatureForm table.dataTable th:nth-of-type(2) {
- min-width: 120px;
+	min-width: 120px;
 }
 
 #div_signatureForm table.dataTable th:nth-of-type(4) {
- min-width: 0;
+	min-width: 0;
 }
 
 #div_signatureForm table.dataTable th:nth-of-type(5),
 #div_signatureForm table.dataTable td:nth-of-type(5) {
- display: none;
+	display: none;
 }
 
 #div_signatureForm table.thickboxTable {
- background-image: none !important;
+	background-image: none !important;
 }
 
 /*--- Adjust Document Upload Form Modal Window ---*/
 
 #div_expressionForm input#submitExpression {
- color: #FFFFFF;
- font-family: "Arial", sans-serif;
- font-size: 11px;
- font-weight: normal;
- background: #1b76a9;
- border: none;
- padding: 5px 10px;
- text-transform: capitalize;
- margin-left: 5px;
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	margin-left: 5px;
 }
 
 #div_expressionForm input#submitExpression:hover {
- cursor: pointer;
+	cursor: pointer;
 }
 
 #div_expressionForm input[value=cancel] {
- color: #FFFFFF;
- font-family: "Arial", sans-serif;
- font-size: 11px;
- font-weight: normal;
- background: #1b76a9;
- border: none;
- padding: 5px 10px;
- text-transform: capitalize;
- margin-left: 5px;
- position: relative;
- left: -208px;
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	margin-left: 5px;
+	position: relative;
+	left: -208px;
 }
 
 #div_expressionForm input[value=cancel]:hover {
- cursor: pointer;
+	cursor: pointer;
 }
 
 /*--- Adjust Terms Tool Resource Link Form Modal Window ---*/
 
 #div_sfxForm input#submitSFX {
- color: #FFFFFF;
- font-family: "Arial", sans-serif;
- font-size: 11px;
- font-weight: normal;
- background: #1b76a9;
- border: none;
- padding: 5px 10px;
- text-transform: capitalize;
- margin-left: 5px;
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	margin-left: 5px;
 }
 
 #div_sfxForm input#submitSFX:hover {
- cursor: pointer;
+	cursor: pointer;
 }
 
 #div_sfxForm input[value=cancel] {
- color: #FFFFFF;
- font-family: "Arial", sans-serif;
- font-size: 11px;
- font-weight: normal;
- background: #1b76a9;
- border: none;
- padding: 5px 10px;
- text-transform: capitalize;
- margin-left: 5px;
- position: relative;
- left: -135px;
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	margin-left: 5px;
+	position: relative;
+	left: -135px;
 }
 
 #div_sfxForm input[value=cancel]:hover {
- cursor: pointer;
+	cursor: pointer;
 }
 
 /*--- Adjust Attachments Form Modal Window ---*/
 
 #div_attachmentForm input#submitAttachment {
- color: #FFFFFF;
- font-family: "Arial", sans-serif;
- font-size: 11px;
- font-weight: normal;
- background: #1b76a9;
- border: none;
- padding: 5px 10px;
- text-transform: capitalize;
- margin-left: 5px;
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	margin-left: 5px;
 }
 
 #div_attachmentForm input#submitAttachment:hover {
- cursor: pointer;
+	cursor: pointer;
 }
 
 #div_attachmentForm input[value=cancel] {
- color: #FFFFFF;
- font-family: "Arial", sans-serif;
- font-size: 11px;
- font-weight: normal;
- background: #1b76a9;
- border: none;
- padding: 5px 10px;
- text-transform: capitalize;
- margin-left: 5px;
- position: relative;
- left: -170px;
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	margin-left: 5px;
+	position: relative;
+	left: -170px;
 }
 
 #div_attachmentForm input[value=cancel]:hover {
- cursor: pointer;
+	cursor: pointer;
 }
 
 /*--- Adjust Update User/Expression Types/Qualifier/ Form Modal Window ---*/
 
 #div_updateForm input[value=Update] {
- color: #FFFFFF;
- font-family: "Arial", sans-serif;
- font-size: 11px;
- font-weight: normal;
- background: #1b76a9;
- border: none;
- padding: 5px 10px;
- text-transform: capitalize;
- margin-left: 5px;
- float: left;
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	margin-left: 5px;
+	float: left;
 }
 
 #div_updateForm input[value=Update]:hover {
- cursor: pointer;
+	cursor: pointer;
 }
 
 #div_updateForm input[value=cancel] {
- color: #FFFFFF;
- font-family: "Arial", sans-serif;
- font-size: 11px;
- font-weight: normal;
- background: #1b76a9;
- border: none;
- padding: 5px 10px;
- text-transform: capitalize;
- margin-left: 5px;
- position: relative;
- left: -128px;
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	margin-left: 5px;
+	position: relative;
+	left: -128px;
 }
 
 #div_updateForm input[value=cancel]:hover {
- cursor: pointer;
+	cursor: pointer;
 }
 
 #div_updateForm input#update-user-cancel {
- color: #FFFFFF;
- font-family: "Arial", sans-serif;
- font-size: 11px;
- font-weight: normal;
- background: #1b76a9;
- border: none;
- padding: 5px 10px;
- text-transform: capitalize;
- margin-left: 5px;
- position: relative;
- left: 4px;
- top: -16px;
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	margin-left: 5px;
+	position: relative;
+	left: 4px;
+	top: -16px;
 }
 
 #div_updateForm input#update-user-cancel:hover {
- cursor: pointer;
+	cursor: pointer;
 }
 
 #div_updateForm input#update-qualifier-cancel {
- color: #FFFFFF;
- font-family: "Arial", sans-serif;
- font-size: 11px;
- font-weight: normal;
- background: #1b76a9;
- border: none;
- padding: 5px 10px;
- text-transform: capitalize;
- margin-left: 5px;
- position: relative;
- left: -158px;
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	margin-left: 5px;
+	position: relative;
+	left: -158px;
 }
 
 #div_updateForm input#update-qualifier-cancel:hover {
- cursor: pointer;
+	cursor: pointer;
 }
 
 /*--- Adjust Edit Calendar Settings Form Modal Window ---*/
 
 #div_updateForm input[value=Edit] {
- color: #FFFFFF;
- font-family: "Arial", sans-serif;
- font-size: 11px;
- font-weight: normal;
- background: #1b76a9;
- border: none;
- padding: 5px 10px;
- text-transform: capitalize;
- margin-left: 5px;
- float: left;
- width: 54px;
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	margin-left: 5px;
+	float: left;
+	width: 54px;
 }
 
 #div_updateForm input[value=Edit]:hover {
- cursor: pointer;
+	cursor: pointer;
+}
+
+/*--- Add New User Modal Window ---*/
+
+#div_updateForm input[value=Add\ New] {
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	margin-left: 5px;
+	float: left;
+}
+
+#div_updateForm input[value=Add\ New]:hover {
+	cursor: pointer;
+}
+
+/*--- Update User Modal Window (Edit Link) ---*/
+
+#div_updateForm a#updateButton {
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	text-decoration: none;
+}
+
+#div_updateForm a#updateButton:hover {
+	cursor: pointer;
+}
+
+#div_updateForm a#closeButton {
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	text-decoration: none;
+	position: relative;
+	top: -5px;
+	left: 2px;
+}
+
+#div_updateForm a#closeButton:hover {
+	cursor: pointer;
 }
