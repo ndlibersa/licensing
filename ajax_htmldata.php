@@ -334,7 +334,7 @@ switch ($_GET['action']) {
 				if ($pageStart == "1"){
 					$pagination .= "<span class='smallText'><i class='fa fa-backward'></i></span>&nbsp;";
 				}else{
-					$pagination .= "<a href='javascript:setPageStart(1);'><i class='fa fa-backward'></i></a>&nbsp;";
+					$pagination .= "<a href='javascript:setPageStart(1);' class='smallLink'><i class='fa fa-backward'></i></a>&nbsp;";
 				}
         $page = floor($pageStart/$numberOfRecords) + 1;
         //now determine the starting page - we will display 3 prior to the currently selected page
@@ -361,14 +361,14 @@ switch ($_GET['action']) {
 					if ($pageStart == $nextPageStarts){
 						$pagination .= "<span class='smallText'>" . $i . "</span>&nbsp;";
 					}else{
-						$pagination .= "<a href='javascript:setPageStart(" . $nextPageStarts  .");'>" . $i . "</a>&nbsp;";
+						$pagination .= "<a href='javascript:setPageStart(" . $nextPageStarts  .");' class='smallLink'>" . $i . "</a>&nbsp;";
 					}
 				}
 
 				if ($pageStart == $nextPageStarts){
 					$pagination .= "<span class='smallText'><i class='fa fa-forward'></i></span>&nbsp;";
 				}else{
-					$pagination .= "<a href='javascript:setPageStart(" . $nextPageStarts  .");'><i class='fa fa-forward'></i></a>&nbsp;";
+					$pagination .= "<a href='javascript:setPageStart(" . $nextPageStarts  .");' class='smallLink'><i class='fa fa-forward'></i></a>&nbsp;";
 				}
 				echo $pagination;
 				echo "</div>";

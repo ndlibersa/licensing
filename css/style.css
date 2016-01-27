@@ -47,20 +47,23 @@ table:nth-of-type(1) td {
 }
 
 .footer {
-		height: 3em;
-		font-size:80%;
-		color:red;
-		text-align:center;
-		width:900px;
-		font-style: italic;
+	height: 3em;
+	font-size: 80%;
+	text-align: center;
+	/*-*/width: 100%;
+	font-style: italic;
+	text-align: center;
 }
-
 
 a {color:#3D545D;font-size:9pt;}
 a:active {color:#94a9be;}
 a:focus {color:#94a9be;outline: none;}
 
-a.smallLink {font-size:95%; }
+a.smallLink {
+	font-size: 12px;
+	text-decoration: none;
+	color: #1B76A9;
+}
 
 span.smallText{font-size:90%;}
 span.redText{color:red;}
@@ -1212,8 +1215,7 @@ table.thickboxTable .headerText {
 	padding: 5px 10px;
 	text-transform: capitalize;
 	margin-left: 5px;
-	position: relative;
-	left: -208px;
+	float: left;
 }
 
 #div_expressionForm input[value=cancel]:hover {
@@ -1284,8 +1286,7 @@ table.thickboxTable .headerText {
 	padding: 5px 10px;
 	text-transform: capitalize;
 	margin-left: 5px;
-	position: relative;
-	left: -170px;
+	float: left;
 }
 
 #div_attachmentForm input[value=cancel]:hover {
@@ -1321,8 +1322,7 @@ table.thickboxTable .headerText {
 	padding: 5px 10px;
 	text-transform: capitalize;
 	margin-left: 5px;
-	position: relative;
-	left: -128px;
+	float: left;
 }
 
 #div_updateForm input[value=cancel]:hover {
@@ -1358,8 +1358,7 @@ table.thickboxTable .headerText {
 	padding: 5px 10px;
 	text-transform: capitalize;
 	margin-left: 5px;
-	position: relative;
-	left: -158px;
+	float: left;
 }
 
 #div_updateForm input#update-qualifier-cancel:hover {
@@ -1423,6 +1422,8 @@ table.thickboxTable .headerText {
 	cursor: pointer;
 }
 
+/*--- Close Buttons in All Forms ---*/
+
 #div_updateForm a#closeButton {
 	color: #FFFFFF;
 	font-family: "Arial", sans-serif;
@@ -1440,4 +1441,63 @@ table.thickboxTable .headerText {
 
 #div_updateForm a#closeButton:hover {
 	cursor: pointer;
+}
+
+#div_signatureForm a#closeButton {
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	text-decoration: none;
+	position: relative;
+	top: -5px;
+	left: 2px;
+}
+
+#div_signatureForm a#closeButton:hover {
+	cursor: pointer;
+}
+
+#div_expressionNotesForm a#closeButton {
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	text-decoration: none;
+	position: relative;
+	top: -5px;
+	left: 2px;
+}
+
+#div_expressionNotesForm a#closeButton:hover {
+	cursor: pointer;
+}
+
+/*--- Capitalize Add Links ---*/
+
+a#commitUpdate {
+	text-transform: capitalize;
+}
+
+/*--- Shorten Width of Select Dropdown for Signatures and Edit ---*/
+
+select#signatureTypeID {
+		width: 200px;
+}
+
+select#expressionTypeID {
+		width: 200px;
+}
+
+/*--- IE10 and IE11 Only ---*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		{ property:value; }
 }

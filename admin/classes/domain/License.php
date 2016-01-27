@@ -226,8 +226,8 @@ class License extends DatabaseObject {
 		$this->delete();
 	}
 
-  public function searchQuery($whereAdd, $orderBy = '', $limit = '', $count = false) {
-    if (count($whereAdd) > 0){
+	public function searchQuery($whereAdd, $orderBy = '', $limit = '', $count = false) {
+		if (count($whereAdd) > 0){
 			$whereStatement = " AND " . implode(" AND ", $whereAdd);
 		}else{
 			$whereStatement = "";
@@ -244,11 +244,11 @@ class License extends DatabaseObject {
 		//if the org module is installed get the org name from org database
 		if ($config->settings->organizationsModule == 'Y') {
 			$dbName = $config->settings->organizationsDatabaseName;
-      if ($count) {
-        $select = "SELECT COUNT(DISTINCT L.licenseID) count";
-      } else {
-        $select = "SELECT distinct L.licenseID, L.shortName licenseName, O2.name consortiumName, O.name providerName, S.shortName status";
-      }
+			if ($count) {
+				$select = "SELECT COUNT(DISTINCT L.licenseID) count";
+			} else {
+				$select = "SELECT distinct L.licenseID, L.shortName licenseName, O2.name consortiumName, O.name providerName, S.shortName status";
+			}
 			//now formulate query
 			$query = $select . "
 									FROM " . $dbName . ".Organization O, License L
@@ -261,11 +261,11 @@ class License extends DatabaseObject {
 									" . $whereStatement;
 
 		} else {
-      if ($count) {
-        $select = "SELECT COUNT(DISTINCT L.licenseID) count";
-      } else {
-        $select = "SELECT distinct L.licenseID, L.shortName licenseName, C.shortName consortiumName, O.shortName providerName, S.shortName status";
-      }
+			if ($count) {
+				$select = "SELECT COUNT(DISTINCT L.licenseID) count";
+			} else {
+				$select = "SELECT distinct L.licenseID, L.shortName licenseName, C.shortName consortiumName, O.shortName providerName, S.shortName status";
+			}
 			//now formulate query
 			$query = $select . "
 									FROM Organization O, License L
@@ -283,21 +283,21 @@ class License extends DatabaseObject {
 		}
 
 		if ($limit) {
-  	  $query .= "\nLIMIT " . $limit;
+		  $query .= "\nLIMIT " . $limit;
 		}
 
 		return $query;
-  }
+	}
 
-  public function searchCount($whereAdd) {
-    $query = $this->searchQuery($whereAdd, '', '', true);
-    $result = $this->db->processQuery(stripslashes($query), 'assoc');
-    return $result['count'];
-  }
+	public function searchCount($whereAdd) {
+		$query = $this->searchQuery($whereAdd, '', '', true);
+		$result = $this->db->processQuery(stripslashes($query), 'assoc');
+		return $result['count'];
+	}
 
 	//returns array based on search
 	public function search($whereAdd, $orderBy, $limit){
-    $query = $this->searchQuery($whereAdd, $orderBy, $limit);
+		$query = $this->searchQuery($whereAdd, $orderBy, $limit);
 
 		$result = $this->db->processQuery(stripslashes($query), 'assoc');
 

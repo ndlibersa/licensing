@@ -395,7 +395,7 @@ switch ($_GET['action']) {
 
 		?>
 		<div id='div_signatureForm'>
-		<table class="thickboxTable" style="background-image:url('images/tbtitle.gif');width:450px;">
+		<table class="thickboxTable" style="background-image:url('images/tbtitle.gif');width:100%;">
 		<tr>
 						<td><span class='headerText'>Signatures</span><br /><span id='span_errors' style='color:#F00;'></span></td>
 		</tr>
@@ -486,7 +486,7 @@ switch ($_GET['action']) {
 		</table>
 		</td>
 		</tr>
-		<tr><td style='text-align:center;width:100%;'><br /><br /><a href='#' onclick='window.parent.tb_remove();  window.parent.updateDocuments();  window.parent.updateArchivedDocuments(); return false'>Close</a></td></tr>
+		<tr><td style='text-align:center;width:100%;'><br /><br /><a href='#' onclick='window.parent.tb_remove();  window.parent.updateDocuments();  window.parent.updateArchivedDocuments(); return false' id='closeButton'>Close</a></td></tr>
 		</table>
 		<input type="hidden" id='documentID' name='documentID' value='<?php echo $documentID; ?>'>
 
@@ -635,7 +635,7 @@ switch ($_GET['action']) {
 		</tr>
 
 		<tr style="vertical-align:middle;">
-		<td style="padding-top:8px;"><input type='button' value='submit' name='submitExpression' id='submitExpression'></td>
+		<td style="padding-top:8px;width:60px;"><input type='button' value='submit' name='submitExpression' id='submitExpression'></td>
 		<td style="padding-top:8px;padding-right:8px;text-align:right;"><input type='button' value='cancel' onclick="tb_remove()"></td>
 		</tr>
 		</table>
@@ -749,7 +749,7 @@ switch ($_GET['action']) {
 		</table>
 		</td>
 		</tr>
-		<tr><td style='text-align:center;width:100%;'><br /><br /><a href='#' onclick='window.parent.tb_remove();  window.parent.<?php if ($_GET['org'] == "compare") { echo "updateSearch()"; } else { echo "updateExpressions()"; } ?>; return false'>Close</a></td></tr>
+		<tr><td style='width:100%;'><br /><br /><a href='#' onclick='window.parent.tb_remove();  window.parent.<?php if ($_GET['org'] == "compare") { echo "updateSearch()"; } else { echo "updateExpressions()"; } ?>; return false' id='closeButton'>Close</a></td></tr>
 		</table>
 		<input type="hidden" id='documentID' name='documentID' value='<?php echo $documentID; ?>'>
 		<input type="hidden" id='org' name='org' value='<?php echo $_GET['org']; ?>'>
@@ -827,7 +827,7 @@ switch ($_GET['action']) {
 		</tr>
 
 		<tr style="vertical-align:middle;">
-		<td style="padding-top:8px;"><input type='button' value='submit' name='submitAttachment' id='submitAttachment'></td>
+		<td style="padding-top:8px;width:60px;"><input type='button' value='submit' name='submitAttachment' id='submitAttachment'></td>
 		<td style="padding-top:8px;padding-right:8px;text-align:right;"><input type='button' value='cancel' onclick="tb_remove();window.parent.updateAttachments();"></td>
 		</tr>
 		</table>
@@ -1007,7 +1007,7 @@ switch ($_GET['action']) {
 
 
 		<tr>
-		<td style="padding-top:18px;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitExpressionType();'></td>
+		<td style="padding-top:18px;width:60px;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitExpressionType();'></td>
 		<td style="padding-top:18px;padding-right:8px;text-align:right;"><input type='button' value='cancel' onclick="window.parent.tb_remove(); return false"></td>
 		</tr>
 		</table>
@@ -1115,7 +1115,7 @@ switch ($_GET['action']) {
 		
 		
 		<tr>
-		<td style="padding-top:18px;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitCalendarSettings();'></td>
+		<td style="padding-top:18px;width:60px;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitCalendarSettings();'></td>
 		<td style="padding-top:18px;padding-right:8px;text-align:right;"><input type='button' value='cancel' onclick="window.parent.tb_remove(); return false"></td>
 		</tr>
 		</table>
@@ -1169,7 +1169,7 @@ switch ($_GET['action']) {
 						<tr><td><label for='shortName'><b>Qualifier</b></label></td><td><input type='text' id='shortName' name='shortName' value='<?php if (isset($qualifier)) echo $qualifier->shortName; ?>' style='width:150px;'/></td></tr>
 
 		<tr>
-		<td style="padding-top:18px;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitQualifier();' id='submitQualifier'></td>
+		<td style="padding-top:18px;width:60px;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitQualifier();' id='submitQualifier'></td>
 		<td style="padding-top:18px;padding-right:8px;text-align:right;"><input type='button' value='cancel' onclick="window.parent.tb_remove(); return false" id='update-qualifier-cancel'></td>
 		</tr>
 		</table>

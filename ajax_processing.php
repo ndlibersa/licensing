@@ -32,11 +32,11 @@ switch ($_GET['action']) {
 	//for document adds or updates - note that actual file is done on form (processing done in uploadDocument)
 	//this just saves the URL in db
 
-    case 'submitDocument':
+		case 'submitDocument':
 
-    	//if documentID is sent then this is an update
-    	if ((isset($_POST['documentID'])) && ($_POST['documentID'] != '')){
- 			$document = new Document(new NamedArguments(array('primaryKey' => $_POST['documentID'])));
+			//if documentID is sent then this is an update
+			if ((isset($_POST['documentID'])) && ($_POST['documentID'] != '')){
+				$document = new Document(new NamedArguments(array('primaryKey' => $_POST['documentID'])));
 
 			if ((($document->expirationDate == "") || ($document->expirationDate == '0000-00-00')) && ($_POST['archiveInd'] == "1")){
 				$document->expirationDate = date( 'Y-m-d H:i:s' );
@@ -45,9 +45,9 @@ switch ($_GET['action']) {
 			}
 
 
-    	}else{
- 			$document = new Document();
- 			$document->documentID = '';
+			}else{
+				$document = new Document();
+				$document->documentID = '';
 
 			if ($_POST['archiveInd'] == "1"){
 				$document->expirationDate = date( 'Y-m-d H:i:s' );
@@ -78,11 +78,11 @@ switch ($_GET['action']) {
 			echo $e->POSTMessage();
 		}
 
-        break;
+				break;
 
 
 
-    case 'deleteLicense':
+		case 'deleteLicense':
 
 		//note: does not delete physical documents
 
@@ -102,7 +102,7 @@ switch ($_GET['action']) {
 
 
 	//archives (expires) document - defaults to current date/time
-    case 'archiveDocument':
+		case 'archiveDocument':
 		$document = new Document(new NamedArguments(array('primaryKey' => $_GET['documentID'])));
 		$document->expirationDate = date( 'Y-m-d H:i:s' );
 
@@ -112,20 +112,20 @@ switch ($_GET['action']) {
 			echo $e->getMessage();
 		}
 
-        break;
+				break;
 
 
 	//verify that the new document name doesn't have bad characters and the name isn't already being used
-    case 'checkUploadDocument':
+		case 'checkUploadDocument':
 		$uploadDocument = $_POST['uploadDocument'];
 		$document = new Document();
 
 		$exists = 0;
 
-    if (!is_writable("documents")) {
-      echo 3;
-      break;
-    }
+		if (!is_writable("documents")) {
+			echo 3;
+			break;
+		}
 
 		//first check that it doesn't have any offending characters
 		if ((strpos($uploadDocument,"'") > 0) || (strpos($uploadDocument,'"') > 0) || (strpos($uploadDocument,"&") > 0) || (strpos($uploadDocument,"<") > 0) || (strpos($uploadDocument,">") > 0)){
@@ -145,7 +145,7 @@ switch ($_GET['action']) {
 
 
 	//performs document upload
-    case 'uploadDocument':
+		case 'uploadDocument':
 		$documentName = basename($_FILES['myfile']['name']);
 
 		$document = new Document();
@@ -180,7 +180,7 @@ switch ($_GET['action']) {
 		break;
 
 
-    case 'deleteDocument':
+		case 'deleteDocument':
 
 		//note - does not delete physical document
 
@@ -209,21 +209,21 @@ switch ($_GET['action']) {
 
 
 
-    case 'submitSignature':
-    	//set date for proper saving
-        if ((isset($_POST['signatureDate'])) && ($_POST['signatureDate'] != '')){
+		case 'submitSignature':
+			//set date for proper saving
+				if ((isset($_POST['signatureDate'])) && ($_POST['signatureDate'] != '')){
 			$signatureDate = date("Y-m-d", strtotime($_POST['signatureDate']));
 		}else{
 			$signatureDate = "";
 		}
 
-    	//if signatureID is sent then this is an update
-    	if ((isset($_POST['signatureID'])) && ($_POST['signatureID'] != '')){
- 			$signature = new Signature(new NamedArguments(array('primaryKey' => $_POST['signatureID'])));
-    	}else{
- 			$signature = new Signature();
- 			$signature->signatureID = '';
- 		}
+			//if signatureID is sent then this is an update
+			if ((isset($_POST['signatureID'])) && ($_POST['signatureID'] != '')){
+				$signature = new Signature(new NamedArguments(array('primaryKey' => $_POST['signatureID'])));
+			}else{
+				$signature = new Signature();
+				$signature->signatureID = '';
+			}
 
 
 		$signature->signerName		= $_POST['signerName'];
@@ -241,7 +241,7 @@ switch ($_GET['action']) {
 		break;
 
 
-    case 'deleteSignature':
+		case 'deleteSignature':
 
 		$signature = new Signature(new NamedArguments(array('primaryKey' => $_GET['signatureID'])));
 
@@ -256,15 +256,15 @@ switch ($_GET['action']) {
 
 
 	//add/update expression
-    case 'submitExpression':
+		case 'submitExpression':
 
-    	//if expressionID is sent then this is an update
-    	if ((isset($_POST['expressionID'])) && ($_POST['expressionID'] != '')){
-    		$expressionID = $_POST['expressionID'];
- 			$expression = new Expression(new NamedArguments(array('primaryKey' => $expressionID)));
-    	}else{
- 			$expression = new Expression();
- 			//default production use (terms tool indicator) to off if this is an add, otherwise we leave it alone
+			//if expressionID is sent then this is an update
+			if ((isset($_POST['expressionID'])) && ($_POST['expressionID'] != '')){
+				$expressionID = $_POST['expressionID'];
+				$expression = new Expression(new NamedArguments(array('primaryKey' => $expressionID)));
+			}else{
+				$expression = new Expression();
+				//default production use (terms tool indicator) to off if this is an add, otherwise we leave it alone
 			$expression->productionUseInd	= 0;
 			$expression->expressionID = '';
 		}
@@ -300,10 +300,10 @@ switch ($_GET['action']) {
 			echo $e->getMessage();
 		}
 
-        break;
+				break;
 
 
-    case 'deleteExpression':
+		case 'deleteExpression':
 
 		$expression = new Expression(new NamedArguments(array('primaryKey' => $_GET['expressionID'])));
 
@@ -317,7 +317,7 @@ switch ($_GET['action']) {
 		break;
 
 
-    case 'setProdUse':
+		case 'setProdUse':
 
 		$expressionID = $_GET['expressionID'];
 		$licenseID = $_GET['licenseID'];
@@ -362,11 +362,11 @@ switch ($_GET['action']) {
 		break;
 
 
-     case 'submitExpressionNote':
+			case 'submitExpressionNote':
 
 		//if note id is sent in, this is an update
-    	if ((isset($_POST['expressionNoteID'])) && ($_POST['expressionNoteID'] != '')){
- 			$expressionNote = new ExpressionNote(new NamedArguments(array('primaryKey' => $_POST['expressionNoteID'])));
+			if ((isset($_POST['expressionNoteID'])) && ($_POST['expressionNoteID'] != '')){
+				$expressionNote = new ExpressionNote(new NamedArguments(array('primaryKey' => $_POST['expressionNoteID'])));
 			$expressionNote->note					= $_POST['expressionNote'];
 			$expressionNote->displayOrderSeqNumber	= $_POST['displayOrderSeqNumber'];
 
@@ -380,8 +380,8 @@ switch ($_GET['action']) {
 			//adding new
 			$expression = new Expression(new NamedArguments(array('primaryKey' => $_POST['expressionID'])));
 
- 			$expressionNote = new ExpressionNote();
- 			$expressionNote->expressionNoteID 		= '';
+				$expressionNote = new ExpressionNote();
+				$expressionNote->expressionNoteID 		= '';
 			$expressionNote->note					= $_POST['expressionNote'];
 			$expressionNote->expressionID			= $_POST['expressionID'];
 			$expressionNote->displayOrderSeqNumber	= $expression->getNextExpressionNoteSequence;
@@ -394,19 +394,19 @@ switch ($_GET['action']) {
 			}
 		}
 
- 		break;
+			break;
 
 
 	 //when the arrows for reordering are clicked
-     case 'reorderExpressionNote':
+			case 'reorderExpressionNote':
 		$expressionNote = new ExpressionNote(new NamedArguments(array('primaryKey' => $_GET['expressionNoteID'])));
 
 		echo $expressionNote->reorder($_GET['direction'], $_GET['oldSeq']);
 
- 		break;
+			break;
 
 
-     case 'deleteExpressionNote':
+			case 'deleteExpressionNote':
 
 		$expressionNote = new ExpressionNote(new NamedArguments(array('primaryKey' => $_GET['expressionNoteID'])));
 
@@ -417,19 +417,19 @@ switch ($_GET['action']) {
 			echo $e->getMessage();
 		}
 
- 		break;
+			break;
 
 
-     case 'submitSFXProvider':
+			case 'submitSFXProvider':
 
-    	//if expressionID is sent then this is an update
-    	if ((isset($_POST['providerID'])) && ($_POST['providerID'] != '')){
- 			$sfxProvider = new SFXProvider(new NamedArguments(array('primaryKey' => $_POST['providerID'])));
+			//if expressionID is sent then this is an update
+			if ((isset($_POST['providerID'])) && ($_POST['providerID'] != '')){
+				$sfxProvider = new SFXProvider(new NamedArguments(array('primaryKey' => $_POST['providerID'])));
 			$sfxProvider->shortName		= $_POST['shortName'];
 			$sfxProvider->documentID 	= $_POST['documentID'];
-    	}else{
- 			$sfxProvider = new SFXProvider();
- 			$sfxProvider->sfxProviderID = '';
+			}else{
+				$sfxProvider = new SFXProvider();
+				$sfxProvider->sfxProviderID = '';
 			$sfxProvider->shortName		= $_POST['shortName'];
 			$sfxProvider->documentID 	= $_POST['documentID'];
 		}
@@ -440,10 +440,10 @@ switch ($_GET['action']) {
 			echo $e->getMessage();
 		}
 
- 		break;
+			break;
 
 
-     case 'deleteSFXProvider':
+			case 'deleteSFXProvider':
 
 		$sfxProvider = new SFXProvider(new NamedArguments(array('primaryKey' => $_GET['sfxProviderID'])));
 
@@ -453,14 +453,14 @@ switch ($_GET['action']) {
 		} catch (Exception $e) {
 			echo $e->getMessage();
 		}
- 		break;
+			break;
 
 
-    case 'submitLicense':
+		case 'submitLicense':
 
 
-    	//may have been sent through despite missing license name or provider- do check here to make sure that isn't the case before insert into DB
-    	if ((isset($_POST['shortName'])) && (isset($_POST['organizationName'])) && ($_POST['shortName'] != '') && ($_POST['organizationName'] != '')) {
+			//may have been sent through despite missing license name or provider- do check here to make sure that isn't the case before insert into DB
+			if ((isset($_POST['shortName'])) && (isset($_POST['organizationName'])) && ($_POST['shortName'] != '') && ($_POST['organizationName'] != '')) {
 			//if licenseID is sent then this is an update
 			if ($_POST['licenseID'] <> ""){
 				//update data
@@ -534,11 +534,11 @@ switch ($_GET['action']) {
 			<?php
 		}
 
-        break;
+				break;
 
 	 //new consortium being added directly on license form - returns updated drop down list
 	 //used only when licensing inter-op is turned off
-     case 'addConsortium':
+			case 'addConsortium':
 
 		if ((isset($_GET['shortName'])) && ($_GET['shortName'] != '')){
 			$consortium = new Consortium();
@@ -568,9 +568,9 @@ switch ($_GET['action']) {
 
 		echo "</select>";
 
- 		break;
+			break;
 
-     case 'addProvider':
+			case 'addProvider':
 		if ((isset($_GET['shortName'])) && ($_GET['shortName'] != '')){
 			$provider = new Provider();
 			$provider->providerID='';
@@ -601,10 +601,10 @@ switch ($_GET['action']) {
 
 		echo "</select>";
 
- 		break;
+			break;
 
 	 //new doc type being added directly on document form - returns updated drop down list
-     case 'addDocumentType':
+			case 'addDocumentType':
 
 		if ((isset($_POST['shortName'])) && ($_POST['shortName'] != '')){
 			$documentType = new DocumentType();
@@ -635,13 +635,13 @@ switch ($_GET['action']) {
 
 		echo "</select>";
 
- 		break;
+			break;
 
 
 
 	 //new signature type being added directly on signature form - returns updated drop down list
 	 //no longer used.... must add signature types from admin form
-     case 'addSignatureType':
+			case 'addSignatureType':
 
 		if ((isset($_POST['shortName'])) && ($_POST['shortName'] != '')){
 			$signatureType = new SignatureType();
@@ -673,12 +673,12 @@ switch ($_GET['action']) {
 
 		echo "</select>";
 
- 		break;
+			break;
 
 
 	 //new expression type being added directly on expression form - returns updated drop down list
 	 //note default type is 'internal'.  this will need to be updated by user in admin if it's decided to be used for display
-     case 'addExpressionType':
+			case 'addExpressionType':
 
 
 		if ((isset($_POST['shortName'])) && ($_POST['shortName'] != '')){
@@ -712,15 +712,15 @@ switch ($_GET['action']) {
 
 		echo "</select>";
 
- 		break;
+			break;
 
 
 	 //generically adds data for admin screen
 	 //error is echoed back
-     case 'addData':
+			case 'addData':
 
- 		$className = $_POST['tableName'];
- 		$shortName = $_POST['shortName'];
+			$className = $_POST['tableName'];
+			$shortName = $_POST['shortName'];
 
 		$instance = new $className();
 		$instance->shortName = $shortName;
@@ -733,14 +733,14 @@ switch ($_GET['action']) {
 		}
 		echo "</font>";
 
- 		break;
+			break;
 
 	 //generically updates data for admin screen
 	 //error is echoed back
-     case 'updateData':
- 		$className = $_POST['tableName'];
- 		$updateID = $_POST['updateID'];
- 		$shortName = $_POST['shortName'];
+			case 'updateData':
+			$className = $_POST['tableName'];
+			$updateID = $_POST['updateID'];
+			$shortName = $_POST['shortName'];
 
 		$instance = new $className(new NamedArguments(array('primaryKey' => $updateID)));
 		$instance->shortName = $shortName;
@@ -751,15 +751,15 @@ switch ($_GET['action']) {
 			echo $e->POSTMessage();
 		}
 
- 		break;
+			break;
 
 
 	 //generically deletes data for admin screen
 	 //error is echoed back
-     case 'deleteData':
+			case 'deleteData':
 
- 		$className = $_GET['tableName'];
- 		$deleteID = $_GET['deleteID'];
+			$className = $_GET['tableName'];
+			$deleteID = $_GET['deleteID'];
 
 		//since we're using MyISAM which doesn't support FKs, must verify that there are no records of children or they could disappear
 		$instance = new $className(new NamedArguments(array('primaryKey' => $deleteID)));
@@ -780,16 +780,16 @@ switch ($_GET['action']) {
 		}
 		echo "</font>";
 
- 		break;
+			break;
 
 
 
-     case 'submitExpressionType':
+			case 'submitExpressionType':
 		if ((isset($_POST['expressionTypeID'])) && ($_POST['expressionTypeID'] != '')){
- 			$expressionType = new ExpressionType(new NamedArguments(array('primaryKey' => $_POST['expressionTypeID'])));
+				$expressionType = new ExpressionType(new NamedArguments(array('primaryKey' => $_POST['expressionTypeID'])));
 		}else{
- 			$expressionType = new ExpressionType();
- 			$expressionType->expressionTypeID = '';
+				$expressionType = new ExpressionType();
+				$expressionType->expressionTypeID = '';
 		}
 
 		$expressionType->shortName	= $_POST['shortName'];
@@ -801,15 +801,15 @@ switch ($_GET['action']) {
 			echo $e->POSTMessage();
 		}
 
- 		break;
+			break;
 
-     case 'submitCalendarSettings':
+			case 'submitCalendarSettings':
 		
 		if ((isset($_POST['calendarSettingsID'])) && ($_POST['calendarSettingsID'] != '')){
- 			$calendarSettings = new CalendarSettings(new NamedArguments(array('primaryKey' => $_POST['calendarSettingsID'])));
+				$calendarSettings = new CalendarSettings(new NamedArguments(array('primaryKey' => $_POST['calendarSettingsID'])));
 		}else{
- 			$calendarSettings = new CalendarSettings();
- 			$calendarSettings->calendarSettingsID = '';
+				$calendarSettings = new CalendarSettings();
+				$calendarSettings->calendarSettingsID = '';
 		}
 		
 		if (is_array($_POST['value'])) {
@@ -824,14 +824,14 @@ switch ($_GET['action']) {
 			echo $e->POSTMessage();
 		}
 
- 		break;
+			break;
 
-     case 'submitQualifier':
+			case 'submitQualifier':
 		if ((isset($_POST['qualifierID'])) && ($_POST['qualifierID'] != '')){
- 			$qualifier = new Qualifier(new NamedArguments(array('primaryKey' => $_POST['qualifierID'])));
+				$qualifier = new Qualifier(new NamedArguments(array('primaryKey' => $_POST['qualifierID'])));
 		}else{
- 			$qualifier = new Qualifier();
- 			$qualifier->qualifierID = '';
+				$qualifier = new Qualifier();
+				$qualifier->qualifierID = '';
 		}
 
 		$qualifier->expressionTypeID 	= $_POST['expressionTypeID'];
@@ -843,13 +843,13 @@ switch ($_GET['action']) {
 			echo $e->POSTMessage();
 		}
 
- 		break;
+			break;
 
-     case 'submitUserData':
+			case 'submitUserData':
 		if ($_POST['orgLoginID']){
- 			$user = new User(new NamedArguments(array('primaryKey' => $_POST['orgLoginID'])));
+				$user = new User(new NamedArguments(array('primaryKey' => $_POST['orgLoginID'])));
 		}else{
-  			$user = new User();
+				$user = new User();
 		}
 
 		$user->loginID		= $_POST['loginID'];
@@ -865,13 +865,13 @@ switch ($_GET['action']) {
 		}
 
 
- 		break;
+			break;
 
 
 
-     case 'deleteUser':
+			case 'deleteUser':
 
- 		$loginID = $_GET['loginID'];
+			$loginID = $_GET['loginID'];
 
 		$user = new User(new NamedArguments(array('primaryKey' => $loginID)));
 
@@ -883,14 +883,14 @@ switch ($_GET['action']) {
 		}
 		echo "</font>";
 
- 		break;
+			break;
 
 
 
 
-     case 'deleteExpressionType':
+			case 'deleteExpressionType':
 
- 		$expressionTypeID = $_GET['expressionTypeID'];
+			$expressionTypeID = $_GET['expressionTypeID'];
 
 		$expressionType = new ExpressionType(new NamedArguments(array('primaryKey' => $expressionTypeID)));
 
@@ -902,22 +902,22 @@ switch ($_GET['action']) {
 		}
 		echo "</font>";
 
- 		break;
+			break;
 
 
 
 	//verify file name for uploaded attachments (4th tab) aren't already being used
-    case 'checkUploadAttachment':
+		case 'checkUploadAttachment':
 
 		$uploadAttachment = $_POST['uploadAttachment'];
 		$attachmentFile = new AttachmentFile();
 
 		$exists = 0;
 		
-    if (!is_writable("attachments")) {
-      echo 3;
-      break;
-    }
+		if (!is_writable("attachments")) {
+			echo 3;
+			break;
+		}
 
 		foreach ($attachmentFile->allAsArray() as $attachmentTestArray) {
 			if (strtoupper($attachmentTestArray['attachmentURL']) == strtoupper($uploadAttachment)) {
@@ -930,7 +930,7 @@ switch ($_GET['action']) {
 		break;
 
 	//perform actual upload for attachments (4th tab)
-    case 'uploadAttachment':
+		case 'uploadAttachment':
 
 		$documentName = basename($_FILES['myfile']['name']);
 
@@ -965,21 +965,21 @@ switch ($_GET['action']) {
 		break;
 
 	//add/update for attachment - 4th tab
-    case 'submitAttachment':
+		case 'submitAttachment':
 
-    	//if attachmentID is sent then this is an update
-    	if ((isset($_POST['attachmentID'])) && ($_POST['attachmentID'] <> "")){
- 			$attachment = new Attachment(new NamedArguments(array('primaryKey' => $_POST['attachmentID'])));
-    	}else{
- 			$attachment = new Attachment();
- 			$attachment->attachmentID = '';
+			//if attachmentID is sent then this is an update
+			if ((isset($_POST['attachmentID'])) && ($_POST['attachmentID'] <> "")){
+				$attachment = new Attachment(new NamedArguments(array('primaryKey' => $_POST['attachmentID'])));
+			}else{
+				$attachment = new Attachment();
+				$attachment->attachmentID = '';
 		}
 
-    	if ((isset($_POST['sentDate'])) && ($_POST['sentDate'] <> "")){
-    		$attachment->sentDate = date("Y-m-d", strtotime($_POST['sentDate']));
-    	}else{
-    		$attachment->sentDate = "";
-    	}
+			if ((isset($_POST['sentDate'])) && ($_POST['sentDate'] <> "")){
+				$attachment->sentDate = date("Y-m-d", strtotime($_POST['sentDate']));
+			}else{
+				$attachment->sentDate = "";
+			}
 
 		$attachment->attachmentText	= $_POST['attachmentText'];
 		$attachment->licenseID 	= $_POST['licenseID'];
@@ -993,11 +993,11 @@ switch ($_GET['action']) {
 		}
 
 
-        break;
+				break;
 
 
 	//adding the attachment file to the db - saves the URL to it only
-    case 'addAttachmentFile':
+		case 'addAttachmentFile':
 
 		$attachmentFile = new AttachmentFile();
 		$attachmentFile->attachmentID		= $_GET['attachmentID'];
@@ -1010,12 +1010,12 @@ switch ($_GET['action']) {
 			echo $e->getMessage();
 		}
 
-        break;
+				break;
 
 
-     case 'deleteAttachment':
+			case 'deleteAttachment':
 
- 		$attachment = new Attachment(new NamedArguments(array('primaryKey' => $_GET['attachmentID'])));
+			$attachment = new Attachment(new NamedArguments(array('primaryKey' => $_GET['attachmentID'])));
 
 		//first delete attachments
 		foreach ($attachment->getAttachmentFiles() as $attachmentFile) {
@@ -1029,12 +1029,12 @@ switch ($_GET['action']) {
 			echo $e->getMessage();
 		}
 
- 		break;
+			break;
 
 
-     case 'deleteAttachmentFile':
+			case 'deleteAttachmentFile':
 
- 		$attachmentFile = new AttachmentFile(new NamedArguments(array('primaryKey' => $_GET['attachmentFileID'])));
+			$attachmentFile = new AttachmentFile(new NamedArguments(array('primaryKey' => $_GET['attachmentFileID'])));
 
 		try {
 			$attachmentFile->delete();
@@ -1043,17 +1043,17 @@ switch ($_GET['action']) {
 			echo $e->getMessage();
 		}
 
- 		break;
+			break;
 
 
 	 //updates license status when a new one is selected in dropdown box
-     case 'updateStatus':
+			case 'updateStatus':
 		$licenseID = $_GET['licenseID'];
 		$statusID = $_GET['statusID'];
- 		$statusDate = date( 'Y-m-d H:i:s' );
+			$statusDate = date( 'Y-m-d H:i:s' );
 
- 		//update license
- 		$license = new License(new NamedArguments(array('primaryKey' => $_GET['licenseID'])));
+			//update license
+			$license = new License(new NamedArguments(array('primaryKey' => $_GET['licenseID'])));
 		$license->statusID = $statusID;
 		$license->statusDate = $statusDate;
 
@@ -1064,11 +1064,11 @@ switch ($_GET['action']) {
 			echo $e->getMessage();
 		}
 
- 		break;
+			break;
 
 
 	//used for autocomplete of signer name
-    case 'getSigners':
+		case 'getSigners':
 
 		if (isset($_GET['searchMode'])) $searchMode = $_GET['searchMode']; else $searchMode='';
 		if (isset($_GET['limit'])) $limit = $_GET['limit']; else $limit = '';
@@ -1088,7 +1088,7 @@ switch ($_GET['action']) {
 
 
 	//used for autocomplete of provider names (from organizations module)
-    case 'getOrganizations':
+		case 'getOrganizations':
 
 		if (isset($_GET['searchMode'])) $searchMode = $_GET['searchMode']; else $searchMode='';
 		if (isset($_GET['limit'])) $limit = $_GET['limit']; else $limit = '';
@@ -1169,8 +1169,8 @@ switch ($_GET['action']) {
 		break;
 
 	default:
-       echo "Action " . $action . " not set up!";
-       break;
+				echo "Action " . $action . " not set up!";
+				break;
 
 
 }

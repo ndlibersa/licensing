@@ -24,7 +24,7 @@ $(document).ready(function(){
 	updateExpressions();
 	updateSFXProviders();
 	updateAttachmentsNumber();
-      	updateAttachments();
+				updateAttachments();
 
 
 	$('#div_displayDocuments').show();
@@ -37,222 +37,222 @@ $(document).ready(function(){
 
 
 
- viewAll=0;
- displayArchiveInd=2;
- showParentDocumentID='';
- showExpressionDocumentID='';
- var parentOrderBy = "DT.shortName asc, D.effectiveDate desc, max(signatureDate) desc, D.shortName asc";
- var childOrderBy = "parentDocumentID, expirationDate, DT.shortName asc, D.effectiveDate desc, max(signatureDate) desc, D.shortName asc";
- var parentArchivedOrderBy = "expirationDate, DT.shortName asc, D.effectiveDate desc, max(signatureDate) desc, D.shortName asc";
- var childArchivedOrderBy = "parentDocumentID, expirationDate, expirationDate, DT.shortName asc, D.effectiveDate desc, max(signatureDate) desc, D.shortName asc";
+	viewAll=0;
+	displayArchiveInd=2;
+	showParentDocumentID='';
+	showExpressionDocumentID='';
+	var parentOrderBy = "DT.shortName asc, D.effectiveDate desc, max(signatureDate) desc, D.shortName asc";
+	var childOrderBy = "parentDocumentID, expirationDate, DT.shortName asc, D.effectiveDate desc, max(signatureDate) desc, D.shortName asc";
+	var parentArchivedOrderBy = "expirationDate, DT.shortName asc, D.effectiveDate desc, max(signatureDate) desc, D.shortName asc";
+	var childArchivedOrderBy = "parentDocumentID, expirationDate, expirationDate, DT.shortName asc, D.effectiveDate desc, max(signatureDate) desc, D.shortName asc";
 
 
 
- $(".showDocuments").click(function () {
- 	if (viewAll == "0"){
+	$(".showDocuments").click(function () {
+		if (viewAll == "0"){
 		$('#div_displayDocuments').show();
 		$('#div_displayExpressions').hide();
 		$('#div_displaySFXProviders').hide();
 		$('#div_displayAttachments').hide();
 	}
 	return false;
- });
- 
- 
- 
-  $(".showExpressions").click(function () {
- 	updateExpressions('');
- 	
-  	if (viewAll == "0"){
- 		$('#div_displayDocuments').hide();
- 		$('#div_displayExpressions').show();
- 		$('#div_displaySFXProviders').hide();
- 		$('#div_displayAttachments').hide();
- 	}
- 	
- 	return false;
- });
- 
- 
- 
-  $(".showSFXProviders").click(function () {
-  	if (viewAll == "0"){
- 		$('#div_displayDocuments').hide();
- 		$('#div_displayExpressions').hide();
- 		$('#div_displaySFXProviders').show();
- 		$('#div_displayAttachments').hide();
- 	}
- 	return false;
- });
+	});
+	
+	
+	
+	$(".showExpressions").click(function () {
+		updateExpressions('');
+		
+		if (viewAll == "0"){
+			$('#div_displayDocuments').hide();
+			$('#div_displayExpressions').show();
+			$('#div_displaySFXProviders').hide();
+			$('#div_displayAttachments').hide();
+		}
+		
+		return false;
+	});
+	
+	
+	
+	$(".showSFXProviders").click(function () {
+		if (viewAll == "0"){
+			$('#div_displayDocuments').hide();
+			$('#div_displayExpressions').hide();
+			$('#div_displaySFXProviders').show();
+			$('#div_displayAttachments').hide();
+		}
+		return false;
+	});
 
 
 
- $(".showAttachments").click(function () {
- 	if (viewAll == "0"){
+	$(".showAttachments").click(function () {
+		if (viewAll == "0"){
 		$('#div_displayDocuments').hide();
 		$('#div_displayExpressions').hide();
 		$('#div_displaySFXProviders').hide();
 		$('#div_displayAttachments').show();
 	}
 	return false;
- });
+	});
 
 
- function deleteLicense(licenseID){
-    if (confirm("Do you really want to delete this license?") == true) {
-       $.ajax({
-          type:       "GET",
-          url:        "ajax_processing.php",
-          cache:      false,
-          data:       "action=deleteLicense&licenseID=" + licenseID,
-          success:    function(html) { 
-          	 //post return message to index
- 		postwith('index.php',{message:html});
-          }
+	function deleteLicense(licenseID){
+		if (confirm("Do you really want to delete this license?") == true) {
+				$.ajax({
+					type:       "GET",
+					url:        "ajax_processing.php",
+					cache:      false,
+					data:       "action=deleteLicense&licenseID=" + licenseID,
+					success:    function(html) {
+						 //post return message to index
+			postwith('index.php',{message:html});
+					}
 
 
-      });
+			});
 
-    }
+		}
 
- }
+	}
 
 
- function updateLicenseHead(){
+	function updateLicenseHead(){
 
-       $.ajax({
-          type:       "GET",
-          url:        "ajax_htmldata.php",
-          cache:      false,
-          data:       "action=getLicenseHead&licenseID=" + $("#licenseID").val(),
-          success:    function(html) { $('#div_licenseHead').html(html);
+				$.ajax({
+					type:       "GET",
+					url:        "ajax_htmldata.php",
+					cache:      false,
+					data:       "action=getLicenseHead&licenseID=" + $("#licenseID").val(),
+					success:    function(html) { $('#div_licenseHead').html(html);
 		tb_reinit();
-          }
+					}
 
 
-      });
+			});
 
- }
+	}
 
- function updateDocuments(showChildrenDocumentID){
-       if (typeof(showChildrenDocumentID) != 'undefined'){
-       	  showParentDocumentID=showChildrenDocumentID;
-       }
-       
-       $.ajax({
-          type:       "GET",
-          url:        "ajax_htmldata.php",
-          cache:      false,
-          data:       "action=getAllDocuments&licenseID=" + $("#licenseID").val() + "&showChildrenDocumentID=" + showParentDocumentID + "&parentOrderBy=" + parentOrderBy + "&childOrderBy=" + childOrderBy,
-          success:    function(html) { 
-          	$('#div_documents').html(html);
-          	tb_reinit();
-          }
-
-
-      });
-
- }
+	function updateDocuments(showChildrenDocumentID){
+				if (typeof(showChildrenDocumentID) != 'undefined'){
+					  showParentDocumentID=showChildrenDocumentID;
+				}
+				
+				$.ajax({
+					type:       "GET",
+					url:        "ajax_htmldata.php",
+					cache:      false,
+					data:       "action=getAllDocuments&licenseID=" + $("#licenseID").val() + "&showChildrenDocumentID=" + showParentDocumentID + "&parentOrderBy=" + parentOrderBy + "&childOrderBy=" + childOrderBy,
+					success:    function(html) {
+						$('#div_documents').html(html);
+						tb_reinit();
+					}
 
 
- function updateArchivedDocuments(showDisplayArchiveInd, showChildrenDocumentID){
+			});
 
-       if ((typeof(showDisplayArchiveInd) != 'undefined') && (showDisplayArchiveInd != '')){
-       	  displayArchiveInd=showDisplayArchiveInd;
-       }
-
-       if (typeof(showChildrenDocumentID) != 'undefined'){
-       	  showParentDocumentID=showChildrenDocumentID;
-       }      
-       
-       $.ajax({
-          type:       "GET",
-          url:        "ajax_htmldata.php",
-          cache:      false,
-          data:       "action=getAllDocuments&licenseID=" + $("#licenseID").val() + "&displayArchiveInd=" + displayArchiveInd + "&showChildrenDocumentID=" + showParentDocumentID + "&parentArchivedOrderBy=" + parentArchivedOrderBy + "&childArchivedOrderBy=" + childArchivedOrderBy,
-          success:    function(html) { $('#div_archives').html(html);
-          	tb_reinit();
-          }
+	}
 
 
-      });
+	function updateArchivedDocuments(showDisplayArchiveInd, showChildrenDocumentID){
 
- }
+				if ((typeof(showDisplayArchiveInd) != 'undefined') && (showDisplayArchiveInd != '')){
+					  displayArchiveInd=showDisplayArchiveInd;
+				}
 
-
- function showExpressionForDocument(expressionDocumentID){
-  	if (viewAll == "0"){
- 		$('#div_displayDocuments').hide();
- 		$('#div_displayExpressions').show();
- 		$('#div_displaySFXProviders').hide();
- 		$('#div_displayAttachments').hide();
- 	}
- 	
- 	updateExpressions(expressionDocumentID);
- }
-
-
-
-
- function updateExpressions(expressionDocumentID){
-       if (typeof(expressionDocumentID) != 'undefined'){
-       	  showExpressionDocumentID=expressionDocumentID;
-       } 	
- 	
-
-       $.ajax({
-          type:       "GET",
-          url:        "ajax_htmldata.php",
-          cache:      false,
-          data:       "action=getAllExpressions&licenseID=" + $("#licenseID").val() + "&documentID=" + showExpressionDocumentID,
-          success:    function(html) { $('#div_expressions').html(html);
-          	tb_reinit();
-          }
+				if (typeof(showChildrenDocumentID) != 'undefined'){
+					  showParentDocumentID=showChildrenDocumentID;
+				}
+				
+				$.ajax({
+					type:       "GET",
+					url:        "ajax_htmldata.php",
+					cache:      false,
+					data:       "action=getAllDocuments&licenseID=" + $("#licenseID").val() + "&displayArchiveInd=" + displayArchiveInd + "&showChildrenDocumentID=" + showParentDocumentID + "&parentArchivedOrderBy=" + parentArchivedOrderBy + "&childArchivedOrderBy=" + childArchivedOrderBy,
+					success:    function(html) { $('#div_archives').html(html);
+						tb_reinit();
+					}
 
 
-      });
+			});
 
- }
-
- function updateSFXProviders(){
+	}
 
 
-       $.ajax({
-          type:       "GET",
-          url:        "ajax_htmldata.php",
-          cache:      false,
-          data:       "action=getAllSFXProviders&licenseID=" + $("#licenseID").val(),
-          success:    function(html) { $('#div_sfxProviders').html(html);
-          	tb_reinit();
-          }
+	function showExpressionForDocument(expressionDocumentID){
+		if (viewAll == "0"){
+			$('#div_displayDocuments').hide();
+			$('#div_displayExpressions').show();
+			$('#div_displaySFXProviders').hide();
+			$('#div_displayAttachments').hide();
+		}
+		
+		updateExpressions(expressionDocumentID);
+	}
 
 
-      });
-
- }
 
 
- function updateAttachments(){
+	function updateExpressions(expressionDocumentID){
+				if (typeof(expressionDocumentID) != 'undefined'){
+					  showExpressionDocumentID=expressionDocumentID;
+				}
+		
+
+				$.ajax({
+					type:       "GET",
+					url:        "ajax_htmldata.php",
+					cache:      false,
+					data:       "action=getAllExpressions&licenseID=" + $("#licenseID").val() + "&documentID=" + showExpressionDocumentID,
+					success:    function(html) { $('#div_expressions').html(html);
+						tb_reinit();
+					}
 
 
-       $.ajax({
-          type:       "GET",
-          url:        "ajax_htmldata.php",
-          cache:      false,
-          data:       "action=getAllAttachments&licenseID=" + $("#licenseID").val(),
-          success:    function(html) { $('#div_attachments').html(html);
-          	updateAttachmentsNumber();
-          	tb_reinit();
-          }
+			});
+
+	}
+
+	function updateSFXProviders(){
 
 
-      });
+				$.ajax({
+					type:       "GET",
+					url:        "ajax_htmldata.php",
+					cache:      false,
+					data:       "action=getAllSFXProviders&licenseID=" + $("#licenseID").val(),
+					success:    function(html) { $('#div_sfxProviders').html(html);
+						tb_reinit();
+					}
 
- }
+
+			});
+
+	}
+
+
+	function updateAttachments(){
+
+
+				$.ajax({
+					type:       "GET",
+					url:        "ajax_htmldata.php",
+					cache:      false,
+					data:       "action=getAllAttachments&licenseID=" + $("#licenseID").val(),
+					success:    function(html) { $('#div_attachments').html(html);
+						updateAttachmentsNumber();
+						tb_reinit();
+					}
+
+
+			});
+
+	}
 
 
 function updateAttachmentsNumber(){
-  $.ajax({
+	$.ajax({
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
 	 cache:      false,
@@ -264,37 +264,37 @@ function updateAttachmentsNumber(){
 			$(".span_AttachmentNumber").html("(" + remaining + " records)");
 		}
 	 }
- });
+	});
 }
 
- function updateStatus(){
+	function updateStatus(){
 
 
-       $.ajax({
-          type:       "GET",
-          url:        "ajax_processing.php",
-          cache:      false,
-          data:       "action=updateStatus&licenseID=" + $("#licenseID").val() + "&statusID=" + $("#statusID").val(),
-          success:    function(html) { 
-          	$('#span_updateStatusResponse').html(html);
-          	
-          	  // close the span in 3 secs
-		  setTimeout("emptyDiv('span_updateStatusResponse');",3000); 
-          }
+				$.ajax({
+					type:       "GET",
+					url:        "ajax_processing.php",
+					cache:      false,
+					data:       "action=updateStatus&licenseID=" + $("#licenseID").val() + "&statusID=" + $("#statusID").val(),
+					success:    function(html) {
+						$('#span_updateStatusResponse').html(html);
+						
+						  // close the span in 3 secs
+		  setTimeout("emptyDiv('span_updateStatusResponse');",3000);
+					}
 
 
-      });
+			});
 
- }
+	}
 
- function emptyDiv(divName){
+	function emptyDiv(divName){
 	$('#' + divName).html("");
- }
+	}
 
 
 
- function archiveDocument(documentID){
-    if (confirm("Do you really want to archive this document?") == true) {
+	function archiveDocument(documentID){
+		if (confirm("Do you really want to archive this document?") == true) {
 	  $.ajax({
 		 type:       "GET",
 		 url:        "ajax_processing.php",
@@ -306,79 +306,79 @@ function updateAttachmentsNumber(){
 			updateExpressions();
 		 }
 	 });
-    }
+		}
 
- }
-
-
- function deleteDocument(documentID){
-    if (confirm("Do you really want to delete this document?") == true) {
-       $.ajax({
-          type:       "GET",
-          url:        "ajax_processing.php",
-          cache:      false,
-          data:       "action=deleteDocument&documentID=" + documentID,
-          success:    function(html) { 
-          	if (html) alert('There was a problem with deleting the document.  You may not delete a document if there are associated expressions.  Remove all expressions and try again.'); 
-          	updateDocuments(); 
-          	updateArchivedDocuments(); 
-          }
+	}
 
 
-      });
-
-    }
-
- }
-
-
- function deleteExpression(expressionID){
-    if (confirm("Do you really want to delete this expression?") == true) {
-       $.ajax({
-          type:       "GET",
-          url:        "ajax_processing.php",
-          cache:      false,
-          data:       "action=deleteExpression&expressionID=" + expressionID,
-          success:    function(html) { updateExpressions(); }
-      });
-
-    }
-
- }
+	function deleteDocument(documentID){
+		if (confirm("Do you really want to delete this document?") == true) {
+				$.ajax({
+					type:       "GET",
+					url:        "ajax_processing.php",
+					cache:      false,
+					data:       "action=deleteDocument&documentID=" + documentID,
+					success:    function(html) {
+						if (html) alert('There was a problem with deleting the document.  You may not delete a document if there are associated expressions.  Remove all expressions and try again.');
+						updateDocuments();
+						updateArchivedDocuments();
+					}
 
 
- function deleteAttachment(attachmentID){
-    if (confirm("Do you really want to delete this attachment?  This will also delete all attached files.") == true) {
-       $.ajax({
-          type:       "GET",
-          url:        "ajax_processing.php",
-          cache:      false,
-          data:       "action=deleteAttachment&attachmentID=" + attachmentID,
-          success:    function(html) { updateAttachments(); }
+			});
+
+		}
+
+	}
 
 
-      });
+	function deleteExpression(expressionID){
+		if (confirm("Do you really want to delete this expression?") == true) {
+				$.ajax({
+					type:       "GET",
+					url:        "ajax_processing.php",
+					cache:      false,
+					data:       "action=deleteExpression&expressionID=" + expressionID,
+					success:    function(html) { updateExpressions(); }
+			});
 
-    }
+		}
 
- }
-
-
- function deleteSFXProvider(sfxProviderID){
-    if (confirm("Do you really want to delete this terms tool resource link?") == true) {
-       $.ajax({
-          type:       "GET",
-          url:        "ajax_processing.php",
-          cache:      false,
-          data:       "action=deleteSFXProvider&sfxProviderID=" + sfxProviderID,
-          success:    function(html) { updateSFXProviders(); }
+	}
 
 
-      });
+	function deleteAttachment(attachmentID){
+		if (confirm("Do you really want to delete this attachment?  This will also delete all attached files.") == true) {
+				$.ajax({
+					type:       "GET",
+					url:        "ajax_processing.php",
+					cache:      false,
+					data:       "action=deleteAttachment&attachmentID=" + attachmentID,
+					success:    function(html) { updateAttachments(); }
 
-    }
 
- }
+			});
+
+		}
+
+	}
+
+
+	function deleteSFXProvider(sfxProviderID){
+		if (confirm("Do you really want to delete this terms tool resource link?") == true) {
+				$.ajax({
+					type:       "GET",
+					url:        "ajax_processing.php",
+					cache:      false,
+					data:       "action=deleteSFXProvider&sfxProviderID=" + sfxProviderID,
+					success:    function(html) { updateSFXProviders(); }
+
+
+			});
+
+		}
+
+	}
 
 
 function showFullAttachmentText(attachmentID){
@@ -393,102 +393,102 @@ function hideFullAttachmentText(attachmentID){
 
 }
 
- var exists = '';
+	var exists = '';
 
- function checkUploadDocument (file, extension){
+	function checkUploadDocument (file, extension){
 
- 	 $.ajax({
- 		 type:       "GET",
- 		 url:        "ajax_processing.php",
- 		 cache:      false,
- 		 data:       "action=checkUploadDocument&uploadDocument=" + file,
- 		 success:    function(response) {
- 			if (response == "1"){
- 				exists = "1";
- 				$("#div_file_message").html("  <font color='red'>File name is already being used.</font>");
- 				return false;
- 			}else{
- 				$("#div_file_message").html("");
- 				exists = "0";
- 			}
- 		 }
-
-
- });
- }
+		 $.ajax({
+			 type:       "GET",
+			 url:        "ajax_processing.php",
+			 cache:      false,
+			 data:       "action=checkUploadDocument&uploadDocument=" + file,
+			 success:    function(response) {
+				if (response == "1"){
+					exists = "1";
+					$("#div_file_message").html("  <font color='red'>File name is already being used.</font>");
+					return false;
+				}else{
+					$("#div_file_message").html("");
+					exists = "0";
+				}
+			 }
 
 
+	});
+	}
 
 
- function replaceFile(){
- 	fileName = $("#upload_button").val();
- 	//used for the Document Edit form - defaults to show current uploaded file with an option to replace
- 	//replace html contents with browse for uploading document.
- 	$('#div_uploadFile').html("<div id='uploadFile'><input type='file' name='upload_button' id='upload_button'></div>");
-
- 	//also reinitialize the code for uploading the file
- 	new AjaxUpload('upload_button',
- 		{action: 'ajax_processing.php?action=uploadDocument',
- 				name: 'myfile',
- 				onChange : function (file, extension){checkUploadDocument(file, extension);},
- 				onComplete : function(data){
- 					fileName=data;
-
- 					if (exists == "1"){
- 						$("#div_file_message").html("  <font color='red'>File name is already being used.</font>");
- 					}else{
- 						$("#div_uploadFile").html("<img src='images/paperclip.gif'>" + fileName + " successfully uploaded.");
-
- 					}
-
- 			}
- 		});
-
- }
 
 
- 
+	function replaceFile(){
+		fileName = $("#upload_button").val();
+		//used for the Document Edit form - defaults to show current uploaded file with an option to replace
+		//replace html contents with browse for uploading document.
+		$('#div_uploadFile').html("<div id='uploadFile'><input type='file' name='upload_button' id='upload_button'></div>");
+
+		//also reinitialize the code for uploading the file
+		new AjaxUpload('upload_button',
+			{action: 'ajax_processing.php?action=uploadDocument',
+					name: 'myfile',
+					onChange : function (file, extension){checkUploadDocument(file, extension);},
+					onComplete : function(data){
+						fileName=data;
+
+						if (exists == "1"){
+							$("#div_file_message").html("  <font color='red'>File name is already being used.</font>");
+						}else{
+							$("#div_uploadFile").html("<img src='images/paperclip.gif'>" + fileName + " successfully uploaded.");
+
+						}
+
+				}
+			});
+
+	}
 
 
- function changeProdUse(expressionID){
-       $.ajax({
-          type:       "GET",
-          url:        "ajax_processing.php",
-          cache:      false,
-          data:       "action=setProdUse&expressionID=" + expressionID + "&licenseID=" + $("#licenseID").val() + "&productionUseInd=" + getCheckboxValue("productionUseInd_" + expressionID), 
-          success:    function(html) { 
-          	$("#span_prod_use_" + expressionID).html(html);
-          	
-          	  // close the span in 3 secs
-		  setTimeout("emptyDiv('span_prod_use_" + expressionID + "');",3000); 
-          }
+	
 
 
-      });
- } 
- 
- 
- 
-  
- function setParentOrder(column, direction){
-  	parentOrderBy = column + " " + direction;
-  	updateDocuments(); 
- }
- 
- 
-  function setChildOrder(column, direction){
-   	childOrderBy = column + " " + direction;
-   	updateDocuments(); 
-  }
+	function changeProdUse(expressionID){
+				$.ajax({
+					type:       "GET",
+					url:        "ajax_processing.php",
+					cache:      false,
+					data:       "action=setProdUse&expressionID=" + expressionID + "&licenseID=" + $("#licenseID").val() + "&productionUseInd=" + getCheckboxValue("productionUseInd_" + expressionID),
+					success:    function(html) {
+						$("#span_prod_use_" + expressionID).html(html);
+						
+						  // close the span in 3 secs
+		  setTimeout("emptyDiv('span_prod_use_" + expressionID + "');",3000);
+					}
 
- 
-  function setParentArchivedOrder(column, direction){
-   	parentArchivedOrderBy = column + " " + direction;
-   	updateArchivedDocuments(); 
-  }  
-  
 
-  function setChildArchivedOrder(column, direction){
-   	childArchivedOrderBy = column + " " + direction;
-   	updateArchivedDocuments(); 
-  }    
+			});
+	}
+	
+	
+	
+	
+	function setParentOrder(column, direction){
+		parentOrderBy = column + " " + direction;
+		updateDocuments();
+	}
+	
+	
+	function setChildOrder(column, direction){
+			childOrderBy = column + " " + direction;
+			updateDocuments();
+	}
+
+	
+	function setParentArchivedOrder(column, direction){
+			parentArchivedOrderBy = column + " " + direction;
+			updateArchivedDocuments();
+	}
+	
+
+	function setChildArchivedOrder(column, direction){
+			childArchivedOrderBy = column + " " + direction;
+			updateArchivedDocuments();
+	}
