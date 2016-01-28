@@ -66,15 +66,15 @@ $coralURL = $util->getCORALURL();
 </head>
 <body id="licensing">
 <noscript><font face=arial>JavaScript must be enabled in order for you to use CORAL. However, it seems JavaScript is either disabled or not supported by your browser. To use CORAL, enable JavaScript by changing your browser options, then <a href="">try again</a>. </font></noscript>
-<!--center-->
+/<center>
 <div class="wrapper">
-<!--center-->
+<center>
 <table>
 <tr>
 <td style='vertical-align:top;'>
 <div style="text-align:left;">
 
-<!--center-->
+<center>
 <table class="titleTable" style="background-image:url('images/licensingtitle.jpg');background-repeat:no-repeat;width:1024px;text-align:left;">
 <tr style='vertical-align:top;'>
 <td style='height:53px;'>
