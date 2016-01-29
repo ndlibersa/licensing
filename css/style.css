@@ -36,6 +36,7 @@ body {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+	/*-*/margin: 0 auto;
 }
 
 table:nth-of-type(1) td {
@@ -243,6 +244,7 @@ table.dataTable {
 	margin-top: 11px;
 	margin-bottom: 10px;
 	text-align: left;
+	/*-*/margin-left: 0;
 }
 
 table.dataTable td {
@@ -1035,9 +1037,8 @@ a.helpfulLink {
 }
 
 #records-per-page {
-	float: left;
-	clear: both;
-}
+	float: right;
+=}
 
 /*--- Login Form Inline with Search Body ---*/
 
@@ -1293,7 +1294,7 @@ table.thickboxTable .headerText {
 	cursor: pointer;
 }
 
-/*--- Adjust Update User/Expression Types/Qualifier/ Form Modal Window ---*/
+/*--- Adjust Update User/Qualifier/ Form Modal Window ---*/
 
 #div_updateForm input[value=Update] {
 	color: #FFFFFF;
@@ -1362,6 +1363,43 @@ table.thickboxTable .headerText {
 }
 
 #div_updateForm input#update-qualifier-cancel:hover {
+	cursor: pointer;
+}
+
+/*--- Adjust Update Expression Types Form Modal Window ---*/
+
+#div_updateForm input#update-expression-type {
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	margin-left: 5px;
+}
+
+#div_updateForm input#update-expression-type:hover {
+	cursor: pointer;
+}
+
+#div_updateForm input#cancel-expression-type {
+	color: #FFFFFF;
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background: #1b76a9;
+	border: none;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	margin-left: 5px;
+	position: relative;
+	left: -120px;
+	float: none;
+}
+
+#div_updateForm input#cancel-expression-type:hover {
 	cursor: pointer;
 }
 
@@ -1499,5 +1537,20 @@ select#expressionTypeID {
 
 /*--- IE10 and IE11 Only ---*/
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-		{ property:value; }
+		{ }
 }
+
+/*--- Firefox Only ---*/
+
+@-moz-document url-prefix() {
+	#div_updateForm input#cancel-expression-type {
+		left: -110px;
+	}
+}
+
+/*--- Left Align Table Header Text ---*/
+
+table.dataTable th {
+	text-align: left;
+}
+

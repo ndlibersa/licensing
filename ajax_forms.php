@@ -1007,8 +1007,8 @@ switch ($_GET['action']) {
 
 
 		<tr>
-		<td style="padding-top:18px;width:60px;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitExpressionType();'></td>
-		<td style="padding-top:18px;padding-right:8px;text-align:right;"><input type='button' value='cancel' onclick="window.parent.tb_remove(); return false"></td>
+		<td style="padding-top:18px;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitExpressionType();' id='update-expression-type'></td>
+		<td style="padding-top:18px;padding-right:8px;text-align:right;"><input type='button' value='cancel' onclick="window.parent.tb_remove(); return false" id='cancel-expression-type'></td>
 		</tr>
 		</table>
 		</div>
