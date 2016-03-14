@@ -31,7 +31,7 @@ $(function(){
 					$("#span_error_licenseShortName").html("&nbsp;");
 					$("#submitLicense").removeAttr("disabled");
 				}else{
-				  $("#span_error_licenseShortName").html("This name is already being used!");
+				  $("#span_error_licenseShortName").html(_("This name is already being used!"));
 				  $("#submitLicense").attr("disabled","disabled");
 
 				}
@@ -54,7 +54,7 @@ $(function(){
 			 success:    function(exists) {
 				if (exists == "0"){
 					$("#licenseOrganizationID").val("");
-					$("#span_error_organizationNameResult").html("<br />Warning!  This organization will be added new.");
+					$("#span_error_organizationNameResult").html("<br />"+_("Warning!  This organization will be added new."));
 
 				}else{
 					$("#licenseOrganizationID").val(exists);
@@ -81,7 +81,6 @@ $(function(){
 	$("#organizationName").autocomplete('ajax_processing.php?action=getOrganizations', {
 		minChars: 2,
 		max: 50,
-		autoFill: true,
 		mustMatch: false,
 		width: 233,
 		delay: 20,
@@ -116,7 +115,7 @@ $(function(){
 				 success:    function(exists) {
 					if (exists == "0"){
 					        $("#licenseOrganizationID").val("");
-					        $("#span_error_organizationNameResult").html("<br />Warning!  This organization will be added new.");
+					        $("#span_error_organizationNameResult").html("<br />"+_("Warning!  This organization will be added new."));
 
 					}else{
 						$("#licenseOrganizationID").val(exists);
@@ -170,7 +169,7 @@ function doSubmitLicense(){
 
 //the following are only used when interoperability with organizations module is turned off
 function newConsortium(){
-  $('#span_newConsortium').html("<input type='text' name='newConsortium' id='newConsortium' class='licenseAddInput' />  <a href='javascript:addConsortium();'>add</a>");
+  $('#span_newConsortium').html("<input type='text' name='newConsortium' id='newConsortium' class='licenseAddInput' />  <a href='javascript:addConsortium();'>"+_("add")+"</a>");
 
 	 //attach enter key event to new input and call add data when hit
 	 $('#span_newConsortium').keyup(function(e) {
@@ -189,7 +188,7 @@ function addConsortium(){
 	 url:        "ajax_processing.php",
 	 cache:      false,
 	 data:       "action=addConsortium&shortName=" + $("#newConsortium").val(),
-	 success:    function(html) { $('#span_consortium').html(html); $('#span_newConsortium').html("<font color='red'>Consortium has been added</font>"); }
+	 success:    function(html) { $('#span_consortium').html(html); $('#span_newConsortium').html("<font color='red'>"+_("Consortium has been added")+"</font>"); }
  });
 }
 
@@ -198,8 +197,8 @@ function addConsortium(){
 //validates fields
 function validateForm (){
 	myReturn=0;
-	if (!validateRequired('licenseShortName','License Name is required.')) myReturn="1";
-	if (!validateRequired('organizationName','Provider is required.')) myReturn="1";
+	if (!validateRequired('licenseShortName',_("License Name is required."))) myReturn="1";
+	if (!validateRequired('organizationName',_("Provider is required."))) myReturn="1";
 
 	if (myReturn == "1"){
 		return false;

@@ -16,6 +16,7 @@ $installer->header('CORAL Maintenance');
   <?php $installer->displayErrorMessages(); ?>
   <h3>CORAL Licensing</h3>
 	<p>Your CORAL Licensing Module is correctly installed and there are no pending updates.</p>
+    <p><a href="..">Go to Licensing Module</a></p>
 <?php
 $installer->footer();
 ?>

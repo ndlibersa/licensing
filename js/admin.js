@@ -119,7 +119,7 @@
  function addData(tableName){
 
        if ($('#new' + tableName).val()) {
-       	       $('#span_' + tableName + "_response").html('<img src = "images/circle.gif">&nbsp;&nbsp;Processing...');
+       	       $('#span_' + tableName + "_response").html("<img src = 'images/circle.gif'>&nbsp;&nbsp;"+_("Processing..."));
        	       
 	       $.ajax({
 		  type:       "POST",
@@ -252,9 +252,9 @@ function submitQualifier(){
 
  function deleteData(tableName, deleteID){
  
- 	if (confirm("Do you really want to delete this data?") == true) {
+ 	if (confirm(_("Do you really want to delete this data?")) == true) {
 
-	       $('#span_' + tableName + "_response").html('<img src = "images/circle.gif">&nbsp;&nbsp;Processing...');
+	       $('#span_' + tableName + "_response").html("<img src = 'images/circle.gif'>&nbsp;&nbsp;"+_("Processing..."));
 	       $.ajax({
 		  type:       "GET",
 		  url:        "ajax_processing.php",
@@ -277,9 +277,9 @@ function submitQualifier(){
 
  function deleteUser(loginID){
  
- 	if (confirm("Do you really want to delete this user?") == true) {
+ 	if (confirm(_("Do you really want to delete this user?")) == true) {
 
-	       $('#span_User_response').html('<img src = "images/circle.gif">&nbsp;&nbsp;Processing...');
+	       $('#span_User_response').html("<img src = 'images/circle.gif'>&nbsp;&nbsp;"+_("Processing..."));
 	       $.ajax({
 		  type:       "GET",
 		  url:        "ajax_processing.php",
@@ -303,9 +303,9 @@ function submitQualifier(){
 
  function deleteExpressionType(deleteID){
  
- 	if (confirm("Do you really want to delete this expression type?  Any associated Qualifiers will be deleted as well.") == true) {
+ 	if (confirm(_("Do you really want to delete this expression type?  Any associated Qualifiers will be deleted as well.")) == true) {
 
-	       $("#span_ExpressionType_response").html('<img src = "images/circle.gif">&nbsp;&nbsp;Processing...');
+	       $("#span_ExpressionType_response").html("<img src = 'images/circle.gif'>&nbsp;&nbsp;"+_("Processing..."));
 	       $.ajax({
 		  type:       "GET",
 		  url:        "ajax_processing.php",
@@ -330,9 +330,9 @@ function submitQualifier(){
 
  function deleteQualifier(deleteID){
  
- 	if (confirm("Do you really want to delete this data?") == true) {
+ 	if (confirm(_("Do you really want to delete this data?")) == true) {
 
-	       $("#span_Qualifier_response").html('<img src = "images/circle.gif">&nbsp;&nbsp;Processing...');
+	       $("#span_Qualifier_response").html("<img src = 'images/circle.gif'>&nbsp;&nbsp;"+_("Processing..."));
 	       $.ajax({
 		  type:       "GET",
 		  url:        "ajax_processing.php",
@@ -354,7 +354,7 @@ function submitQualifier(){
   
  
 function showAdd(tableName){
-       $('#span_new' + tableName).html("<input type='text' name='new" + tableName + "' id='new" + tableName + "' class='adminAddInput' />  <a href='javascript:addData(\"" + tableName + "\");'>add</a>");
+       $('#span_new' + tableName).html("<input type='text' name='new" + tableName + "' id='new" + tableName + "' class='adminAddInput' />  <a href='javascript:addData(\"" + tableName + "\");'>"+_("add")+"</a>");
 
        //attach enter key event to new input and call add data when hit
        $('#new' + tableName).keyup(function(e) {

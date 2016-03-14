@@ -40,7 +40,7 @@ var numberOfRecords = 25;
 var startWith = '';
 
 function updateSearch(){
-      $("#div_feedback").html("<img src='images/circle.gif'> <span style='font-size:80%'>Processing...</span>");
+      $("#div_feedback").html("<img src='images/circle.gif'> <span style='font-size:80%'>"+_("Processing...")+"</span>");
       
 	
       $.ajax({

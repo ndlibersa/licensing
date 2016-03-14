@@ -32,7 +32,7 @@ $currentPage = $parts[count($parts) - 1];
 //this will redirect back to the actual license record
 if ((isset($_GET['editLicenseForm'])) && ($_GET['editLicenseForm'] == "Y")){
 	if (((isset($_GET['licenseShortName'])) && ($_GET['licenseShortName'] == "")) && ((isset($_GET['licenseOrganizationID'])) && ($_GET['licenseOrganizationID'] == ""))){
-		$err="<span style='color:red;text-align:left;'>Both license name and organization must be filled out.  Please try again.</span>";
+		$err="<span style='color:red;text-align:left;'>"._("Both license name and organization must be filled out.  Please try again.")."</span>";
 	}else{
 		$util->fixLicenseFormEnter($_GET['editLicenseID']);
 	}
@@ -58,14 +58,30 @@ $coralURL = $util->getCORALURL();
 <script type="text/javascript" src="js/plugins/jquery.js"></script>
 <script type="text/javascript" src="js/plugins/ajaxupload.3.5.js"></script>
 <script type="text/javascript" src="js/plugins/thickbox.js"></script>
-<script type="text/javascript" src="js/plugins/date.js"></script>
-<script type="text/javascript" src="js/plugins/jquery.datePicker.js"></script>
 <script type="text/javascript" src="js/plugins/jquery.autocomplete.js"></script>
 <script type="text/javascript" src="js/plugins/jquery.tooltip.js"></script>
+<script type="text/javascript" src="js/plugins/Gettext.js"></script>
+<?php
+    // Add translation for the JavaScript files
+    global $http_lang;
+    $str = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,2);
+    $default_l = $lang_name->getLanguage($str);
+    if($default_l==null || empty($default_l)){$default_l=$str;}
+    if(isset($_COOKIE["lang"])){
+        if($_COOKIE["lang"]==$http_lang && $_COOKIE["lang"] != "en_US"){
+            echo "<link rel='gettext' type='application/x-po' href='./locale/".$http_lang."/LC_MESSAGES/messages.po' />";
+        }
+    }else if($default_l==$http_lang && $default_l != "en_US"){
+            echo "<link rel='gettext' type='application/x-po' href='./locale/".$http_lang."/LC_MESSAGES/messages.po' />";
+    }
+?>
+<script type="text/javascript" src="js/plugins/translate.js"></script>
+<script type="text/javascript" src="js/plugins/date.js"></script>
+<script type="text/javascript" src="js/plugins/jquery.datePicker.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
 </head>
 <body id="licensing">
-<noscript><font face=arial>JavaScript must be enabled in order for you to use CORAL. However, it seems JavaScript is either disabled or not supported by your browser. To use CORAL, enable JavaScript by changing your browser options, then <a href="">try again</a>. </font></noscript>
+<noscript><font face='arial'><?php echo _("JavaScript must be enabled in order for you to use CORAL. However, it seems JavaScript is either disabled or not supported by your browser. To use CORAL, enable JavaScript by changing your browser options, then ");?><a href=""><?php echo _("try again");?></a>. </font></noscript>
 <!--center-->
 <div class="wrapper">
 <!--center-->
@@ -84,7 +100,7 @@ $coralURL = $util->getCORALURL();
 <div style='margin-top:1px;'>
 <span class='smallText' style='color:#526972;'>
 <?php
-	echo "Hello, ";
+	echo _("Hello, ");
 	//user may not have their first name / last name set up
 	if ($user->lastName){
 		echo $user->firstName . " " . $user->lastName;
@@ -93,7 +109,7 @@ $coralURL = $util->getCORALURL();
 	}
 ?>
 </span>
-<br /><?php if($config->settings->authModule == 'Y'){ echo "<a href='" . $coralURL . "auth/?logout' id='logout'>logout</a><span id='divider'> | </span><a href='https://js-erm-helps.bc.sirsidynix.net' id='help' target='_blank'>Help</a>"; } ?>
+<br /><?php if($config->settings->authModule == 'Y'){ echo "<a href='" . $coralURL . "auth/?logout' id='logout'>"._("logout")."</a><span id='divider'> | </span><a href='https://js-erm-helps.bc.sirsidynix.net' id='help' target='_blank'>Help</a>"; } ?>
 </div>
 </td>
 </tr>
@@ -118,46 +134,40 @@ if ($user->isAdmin()){ ?>
 //only show the 'Change Module' if there are other modules installed or if there is an index to the main CORAL page
 $config = new Configuration();
 
-if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->organizationsModule == 'Y') || ($config->settings->resourcesModule == 'Y') || ($config->settings->cancellationModule == 'Y') || ($config->settings->usageModule == 'Y')) {
+if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->organizationsModule == 'Y') || ($config->settings->resourcesModule == 'Y') || ($config->settings->managementModule == 'Y') || ($config->settings->usageModule == 'Y')) {
 
 	?>
 
-			<div style='text-align:left;'>
-					<ul class="tabs">
-					<li style="background: url('images/change/coral-change.gif') no-repeat right;">&nbsp;
-								<ul class="coraldropdown">
-										<?php if (file_exists($util->getCORALPath() . "index.php")) {?>
-										<li><a href="<?php echo $coralURL; ?>" target='_blank'><img src='images/change/coral-main.png'></a></li>
-										<?php
-										}
-										if ($config->settings->organizationsModule == 'Y') {
-										?>
-										<li><a href="<?php echo $coralURL; ?>organizations/" target='_blank'><img src='images/change/coral-organizations.png'></a></li>
-										<?php
-										}
-										if ($config->settings->resourcesModule == 'Y') {
-										?>
-										<li><a href="<?php echo $coralURL; ?>resources/" target='_blank'><img src='images/change/coral-resources.png'></a></li>
-										<?php
-										}
-										if ($config->settings->cancellationModule == 'Y') {
-										?>
-										<li><a href="<?php echo $coralURL; ?>cancellation/" target='_blank'><img src='images/change/coral-cancellation.png'></a></li>
-										<?php
-										}
-										if ($config->settings->usageModule == 'Y') {
-										?>
-										<li><a href="<?php echo $coralURL; ?>usage/" target='_blank'><img src='images/change/coral-usage.png'></a></li>
-										<?php
-										}
-										if ($config->settings->managementModule == 'Y') {
-										?>
-										<li><a href="<?php echo $coralURL; ?>management/" target='_blank'><img src='images/change/coral-management.png'></a></li>
-										<?php } ?>
-								</ul>
-					</li>
-					</ul>
-
+	<div style='text-align:left;'>
+		<ul class="tabs">
+		<li style="background: url('images/change/<?php echo $http_lang?>/coral-change.gif') no-repeat right;">&nbsp;
+			<ul class="coraldropdown">
+				<?php if (file_exists($util->getCORALPath() . "index.php")) {?>
+				<li><a href="<?php echo $coralURL; ?>" target='_blank'><img src='images/change/coral-main.png'></a></li>
+				<?php
+				}
+				if ($config->settings->licensingModule == 'Y') {
+				?>
+				<li><a href="<?php echo $coralURL; ?>licensing/" target='_blank'><img src='images/change/coral-licensing.png'></a></li>
+				<?php
+				}
+				if ($config->settings->organizationsModule == 'Y') {
+				?>
+				<li><a href="<?php echo $coralURL; ?>organizations/" target='_blank'><img src='images/change/coral-organizations.png'></a></li>
+				<?php
+				}
+				if ($config->settings->usageModule == 'Y') {
+				?>
+				<li><a href="<?php echo $coralURL; ?>usage/" target='_blank'><img src='images/change/coral-usage.png'></a></li>
+				<?php
+				}
+				if ($config->settings->managementModule == 'Y') {
+				?>
+				<li><a href="<?php echo $coralURL; ?>management/" target='_blank'><img src='images/change/coral-management.png'></a></li>
+				<?php } ?>
+			</ul>
+		</li>
+		</ul>
 	</div>
 	<?php
 
@@ -168,6 +178,61 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
 ?>
 
 </td>
-</tr>
+<td id="setLanguage">
+		<select name="lang" id="lang" class="dropDownLang">
+           <?php
+            // Get all translations on the 'locale' folder
+            $route='locale';
+            $lang[]="en_US"; // add default language
+            if (is_dir($route)) { 
+                if ($dh = opendir($route)) { 
+                    while (($file = readdir($dh)) !== false) {
+                        if (is_dir("$route/$file") && $file!="." && $file!=".."){
+                            $lang[]=$file;
+                        } 
+                    } 
+                    closedir($dh); 
+                } 
+            }else {
+                echo "<br>"._("Invalid translation route!"); 
+            }
+            // Get language of navigator
+            $defLang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,2);
+            
+            // Show an ordered list
+            sort($lang); 
+            for($i=0; $i<count($lang); $i++){
+                if(isset($_COOKIE["lang"])){
+                    if($_COOKIE["lang"]==$lang[$i]){
+                        echo "<option value='".$lang[$i]."' selected='selected'>".$lang_name->getNameLang(substr($lang[$i],0,2))."</option>";
+                    }else{
+                        echo "<option value='".$lang[$i]."'>".$lang_name->getNameLang(substr($lang[$i],0,2))."</option>";
+                    }
+                }else{
+                    if($defLang==substr($lang[$i],0,2)){
+                        echo "<option value='".$lang[$i]."' selected='selected'>".$lang_name->getNameLang(substr($lang[$i],0,2))."</option>";
+                    }else{
+                        echo "<option value='".$lang[$i]."'>".$lang_name->getNameLang(substr($lang[$i],0,2))."</option>";
+                    }
+                }
+            }
+            ?>
+            
+        </select>
+</td></tr>
 </table>
+	<script>
+        $("#lang").change(function() {
+            setLanguage($("#lang").val());
+            location.reload();
+        });
+        
+        function setLanguage(lang) {
+			var wl = window.location, now = new Date(), time = now.getTime();
+            var cookievalid=2592000000; // 30 days (1000*60*60*24*30)
+            time += cookievalid;
+			now.setTime(time);
+			document.cookie ='lang='+lang+';path=/'+';domain='+wl.host+';expires='+now;
+	    }
+    </script>
 <span id='span_message' style='color:red;text-align:left;'><?php if (isset($err)) echo $err; ?></span>
