@@ -146,9 +146,9 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
 				<li><a href="<?php echo $coralURL; ?>" target='_blank'><img src='images/change/coral-main.png'></a></li>
 				<?php
 				}
-				if ($config->settings->licensingModule == 'Y') {
+				if ($config->settings->resourcesModule == 'Y') {
 				?>
-				<li><a href="<?php echo $coralURL; ?>licensing/" target='_blank'><img src='images/change/coral-licensing.png'></a></li>
+				<li><a href="<?php echo $coralURL; ?>resources/" target='_blank'><img src='images/change/coral-resources.png'></a></li>
 				<?php
 				}
 				if ($config->settings->organizationsModule == 'Y') {
