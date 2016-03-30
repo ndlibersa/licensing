@@ -917,7 +917,7 @@ table.surroundBox table.noBorder {
 			margin: 15px !important;
 }
 
-#div_licenseForm table.thickboxTable input[type="button"] {
+/*#div_licenseForm table.thickboxTable input[type="button"] {
 			color: #FFFFFF;
 			font-family: "Arial", sans-serif;
 			font-size: 11px;
@@ -926,7 +926,7 @@ table.surroundBox table.noBorder {
 			border: none;
 			padding: 5px 10px;
 			text-transform: capitalize;
-}
+}*/
 
 /*--- My Queue Page Side Menu ---*/
 
@@ -1104,7 +1104,7 @@ table.thickboxTable .headerText {
 
 /*--- Adjust Document Upload Form Modal Window ---*/
 
-#div_uploadDoc input#submitDocument {
+/*#div_uploadDoc input#submitDocument {
 	color: #FFFFFF;
 	font-family: "Arial", sans-serif;
 	font-size: 11px;
@@ -1131,12 +1131,11 @@ table.thickboxTable .headerText {
 	text-transform: capitalize;
 	margin-left: 5px;
 	position: relative;
-	left: -82px;
 }
 
 #div_uploadDoc input[value=cancel]:hover {
 	cursor: pointer;
-}
+}*/
 
 /*--- Login Form Modal Window ---*/
 
@@ -1190,7 +1189,7 @@ table.thickboxTable .headerText {
 
 /*--- Adjust Document Upload Form Modal Window ---*/
 
-#div_expressionForm input#submitExpression {
+/*#div_expressionForm input#submitExpression {
 	color: #FFFFFF;
 	font-family: "Arial", sans-serif;
 	font-size: 11px;
@@ -1221,11 +1220,11 @@ table.thickboxTable .headerText {
 
 #div_expressionForm input[value=cancel]:hover {
 	cursor: pointer;
-}
+}*/
 
 /*--- Adjust Terms Tool Resource Link Form Modal Window ---*/
 
-#div_sfxForm input#submitSFX {
+/*#div_sfxForm input#submitSFX {
 	color: #FFFFFF;
 	font-family: "Arial", sans-serif;
 	font-size: 11px;
@@ -1252,16 +1251,15 @@ table.thickboxTable .headerText {
 	text-transform: capitalize;
 	margin-left: 5px;
 	position: relative;
-	left: -135px;
 }
 
 #div_sfxForm input[value=cancel]:hover {
 	cursor: pointer;
-}
+}*/
 
 /*--- Adjust Attachments Form Modal Window ---*/
 
-#div_attachmentForm input#submitAttachment {
+/*#div_attachmentForm input#submitAttachment {
 	color: #FFFFFF;
 	font-family: "Arial", sans-serif;
 	font-size: 11px;
@@ -1292,11 +1290,11 @@ table.thickboxTable .headerText {
 
 #div_attachmentForm input[value=cancel]:hover {
 	cursor: pointer;
-}
+}*/
 
 /*--- Adjust Update User/Qualifier/ Form Modal Window ---*/
 
-#div_updateForm input[value=Update] {
+/*#div_updateForm input[value=Update] {
 	color: #FFFFFF;
 	font-family: "Arial", sans-serif;
 	font-size: 11px;
@@ -1341,15 +1339,13 @@ table.thickboxTable .headerText {
 	text-transform: capitalize;
 	margin-left: 5px;
 	position: relative;
-	left: 4px;
-	top: -16px;
 }
 
 #div_updateForm input#update-user-cancel:hover {
 	cursor: pointer;
-}
+}*/
 
-#div_updateForm input#update-qualifier-cancel {
+/*#div_updateForm input#update-qualifier-cancel {
 	color: #FFFFFF;
 	font-family: "Arial", sans-serif;
 	font-size: 11px;
@@ -1364,11 +1360,11 @@ table.thickboxTable .headerText {
 
 #div_updateForm input#update-qualifier-cancel:hover {
 	cursor: pointer;
-}
+}*/
 
 /*--- Adjust Update Expression Types Form Modal Window ---*/
 
-#div_updateForm input#update-expression-type {
+/*#div_updateForm input#update-expression-type {
 	color: #FFFFFF;
 	font-family: "Arial", sans-serif;
 	font-size: 11px;
@@ -1401,11 +1397,11 @@ table.thickboxTable .headerText {
 
 #div_updateForm input#cancel-expression-type:hover {
 	cursor: pointer;
-}
+}*/
 
 /*--- Adjust Edit Calendar Settings Form Modal Window ---*/
 
-#div_updateForm input[value=Edit] {
+/*#div_updateForm input[value=Edit] {
 	color: #FFFFFF;
 	font-family: "Arial", sans-serif;
 	font-size: 11px;
@@ -1421,11 +1417,11 @@ table.thickboxTable .headerText {
 
 #div_updateForm input[value=Edit]:hover {
 	cursor: pointer;
-}
+}*/
 
 /*--- Add New User Modal Window ---*/
 
-#div_updateForm input[value=Add\ New] {
+/*#div_updateForm input[value=Add\ New] {
 	color: #FFFFFF;
 	font-family: "Arial", sans-serif;
 	font-size: 11px;
@@ -1440,11 +1436,11 @@ table.thickboxTable .headerText {
 
 #div_updateForm input[value=Add\ New]:hover {
 	cursor: pointer;
-}
+}*/
 
 /*--- Update User Modal Window (Edit Link) ---*/
 
-#div_updateForm a#updateButton {
+/*#div_updateForm a#updateButton {
 	color: #FFFFFF;
 	font-family: "Arial", sans-serif;
 	font-size: 11px;
@@ -1458,11 +1454,11 @@ table.thickboxTable .headerText {
 
 #div_updateForm a#updateButton:hover {
 	cursor: pointer;
-}
+}*/
 
 /*--- Close Buttons in All Forms ---*/
 
-#div_updateForm a#closeButton {
+/*#div_updateForm a#closeButton {
 	color: #FFFFFF;
 	font-family: "Arial", sans-serif;
 	font-size: 11px;
@@ -1517,7 +1513,7 @@ table.thickboxTable .headerText {
 
 #div_expressionNotesForm a#closeButton:hover {
 	cursor: pointer;
-}
+}*/
 
 /*--- Capitalize Add Links ---*/
 
@@ -1544,7 +1540,7 @@ select#expressionTypeID {
 
 @-moz-document url-prefix() {
 	#div_updateForm input#cancel-expression-type {
-		left: -110px;
+		/*left: -110px;*/
 	}
 }
 
@@ -1589,6 +1585,46 @@ select#lang {
     background-color: #fff;
 }
 
+/*--- Consistentcy for Form Buttons ---*/
+
+.submit-button,
+.cancel-button,
+.save-button
+ {
+    color: #FFFFFF;
+    font-family: "Arial", sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    background: #1b76a9;
+    border: none;
+    padding: 5px 10px;
+    text-transform: capitalize;
+    margin-left: 8px;
+    min-width: 60px;
+    margin-top: 10px;
+}
+
+.submit-button:hover,
+.cancel-button:hover,
+.save-button {
+    cursor: pointer;
+}
+
+.submit-button {
+    margin-left: 0;
+}
+
+#TB_ajaxContent table.thickboxTable tr:last-child {
+    display: inline-block;
+}
+
+a.submit-button,
+a.cancel-button,
+a.save-button
+ {
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+ }
 #setLanguage {
     vertical-align: middle;
 }
