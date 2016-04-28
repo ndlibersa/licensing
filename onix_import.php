@@ -10,7 +10,15 @@
 		}
 		return null;
 	}
-	session_start();
+	function simplexml_xpath_ns($element, $xpath, $xmlns)
+	{
+	    foreach ($xmlns as $prefix_uri)
+	    {
+	        list($prefix, $uri) = explode("=", $prefix_uri, 2);
+	        $element->registerXPathNamespace($prefix, $uri);
+	    }
+	    return $element->xpath($xpath);
+	}	session_start();
 	include_once 'directory.php';
 	$pageTitle=_('ONIX-PL Import');
 	include 'templates/header.php';
@@ -39,15 +47,26 @@
 				$licenseAgreement = "";
 				foreach($xml->LicenseDocumentText->TextElement as $licensetext)
 				{
-					$licenseAgreement .= $licensetext->Text . "\n\n";
+					$licenseAgreement .= html_entity_decode($licensetext->Text, ENT_QUOTES, "utf-8") . "\n\n";
 				}
 
-				//Save License Agreement and get IDs
-				print $xml->LicenseDetail->Description;
-				$licenseFile = fopen("documents/" . trim($xml->LicenseDetail->Description) . ".txt", "wb") or die (_("Unable to create file for license."));
-				fwrite($licenseFile, $licenseAgreement);
-				fclose($licenseFile);
-
+				//Save License Agreement to documents directory, create license, attachment, and attachmentFile records and get IDs
+				// $filename = trim($xml->LicenseDetail->Description);
+				// print $xml->LicenseDetail->Description;
+				// $licenseFile = fopen("documents/" . $filename . ".txt", "wb") or die (_("Unable to create file for license."));
+				// fwrite($licenseFile, $licenseAgreement);
+				// fclose($licenseFile);
+				// $licenseObj = new License();
+				// $licenseObj->shortName = $filename;
+				// $licenseObj->save();
+				// $licenseID = $licenseObj->primaryKey;
+				// $documentObj = new Document();
+				// $documentObj->shortName = $filename;
+				// $documentObj->documentTypeID = 3;
+				// $documentObj->licenseID = $licenseID;
+				// $documentObj->documentURL = $filename . ".txt";
+				// $documentObj->save();
+				// $documentID = $documentObj->primaryKey;
 
 				if($_POST['usageTerms'] === "on")
 				{
@@ -93,6 +112,16 @@
 							$qualifierObj->save();
 							$qualifierID = $qualifierObj->primaryKey;
 							$qualifierInserted++;
+						}
+						foreach($usage->LicenseTextLink as $licenseTextLink)
+						{
+							$path = '//TextElement[@id="' . $licenseTextLink["href"] . '"]';
+							$xmlns = ["n=http://www.editeur.org/onix-pl"];
+							$result = simplexml_xpath_ns($xml, '/n:PublicationsLicenseExpression', $xmlns);
+							//var_dump($result);
+							print $path . "<br/>";
+							echo $result[0]->Text->__toString();
+							print "<br/>";
 						}
 					}
 
