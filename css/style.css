@@ -1628,3 +1628,24 @@ a.save-button
 #setLanguage {
     vertical-align: middle;
 }
+
+#onixImportPage {
+	text-align: center;
+}
+#onixImportPage p {
+	margin-bottom: 15px;
+}
+
+#onixImportPage legend {
+	margin-bottom: 10px;
+	font-weight: bold;
+	width: 100%;
+}
+
+#onixImportPage fieldset {
+	margin-bottom: 20px;
+}
+
+#importOptions {
+	text-align: left;
+}
