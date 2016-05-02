@@ -39,29 +39,31 @@
 				$licenseAgreement = "";
 				foreach($xml->LicenseDocumentText->TextElement as $licenseText)
 				{
-					$licenseAgreement .= (string)$licenseText->Text . "\n\n";
+					$licenseAgreement .= "<p>" . preg_replace('~\R~u', "<br/>\n", (string)$licenseText->Text) . "</p>\n\n";
 					if((string)$licenseText['id'] !== "")
 					{
-						$textArray[(string)$licenseText['id']]=(string)$licenseText->Text;
+						$textArray[(string)$licenseText['id']]="<p>" . preg_replace('~\R~u', "<br/>", (string)$licenseText->Text) . "</p>";
 					}
 				}
 
 				//Save License Agreement to documents directory, create license, attachment, and attachmentFile records and get IDs
 				$filename = trim($xml->LicenseDetail->Description);
 				print $xml->LicenseDetail->Description;
-				$licenseFile = fopen("documents/" . $filename . ".txt", "wb") or die (_("Unable to create file for license."));
+				$licenseFile = fopen("documents/" . $filename . ".html", "wb") or die (_("Unable to create file for license."));
+				fwrite($licenseFile, "<html>\n<head>\n<meta charset='utf-8'/>\n</head>\n</body>");
 				fwrite($licenseFile, $licenseAgreement);
+				fwrite($licenseFile, "</body>\n</html>");
 				fclose($licenseFile);
 				$licenseObj = new License();
 				$licenseObj->shortName = $filename;
-				$licenseObj->organizationID = $_POST['licenseOrganizationID'];
+				$licenseObj->setOrganization($_POST['organizationID'], $_POST['organizationName']);
 				$licenseObj->save();
 				$licenseID = $licenseObj->primaryKey;
 				$documentObj = new Document();
 				$documentObj->shortName = $filename;
 				$documentObj->documentTypeID = 3;
 				$documentObj->licenseID = $licenseID;
-				$documentObj->documentURL = $filename . ".txt";
+				$documentObj->documentURL = $filename . ".html";
 				$documentObj->save();
 				$documentID = $documentObj->primaryKey;
 
@@ -332,97 +334,7 @@
 			</fieldset>
 			<input type="submit" name="submit" value="<?php echo _("Upload");?>" class="submit-button" />
 		</form>
-		<script type='text/javascript'>
-			$("#organizationName").keyup(function() {
-				  $.ajax({
-					 type:       "GET",
-					 url:        "ajax_processing.php",
-					 cache:      false,
-					 async:	     true,
-					 data:       "action=getExistingOrganizationName&shortName=" + $("#organizationName").val(),
-					 success:    function(exists) {
-						if (exists == "0"){
-							$("#licenseOrganizationID").val("");
-							$("#span_error_organizationNameResult").html("<br />"+_("Warning!  This organization will be added new."));
-
-						}else{
-							$("#licenseOrganizationID").val(exists);
-							$("#span_error_organizationNameResult").html("");
-
-						}
-					 }
-				  });
-			});	
-
-			//used for autocomplete formatting
-	        formatItem = function (row){ 
-	            return "<span style='font-size: 80%;'>" + row[1] + "</span>";
-	        }
-		 
-	        formatResult = function (row){ 
-	            return row[1].replace(/(<.+?>)/gi, '');
-	        }	
-
-			$("#organizationName").autocomplete('ajax_processing.php?action=getOrganizations', {
-				minChars: 2,
-				max: 50,
-				mustMatch: false,
-				width: 233,
-				delay: 20,
-				cacheLength: 10,
-				matchSubset: true,
-				matchContains: true,	
-				formatItem: formatItem,
-				formatResult: formatResult,
-				parse: function(data){
-				    var parsed = [];
-				    var rows = data.split("\n");
-				    for (var i=0; i < rows.length; i++) {
-				      var row = $.trim(rows[i]);
-				      if (row) {
-					row = row.split("|");
-					parsed[parsed.length] = {
-					  data: row,
-					  value: row[0],
-					  result: formatResult(row, row[0]) || row[0]
-					};
-				      }
-				    }
-
-				    if (parsed.length == 0) {
-
-					  $.ajax({
-						 type:       "GET",
-						 url:        "ajax_processing.php",
-						 cache:      false,
-						 async:	     true,
-						 data:       "action=getExistingOrganizationName&shortName=" + $("#organizationName").val(),
-						 success:    function(exists) {
-							if (exists == "0"){
-							        $("#licenseOrganizationID").val("");
-							        $("#span_error_organizationNameResult").html("<br />"+_("Warning!  This organization will be added new."));
-
-							}else{
-								$("#licenseOrganizationID").val(exists);
-								$("#span_error_organizationNameResult").html("");
-
-							}
-						 }
-					  });
-				    
-				    }
-				}		
-			 });
-		 
-			 
-			//once something has been selected, change the hidden input value
-			$("#organizationName").result(function(event, data, formatted) {
-				if (data[0]){
-					$("#licenseOrganizationID").val(data[0]);
-					$("#span_error_organizationNameResult").html("");
-				}
-			});
-		</script>
+		<script type="text/javascript" src="js/onix_import.js"></script>
 <?php
 	}
 ?>
