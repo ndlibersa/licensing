@@ -16,7 +16,6 @@
 ?>
 <div id="onixImportPage"><h1><?php echo _("ONIX-PL Import");?></h1>
 <?php
-	// CSV configuration
 	if ($_POST['submit'])
 	{
 		$expressionTypeInserted = 0;
@@ -311,7 +310,7 @@
 		<form enctype="multipart/form-data" action="onix_import.php" method="post" id="importForm">
 			<fieldset>
 				<legend><?php echo _("File selection");?></legend>
-				<label for="uploadFile"><?php echo _("CSV File");?></label>
+				<label for="uploadFile"><?php echo _("XML File");?></label>
 				<input type="file" name="uploadFile" id="uploadFile" />
 			</fieldset>
 			<fieldset>
