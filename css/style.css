@@ -1581,8 +1581,10 @@ a#help:before {
 
 select#lang {
     border: none;
-    margin-left: 10px;
+    margin-left: 6px;
     background-color: #fff;
+    position: relative;
+    top: 3px;
 }
 
 /*--- Consistentcy for Form Buttons ---*/
@@ -1648,4 +1650,34 @@ a.save-button
 
 #importOptions {
 	text-align: left;
+}
+
+/*--- ONIX-PL Page ---*/
+
+#importOptions{
+    display: inline-block;
+}
+
+#onixImportPage #importOptions input[type=checkbox] {
+    margin-right: 6px;
+}
+
+#onixImportPage #importOptions #organizationName {
+    width: 100%;
+}
+
+#onixImportPage #importOptions label.formText {
+    display: block;
+    text-align: center;
+}
+
+/*--- Main Menu Spacing Fixes ---*/
+
+table.titleTable #main-menu-titles img {
+	float: left;
+}
+
+span#divider {
+	position: relative;
+	top: 3px;
 }
