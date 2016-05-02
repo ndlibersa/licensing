@@ -91,7 +91,7 @@ $coralURL = $util->getCORALURL();
 <div style="text-align:left;">
 
 <!--center-->
-<table class="titleTable" style="background-image:url('images/licensingtitle.jpg');background-repeat:no-repeat;width:1115px;text-align:left;">
+<table class="titleTable" style="background-image:url('images/licensingtitle.jpg');background-repeat:no-repeat;width:1125px;text-align:left;">
 <tr style='vertical-align:top;'>
 <td style='height:53px;'>
 &nbsp;
