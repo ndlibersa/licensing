@@ -142,19 +142,21 @@ span.searchLetterSelected a:active{color:#3D545D;}
 
 /* The following is used for expression comparison page - due to IE issues
 *************************/
-.container {position: relative; width:800px; height: 30px; }
+.container {
+	width: 100%;
+	height: 30px;
+}
 
 .left-element {
-	width: 450px;
+	width: 50%;
 	margin-top: 10px;
 	float: left;
 }
 
 .right-element {
-	width: 400px;
+	width: 50%;
 	margin-top: 10px;
-	text-align: left;
-	float: right;
+	float: left;
 }	
 
 /* Coral Change Module Menu  -  tabs
