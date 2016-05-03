@@ -1585,6 +1585,7 @@ select#lang {
     background-color: #fff;
     position: relative;
     top: 3px;
+    font-size: 12px;
 }
 
 /*--- Consistentcy for Form Buttons ---*/
