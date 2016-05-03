@@ -143,11 +143,19 @@ span.searchLetterSelected a:active{color:#3D545D;}
 /* The following is used for expression comparison page - due to IE issues
 *************************/
 .container {position: relative; width:800px; height: 30px; }
-.left-element { position: absolute; left: 0; width: 400px; margin-top:10px; }
-.right-element {position: absolute; width: 400px; margin-left:400px; margin-top:10px; text-align: left; }
-		
-		
-		
+
+.left-element {
+	width: 450px;
+	margin-top: 10px;
+	float: left;
+}
+
+.right-element {
+	width: 400px;
+	margin-top: 10px;
+	text-align: left;
+	float: right;
+}	
 
 /* Coral Change Module Menu  -  tabs
 *************************/
@@ -551,7 +559,7 @@ table.borderedFormTable tr {vertical-align: top;}
 }
 
 .noBorder > tbody > tr > td:nth-child(1) {
-	width: 100px !important;
+	width: 130px !important;
 	padding-bottom: 20px;
 	padding-left: 20px;
 }
