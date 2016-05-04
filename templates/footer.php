@@ -1,7 +1,7 @@
 <?php
 /*
 **************************************************************************************************************************
-** CORAL Licensing Module v. 1.0
+** CORAL Licensing Module v. 1.4
 **
 ** Copyright (c) 2010 University of Notre Dame
 **
@@ -18,7 +18,7 @@
 ?>
 
 <br />
-<div class="footer">Copyright &copy; 2015. Licensing Module version 1.3<br/><a href="http://coral-erm.org/">CORAL Project Website</a> | <a href="https://github.com/ndlibersa/licensing">GitHub Site</a></div>
+<div class="footer">Copyright &copy; 2015. Licensing Module version 1.4<br/><a href="http://coral-erm.org/">CORAL Project Website</a> | <a href="https://github.com/ndlibersa/licensing">GitHub Site</a></div>
 </div>
 
 </td>
