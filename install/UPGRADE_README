@@ -1,4 +1,20 @@
-The following file contains notes on specific upgrades.  For full instructions on how to run an upgrade, refer to the technical documentation available at http://erm.library.nd.edu.
+The following file contains notes on specific upgrades.  For full instructions on how to run an upgrade, refer to the technical documentation available at http://coral-erm.org
+
+**************************************************************************************************
+****
+****
+****  UPGRADING FROM CORAL LICENSING VERSION 1.3 TO 1.4
+****
+****
+**************************************************************************************************
+
+This upgrade contains coding and no database structure changes.
+The 1.4 version includes:
+    * Licensing module can now be translated. The French translation is provided (but still need some polishing)
+    * some forms are now checked to prevent validating empty forms
+
+This version is the last one released as a single module. Next versions will be able from https://github.com/Coral-erm/Coral, the ndlibersa is deprecated.
+
 
 **************************************************************************************************
 ****
