@@ -55,6 +55,35 @@ class License extends DatabaseObject {
 		return $objects;
 	}
 
+	//returns array of Resource object - used for helpful links display on license record
+	public function getResourceArray() {
+		$config = new Configuration;
+		$dbName = $config->settings->resourcesDatabaseName;
+
+		if($config->settings->resourcesModule == 'Y') {
+
+			$resourceLicenseArray = array();
+
+			$query = "SELECT * FROM " . $dbName . ".ResourceLicenseLink WHERE licenseID = '" . $this->licenseID . "'";
+
+			$result = mysqli_query($this->db->getDatabase(), $query);
+
+			while ($row = mysqli_fetch_assoc($result)){
+				$resArray = array();
+
+				//first, get the resource name
+				$query = "SELECT resourceID, titleText FROM " . $dbName . ".Resource WHERE resourceID = " . $row['resourceID'];
+
+				$resResult = mysqli_query($this->db->getDatabase(), $query);
+				while($resRow = mysqli_fetch_assoc($resResult)) {
+					$resArray['resource'] = $resRow['titleText'];
+					$resArray['resourceID'] = $resRow['resourceID'];
+					array_push($resourceLicenseArray, $resArray);
+				}
+			}
+		}
+		return $resourceLicenseArray;
+	}
 
 	//returns array of Document objects (parent documents) - used for document display on license record
 	public function getDocumentsWithoutParents($orderBy){

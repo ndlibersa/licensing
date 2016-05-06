@@ -84,6 +84,10 @@ class Utility {
 		return $this->getCORALURL() . "organizations/orgDetail.php?organizationID=";
 	}
 
+	public function getResourceURL(){
+		return $this->getCORALURL() . "resources/resource.php?resourceID=";
+	}
+
 
 
 

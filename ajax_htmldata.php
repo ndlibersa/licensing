@@ -1557,7 +1557,34 @@ switch ($_GET['action']) {
 
 		break;
 
+	case 'getRightPanel':
+		$licenseID = $_GET['licenseID'];
+		$license = new License(new NamedArguments(array('primaryKey' => $licenseID)));
+		$config = new Configuration;
 
+		//get resources (already returned in array)
+		$resourceArray = $license->getResourceArray();
+
+		if ((count($resourceArray) > 0) && ($config->settings->resourcesModule == 'Y')) {
+
+		?>
+			<div style='background-color:white; width:219px; padding:7px;'>
+				<div class='rightPanelHeader'><?php echo _("Resources Module");?></div>
+
+				<?php
+				foreach ($resourceArray as $resource){
+					echo "<div class='rightPanelLink'><a href='" . $util->getResourceURL() . $resource['resourceID'] . "' target='_blank' class='helpfulLink'>" . $resource['resource'] . "</a></div>";
+				}
+
+				?>
+
+			</div>
+
+		<?php
+
+	}
+
+		break;
 
 	default:
        echo _("Action ") . $action . _(" not set up!");

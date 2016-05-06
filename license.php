@@ -55,10 +55,10 @@ if ($license->shortName){
 
 <input type='hidden' name='licenseID' id='licenseID' value='<?php echo $license->licenseID; ?>'>
 
-<div style="width: 899px;" id ='div_displayDocuments'>
+<div style="width: 1024px;" id ='div_displayDocuments'>
 	<table cellpadding="0" cellspacing="0" style="width: 100%;">
 		<tr>
-			<td class="sidemenu">
+			<td class="sidemenu" style='margin-right: 15px;'>
 				<div class="sidemenuselected" style='position: relative; width: 91px'><a href='javascript:void(0)' class='showDocuments'><?php echo _("Documents");?></a></div>
 				<div class='sidemenuunselected'><a href='javascript:void(0)' class='showExpressions'><?php echo _("Expressions");?></a></div>
 				<?php if ($displaySFX == "1"){ ?><div class='sidemenuunselected'><a href='javascript:void(0)' class='showSFXProviders'><?php echo _("Terms Tool");?></a></div><?php } ?>
@@ -71,6 +71,23 @@ if ($license->shortName){
 				</div>
 				<br />
 				<div id='div_archives'>
+				</div>
+			</td>
+			<td class='helpfulLinks'>
+				<div style='float:right; vertical-align:top; width:303px; text-align:left; padding:0; margin:0 0 0 15px; background-color:white;' id='div_fullRightPanel' class='rightPanel'>
+					<div style="background-image:url('images/helpfullinks-top.jpg');background-repeat:no-repeat;width:265px;text-align:left;padding:6px;margin:10px 19px 0px 19px;">
+						<div style='margin:29px 8px 0px 8px;' id='div_rightPanel'>
+						</div>
+					</div>
+					<div style="background-image:url('images/helpfullinks-bottom.jpg');background-repeat:no-repeat;width:265px;height:50px;padding:6px; margin:0px 19px 15px 19px;">
+						<?php if ($config->settings->feedbackEmailAddress != '') {?>
+							<div style='margin:0px 8px 10px 8px;'>
+								<div style='width:219px; padding:7px; margin-bottom:5px;'>
+									<a href="mailto: <?php echo $config->settings->feedbackEmailAddress; ?>?subject=<?php echo $resource->titleText . ' (Resource ID: ' . $resource->resourceID . ')'; ?>" class='helpfulLink'><?php echo _("Send feedback on this resource");?></a>
+								</div>
+							</div>
+						<?php } ?>
+					</div>
 				</div>
 			</td>
 		</tr>

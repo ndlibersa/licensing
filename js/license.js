@@ -25,6 +25,7 @@ $(document).ready(function(){
 	updateSFXProviders();
 	updateAttachmentsNumber();
       	updateAttachments();
+  updateRightPanel();
 
 
 	$('#div_displayDocuments').show();
@@ -154,6 +155,22 @@ $(document).ready(function(){
 
  }
 
+function updateRightPanel(){
+  $("#div_rightPanel").append("<img src='images/circle.gif' />  "+_("Refreshing Contents..."));
+  $.ajax({
+   type:       "GET",
+   url:        "ajax_htmldata.php",
+   cache:      false,
+   data:       "action=getRightPanel&licenseID=" + $("#licenseID").val(),
+   success:    function(html) {
+    $("#div_rightPanel").html(html + "&nbsp;");
+    
+   }
+
+
+  });
+
+} 
 
  function updateArchivedDocuments(showDisplayArchiveInd, showChildrenDocumentID){
 
