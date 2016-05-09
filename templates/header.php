@@ -162,95 +162,154 @@ $coralURL = $util->getCORALURL();
 <td style='width:870px;height:19px;' id='main-menu-titles' colspan="2">
 <?php
 if ($user->isAdmin()) { ?>
-	<a href='index.php'>
-        <img src="images/menu/<?php echo $http_lang?>/menu-home<?php if ($currentPage == 'index.php') { echo "-on"; } ?>.gif" hover="images/menu/<?php echo $http_lang?>/menu-home-over.gif" class="rollover" />
+
+    <a href='index.php'>
+        <div class="main-menu-link <?php if ($currentPage == 'index.php') { echo "active"; } ?>">
+            <img src="images/menu/icon-home.png" />
+            <span>Home</span>
+        </div>
     </a>
-    <img src='images/menu/menu-bar.gif'>
+
     <a href='ajax_forms.php?action=getLicenseForm&height=265&width=260&modal=true&newLicenseID=' class='thickbox' id='newLicense'>
-        <img src='images/menu/<?php echo $http_lang?>/menu-newlicense.gif' hover="images/menu/<?php echo $http_lang?>/menu-newlicense-over.gif" class="rollover">
+        <div class="main-menu-link">
+            <img src="images/menu/icon-plus-square.png" />
+            <span>New License</span>
+        </div>
     </a>
-    <img src='images/menu/menu-bar.gif'>
+
     <a href='in_progress.php'>
-        <img src="images/menu/<?php echo $http_lang?>/menu-licensesinprogress<?php if ($currentPage == 'in_progress.php') { echo "-on"; } ?>.gif" hover="images/menu/<?php echo $http_lang?>/menu-licensesinprogress-over.gif" class="rollover" />
+        <div class="main-menu-link <?php if ($currentPage == 'in_progress.php') { echo "active"; } ?>">
+            <img src="images/menu/icon-license-progress.png" />
+            <span>License In Progress</span>
+        </div>
     </a>
-    <img src='images/menu/menu-bar.gif'>
+
     <a href='compare.php'>
-        <img src="images/menu/<?php echo $http_lang?>/menu-expressioncomparison<?php if ($currentPage == 'compare.php') { echo "-on"; } ?>.gif" hover="images/menu/<?php echo $http_lang?>/menu-expressioncomparison-over.gif" class="rollover" />
-    </a>
+        <div class="main-menu-link <?php if ($currentPage == 'compare.php') { echo "active"; } ?>">
+            <img src="images/menu/icon-expression.png" />
+            <span>Expression Comparison</span>
+        </div>
+    </a>    
+
     <?php if (($config->settings->resourcesModule == 'Y') && (strlen($config->settings->resourcesDatabaseName) > 0)) { ?>
-        <img src='images/menu/menu-bar.gif'>
         <a href='calendar.php'>
-            <img src="images/menu/<?php echo $http_lang?>/menu-calendar<?php if ($currentPage == 'calendar.php') { echo "-on"; } ?>.gif" hover="images/menu/<?php echo $http_lang?>/menu-calendar-over.gif" class="rollover" />
-        </a>
+            <div class="main-menu-link <?php if ($currentPage == 'calendar.php') { echo "active"; } ?>">
+                <img src="images/menu/icon-calendar.png" />
+                <span>Calendar</span>
+            </div>
+        </a>  
     <?php } ?>
-    <img src='images/menu/menu-bar.gif'>
+
     <a href='onix_import.php'>
-        <img src="images/menu/<?php echo $http_lang?>/menu-onix<?php if ($currentPage == 'onix_import.php') { echo "-on"; } ?>.gif" hover="images/menu/<?php echo $http_lang?>/menu-onix-over.gif" class="rollover" />
-    </a>
-    <img src='images/menu/menu-bar.gif'>
+        <div class="main-menu-link <?php if ($currentPage == 'onix_import.php') { echo "active"; } ?>">
+            <img src="images/menu/icon-import.png" />
+            <span>ONIX-PL File Import</span>
+        </div>
+    </a> 
+
     <a href='admin.php'>
-        <img src='images/menu/<?php echo $http_lang?>/menu-admin<?php if ($currentPage == 'admin.php') { echo "-on"; } ?>.gif' hover="images/menu/<?php echo $http_lang?>/menu-admin-over.gif" id="menu-last" class="rollover" />
-    </a>
+        <div class="main-menu-link <?php if ($currentPage == 'admin.php') { echo "active"; } ?>">
+            <img src="images/menu/icon-admin.png" />
+            <span>Admin</span>
+        </div>
+    </a>     
+
 <?php
 }
 else if ($user->canEdit()) { ?>
-	<a href='index.php'>
-        <img src="images/menu/<?php echo $http_lang?>/menu-home<?php if ($currentPage == 'index.php') { echo "-on"; } ?>.gif" hover="images/menu/<?php echo $http_lang?>/menu-home-over.gif" class="rollover" />
+    
+    <a href='index.php'>
+        <div class="main-menu-link <?php if ($currentPage == 'index.php') { echo "active"; } ?>">
+            <img src="images/menu/icon-home.png" />
+            <span>Home</span>
+        </div>
     </a>
-    <img src='images/menu/menu-bar.gif'>
+
     <a href='ajax_forms.php?action=getLicenseForm&height=265&width=260&modal=true&newLicenseID=' class='thickbox' id='newLicense'>
-        <img src='images/menu/<?php echo $http_lang?>/menu-newlicense.gif' hover="images/menu/<?php echo $http_lang?>/menu-newlicense-over.gif" class="rollover">
+        <div class="main-menu-link">
+            <img src="images/menu/icon-plus-square.png" />
+            <span>New License</span>
+        </div>
     </a>
-    <img src='images/menu/menu-bar.gif'>
+
     <a href='in_progress.php'>
-        <img src="images/menu/<?php echo $http_lang?>/menu-licensesinprogress<?php if ($currentPage == 'in_progress.php') { echo "-on"; } ?>.gif" hover="images/menu/<?php echo $http_lang?>/menu-licensesinprogress-over.gif" class="rollover" />
+        <div class="main-menu-link <?php if ($currentPage == 'in_progress.php') { echo "active"; } ?>">
+            <img src="images/menu/icon-license-progress.png" />
+            <span>License In Progress</span>
+        </div>
     </a>
-    <img src='images/menu/menu-bar.gif'>
+
     <a href='compare.php'>
-        <img src="images/menu/<?php echo $http_lang?>/menu-expressioncomparison<?php if ($currentPage == 'compare.php') { echo "-on"; } ?>.gif" hover="images/menu/<?php echo $http_lang?>/menu-expressioncomparison-over.gif" id="menu-last" class="rollover" />
-    </a>
+        <div class="main-menu-link <?php if ($currentPage == 'compare.php') { echo "active"; } ?>">
+            <img src="images/menu/icon-expression.png" />
+            <span>Expression Comparison</span>
+        </div>
+    </a>    
+
     <?php if (($config->settings->resourcesModule == 'Y') && (strlen($config->settings->resourcesDatabaseName) > 0)) { ?>
-        <img src='images/menu/menu-bar.gif'>
         <a href='calendar.php'>
-            <img src="images/menu/<?php echo $http_lang?>/menu-calendar<?php if ($currentPage == 'calendar.php') { echo "-on"; } ?>.gif" hover="images/menu/<?php echo $http_lang?>/menu-calendar-over.gif" class="rollover" />
-        </a>
+            <div class="main-menu-link <?php if ($currentPage == 'calendar.php') { echo "active"; } ?>">
+                <img src="images/menu/icon-calendar.png" />
+                <span>Calendar</span>
+            </div>
+        </a>  
     <?php } ?>
-    <img src='images/menu/menu-bar.gif'>
+
     <a href='onix_import.php'>
-        <img src="images/menu/<?php echo $http_lang?>/menu-onix<?php if ($currentPage == 'onix_import.php') { echo "-on"; } ?>.gif" hover="images/menu/<?php echo $http_lang?>/menu-onix-over.gif" class="rollover" />
-    </a>
+        <div class="main-menu-link <?php if ($currentPage == 'onix_import.php') { echo "active"; } ?>">
+            <img src="images/menu/icon-import.png" />
+            <span>ONIX-PL File Import</span>
+        </div>
+    </a> 
+
 <?php
 }
 else { ?>
-	<a href='index.php'>
-        <img src="images/menu/<?php echo $http_lang?>/menu-home<?php if ($currentPage == 'index.php') { echo "-on"; } ?>.gif" hover="images/menu/<?php echo $http_lang?>/menu-home-over.gif" class="rollover" />
+
+    <a href='index.php'>
+        <div class="main-menu-link <?php if ($currentPage == 'index.php') { echo "active"; } ?>">
+            <img src="images/menu/icon-home.png" />
+            <span>Home</span>
+        </div>
     </a>
-    <img src='images/menu/menu-bar.gif'>
+
     <a href='ajax_forms.php?action=getLicenseForm&height=265&width=260&modal=true&newLicenseID=' class='thickbox' id='newLicense'>
-        <img src='images/menu/<?php echo $http_lang?>/menu-newlicense.gif' hover="images/menu/<?php echo $http_lang?>/menu-newlicense-over.gif" class="rollover">
+        <div class="main-menu-link">
+            <img src="images/menu/icon-plus-square.png" />
+            <span>New License</span>
+        </div>
     </a>
-    <img src='images/menu/menu-bar.gif'>
+
     <a href='in_progress.php'>
-        <img src="images/menu/<?php echo $http_lang?>/menu-licensesinprogress<?php if ($currentPage == 'in_progress.php') { echo "-on"; } ?>.gif" hover="images/menu/<?php echo $http_lang?>/menu-licensesinprogress-over.gif" class="rollover" />
+        <div class="main-menu-link <?php if ($currentPage == 'in_progress.php') { echo "active"; } ?>">
+            <img src="images/menu/icon-license-progress.png" />
+            <span>License In Progress</span>
+        </div>
     </a>
-    <img src='images/menu/menu-bar.gif'>
+
     <a href='compare.php'>
-        <img src="images/menu/<?php echo $http_lang?>/menu-expressioncomparison<?php if ($currentPage == 'compare.php') { echo "-on"; } ?>.gif" hover="images/menu/<?php echo $http_lang?>/menu-expressioncomparison-over.gif" class="rollover" />
-    </a>
+        <div class="main-menu-link <?php if ($currentPage == 'compare.php') { echo "active"; } ?>">
+            <img src="images/menu/icon-expression.png" />
+            <span>Expression Comparison</span>
+        </div>
+    </a>    
+
     <?php if (($config->settings->resourcesModule == 'Y') && (strlen($config->settings->resourcesDatabaseName) > 0)) { ?>
-        <img src='images/menu/menu-bar.gif'>
         <a href='calendar.php'>
-            <img src="images/menu/<?php echo $http_lang?>/menu-calendar<?php if ($currentPage == 'calendar.php') { echo "-on"; } ?>.gif" hover="images/menu/<?php echo $http_lang?>/menu-calendar-over.gif" class="rollover" />
-        </a>
+            <div class="main-menu-link <?php if ($currentPage == 'calendar.php') { echo "active"; } ?>">
+                <img src="images/menu/icon-calendar.png" />
+                <span>Calendar</span>
+            </div>
+        </a>  
     <?php } ?>
-    <img src='images/menu/menu-bar.gif'>
+
     <a href='onix_import.php'>
-        <img src="images/menu/<?php echo $http_lang?>/menu-onix<?php if ($currentPage == 'onix_import.php') { echo "-on"; } ?>.gif" hover="images/menu/<?php echo $http_lang?>/menu-onix-over.gif" class="rollover" />
-    </a>
-    <img src='images/menu/menu-bar.gif'>
-    <a href='admin.php'>
-        <img src='images/menu/<?php echo $http_lang?>/menu-admin<?php if ($currentPage == 'admin.php') { echo "-on"; } ?>.gif' hover="images/menu/<?php echo $http_lang?>/menu-admin-over.gif" id="menu-last" class="rollover" />
-    </a>
+        <div class="main-menu-link <?php if ($currentPage == 'onix_import.php') { echo "active"; } ?>">
+            <img src="images/menu/icon-import.png" />
+            <span>ONIX-PL File Import</span>
+        </div>
+    </a> 
+
 <?php
 } ?>
 </td>
@@ -267,30 +326,31 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
 
 	<div style='text-align:left;'>
 		<ul class="tabs">
-		<li style="background: url('images/change/<?php echo $http_lang?>/coral-change.gif') no-repeat right;">&nbsp;
+<!-- 		<li style="background: url('images/change/<?php echo $http_lang?>/coral-change.gif') no-repeat right;">
+ -->        <li id="change-mod-menu"><img src="images/change/icon-change-mod.png" /><span>Change Module</span><i class="fa fa-chevron-down"></i>
 			<ul class="coraldropdown">
 				<?php if (file_exists($util->getCORALPath() . "index.php")) {?>
-				<li><a href="<?php echo $coralURL; ?>" target='_blank'><img src='images/change/coral-main.png'></a></li>
+				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>" target='_blank'><img src='images/change/icon-mod-main.png'><span>Main Menu</span></a></li>
 				<?php
 				}
 				if ($config->settings->resourcesModule == 'Y') {
 				?>
-				<li><a href="<?php echo $coralURL; ?>resources/" target='_blank'><img src='images/change/coral-resources.png'></a></li>
+				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>resources/" target='_blank'><img src='images/change/icon-mod-resources.png'><span>Resources</span></a></li>
 				<?php
 				}
 				if ($config->settings->organizationsModule == 'Y') {
 				?>
-				<li><a href="<?php echo $coralURL; ?>organizations/" target='_blank'><img src='images/change/coral-organizations.png'></a></li>
+				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>organizations/" target='_blank'><img src='images/change/icon-mod-organizations.png'><span>Organizations</span></a></li>
 				<?php
 				}
 				if ($config->settings->usageModule == 'Y') {
 				?>
-				<li><a href="<?php echo $coralURL; ?>usage/" target='_blank'><img src='images/change/coral-usage.png'></a></li>
+				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>usage/" target='_blank'><img src='images/change/icon-mod-usage.png'><span>Usage Staistics</span></a></li>
 				<?php
 				}
 				if ($config->settings->managementModule == 'Y') {
 				?>
-				<li><a href="<?php echo $coralURL; ?>management/" target='_blank'><img src='images/change/coral-management.png'></a></li>
+				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>management/" target='_blank'><img src='images/change/icon-mod-management.png'><span>Management</span></a></li>
 				<?php } ?>
 			</ul>
 		</li>
