@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2016-05-03 11:10-0600\n"
+"POT-Creation-Date: 2016-05-09 16:33-0600\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Paul Poulain <paul.poulain@biblibre.com>\n"
 "Language-Team: \n"
@@ -12,6 +12,7 @@ msgstr ""
 "X-Generator: Poedit 1.8.7\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ../../..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: js/admin.js:122 js/admin.js:257 js/admin.js:282 js/admin.js:308
@@ -50,7 +51,7 @@ msgstr "Le nom du fichier est déjà utilisé..."
 msgid "The attachments directory is not writable."
 msgstr "Le dossier des pièces jointes n'a pas de droits d'écriture."
 
-#: js/forms/attachmentForm.js:84 js/forms/documentForm.js:134 js/license.js:440
+#: js/forms/attachmentForm.js:84 js/forms/documentForm.js:134 js/license.js:457
 msgid " successfully uploaded."
 msgstr " téléchargé avec succès."
 
@@ -138,27 +139,31 @@ msgstr "Voulez-vous vraiment supprimer cette signature ?"
 msgid "SignatureType has been added"
 msgstr "Type de signature ajouté"
 
-#: js/license.js:102
+#: js/license.js:103
 msgid "Do you really want to delete this license?"
 msgstr "Voulez-vous vraiment supprimer cette licence ?"
 
-#: js/license.js:262
+#: js/license.js:159
+msgid "Refreshing Contents..."
+msgstr "Actualisation des contenus en cours..."
+
+#: js/license.js:279
 msgid " record)"
 msgstr " fiche)"
 
-#: js/license.js:264
+#: js/license.js:281
 msgid " records)"
 msgstr " fiches)"
 
-#: js/license.js:297
+#: js/license.js:314
 msgid "Do you really want to archive this document?"
 msgstr "Voulez-vous vraiment archiver ce document ?"
 
-#: js/license.js:315
+#: js/license.js:332
 msgid "Do you really want to delete this document?"
 msgstr "Voulez-vous vraiment supprimer ce document ?"
 
-#: js/license.js:322
+#: js/license.js:339
 msgid ""
 "There was a problem with deleting the document.  You may not delete a "
 "document if there are associated expressions.  Remove all expressions and "
@@ -168,11 +173,11 @@ msgstr ""
 "supprimer un document s'il contient des expressions associées. Retirez "
 "toutes les expressions et essayez à nouveau."
 
-#: js/license.js:336
+#: js/license.js:353
 msgid "Do you really want to delete this expression?"
 msgstr "Voulez-vous vraiment supprimer cette expression ?"
 
-#: js/license.js:351
+#: js/license.js:368
 msgid ""
 "Do you really want to delete this attachment?  This will also delete all "
 "attached files."
@@ -180,12 +185,12 @@ msgstr ""
 "Voulez-vous vraiment supprimer cette pièce jointe ? Cette opération "
 "supprimera également tous les fichiers rattachés."
 
-#: js/license.js:368
+#: js/license.js:385
 msgid "Do you really want to delete this terms tool resource link?"
 msgstr ""
 "Voulez-vous vraiment supprimer ce lien vers l'outil de ressource des termes ?"
 
-#: js/license.js:408 js/license.js:438
+#: js/license.js:425 js/license.js:455
 msgid "File name is already being used."
 msgstr "Ce nom de fichier est déjà utilisé."
 
@@ -395,7 +400,7 @@ msgstr "Ajouter un utilisateur"
 
 #: admin.php:39 admin.php:56 admin.php:70 admin.php:83 admin.php:97
 #: admin.php:112 admin.php:132 admin.php:153 admin.php:167 in_progress.php:38
-#: license.php:70 license.php:94 license.php:113 license.php:133
+#: license.php:70 license.php:111 license.php:130 license.php:150
 msgid "Loading..."
 msgstr "Chargement en cours..."
 
@@ -601,8 +606,8 @@ msgstr "Valider la modification"
 msgid "edit"
 msgstr "Modifier"
 
-#: ajax_forms.php:546 license.php:63 license.php:87 license.php:107
-#: license.php:126
+#: ajax_forms.php:546 license.php:63 license.php:104 license.php:124
+#: license.php:143
 msgid "Expressions"
 msgstr "Expressions"
 
@@ -634,8 +639,8 @@ msgstr "Remarques"
 msgid "For Document Text:"
 msgstr "Pour le texte du document :"
 
-#: ajax_forms.php:789 license.php:65 license.php:89 license.php:109
-#: license.php:128
+#: ajax_forms.php:789 license.php:65 license.php:106 license.php:126
+#: license.php:145
 msgid "Attachments"
 msgstr "Pièces jointes"
 
@@ -770,11 +775,11 @@ msgstr "Qualificateur"
 msgid "For Expression Type"
 msgstr "Pour le type d'expression"
 
-#: ajax_forms.php:1196 ajax_htmldata.php:1563 ajax_processing.php:1172
+#: ajax_forms.php:1196 ajax_htmldata.php:1590 ajax_processing.php:1172
 msgid "Action "
 msgstr "Action"
 
-#: ajax_forms.php:1196 ajax_htmldata.php:1563 ajax_processing.php:1172
+#: ajax_forms.php:1196 ajax_htmldata.php:1590 ajax_processing.php:1172
 msgid " not set up!"
 msgstr " Non défini !"
 
@@ -1031,6 +1036,10 @@ msgstr "Paramètre"
 msgid "Limit by Qualifier:"
 msgstr "Restreindre par qualificateur :"
 
+#: ajax_htmldata.php:1572
+msgid "Resources Module"
+msgstr "Module Ressources"
+
 #: ajax_processing.php:96
 msgid "License successfully deleted."
 msgstr "Licence supprimée avec succès."
@@ -1151,11 +1160,13 @@ msgstr "Fichier de la pièce jointe supprimé avec succès."
 msgid "Status has been updated"
 msgstr "Statut mis à jour"
 
-#: calendar.php:21 in_progress.php:23 index.php:23
+#: calendar.php:21 in_progress.php:23 index.php:23 templates/header.php:169
+#: templates/header.php:224 templates/header.php:272
 msgid "Home"
 msgstr "Accueil"
 
-#: calendar.php:34
+#: calendar.php:34 templates/header.php:198 templates/header.php:253
+#: templates/header.php:301
 msgid "Calendar"
 msgstr "Calendrier"
 
@@ -1220,7 +1231,8 @@ msgstr " jours "
 msgid "Participants:  "
 msgstr "Participants :"
 
-#: compare.php:22
+#: compare.php:22 templates/header.php:190 templates/header.php:245
+#: templates/header.php:293
 msgid "Expression Comparison"
 msgstr "Comparaison des expressions"
 
@@ -1268,13 +1280,17 @@ msgstr "Type de document"
 msgid "Starts with"
 msgstr "Commençant par"
 
-#: license.php:62 license.php:86 license.php:106 license.php:125
+#: license.php:62 license.php:103 license.php:123 license.php:142
 msgid "Documents"
 msgstr "Documents"
 
-#: license.php:64 license.php:88 license.php:108 license.php:127
+#: license.php:64 license.php:105 license.php:125 license.php:144
 msgid "Terms Tool"
 msgstr "Outil des termes"
+
+#: license.php:86
+msgid "Send feedback on this resource"
+msgstr ""
 
 #: not_available.php:21
 msgid "Not Available"
@@ -1367,6 +1383,46 @@ msgstr "Se déconnecter"
 msgid "Invalid translation route!"
 msgstr "Chemin vers les traductions invalide !"
 
+#: templates/header.php:176 templates/header.php:231 templates/header.php:279
+msgid "New License"
+msgstr "Ajouter une nouvelle licence"
+
+#: templates/header.php:183 templates/header.php:238 templates/header.php:286
+msgid "License In Progress"
+msgstr "Licences en cours"
+
+#: templates/header.php:206 templates/header.php:261 templates/header.php:309
+msgid "ONIX-PL File Import"
+msgstr "ONIX-PL Importer"
+
+#: templates/header.php:213
+msgid "Admin"
+msgstr "Admin"
+
+#: templates/header.php:330
+msgid "Change Module"
+msgstr "Changer de module"
+
+#: templates/header.php:333
+msgid "Main Menu"
+msgstr "Menu principal"
+
+#: templates/header.php:338
+msgid "Resources"
+msgstr "Ressources"
+
+#: templates/header.php:343
+msgid "Organizations"
+msgstr "Organisations"
+
+#: templates/header.php:348
+msgid "Usage Staistics"
+msgstr "Statistiques d'utilisation"
+
+#: templates/header.php:353
+msgid "Management"
+msgstr "Gestion"
+
 #: terms_report.php:22
 msgid "Terms Report"
 msgstr "Rapport des termes"
@@ -1380,20 +1436,11 @@ msgstr "Rapport des termes"
 #~ msgid "You have not been set up to have access to the Licensing Module."
 #~ msgstr "Vous n'avez pas configuré l'accès au Module de Licences."
 
-#~ msgid "New License"
-#~ msgstr "Ajouter une nouvelle licence"
-
 #~ msgid "Licenses in Progress"
 #~ msgstr "Licences en cours"
 
 #~ msgid "Expression Comparision"
 #~ msgstr "Comparaison d'expressions"
-
-#~ msgid "Admin"
-#~ msgstr "Admin"
-
-#~ msgid "Change Module"
-#~ msgstr "Changer de module"
 
 #~ msgid "French, FR"
 #~ msgstr "Français, FR"

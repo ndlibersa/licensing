@@ -166,28 +166,28 @@ if ($user->isAdmin()) { ?>
     <a href='index.php'>
         <div class="main-menu-link <?php if ($currentPage == 'index.php') { echo "active"; } ?>">
             <img src="images/menu/icon-home.png" />
-            <span>Home</span>
+            <span><?php echo _("Home");?></span>
         </div>
     </a>
 
     <a href='ajax_forms.php?action=getLicenseForm&height=265&width=260&modal=true&newLicenseID=' class='thickbox' id='newLicense'>
         <div class="main-menu-link">
             <img src="images/menu/icon-plus-square.png" />
-            <span>New License</span>
+            <span><?php echo _("New License");?></span>
         </div>
     </a>
 
     <a href='in_progress.php'>
         <div class="main-menu-link <?php if ($currentPage == 'in_progress.php') { echo "active"; } ?>">
             <img src="images/menu/icon-license-progress.png" />
-            <span>License In Progress</span>
+            <span><?php echo _("License In Progress");?></span>
         </div>
     </a>
 
     <a href='compare.php'>
         <div class="main-menu-link <?php if ($currentPage == 'compare.php') { echo "active"; } ?>">
             <img src="images/menu/icon-expression.png" />
-            <span>Expression Comparison</span>
+            <span><?php echo _("Expression Comparison");?></span>
         </div>
     </a>    
 
@@ -195,7 +195,7 @@ if ($user->isAdmin()) { ?>
         <a href='calendar.php'>
             <div class="main-menu-link <?php if ($currentPage == 'calendar.php') { echo "active"; } ?>">
                 <img src="images/menu/icon-calendar.png" />
-                <span>Calendar</span>
+                <span><?php echo _("Calendar");?></span>
             </div>
         </a>  
     <?php } ?>
@@ -203,14 +203,14 @@ if ($user->isAdmin()) { ?>
     <a href='onix_import.php'>
         <div class="main-menu-link <?php if ($currentPage == 'onix_import.php') { echo "active"; } ?>">
             <img src="images/menu/icon-import.png" />
-            <span>ONIX-PL File Import</span>
+            <span><?php echo _("ONIX-PL File Import");?></span>
         </div>
     </a> 
 
     <a href='admin.php'>
         <div class="main-menu-link <?php if ($currentPage == 'admin.php') { echo "active"; } ?>">
             <img src="images/menu/icon-admin.png" />
-            <span>Admin</span>
+            <span><?php echo _("Admin");?></span>
         </div>
     </a>     
 
@@ -221,28 +221,28 @@ else if ($user->canEdit()) { ?>
     <a href='index.php'>
         <div class="main-menu-link <?php if ($currentPage == 'index.php') { echo "active"; } ?>">
             <img src="images/menu/icon-home.png" />
-            <span>Home</span>
+            <span><?php echo _("Home");?></span>
         </div>
     </a>
 
     <a href='ajax_forms.php?action=getLicenseForm&height=265&width=260&modal=true&newLicenseID=' class='thickbox' id='newLicense'>
         <div class="main-menu-link">
             <img src="images/menu/icon-plus-square.png" />
-            <span>New License</span>
+            <span><?php echo _("New License");?></span>
         </div>
     </a>
 
     <a href='in_progress.php'>
         <div class="main-menu-link <?php if ($currentPage == 'in_progress.php') { echo "active"; } ?>">
             <img src="images/menu/icon-license-progress.png" />
-            <span>License In Progress</span>
+            <span><?php echo _("License In Progress");?></span>
         </div>
     </a>
 
     <a href='compare.php'>
         <div class="main-menu-link <?php if ($currentPage == 'compare.php') { echo "active"; } ?>">
             <img src="images/menu/icon-expression.png" />
-            <span>Expression Comparison</span>
+            <span><?php echo _("Expression Comparison");?></span>
         </div>
     </a>    
 
@@ -250,7 +250,7 @@ else if ($user->canEdit()) { ?>
         <a href='calendar.php'>
             <div class="main-menu-link <?php if ($currentPage == 'calendar.php') { echo "active"; } ?>">
                 <img src="images/menu/icon-calendar.png" />
-                <span>Calendar</span>
+                <span><?php echo _("Calendar");?></span>
             </div>
         </a>  
     <?php } ?>
@@ -258,7 +258,7 @@ else if ($user->canEdit()) { ?>
     <a href='onix_import.php'>
         <div class="main-menu-link <?php if ($currentPage == 'onix_import.php') { echo "active"; } ?>">
             <img src="images/menu/icon-import.png" />
-            <span>ONIX-PL File Import</span>
+            <span><?php echo _("ONIX-PL File Import");?></span>
         </div>
     </a> 
 
@@ -269,28 +269,28 @@ else { ?>
     <a href='index.php'>
         <div class="main-menu-link <?php if ($currentPage == 'index.php') { echo "active"; } ?>">
             <img src="images/menu/icon-home.png" />
-            <span>Home</span>
+            <span><?php echo _("Home");?></span>
         </div>
     </a>
 
     <a href='ajax_forms.php?action=getLicenseForm&height=265&width=260&modal=true&newLicenseID=' class='thickbox' id='newLicense'>
         <div class="main-menu-link">
             <img src="images/menu/icon-plus-square.png" />
-            <span>New License</span>
+            <span><?php echo _("New License");?></span>
         </div>
     </a>
 
     <a href='in_progress.php'>
         <div class="main-menu-link <?php if ($currentPage == 'in_progress.php') { echo "active"; } ?>">
             <img src="images/menu/icon-license-progress.png" />
-            <span>License In Progress</span>
+            <span><?php echo _("License In Progress");?></span>
         </div>
     </a>
 
     <a href='compare.php'>
         <div class="main-menu-link <?php if ($currentPage == 'compare.php') { echo "active"; } ?>">
             <img src="images/menu/icon-expression.png" />
-            <span>Expression Comparison</span>
+            <span><?php echo _("Expression Comparison");?></span>
         </div>
     </a>    
 
@@ -298,7 +298,7 @@ else { ?>
         <a href='calendar.php'>
             <div class="main-menu-link <?php if ($currentPage == 'calendar.php') { echo "active"; } ?>">
                 <img src="images/menu/icon-calendar.png" />
-                <span>Calendar</span>
+                <span><?php echo _("Calendar");?></span>
             </div>
         </a>  
     <?php } ?>
@@ -306,7 +306,7 @@ else { ?>
     <a href='onix_import.php'>
         <div class="main-menu-link <?php if ($currentPage == 'onix_import.php') { echo "active"; } ?>">
             <img src="images/menu/icon-import.png" />
-            <span>ONIX-PL File Import</span>
+            <span><?php echo _("ONIX-PL File Import");?></span>
         </div>
     </a> 
 
@@ -327,30 +327,30 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
 	<div style='text-align:left;'>
 		<ul class="tabs">
 <!-- 		<li style="background: url('images/change/<?php echo $http_lang?>/coral-change.gif') no-repeat right;">
- -->        <li id="change-mod-menu"><img src="images/change/icon-change-mod.png" /><span>Change Module</span><i class="fa fa-chevron-down"></i>
+ -->        <li id="change-mod-menu"><img src="images/change/icon-change-mod.png" /><span><?php echo _("Change Module");?></span><i class="fa fa-chevron-down"></i>
 			<ul class="coraldropdown">
 				<?php if (file_exists($util->getCORALPath() . "index.php")) {?>
-				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>" target='_blank'><img src='images/change/icon-mod-main.png'><span>Main Menu</span></a></li>
+				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>" target='_blank'><img src='images/change/icon-mod-main.png'><span><?php echo _("Main Menu");?></span></a></li>
 				<?php
 				}
 				if ($config->settings->resourcesModule == 'Y') {
 				?>
-				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>resources/" target='_blank'><img src='images/change/icon-mod-resources.png'><span>Resources</span></a></li>
+				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>resources/" target='_blank'><img src='images/change/icon-mod-resources.png'><span><?php echo _("Resources");?></span></a></li>
 				<?php
 				}
 				if ($config->settings->organizationsModule == 'Y') {
 				?>
-				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>organizations/" target='_blank'><img src='images/change/icon-mod-organizations.png'><span>Organizations</span></a></li>
+				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>organizations/" target='_blank'><img src='images/change/icon-mod-organizations.png'><span><?php echo _("Organizations");?></span></a></li>
 				<?php
 				}
 				if ($config->settings->usageModule == 'Y') {
 				?>
-				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>usage/" target='_blank'><img src='images/change/icon-mod-usage.png'><span>Usage Staistics</span></a></li>
+				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>usage/" target='_blank'><img src='images/change/icon-mod-usage.png'><span><?php echo _("Usage Staistics");?></span></a></li>
 				<?php
 				}
 				if ($config->settings->managementModule == 'Y') {
 				?>
-				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>management/" target='_blank'><img src='images/change/icon-mod-management.png'><span>Management</span></a></li>
+				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>management/" target='_blank'><img src='images/change/icon-mod-management.png'><span><?php echo _("Management");?></span></a></li>
 				<?php } ?>
 			</ul>
 		</li>
