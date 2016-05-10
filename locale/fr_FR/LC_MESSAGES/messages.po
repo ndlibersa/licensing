@@ -1385,7 +1385,7 @@ msgstr "Chemin vers les traductions invalide !"
 
 #: templates/header.php:176 templates/header.php:231 templates/header.php:279
 msgid "New License"
-msgstr "Ajouter une nouvelle licence"
+msgstr "Ajouter licence"
 
 #: templates/header.php:183 templates/header.php:238 templates/header.php:286
 msgid "License In Progress"
