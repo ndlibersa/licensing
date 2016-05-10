@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2016-05-10 08:19-0600\n"
+"POT-Creation-Date: 2016-05-10 14:48-0600\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Paul Poulain <paul.poulain@biblibre.com>\n"
 "Language-Team: \n"
@@ -1436,7 +1436,7 @@ msgid "Organizations"
 msgstr "Organisations"
 
 #: templates/header.php:348
-msgid "Usage Staistics"
+msgid "Usage Statistics"
 msgstr "Statistiques d'utilisation"
 
 #: templates/header.php:353
@@ -1446,6 +1446,9 @@ msgstr "Gestion"
 #: terms_report.php:22
 msgid "Terms Report"
 msgstr "Rapport des termes"
+
+#~ msgid "Usage Staistics"
+#~ msgstr "Statistiques d'utilisation"
 
 #~ msgid "French"
 #~ msgstr "Français"
