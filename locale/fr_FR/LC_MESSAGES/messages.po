@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2016-05-09 16:33-0600\n"
+"POT-Creation-Date: 2016-05-10 08:19-0600\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Paul Poulain <paul.poulain@biblibre.com>\n"
 "Language-Team: \n"
@@ -1290,7 +1290,7 @@ msgstr "Outil des termes"
 
 #: license.php:86
 msgid "Send feedback on this resource"
-msgstr ""
+msgstr "Envoyez des commentaires sur cette ressource"
 
 #: not_available.php:21
 msgid "Not Available"
@@ -1344,6 +1344,26 @@ msgstr "Fichier XML"
 #: onix_import.php:317
 msgid "Import options"
 msgstr "Options d'importation"
+
+#: onix_import.php:319
+msgid "Usage Terms"
+msgstr "Conditions d'utilisation"
+
+#: onix_import.php:320
+msgid "Supply Terms"
+msgstr "Conditions d'approvisionnement"
+
+#: onix_import.php:321
+msgid "Continuing Access Terms"
+msgstr "Conditions d'accès continu"
+
+#: onix_import.php:322
+msgid "Payment Terms"
+msgstr "Conditions de paiement"
+
+#: onix_import.php:323
+msgid "General Terms"
+msgstr "Conditions générales"
 
 #: onix_import.php:334
 msgid "Upload"

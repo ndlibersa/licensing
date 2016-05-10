@@ -316,11 +316,11 @@
 			<fieldset>
 				<legend><?php echo _("Import options");?></legend>
 				<div id='importOptions'>
-					<input id='usageTerms' name='usageTerms' type='checkbox'><label for='usageTerms'>Usage Terms</label><br/>
-					<input id='supplyTerms' name='supplyTerms' type='checkbox'><label for='supplyTerms'>Supply Terms</label><br/>
-					<input id='continuingAccessTerms' name='continuingAccessTerms' type='checkbox'><label for='continuingAccessTerms'>Continuing Access Terms</label><br/>
-					<input id='paymentTerms' name='paymentTerms' type='checkbox'><label for='paymentTerms'>Payment Terms</label><br/>
-					<input id='generalTerms' name='generalTerms' type='checkbox'><label for='generalTerms'>General Terms</label><br/><br>
+					<input id='usageTerms' name='usageTerms' type='checkbox'><label for='usageTerms'><?php echo _("Usage Terms");?></label><br/>
+					<input id='supplyTerms' name='supplyTerms' type='checkbox'><label for='supplyTerms'><?php echo _("Supply Terms");?></label><br/>
+					<input id='continuingAccessTerms' name='continuingAccessTerms' type='checkbox'><label for='continuingAccessTerms'><?php echo _("Continuing Access Terms");?></label><br/>
+					<input id='paymentTerms' name='paymentTerms' type='checkbox'><label for='paymentTerms'><?php echo _("Payment Terms");?></label><br/>
+					<input id='generalTerms' name='generalTerms' type='checkbox'><label for='generalTerms'><?php echo _("General Terms");?></label><br/><br>
 					<label for="licenseOrganizationID" class="formText">
 						<?php echo _("Publisher / Provider:");?>
 					</label>
