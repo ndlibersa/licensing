@@ -1730,6 +1730,7 @@ span#divider {
 	padding: 13px 0 12px;
     color: #fff;
     height: initial;
+    text-align: center;
 }
 
 #change-mod-menu img {
@@ -1748,6 +1749,7 @@ span#divider {
 li.change-mod-item {
     background: #4d4d4d;
     height: initial !important;
+    text-align: left;
 }
 
 li.change-mod-item a {

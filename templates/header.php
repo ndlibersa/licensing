@@ -327,7 +327,7 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
 	<div style='text-align:left;'>
 		<ul class="tabs">
 <!-- 		<li style="background: url('images/change/<?php echo $http_lang?>/coral-change.gif') no-repeat right;">
- -->        <li id="change-mod-menu"><img src="images/change/icon-change-mod.png" /><span><?php echo _("Change Module");?></span><i class="fa fa-chevron-down"></i>
+ -->        <li id="change-mod-menu"><span><?php echo _("Change Module");?></span><i class="fa fa-chevron-down"></i>
 			<ul class="coraldropdown">
 				<?php if (file_exists($util->getCORALPath() . "index.php")) {?>
 				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>" target='_blank'><img src='images/change/icon-mod-main.png'><span><?php echo _("Main Menu");?></span></a></li>
@@ -345,7 +345,7 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
 				}
 				if ($config->settings->usageModule == 'Y') {
 				?>
-				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>usage/" target='_blank'><img src='images/change/icon-mod-usage.png'><span><?php echo _("Usage Staistics");?></span></a></li>
+				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>usage/" target='_blank'><img src='images/change/icon-mod-usage.png'><span><?php echo _("Usage Statistics");?></span></a></li>
 				<?php
 				}
 				if ($config->settings->managementModule == 'Y') {
