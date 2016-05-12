@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2016-05-11 13:16-0600\n"
+"POT-Creation-Date: 2016-05-12 14:22-0600\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Paul Poulain <paul.poulain@biblibre.com>\n"
 "Language-Team: \n"
@@ -1160,13 +1160,13 @@ msgstr "Fichier de la pièce jointe supprimé avec succès."
 msgid "Status has been updated"
 msgstr "Statut mis à jour"
 
-#: calendar.php:21 in_progress.php:23 index.php:23 templates/header.php:180
-#: templates/header.php:235 templates/header.php:283
+#: calendar.php:21 in_progress.php:23 index.php:23 templates/header.php:181
+#: templates/header.php:236 templates/header.php:284
 msgid "Home"
 msgstr "Accueil"
 
-#: calendar.php:34 templates/header.php:209 templates/header.php:264
-#: templates/header.php:312
+#: calendar.php:34 templates/header.php:210 templates/header.php:265
+#: templates/header.php:313
 msgid "Calendar"
 msgstr "Calendrier"
 
@@ -1231,8 +1231,8 @@ msgstr " jours "
 msgid "Participants:  "
 msgstr "Participants :"
 
-#: compare.php:22 templates/header.php:201 templates/header.php:256
-#: templates/header.php:304
+#: compare.php:22 templates/header.php:202 templates/header.php:257
+#: templates/header.php:305
 msgid "Expression Comparison"
 msgstr "Comparaison des expressions"
 
@@ -1376,7 +1376,7 @@ msgstr ""
 "Le nom de la licence et de l'organisation doivent être indiqués. Réessayez à "
 "nouveau."
 
-#: templates/header.php:84
+#: templates/header.php:85
 msgid ""
 "JavaScript must be enabled in order for you to use CORAL. However, it seems "
 "JavaScript is either disabled or not supported by your browser. To use "
@@ -1387,59 +1387,71 @@ msgstr ""
 "Pour utiliser CORAL, activez JavaScript en modifiant les options de votre "
 "navigateur, puis "
 
-#: templates/header.php:84
+#: templates/header.php:85
 msgid "try again"
 msgstr "réessayez"
 
-#: templates/header.php:106
+#: templates/header.php:107
 msgid "Licensing"
 msgstr "Licences"
 
-#: templates/header.php:107
+#: templates/header.php:108
 msgid "Powered by"
 msgstr "Alimenté par"
 
-#: templates/header.php:141
+#: templates/header.php:114
+msgid "Hello"
+msgstr "Bonjour"
+
+#: templates/header.php:124
+msgid "logout"
+msgstr "Se déconnecter"
+
+#: templates/header.php:124
+msgid "Help"
+msgstr "Aide"
+
+#: templates/header.php:142
 msgid "Invalid translation route!"
 msgstr "Chemin vers les traductions invalide !"
 
-#: templates/header.php:187 templates/header.php:242 templates/header.php:290
+#: templates/header.php:188 templates/header.php:243 templates/header.php:291
 msgid "New License"
 msgstr "Ajouter licence"
 
-#: templates/header.php:194 templates/header.php:249 templates/header.php:297
+#: templates/header.php:195 templates/header.php:250 templates/header.php:298
 msgid "License In Progress"
 msgstr "Licences en cours"
 
-#: templates/header.php:217 templates/header.php:272 templates/header.php:320
+#: templates/header.php:218 templates/header.php:273 templates/header.php:321
 msgid "ONIX-PL File Import"
 msgstr "ONIX-PL Importer"
 
-#: templates/header.php:224
+#: templates/header.php:225
 msgid "Admin"
 msgstr "Admin"
 
-#: templates/header.php:341
+#: templates/header.php:342
 msgid "Change Module"
 msgstr "Changer de module"
 
-#: templates/header.php:344
+#: templates/header.php:345
 msgid "Main Menu"
 msgstr "Menu principal"
 
-#: templates/header.php:349
+#: templates/header.php:350
 msgid "Resources"
 msgstr "Ressources"
 
-#: templates/header.php:354
+#: templates/header.php:355
 msgid "Organizations"
 msgstr "Organisations"
 
-#: templates/header.php:359
+#: templates/header.php:360
 msgid "Usage Statistics"
 msgstr "Statistiques d'utilisation"
 
-#: templates/header.php:364
+#: templates/header.php:365
 msgid "Management"
 msgstr "Gestion"
 
@@ -1449,9 +1461,6 @@ msgstr "Rapport des termes"
 
 #~ msgid "Hello, "
 #~ msgstr "Bonjour, "
-
-#~ msgid "logout"
-#~ msgstr "Se déconnecter"
 
 #~ msgid "Usage Staistics"
 #~ msgstr "Statistiques d'utilisation"
