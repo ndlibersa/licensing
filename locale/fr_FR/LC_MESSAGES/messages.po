@@ -129,7 +129,7 @@ msgstr "Aucun élément correspondant !"
 
 #: js/forms/signatureForm.js:41
 msgid "Selected: "
-msgstr "Sélectionné : "
+msgstr "Sélectionné: "
 
 #: js/forms/signatureForm.js:96
 msgid "Do you really want to delete this signature?"
@@ -211,7 +211,7 @@ msgid ""
 "Please correct the following form error(s):\n"
 "\n"
 msgstr ""
-"Veuillez corriger le(s) erreur(s) de formulaire suivante(s) :\n"
+"Veuillez corriger le(s) erreur(s) de formulaire suivante(s):\n"
 "\n"
 
 #: js/plugins/date.js:30
@@ -470,7 +470,7 @@ msgstr "Vous n'avez pas l'autorisation d’accéder à cette page"
 
 #: admin/classes/common/DBService.php:40
 msgid "There was a problem with the database: "
-msgstr "Il y a eu un problème avec la base de données : "
+msgstr "Il y a eu un problème avec la base de données: "
 
 #: admin/classes/common/Object.php:72
 msgid "Cannot get value for undefined key ("
@@ -482,15 +482,15 @@ msgstr "Licence"
 
 #: ajax_forms.php:51
 msgid "License Name:"
-msgstr "Nom de la licence :"
+msgstr "Nom de la licence:"
 
 #: ajax_forms.php:56 onix_import.php:325
 msgid "Publisher / Provider:"
-msgstr "Éditeur / fournisseur :"
+msgstr "Éditeur / fournisseur:"
 
 #: ajax_forms.php:66
 msgid "Consortium:"
-msgstr "Consortium :"
+msgstr "Consortium:"
 
 #: ajax_forms.php:94 ajax_htmldata.php:496 index.php:92
 msgid ""
@@ -523,11 +523,11 @@ msgstr "Télécharger un document"
 
 #: ajax_forms.php:167
 msgid "Effective Date:"
-msgstr "Date effective :"
+msgstr "Date effective:"
 
 #: ajax_forms.php:174
 msgid "Document Type:"
-msgstr "Type de document :"
+msgstr "Type de document:"
 
 #: ajax_forms.php:195
 msgid "add document type"
@@ -535,15 +535,15 @@ msgstr "Ajouter un type de document"
 
 #: ajax_forms.php:203
 msgid "Parent:"
-msgstr "Type principal :"
+msgstr "Type principal:"
 
 #: ajax_forms.php:235
 msgid "Name:"
-msgstr "Nom :"
+msgstr "Nom:"
 
 #: ajax_forms.php:241
 msgid "File:"
-msgstr "Fichier :"
+msgstr "Fichier:"
 
 #: ajax_forms.php:247
 msgid "replace with new file"
@@ -551,7 +551,7 @@ msgstr "Remplacer par un nouveau fichier"
 
 #: ajax_forms.php:263
 msgid "Archived:"
-msgstr "Archivé :"
+msgstr "Archivé:"
 
 #: ajax_forms.php:297
 msgid "Archive Document Date"
@@ -559,7 +559,7 @@ msgstr "Date de l'archivage du document"
 
 #: ajax_forms.php:302
 msgid "Archive Date:"
-msgstr "Archivé le :"
+msgstr "Archivé le:"
 
 #: ajax_forms.php:305 ajax_processing.php:505 ajax_processing.php:517
 #: ajax_processing.php:530
@@ -572,11 +572,11 @@ msgstr "Lien vers l'Outil-ressource des termes"
 
 #: ajax_forms.php:340 ajax_htmldata.php:1079
 msgid "For Document:"
-msgstr "Pour le document :"
+msgstr "Pour le document:"
 
 #: ajax_forms.php:363
 msgid "Terms Tool Resource:"
-msgstr "Ressource de l'outil des termes :"
+msgstr "Ressource de l'outil des termes:"
 
 #: ajax_forms.php:401 ajax_htmldata.php:773 ajax_htmldata.php:778
 #: ajax_htmldata.php:903 ajax_htmldata.php:908
@@ -613,11 +613,11 @@ msgstr "Expressions"
 
 #: ajax_forms.php:551
 msgid "Document:"
-msgstr "Document :"
+msgstr "Document:"
 
 #: ajax_forms.php:573
 msgid "Expression Type:"
-msgstr "Type d'expression :"
+msgstr "Type d'expression:"
 
 #: ajax_forms.php:592
 msgid "add expression"
@@ -625,11 +625,11 @@ msgstr "Ajouter une expression"
 
 #: ajax_forms.php:599
 msgid "Qualifier:"
-msgstr "Qualificateur :"
+msgstr "Qualificateur:"
 
 #: ajax_forms.php:635 ajax_htmldata.php:543
 msgid "Document Text:"
-msgstr "Texte du document :"
+msgstr "Texte du document:"
 
 #: ajax_forms.php:673 ajax_forms.php:684 ajax_htmldata.php:631
 msgid "Notes"
@@ -637,7 +637,7 @@ msgstr "Remarques"
 
 #: ajax_forms.php:674
 msgid "For Document Text:"
-msgstr "Pour le texte du document :"
+msgstr "Pour le texte du document:"
 
 #: ajax_forms.php:789 license.php:65 license.php:106 license.php:126
 #: license.php:145
@@ -646,15 +646,15 @@ msgstr "Pièces jointes"
 
 #: ajax_forms.php:793
 msgid "Date:"
-msgstr "Date :"
+msgstr "Date:"
 
 #: ajax_forms.php:800
 msgid "Details:"
-msgstr "Détails :"
+msgstr "Détails:"
 
 #: ajax_forms.php:806
 msgid "Attachments:"
-msgstr "Pièces jointes :"
+msgstr "Pièces jointes:"
 
 #: ajax_forms.php:860 ajax_forms.php:901 ajax_forms.php:984 ajax_forms.php:1135
 msgid "Update"
@@ -797,7 +797,7 @@ msgstr "Modifier l'organisation"
 
 #: ajax_htmldata.php:78
 msgid "License Status:"
-msgstr "Statut de la licence :"
+msgstr "Statut de la licence:"
 
 #: ajax_htmldata.php:131
 msgid "For Document"
@@ -907,11 +907,11 @@ msgstr "Voir la licence"
 #: ajax_htmldata.php:547 ajax_htmldata.php:652 ajax_htmldata.php:1155
 #: ajax_htmldata.php:1157
 msgid " Notes:"
-msgstr " Notes :"
+msgstr " Notes:"
 
 #: ajax_htmldata.php:573
 msgid "Qualifiers:"
-msgstr "Qualificateurs :"
+msgstr "Qualificateurs:"
 
 #: ajax_htmldata.php:632 ajax_htmldata.php:1084
 msgid "Document Text"
@@ -940,7 +940,7 @@ msgstr "Date effective"
 
 #: ajax_htmldata.php:813 ajax_htmldata.php:933
 msgid "archived on: "
-msgstr "Archivé le : "
+msgstr "Archivé le: "
 
 #: ajax_htmldata.php:836 ajax_htmldata.php:954
 msgid "(no date)"
@@ -1034,7 +1034,7 @@ msgstr "Paramètre"
 
 #: ajax_htmldata.php:1488
 msgid "Limit by Qualifier:"
-msgstr "Restreindre par qualificateur :"
+msgstr "Restreindre par qualificateur:"
 
 #: ajax_htmldata.php:1572
 msgid "Resources Module"
@@ -1073,11 +1073,11 @@ msgstr ""
 
 #: ajax_processing.php:336
 msgid "License:  "
-msgstr "Licence :  "
+msgstr "Licence:  "
 
 #: ajax_processing.php:337
 msgid "View License Record:  "
-msgstr "Consulter la fiche de la licence :"
+msgstr "Consulter la fiche de la licence:"
 
 #: ajax_processing.php:341
 msgid "Licensing - expression set to production use"
@@ -1229,7 +1229,7 @@ msgstr " jours "
 
 #: calendar.php:234
 msgid "Participants:  "
-msgstr "Participants :"
+msgstr "Participants:"
 
 #: compare.php:22 templates/header.php:202 templates/header.php:257
 #: templates/header.php:305
@@ -1238,7 +1238,7 @@ msgstr "Comparaison des expressions"
 
 #: compare.php:39
 msgid "Limit by Expression Type:"
-msgstr "Restreindre par type d'expression :"
+msgstr "Restreindre par type d'expression:"
 
 #: in_progress.php:33
 msgid "Licenses In Progress"
@@ -1331,7 +1331,7 @@ msgstr "Impossible de télécharger le fichier"
 
 #: onix_import.php:298
 msgid "Error: "
-msgstr "Erreur : "
+msgstr "Erreur: "
 
 #: onix_import.php:312
 msgid "File selection"
