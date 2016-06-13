@@ -1827,3 +1827,23 @@ table.titleTable {
 #main-table {
     margin: 0 30px;
 }
+
+/*--- Allow Browser to Scroll When Modal Appears ---*/
+
+#TB_window {
+	position: absolute !important;
+	margin-top: 100px !important;
+	top: 0 !important;
+}
+
+/*--- Allow for Language Changes to Helpful Links Side Menu ---*/
+
+#side-menu-title {
+    font-size: 21px;
+    font-weight: 600;
+    padding: 10px;
+}
+
+td.helpfulLinks {
+    vertical-align: top;
+}
