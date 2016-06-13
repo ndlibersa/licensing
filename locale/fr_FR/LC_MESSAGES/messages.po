@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2016-05-12 14:22-0600\n"
+"POT-Creation-Date: 2016-06-13 12:56-0600\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Paul Poulain <paul.poulain@biblibre.com>\n"
 "Language-Team: \n"
@@ -400,7 +400,7 @@ msgstr "Ajouter un utilisateur"
 
 #: admin.php:39 admin.php:56 admin.php:70 admin.php:83 admin.php:97
 #: admin.php:112 admin.php:132 admin.php:153 admin.php:167 in_progress.php:38
-#: license.php:70 license.php:111 license.php:130 license.php:150
+#: license.php:70 license.php:112 license.php:131 license.php:151
 msgid "Loading..."
 msgstr "Chargement en cours..."
 
@@ -606,8 +606,8 @@ msgstr "Valider la modification"
 msgid "edit"
 msgstr "Modifier"
 
-#: ajax_forms.php:546 license.php:63 license.php:104 license.php:124
-#: license.php:143
+#: ajax_forms.php:546 license.php:63 license.php:105 license.php:125
+#: license.php:144
 msgid "Expressions"
 msgstr "Expressions"
 
@@ -639,8 +639,8 @@ msgstr "Remarques"
 msgid "For Document Text:"
 msgstr "Pour le texte du document:"
 
-#: ajax_forms.php:789 license.php:65 license.php:106 license.php:126
-#: license.php:145
+#: ajax_forms.php:789 license.php:65 license.php:107 license.php:127
+#: license.php:146
 msgid "Attachments"
 msgstr "Pièces jointes"
 
@@ -1280,15 +1280,19 @@ msgstr "Type de document"
 msgid "Starts with"
 msgstr "Commençant par"
 
-#: license.php:62 license.php:103 license.php:123 license.php:142
+#: license.php:62 license.php:104 license.php:124 license.php:143
 msgid "Documents"
 msgstr "Documents"
 
-#: license.php:64 license.php:105 license.php:125 license.php:144
+#: license.php:64 license.php:106 license.php:126 license.php:145
 msgid "Terms Tool"
 msgstr "Outil des termes"
 
-#: license.php:86
+#: license.php:79
+msgid "Helpful Links"
+msgstr "Liens utiles"
+
+#: license.php:87
 msgid "Send feedback on this resource"
 msgstr "Envoyez des commentaires sur cette ressource"
 
