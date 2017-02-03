@@ -18,7 +18,7 @@
 ?>
 
 <br />
-<div class="footer">Copyright &copy; 2015. Licensing Module version 1.4.1<br/><a href="http://coral-erm.org/">CORAL Project Website</a> | <a href="https://github.com/ndlibersa/licensing">GitHub Site</a></div>
+<div class="footer">Copyright &copy; 2015. Licensing Module version 1.4.2<br/><a href="http://coral-erm.org/">CORAL Project Website</a> | <a href="https://github.com/ndlibersa/licensing">GitHub Site</a></div>
 </div>
 
 </td>
