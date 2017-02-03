@@ -37,7 +37,7 @@ if ($_POST["submit"]) {
 			foreach ($statements as $statement) {
 			   if (strlen(trim($statement))>3){
 
-					$result = mysqli_query($installer->getDatabase, $statement);
+					$result = mysqli_query($installer->getDatabase(), $statement);
 					if (!$result){
 						$installer->addErrorMessage(mysqli_error($installer->getDatabase) . "<br /><br />For statement: " . $statement);
 						break;
