@@ -1,6 +1,17 @@
 The following file contains notes on specific upgrades.  For full instructions on how to run an upgrade, refer to the technical documentation available at http://coral-erm.org
 
 
+
+**************************************************************************************************
+****
+****
+****  UPGRADING FROM CORAL LICENSING VERSION 1.4.1 TO 1.4.2
+****
+****
+**************************************************************************************************
+This is a bug fix with no database changes. Make a backup of your licensing directory before you start. Checkout or copy the new code /licensing/ files into your /licensing/ directory. 
+
+
 **************************************************************************************************
 ****
 ****
